@@ -8,14 +8,23 @@ public class ArrayTest021 {
 		int[][] arr3=new int[3][3];
 		int count=0; // 다음 행에 다음 증가값 추가 
 		
-		// 배열 입력 
+		/*
+		// 문제 1- 배열 입력 방법2
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				arr3[i][j]=(i+count)+j+1; //
+				count++;
+				arr3[i][j]=count; //
 			}
-			count+=2; // i(행)에 대한 증가 값을 추가 
-		}// 배열 입력 완료 		
-		
+		}
+		*/
+
+		// 문제 2 - 배열 입력 방법 
+		for (int j = 0; j < 3; j++) {
+			for (int i = 0; i < 3; i++) {
+				count++;
+				arr3[i][j]=count; //
+			}
+		}
 		
 		// 배열 출력
 		for (int i = 0; i < 3; i++) {
