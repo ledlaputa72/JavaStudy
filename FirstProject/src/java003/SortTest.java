@@ -49,13 +49,19 @@ public class SortTest {
 		
 		
         //자바에서 제공하는 sort 함수 /////////////////
-        int[] bae= {10,90,100,60,70};
-        Arrays.sort(bae); // import 클래스 필요 , import java.util.Arrays;
+        int[] bae= {10,90,100,60,70}; 
+        Arrays.sort(bae); // import 클래스 필요 , import java.util.Arrays; 오름차순
 
         
         ///////////////////////////////////////
-		//정렬된 배열 출력
+		//정렬된 배열 출력 - 오름차순
 		for (int i = 0; i < bae.length; i++) {
+			System.out.print(bae[i]+"\t");
+		}
+		System.out.println();
+		
+		// 내림차순으로 찍을땐
+		for (int i = bae.length-1; i>=0 ; i--) {
 			System.out.print(bae[i]+"\t");
 		}
 		System.out.println();
