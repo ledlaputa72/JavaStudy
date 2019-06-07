@@ -28,6 +28,21 @@ public class ArrayTest03 {
 			System.out.println();
 		}//for end
 		
+		// 연습문제
+		System.out.println("length를 이용하여 배열을 출력하시오");
+		int[][] p = {
+				{1,2,3},
+				{4,5,6},
+				{7,8,9}
+		};//p 배열 선언&초기화
+		
+		for (int i = 0; i < p.length; i++) {
+			for (int j = 0; j < p[i].length; j++) {
+				System.out.print(p[i][j]+"\t");;
+			}
+		System.out.println();
+		}//p배열 출력
+		
 	}// main end
 
 }//lass end
