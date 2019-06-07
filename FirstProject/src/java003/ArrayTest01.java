@@ -67,6 +67,7 @@ public class ArrayTest01 {
 		
 		for (int i = 0; i < love.length; i++) {
 			System.out.print(love[i]);
+			
 		}
 	}
 
