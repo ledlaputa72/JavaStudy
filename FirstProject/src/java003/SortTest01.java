@@ -2,6 +2,7 @@ package java003;
 
 public class SortTest01 {
 
+
 	public static void main(String[] args) {
 
 		int[] ki= {175, 180, 174, 185, 165, 160, 174, 181, 179, 169};
@@ -29,6 +30,19 @@ public class SortTest01 {
 			System.out.print(ki[i]+"\t");	
 		}
 		System.out.println();
+		
+		/*
+		//정렬 공식
+		for (int i = 0; i < ki.length-1; i++) {
+			for (int j = 0; j < ki.length-1-i; j++) {
+				if (ki[j]<ki[j-1]) {
+					int tmp=ki[j];
+					ki[j]=ki[j+1];
+					ki[j+1]=tmp;
+				}
+			}
+		}
+		*/
 		
 	}// main end
 
