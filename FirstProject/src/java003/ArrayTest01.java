@@ -1,3 +1,4 @@
+// github연결하기 
 package java003;
 
 import java.util.Scanner;
@@ -6,6 +7,7 @@ public class ArrayTest01 {
 
 	public static void main(String[] args) {
 		Scanner sc1=new Scanner(System.in);
+		
 		
         //char[] love= {'L','O','V','E'};
         System.out.println("문장을 입력하세요.");
