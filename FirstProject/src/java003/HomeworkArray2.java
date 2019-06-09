@@ -11,7 +11,7 @@ public class HomeworkArray2 {
 		int count3=0;
 		
 		for (int i = 0; i < arr3.length; i++) {
-			for (int j = arr3.length-1; j >= arr3.length-1-i ; j--) {
+			for (int j = 2; j >= 2-i ; j--) {
 				count3++;
 				arr3[i][j]=count3;
 			}
@@ -32,8 +32,8 @@ public class HomeworkArray2 {
 		int[][] arr7=new int[3][3];
 		int count7=0;
 		
-		for (int i = arr7.length-1; i >=0 ; i--) {
-			for (int j = arr7.length-1; j >=i; j--) {
+		for (int i = 2; i >=0 ; i--) {
+			for (int j = 2; j >=i; j--) {
 				count7++;
 				arr7[i][j]=count7;
 			}
