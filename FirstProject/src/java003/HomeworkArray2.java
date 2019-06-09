@@ -3,8 +3,8 @@ package java003;
 public class HomeworkArray2 {
 
 	public static void main(String[] args) {
-		// 3)ì—­ì—´ ì •í–‰  - 2ì¤‘ ë°°ì—´ 		
-		System.out.println("3)ì—­ì—´ ì •í–‰ - 2ì¤‘ ë°°ì—´ ");
+		// 3)¿ª¿­ Á¤Çà  - 2Áß ¹è¿­ 		
+		System.out.println("3)¿ª¿­ Á¤Çà - 2Áß ¹è¿­ ");
 		System.out.println();
 
 		int[][] arr3=new int[3][3];
@@ -25,8 +25,8 @@ public class HomeworkArray2 {
 		}
 		System.out.println("================");
 		
-		// 7) ì—­ì—´ ì—­í–‰ - 2ì¤‘ ë°°ì—´
-		System.out.println("7) ì—­ì—´ ì—­í–‰ - 2ì¤‘ ë°°ì—´ ");
+		// 7) ¿ª¿­ ¿ªÇà - 2Áß ¹è¿­
+		System.out.println("7) ¿ª¿­ ¿ªÇà - 2Áß ¹è¿­ ");
 		System.out.println();
 		
 		int[][] arr7=new int[3][3];

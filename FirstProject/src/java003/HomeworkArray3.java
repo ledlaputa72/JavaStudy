@@ -4,14 +4,14 @@ public class HomeworkArray3 {
 
 	public static void main(String[] args) {
 
-		// 1)ìš°ìƒ 0ë°ì´í„°   
-		System.out.println("1)ìš°ìƒ 0ë°ì´í„°  ");
+		// 1)¿ì»ó 0µ¥ÀÌÅÍ   
+		System.out.println("1)¿ì»ó 0µ¥ÀÌÅÍ  ");
 		System.out.println();
 		
 		int[][] arr1=new int[3][3];
 		int count1=0;
 		
-		for (int i = 0; i < arr1.length; i++) {
+		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < i+1; j++) {
 				count1++;
 				arr1[i][j]=count1;
@@ -27,14 +27,14 @@ public class HomeworkArray3 {
 		
 		System.out.println("================");
 		
-		// 2)ìš°í•˜ 0ë°ì´í„° 
-		System.out.println("2)ìš°í•˜ 0ë°ì´í„° ");
+		// 2)¿ìÇÏ 0µ¥ÀÌÅÍ 
+		System.out.println("2)¿ìÇÏ 0µ¥ÀÌÅÍ ");
 		System.out.println();
 		
 		int[][] arr2=new int[3][3];
 		int count2=0;
 		
-		for (int i = 0; i < arr2.length; i++) {
+		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3-i; j++) {
 				count2++;
 				arr2[i][j]=count2;
@@ -50,15 +50,15 @@ public class HomeworkArray3 {
 		
 		System.out.println("================");
 		
-		// 3)ì¢Œìƒ 0ë°ì´í„°  
-		System.out.println("3)ì¢Œìƒ 0ë°ì´í„° ");
+		// 3)ÁÂ»ó 0µ¥ÀÌÅÍ  
+		System.out.println("3)ÁÂ»ó 0µ¥ÀÌÅÍ ");
 		System.out.println();
 		
 		int[][] arr3=new int[3][3];
 		int count3=0;
 		
-		for (int i = 0; i < arr3.length; i++) {
-			for (int j = arr3.length-1; j >= arr3.length-1-i; j--) {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 3-1; j >= 2-i; j--) {
 				count3++;
 				arr3[i][j]=count3;
 			}
@@ -73,15 +73,15 @@ public class HomeworkArray3 {
 		
 		System.out.println("================");
 		
-		// 4)ì¢Œí•˜ 0ë°ì´í„°  
-		System.out.println("4)ì •ì¢Œí•˜ 0ë°ì´í„° ");
+		// 4)ÁÂÇÏ 0µ¥ÀÌÅÍ  
+		System.out.println("4)Á¤ÁÂÇÏ 0µ¥ÀÌÅÍ ");
 		System.out.println();
 		
 		int[][] arr4=new int[3][3];
 		int count4=0;
 		
-		for (int i = 0; i < arr4.length; i++) {
-			for (int j = arr4.length-1; j >= i; j--) {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 3-1; j >= i; j--) {
 				count4++;
 				arr4[i][j]=count4;
 			}
