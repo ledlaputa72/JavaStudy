@@ -21,7 +21,7 @@ public class SearchTest {
 
 		
 		// 이진 검색
-		System.out.println("===== 이진 검색 =====");
+		System.out.println("===== 이진 검색 직접 =====");
 		int[] arr2= {11,84,45,78,34,9,2};
 		Arrays.sort(arr2); // 배열 정렬
 		

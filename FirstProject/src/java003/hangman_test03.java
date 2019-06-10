@@ -24,16 +24,16 @@ public class hangman_test03 {
 		}
         System.out.println();
         System.out.println("단어의 길이"+arr1.length); // 단어의 길이 
+        System.out.println("시도 기회 : "+arr1.length*2);
         
         char[] arr2=new char[arr1.length]; //String arr2를 char로 변환
         for (int i = 0; i < arr2.length; i++) {
 			arr2[i]='_';
 		}
-        
-        for (int i = 0; i < arr2.length; i++) { // 단어 출력
-        	System.out.print(arr2[i]+",");
-		}
-        System.out.println();
+//        for (int i = 0; i < arr2.length; i++) { // 단어 출력
+//        	System.out.print(arr2[i]+",");
+//		}
+//        System.out.println();
         
         //2. 시도 횟수 카운트
         int count=0; //횟수 시도 카운트
@@ -70,7 +70,12 @@ public class hangman_test03 {
                   
              } // if success !=0 반복
              else {
-                  System.out.println("성공했습니다.");        
+            	 //정답 출력 확인
+                  for (int j = 0; j < arr2.length; j++) {
+                	  System.out.print(arr2[j]);
+				}
+                  System.out.println();                  
+            	  System.out.println("성공했습니다.");        
                   break;
              } //if end 성공유무 판다.
         } // for end 전체 시도 횟수

@@ -8,7 +8,7 @@ public class SearchTest01 {
 	public static void main(String[] args) {
 		
 		// 배열
-		System.out.println("===== 이진 검색 =====");
+		System.out.println("===== 이진 검색 함수 이용 =====");
 		int[] arr2= {11,84,45,78,34,9,2};
 		Arrays.sort(arr2); // 배열 정렬
 		
@@ -23,7 +23,7 @@ public class SearchTest01 {
 		System.out.print("찾을 숫자를 입력하세요 : ");
 		int ans=sc1.nextInt();
 		
-		//배열 이전 검색으로 위치 출력
+		//함수를 이용한 방법
 		if (Arrays.binarySearch(arr2, ans)>=0) { // ans는 찾는 수, >=0 : 값이 있는 경우를 의미
 			System.out.print("찾는 수 "+ans+"는");
 			System.out.println((Arrays.binarySearch(arr2,ans))+"번째 있다.");
