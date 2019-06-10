@@ -6,7 +6,7 @@ import java.util.Random;
 public class SearchTest02 {
 
 	public static void main(String[] args) {
-		 Random r1=new Random(); //2)Random 클래스 
+		 Random r1=new Random(); //2)Random 클래스  1)2)번중 아무거나 사용해도 무관
 		int [] roto=new int[6];//배열에 6개 숫자 담기
 		
 		for (int i = 0; i < 6; i++) { //중복 배제 로직
