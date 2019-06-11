@@ -22,14 +22,13 @@ public class ArrayArgTest {
 				System.out.print("*");
 			}
 			System.out.println();
-		}
+		} // 1st 인자 처리 end
 		
 		int str=Integer.parseInt(args[0]); // 인자를 숫자로 바꿔주기 
 		for (int i = 0; i < str+1; i++) {
 			System.out.println("아름다운 밤입니다.!!");
-		}
+		} // 2nd 인자 처리 end
 		
-		
-	}
+	}//main end
 
-}
+}//class end
