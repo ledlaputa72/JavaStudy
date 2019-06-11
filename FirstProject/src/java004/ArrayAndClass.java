@@ -1,4 +1,4 @@
-package java003;
+package java004;
 
 public class ArrayAndClass {
 
