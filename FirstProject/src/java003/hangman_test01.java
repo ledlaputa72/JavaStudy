@@ -6,7 +6,7 @@ public class hangman_test01 {
 
 	public static void main(String[] args) {
 		
-		// 선생님 문제 풀이 - 아래 다시 확인 필요 제대로 못 받아 씀
+		// 선생님 문제 풀이 - 아래 다시 확인 필요 제대로 못 받아 씀 
 		
 		String [] moonja={"p","i","c","t","u","r","e"};
        String [] jool={"_","_","_","_","_","_","_"};

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class SearchTest01 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
 		// 배열
 		System.out.println("===== 이진 검색 함수 이용 =====");

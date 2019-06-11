@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SortTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 
 		int[] k= {10,30,24,78,9}; //정렬한 배열 
 		

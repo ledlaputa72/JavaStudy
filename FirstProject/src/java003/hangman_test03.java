@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class hangman_test03 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
 		// 행맨의 문제 단어를 직접 입력하고, 단어 길*2만큼의 시도안에 단어를 모두 맞추어라 
 		

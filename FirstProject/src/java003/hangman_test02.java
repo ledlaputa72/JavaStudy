@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class hangman_test02 {
 
-	 public static void main(String[] args) {
+	 public static void main(String[] args) { 
          
 		 //내가 푼 문제 풀이 
 		 
