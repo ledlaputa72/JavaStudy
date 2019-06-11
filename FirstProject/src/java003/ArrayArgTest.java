@@ -16,19 +16,34 @@ public class ArrayArgTest {
 		
         System.out.println("입력받은 인자 1 = "+args[0]+", 입력받은 인자 2 = "+args[1]);
         
-        int star=Integer.parseInt(args[0]); // 인자를 숫자로 바꾸주기
+        starPrint(args[0]);// 별찍기 메소드 
+        strPrint(args[1]);// 텍스트 프린트 메소드         
+		
+	}//main end
+
+	private static void strPrint(String str1) {
+
+		int str=Integer.parseInt(str1); // 인자를 숫자로 바꿔주기 
+		
+		for (int i = 0; i < str+1; i++) {
+			System.out.println("아름다운 밤입니다.!!");
+		} // 2nd 인자 처리 end
+	}
+
+	private static void starPrint(String star1) {
+		
+        int star=Integer.parseInt(star1); // 인자를 숫자로 바꾸주기
+        
 		for (int i = 0; i < star; i++) {
+			
 			for (int j = 0; j < i+1; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
 		} // 1st 인자 처리 end
 		
-		int str=Integer.parseInt(args[0]); // 인자를 숫자로 바꿔주기 
-		for (int i = 0; i < str+1; i++) {
-			System.out.println("아름다운 밤입니다.!!");
-		} // 2nd 인자 처리 end
-		
-	}//main end
+	}
+	
+	
 
 }//class end
