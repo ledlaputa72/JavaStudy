@@ -1,11 +1,10 @@
 package java004;
 
-import java.util.Scanner;
-
-public class ArrayArgTest {
+public class ArrayCastTest {
 
 	public static void main(String[] args) {
 
+		
 		String str= "kongjoo";
         char[] ch2=str.toCharArray(); // String -> char[]
 		//  'k'   'o'   'n'   'g' ...
