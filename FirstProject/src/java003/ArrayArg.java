@@ -1,4 +1,4 @@
-package java004;
+package java003;
 
 public class ArrayArg {
 	//명령어와 명령행 인자 만들기 

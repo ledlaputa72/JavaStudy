@@ -1,4 +1,4 @@
-package java004;
+package java003;
 
 public class ArrayCastTest {
 
