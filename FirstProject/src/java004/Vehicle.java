@@ -1,7 +1,7 @@
 package java004;
 
 class Car {
-	public String color;
+	public String color; // 접근지정자 public Vehicle class에서 접근이 가능하다. 
 	public int doors;
 	public int price;
 };//Car Class end
@@ -10,7 +10,7 @@ public class Vehicle {
 
 	public static void main(String[] args) {
 		Car redCar=new Car();
-		redCar.color="Red";
+		redCar.color="Red"; //Car class의 public으로 된 color,doors,price에 사용이 가능
 		redCar.doors=4;
 		redCar.price=30000;
 		
