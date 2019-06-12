@@ -46,6 +46,10 @@ class Cafe {
 	public Cafe() {
 		
 	}
+	
+	public void print1() {
+		System.out.println(this.getName()+"\t"+this.getSize()+"\t"+this.getPrice()+"\t"+this.getStore());
+	}
 }
 
 public class CafeEvent {
@@ -62,11 +66,16 @@ public class CafeEvent {
 		System.out.println("------------------------------");
 		System.out.println("커피이름"+"\t"+"커피크기"+"\t"+"커피가격"+"\t"+"매장이름");
 		System.out.println("------------------------------");
-		System.out.println(cf1.getName()+"\t"+cf1.getSize()+"\t"+cf1.getPrice()+"\t"+cf1.getStore());
-		System.out.println(cf2.getName()+"\t"+cf2.getSize()+"\t"+cf2.getPrice()+"\t"+cf2.getStore());
-		System.out.println(cf3.getName()+"\t"+cf3.getSize()+"\t"+cf3.getPrice()+"\t"+cf3.getStore());
-		System.out.println(cf4.getName()+"\t"+cf4.getSize()+"\t"+cf4.getPrice()+"\t"+cf4.getStore());
-		System.out.println(cf5.getName()+"\t"+cf5.getSize()+"\t"+cf5.getPrice()+"\t"+cf5.getStore());
+		cf1.print1();
+		cf2.print1();
+		cf3.print1();
+		cf4.print1();
+		cf5.print1();
+//		System.out.println(cf1.getName()+"\t"+cf1.getSize()+"\t"+cf1.getPrice()+"\t"+cf1.getStore());
+//		System.out.println(cf2.getName()+"\t"+cf2.getSize()+"\t"+cf2.getPrice()+"\t"+cf2.getStore());
+//		System.out.println(cf3.getName()+"\t"+cf3.getSize()+"\t"+cf3.getPrice()+"\t"+cf3.getStore());
+//		System.out.println(cf4.getName()+"\t"+cf4.getSize()+"\t"+cf4.getPrice()+"\t"+cf4.getStore());
+//		System.out.println(cf5.getName()+"\t"+cf5.getSize()+"\t"+cf5.getPrice()+"\t"+cf5.getStore());
 		System.out.println("------------------------------");
 		
 		Scanner sc1=new Scanner(System.in);
