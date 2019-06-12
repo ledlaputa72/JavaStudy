@@ -4,11 +4,14 @@ class BBang4 {
 	private String jong; // 객체 속성 
 	private int ka;
 	
-	public BBang4(String jong, int ka) {
+	public BBang4(String jong, int ka) { // 생성자 오버로딩
 		this.jong=jong;
 		this.ka=ka;
 	}
 	
+	public BBang4() { // 생성자 오버로딩 
+	}
+
 	public String getJong() {
 		return jong;
 	}
@@ -35,5 +38,7 @@ public class Bread4 {
 		
 		System.out.println(b1.getJong()); 
 		System.out.println(b1.getKa());
+		
+		BBang4 b2=new BBang4(); //초기치 없이 생성만 넣는 경우  (디폴트 생성자를 안만들어 주고 있다. 위쪽 때문에)
 	}
 }
