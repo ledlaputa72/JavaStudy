@@ -1,6 +1,6 @@
 package java004;
 
-class BBangEncap { //정의 
+class BBang2 { //정의 
 	private String jong; //캡슐화,  private로 외부 클래스에서 접급이 불가능 한다. 
 	private int ka; 
 	// private 속성을 꺼내주고, 받게 하는 도우미(메소드)가 필요하다. public 
@@ -27,7 +27,7 @@ class BBangEncap { //정의
 
 public class BreadEncapsul {
 	public static void main(String[] args) {
-		BBangEncap b1=new BBangEncap(); // 생성
+		BBang2 b1=new BBang2(); // 생성
 		// b1.jong="팥빵"; 이렇게 안된다.
 		b1.setJong("슈크림빵"); //속성값을 넣는 setJong
 		b1.setKa(2000);
@@ -35,7 +35,7 @@ public class BreadEncapsul {
 		System.out.println(b1.getJong()); //속성값을 가져오는 getJong
 		System.out.println(b1.getKa());
 		
-		BBangEncap b2=new BBangEncap(); // 생성
+		BBang2 b2=new BBang2(); // 생성
 		b2.setJong("슈크림빵"); //속성값을 넣는 setJong
 		b2.setKa(2000);
 		

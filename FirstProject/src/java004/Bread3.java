@@ -1,22 +1,42 @@
 package java004;
 
-class BBang3 { //정의 : 빵가게 클래스 (설계도:메모리에 만들어지지 않았다.)
-	public String jong; //빵의 종류 (속성,필드)
-	public int ka; //빵의 가격 (속성,필드)
+class BBang3 { 
+	private String jong; // 객체 속성 
+	private int ka;
+	
+	// 이클립스를 이용한 getter,setter 자동 생성 
+	
+	public String getJong() {
+		return jong;
+	}
+	public void setJong(String jong) {
+		this.jong = jong;
+	}
+	public int getKa() {
+		return ka;
+	}
+	public void setKa(int ka) {
+		this.ka = ka;
+	} 
 	
 }
 public class Bread3 {
 	public static void main(String[] args) {
-		BBang b1=new BBang(); //생성1, b1이라는 이름으로  BBang객체를 찾아갈 수 있게 한다. 
-		b1.jong="팥빵"; //객체.속성=값
-		b1.ka=1200;
+		BBang3 b1=new BBang3();
 		
-		BBang b2=new BBang(); //생성2, b2라는 새로운 객체가 생겨남 
-		b2.jong="초코빵";
-		b2.ka=3000;
+		b1.setJong("슈크림빵"); 
+		b1.setKa(2000);
+				
+		System.out.println(b1.getJong());
+		System.out.println(b1.getKa());
 		
-		System.out.println(b1.jong+"\t"+b1.ka); //b1객체.속성
-		System.out.println(b2.jong+"\t"+b2.ka); //b2객체.속성
+		BBang3 b2=new BBang3(); 
+		
+		b2.setJong("슈크림빵");
+		b2.setKa(2000);
+		
+		System.out.println(b2.getJong()); 
+		System.out.println(b2.getKa());
 	}
 
 }
