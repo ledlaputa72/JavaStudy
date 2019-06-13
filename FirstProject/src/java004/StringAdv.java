@@ -52,11 +52,23 @@ public class StringAdv {
 	public static void main(String[] args) {
 		
 		//문자열 -> 배열로 
-		String pummok="bag,150000,coacha,jongro"; //문자열
-		String[] arr=pummok.split(","); 
+//		String pummok="bag,150000,coacha,jongro"; //문자열
+//		String[] arr=pummok.split(",");
 		
-		//개체 생성과 출력 
+		String pummok="bag**150000**coacha**jongro"; //**를 구분자로
+		String[] arr=pummok.split("\\*\\*"); 
+		
+		//객체 생성과 출력 
 		Sangpum bag=new Sangpum(arr[0],Integer.parseInt(arr[1]),arr[2],arr[3]); //객체 생성
+		
+		/* //선생님 방법
+		 * Sangpum sp1=new Sangpum();//sp1 객체 하나만들고 
+		 * String[] arr=pummok.split(",");  
+		 * sp1.setIrum{arr[0]);//품목명
+		 * sp1.setKa{Integer.valueOf(arr[0]));//가격
+		 * sp1.setCompany{arr[0]);//제조회사
+		 * sp1.setJijeom{arr[0]); //판매처
+		 */
 		System.out.println(bag.toString());
 	}
 

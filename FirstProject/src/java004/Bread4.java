@@ -1,15 +1,24 @@
 package java004;
 
+import java.util.Scanner;
+
 class BBang4 { 
 	private String jong; // 객체 속성 
 	private int ka;
 	
-	public BBang4(String jong, int ka) { // 생성자 오버로딩
+	public BBang4(String jong, int ka) { // 생성자1, 오버로딩 b1에 적용
 		this.jong=jong;
 		this.ka=ka;
 	}
 	
-	public BBang4() { // 생성자 오버로딩 
+	public BBang4(String jong) { //생성자3, 오버로딩 b3,4 객체용
+//		this.jong=jong;
+//		this.ka=700;
+		this(jong,700); //생성자에서 다른 생성자를 호출 (생성자 중에 인자가 2개 있는 생성자1을 찾아간다) 
+	}
+	
+	public BBang4(int ka) { // 생성자2, 오버로딩 b2 객체용
+		this("담는데로행사빵", ka);
 	}
 
 	public String getJong() {
@@ -38,7 +47,6 @@ class BBang4 {
 		// 20+30=50   "20"+"30"=2030  "20"+30=2030
 	}
 	
-	
 } //BBang4 end
 
 public class Bread4 {
@@ -51,7 +59,21 @@ public class Bread4 {
 		System.out.println(b1.toString()); //b1.toString은 값을 전달 받지만 찍는건 sysout으로
 		System.out.println(b1); //뒤에 toString 있는것으로 간주해서 작동
 		
-		BBang4 b2=new BBang4(); //초기치 없이 생성만 넣는 경우  (디폴트 생성자를 안만들어 주고 있다. 위쪽 때문에)
+//		BBang4 b2=new BBang4(); //초기치 없이 생성만 넣는 경우  (디폴트 생성자를 안만들어 주고 있다. 위쪽 때문에)
+		
+		//this() 활용
+		System.out.println("=== 개업3주년 기념 무조건 700원 ===");
+		BBang4 b3=new BBang4("치즈빵"); //생성자에서 가격은 700으로 통일 
+		System.out.println(b3);
+		
+		BBang4 b4=new BBang4("케잌빵");
+		System.out.println(b4);
+		
+		System.out.println("=== 개업5주년 기념 담는데로 사장이 가격정함 ===");
+		BBang4 b5=new BBang4(7800);
+		BBang4 b6=new BBang4(13000);
+		System.out.println(b5);
+		System.out.println(b6);
 		
 	}
 } // Bread4 end
