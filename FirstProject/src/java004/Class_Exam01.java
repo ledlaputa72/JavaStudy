@@ -45,6 +45,11 @@ class CellPhone{
 	public String toString() {
 		return this.getName()+" 고객님의 핸드폰 정보는 다음과 같습니다.\n"+"고객님의 "+this.getCpModel()+"의 가격은 "+this.getCpPrice()+"원 이고 구입처는 "+this.getCpStore()+"입니다.";
 	}
+
+//  아래와 같이 해도 무관하다. 	
+//	public String toString() {
+//		return name+" 고객님의 핸드폰 정보는 다음과 같습니다.\n"+"고객님의 "+cpModel+"의 가격은 "+cpPrice+"원 이고 구입처는 "+cpStore+"입니다.";
+//	}
 	
 }//CellPhone class end
 
@@ -71,6 +76,7 @@ public class Class_Exam01 {
 		System.out.println(cp1.toString());
 		System.out.println();
 		System.out.println(cp2.toString());
-	}//main end
+		
+ 	}//main end
 
 }//class end
