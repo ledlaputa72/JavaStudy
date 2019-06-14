@@ -40,10 +40,10 @@ public class ClassExam {
 		
 		//--------------------
 		BB b3=(BB)a2; //BB b3=new BB(), a2=new BB()이므로
-		CC c3=(CC)b2; //CC c3=new CC(), b2=new CC()이므로
+		CC c3=(CC)b2; //CC c3=new CC(), b2=new CCC()이므로
 		//출력
 		b3.car(); //BB car출력
-		c3.car(); //CC car출력
+		c3.car(); //AA car출력
 		
 	}
 
