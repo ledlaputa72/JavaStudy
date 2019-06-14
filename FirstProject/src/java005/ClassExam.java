@@ -2,20 +2,20 @@ package java005;
 
 class AA{
 	public void car() {
-		System.out.println("클래스 AA Car");
+		System.out.println("클래스 AA - 드라이브");
 	}
 }
 
 class BB extends AA{
 	public void car() { //AA의 car()를 상속 +a
-		System.out.println("클래스 BB Car");
+		System.out.println("클래스 BB - 여행");
 	}
 	
 }
 
 class CC extends BB{
 	public void car() { //BB의 car()를 상송 +a
-		System.out.println("클래스 CC Car");
+		System.out.println("클래스 CC - 세계일주");
 	}
 }
 
