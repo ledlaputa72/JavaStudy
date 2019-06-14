@@ -31,7 +31,7 @@ public class ClassTrans {
 		//아래 문장 정상
 		Child c3=(Child)p2; // Child c3=new Child();
 		//아래 문장 에러, Compile ok, Run err (자산이 틀리기 때문)
-		Child c4=(Child)p1; //빨간줄은 없으나 에러이다. 
+		//Child c4=(Child)p1; //빨간줄은 없으나 에러이다. 
 	}
 
 }
