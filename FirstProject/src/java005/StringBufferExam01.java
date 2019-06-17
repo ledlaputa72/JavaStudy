@@ -31,6 +31,22 @@ public class StringBufferExam01 {
 		
 		System.out.println("sb1.length : "+sb1.length());
 		System.out.println("sb2.length : "+sb2.length());
-	}
+		
+		sb2.append("java"); //java
+		
+		sb2.reverse(); //avaj
+		System.out.println(sb2.toString()); //avaj
+		System.out.println(sb2); //avaj
+		
+		sb2.delete(1, 2);
+		System.out.println(sb2.toString()); //aaj
+		
+		sb2.replace(0, 2, "va");
+		System.out.println(sb2.toString()); //vaj
+		
+		System.out.println("문자열 결합 후의 sb2.length : "+sb2.length()); //3
+		
+		
+	} //main end
 
-}
+}//class end
