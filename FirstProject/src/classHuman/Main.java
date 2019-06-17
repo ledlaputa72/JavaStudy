@@ -1,6 +1,6 @@
 package classHuman;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 
@@ -11,7 +11,6 @@ public class main {
 		System.out.println("=============================================");
 		k1.show();
 		k2.show();
-		
 		
 	}
 
