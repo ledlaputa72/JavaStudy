@@ -1,3 +1,4 @@
+package classHuman;
 
 public class Demon {
 	private String weapon;

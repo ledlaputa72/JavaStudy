@@ -1,3 +1,4 @@
+package classHuman;
 
 public class Knight extends Human{
 	private String weapon;

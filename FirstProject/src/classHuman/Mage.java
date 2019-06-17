@@ -1,3 +1,4 @@
+package classHuman;
 
 public class Mage extends Human{
 	private String magic;

@@ -1,3 +1,4 @@
+package classHuman;
 
 public class main {
 
