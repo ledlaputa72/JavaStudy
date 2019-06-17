@@ -27,4 +27,4 @@ public class SearchExam04 {
 			System.out.println(s1);
 		}
 	}
-}
+} 
