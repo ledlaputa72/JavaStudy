@@ -1,6 +1,7 @@
 //객체의 형변환
 package java005;
 
+
 class Parent{
 	public void car() { //car1
 		System.out.println("나는 부모-드라이브가자.");
