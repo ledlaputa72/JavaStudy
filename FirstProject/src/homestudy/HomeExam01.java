@@ -6,30 +6,30 @@ public class HomeExam01 {
 
 	public static void main(String[] args) {
 
-		/*//ìˆ˜ì ë”í•˜ê¸° 
+		/*//¼öÀÚ ´õÇÏ±â 
 		 * int[] num= new int[10];
 		 * Scanner sc=new Scanner(System.in);
 		 * 
 		 * int sum=0;
 		 * for (int i = 0; i < num.length; i++) {
-		 * System.out.println((i+1)+"ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		 * System.out.println((i+1)+"¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
 		 * num[i]=sc.nextInt();
 		 * sum+=num[i];
 		 * System.out.println("sum: "+sum);
 		 * }
 		 */
 		
-		//í•™ìƒ ìˆ˜ ì…ë ¥ ë°›ì•„ ê·¸ë§Œí¼ì˜ ë°°ì—´ì„ ë§Œë“¤ê³ , 
-		// êµ­ì–´, ì˜ì–´, ìˆ˜í•™ì˜ ì ìˆ˜ë¥¼ ë°›ê³  ì´ë¥¼ ì¶œë ¥í•œë‹¤. 
+		//ÇĞ»ı ¼ö ÀÔ·Â ¹Ş¾Æ ±×¸¸Å­ÀÇ ¹è¿­À» ¸¸µé°í, 
+		// ±¹¾î, ¿µ¾î, ¼öÇĞÀÇ Á¡¼ö¸¦ ¹Ş°í ÀÌ¸¦ Ãâ·ÂÇÑ´Ù. 
 		
 		Scanner sc=new Scanner(System.in);
-		System.out.print("ì‘ì„±í•  í•™ìƒ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”. : ");
+		System.out.print("ÀÛ¼ºÇÒ ÇĞ»ı ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä. : ");
 		
-		String[] arr1; // í•™ìƒ ë°°ì—´ (ì´ë¦„ìœ¼ë¡œ String) 
-		int stNumber=sc.nextInt(); // í•™ìƒìˆ˜ ì…ë ¥ 
-		arr1=new String[stNumber]; // í•™ìƒ ë°°ì—´ì— ì…ë ¥í•œ í•™ìƒ ìˆ˜ ì ìš© 
+		String[] arr1; // ÇĞ»ı ¹è¿­ (ÀÌ¸§À¸·Î String) 
+		int stNumber=sc.nextInt(); // ÇĞ»ı¼ö ÀÔ·Â 
+		arr1=new String[stNumber]; // ÇĞ»ı ¹è¿­¿¡ ÀÔ·ÂÇÑ ÇĞ»ı ¼ö Àû¿ë 
 		
-		int[][] arr2=new int[stNumber][6]; // ì ìˆ˜ ë°°ì—´ (ì ìˆ˜ë¡œ int), ê° ì ìˆ˜ì™€ í•©ê³„,í‰ê· ,ìˆœìœ„ë¥¼ ì œê³µ 
+		int[][] arr2=new int[stNumber][6]; // Á¡¼ö ¹è¿­ (Á¡¼ö·Î int), °¢ Á¡¼ö¿Í ÇÕ°è,Æò±Õ,¼øÀ§¸¦ Á¦°ø 
 		
 		String name;
 		
@@ -55,16 +55,16 @@ public class HomeExam01 {
 					}
 					arr2[i][j] = sc.nextInt();
 				}
-				else if(j==3) { //í•©ê³„ êµ¬í•˜ê¸° 
+				else if(j==3) { //ÇÕ°è ±¸ÇÏ±â 
 					arr2[i][j]=arr2[i][j-1]+arr2[i][j-2]+arr2[i][j-3];
 //					System.out.println(arr2[i][j]);
 				}
-				else if(j==4) { //í‰ê·  êµ¬í•˜ê¸° 
+				else if(j==4) { //Æò±Õ ±¸ÇÏ±â 
 					arr2[i][j]=arr2[i][j-1]/3;
 //					System.out.println(arr2[i][j]);
 				}
-				else if(j==5) { //ìˆœìœ„ ë¹„êµ 
-//					System.out.println(arr1[i]+"ì˜ ë­í‚¹ì€");
+				else if(j==5) { //¼øÀ§ ºñ±³ 
+//					System.out.println(arr1[i]+"ÀÇ ·©Å·Àº");
 					
 				}
 				
@@ -73,7 +73,7 @@ public class HomeExam01 {
 		}
 		
 		
-		// ì§€ê¸ˆê¹Œì§€ ì…ë ¥ëœ ì •ë³´ ì¶œë ¥ 
+		// Áö±İ±îÁö ÀÔ·ÂµÈ Á¤º¸ Ãâ·Â 
 		System.out.println("----------------------------------------------------");
 		System.out.println("name \t"+"Kor \t"+"Eng \t"+"Mat \t"+"Sum \t"+"Avg \t"+"Rank");
 		System.out.println("====================================================");
