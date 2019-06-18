@@ -46,7 +46,6 @@ public class StringBufferExam01 {
 		
 		System.out.println("문자열 결합 후의 sb2.length : "+sb2.length()); //3
 		
-		
 	} //main end
 
 }//class end
