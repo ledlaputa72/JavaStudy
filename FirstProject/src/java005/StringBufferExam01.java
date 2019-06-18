@@ -25,6 +25,9 @@ public class StringBufferExam01 {
 		if(sb1.equals(sb5)) { //내용 비교
 			System.out.println("이게 찍힐까요?2내용"); //같은 내용이지만 안찍힌다. 
 		}
+		if(sb1.toString().equals(sb5.toString())) { //내용이 출력 된다.
+			System.out.println("이게 찍힐까요?2내용2");
+		}
 		//-----------------------
 		
 		StringBuffer sb2=new StringBuffer(10);
