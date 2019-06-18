@@ -33,10 +33,10 @@ public class InterfaceStudy01 {
 	public static void main(String[] args) {
 		Child c1=new Child();
 		Parent p1=c1;
-		p1.car();
-		c1.car();
-		c1.boat();
-		c1.motocycle();
+		p1.car(); //자녀의 car
+		c1.car(); //자녀의 car
+		c1.boat(); //삼촌한테 상속
+		c1.motocycle(); //친구한테 상속
 
 	}
 }
