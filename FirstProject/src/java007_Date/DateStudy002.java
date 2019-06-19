@@ -23,6 +23,12 @@ public class DateStudy002 {
 		Date d22=new Date(1000L); //long int 8바이트, 1000L은 1000ms을 의미 
 		String s22=d22.toLocaleString();
 		System.out.println("기준에서 1초 지나면 : "+s22);
+		
+		Date d23=new Date(1037436398768L);  
+		String s23=d23.toLocaleString();
+		System.out.println("기준에서 한참 지나면 : "+s23);
+		
+		
 	}
 
 }
