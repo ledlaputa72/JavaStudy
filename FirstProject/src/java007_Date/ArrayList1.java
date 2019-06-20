@@ -7,6 +7,8 @@ class SMarket{
 	private int price;
 	
 	//생성자
+	public SMarket() { //this("나 빈칸", 0)
+	}
 	public SMarket(String sangpum, int price) {
 		this.sangpum = sangpum;
 		this.price = price;
@@ -31,10 +33,20 @@ public class ArrayList1 {
 		for (int i = 0; i < arr3.size(); i++) {
 			System.out.print(arr3.get(i)+"\t");
 		}
-		System.out.println();
 		
 		//객체를 넣어보자 /////////////////////
 		arr3.add(new SMarket("우유",1000)); //class 필요 
 		System.out.println(arr3.get(4));//추가한 객체 클래스만 출력해 보기 
+		//get(4).toString() 
+		
+		arr3.set(1, "과자"); //1번째에 "과자"를 넣어라 , 1번째 내용이 지워지고 "과자"가 들어감 
+		arr3.remove(2); //2번째를 지움 
+		
+		for (int i = 0; i < arr3.size(); i++) {
+			System.out.print(arr3.get(i)+"\t");
+		}
+		System.out.println();
+		
+		
 	} //main end
 }//class end
