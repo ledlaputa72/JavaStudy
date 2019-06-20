@@ -81,10 +81,24 @@ public class CollectionExamTest01 {
 		
 		//검색
 		//가격이 3500원 이상인 것을 모두 출력하시오 
+		System.out.print("검색할 상품명을 입력하세요 : ");
+ 		
+ 		Scanner sc=new Scanner(System.in);
+ 		String sc1=sc.next();
+	
 		System.out.println("==============3500원 이상인 제품은=================");
 		for (int i = 0; i < arr1.size(); i++) {
-				if (arr1.get(i).getPrice() >=3500) {
-					System.out.println(arr1.get(i));
+				if (sc1.equals(arr1.get(i).getSangpum())) {
+					System.out.println("검색된 상품은 "+arr1.get(i));
+					System.out.print("이름을 수정하세요 : ");
+					String sc11=sc.next();
+					System.out.print("가격을 수정하세요 : ");
+					int sc12=sc.nextInt();
+					System.out.print("매대를 수정하세요 : ");
+					String sc13=sc.next();
+					
+					arr1.set(i, new SMarket1(sc11, sc12, sc13));
+					System.out.println("수정된 "+arr1.get(i));
 				}
 			}
 		
