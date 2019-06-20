@@ -8,11 +8,17 @@ public class CollectionStudy01 {
 		
 		Vector v7=new Vector(3);
 		
-		v7.add(new Integer(100));
+		v7.add(new Integer(100)); //wrapper //boxing 
 		v7.add(new Integer(20));
 		v7.add(new Integer(300));
 		v7.add(new Integer(700));
 		
+		//int vs Integer
+		/*
+		
+		
+		
+		*/
 	}
 
 }
