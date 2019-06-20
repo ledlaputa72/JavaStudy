@@ -6,11 +6,12 @@ class SMarket{
 	private String sangpum;
 	private int price;
 	
+	//생성자
 	public SMarket(String sangpum, int price) {
 		this.sangpum = sangpum;
 		this.price = price;
 	}
-	
+	//toString 출력 메소드
 	public String toString() {
 		return "슈퍼의 상품은 :"+sangpum+", 값은 "+price;
 	}
