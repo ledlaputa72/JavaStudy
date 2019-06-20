@@ -47,6 +47,29 @@ public class ArrayList1 {
 		}
 		System.out.println();
 		
+		//Generic////////////////////////
+		ArrayList<String> arr1=new ArrayList<String>();
+		System.out.println(arr1.size()); //0
+		
+		arr1.add("빵");
+		arr1.add("라면");
+		arr1.add("우유");
+		arr1.add("김밥");
+		//arr1.add(30);//에러 발생, String이 아닌 int
+		
+		arr1.set(1,"과자"); //라면 -> 과자
+		arr1.remove(2);//우유 삭제
+		arr1.remove("빵"); //빵 삭제 
+		
+		for (int i = 0; i < arr1.size(); i++) {
+			System.out.print(arr1.get(i)+"\t");
+		}
+		System.out.println();
+		
+		for(String imsi:arr1) {
+			System.out.println(imsi); //과자 김밥
+		}
+		
 		
 	} //main end
 }//class end
