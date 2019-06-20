@@ -37,10 +37,18 @@ class SMarket1{
 		this.wichi = wichi;
 	}
 	
+	/*
+	@Override //자동으로 생성한 toString, @Override는 자동으로 생성되었음을 나타낸다. 
+	public String toString() {
+		return "SMarket1 [sangpum=" + sangpum + ", price=" + price + ", wichi=" + wichi + "]";
+	}
+	*/	
+	
 	//toString 출력 메소드
 	public String toString() {
-		return "슈퍼의 상품 "+sangpum+"의 값은 "+price+"이고, 위치는 "+wichi+"입니다.";
+		return "슈퍼의 상품 "+sangpum+"의 가격은 "+price+"이고, 상품의 매대 위치는 "+wichi+"입니다.";
 	}
+	
 } //SMarket class end
 
 
