@@ -1,5 +1,7 @@
 package java007_Date;
 
+import java.util.*;
+
 //클래스 
 class SMarket1{ 
 	private String sangpum;
@@ -46,7 +48,7 @@ class SMarket1{
 	
 	//toString 출력 메소드
 	public String toString() {
-		return "슈퍼의 상품 "+sangpum+"의 가격은 "+price+"이고, 상품의 매대 위치는 "+wichi+"입니다.";
+		return "상품이름은 "+sangpum+"이고, 가격은 "+price+"이고, 상품의 매대 위치는 "+wichi+"입니다.";
 	}
 	
 } //SMarket class end
@@ -56,8 +58,36 @@ public class CollectionExamTest01 {
 
 	public static void main(String[] args) {
 
+		//ArrayList가 먼저 있어야 한다.
+		ArrayList<SMarket1> arr1=new ArrayList<SMarket1>();
 		
+		//.add를 통해 값을 입력 
+		arr1.add(new SMarket1("요쿠르트",2000,"A")); //집어 넣을때 .add
+		//System.out.println(arr1.get(0)); //꺼낼때 .get
+		arr1.add(new SMarket1("서울우유",2500,"A"));
+		arr1.add(new SMarket1("액티비아",3500,"A"));
+		arr1.add(new SMarket1("이오",2000,"A"));
+		arr1.add(new SMarket1("매일우유",2300,"A"));
+		arr1.add(new SMarket1("남양우유",2300,"A"));
+		arr1.add(new SMarket1("서울치즈",4000,"B"));
+		arr1.add(new SMarket1("코카콜라",1500,"C"));
+		arr1.add(new SMarket1("스프라이트",1400,"C"));
+		arr1.add(new SMarket1("썬키스트",4500,"D"));
 		
-	}
+		System.out.println("=================등록된 제품은===================");
+		for (int i = 0; i < arr1.size(); i++) {
+			System.out.println(arr1.get(i));
+		}
+		
+		//검색
+		//가격이 3500원 이상인 것을 모두 출력하시오 
+		System.out.println("==============3500원 이상인 제품은=================");
+		for (int i = 0; i < arr1.size(); i++) {
+				if (arr1.get(i).getPrice() >=3500) {
+					System.out.println(arr1.get(i));
+				}
+			}
+		
+	}// main end
 
-}
+}//class end
