@@ -117,7 +117,7 @@ public class Main {
 
 	} //main end
 	
-	//1) 상품 입력 메소드
+	//1) 상품 입력 메소드///////////////////////////////////////
 	private static void kajaCreate(ArrayList<SMarket> arr1) {
 		System.out.println("상품 입력");
 		
@@ -126,7 +126,7 @@ public class Main {
 
 	}
 
-	//2) 상품 수정 메소드
+	//2) 상품 수정 메소드/////////////////////////////////////////
 	private static void kajaUpdate(ArrayList<SMarket> arr1) {
 		System.out.println("상품 수정");
 		
@@ -134,7 +134,7 @@ public class Main {
 		
 	}
 
-	//3) 상품 검색 메소드
+	//3) 상품 검색 메소드////////////////////////////////////////
 	private static void kajaSearch(ArrayList<SMarket> arr1) {
 		System.out.println("--------------상품 검색----------------");
 		System.out.println("검색할 상품명을 입력하세요 ");
@@ -150,7 +150,7 @@ public class Main {
 		System.out.println("검색을 마칩니다. ");
 		
 	}
-	//4) 상품 삭제 메소드
+	//4) 상품 삭제 메소드//////////////////////////////////////////////
 	private static void kajaDelete(ArrayList<SMarket> arr1) {
 		System.out.println("상품 삭제");
 		
