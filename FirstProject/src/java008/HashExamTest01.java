@@ -1,6 +1,6 @@
 package java008;
 
-import java.util.HashMap;
+import java.util.*;
 
 class HashStudient{
 	private String name;
@@ -54,9 +54,24 @@ public class HashExamTest01 {
 		HashMap <Integer, HashStudient> hms1=new HashMap <Integer, HashStudient>();
 		System.out.println(hms1.size()); //0
 		
-		 
+		HashStudient hs1=new HashStudient("¸ÚÀïÀÌ", 100, 100, 100);
+		HashStudient hs2=new HashStudient("¿ÕÀÚ", 90, 90, 100);
+		HashStudient hs3=new HashStudient("°øÁÖ", 100, 95, 100);
 		
-		
-		}
+		for (int i = 0; i < 3; i++) {
+			System.out.println(hs1.getEng());
 
+		}
+		
+		
+		hms1.put(new Integer(100),hs1);
+		hms1.put(new Integer(200),hs2);
+		hms1.put(new Integer(300),hs3);
+		
+		Set<Integer> s1=hms1.keySet();
+        System.out.println(s1);
+        
+        Collection <HashStudient> v1=hms1.values();
+        System.out.println(v1);
+	}
 }

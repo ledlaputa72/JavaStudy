@@ -31,9 +31,9 @@ public class Knight extends Human{
 		this.power = power;
 	}
 	
-	public Knight(String name, String race, int age, int height, int health, String weapon, String armor, String shild,
+	public Knight(String name, String race, int age, int height, int health, int positionX, String weapon, String armor, String shild,
 			int power) {
-		super(name, race, age, height, health);
+		super(name, race, age, height, health,positionX, power);
 		this.weapon = weapon;
 		this.armor = armor;
 		this.shild = shild;

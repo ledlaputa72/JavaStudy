@@ -33,7 +33,7 @@ public class Mage extends Human{
 	
 	public Mage(String name, String race, int age, int height, int health, String magic, String close, String magicItem,
 			int magica) {
-		super(name, race, age, height, health);
+		super(name, race, age, height, health, magica, magica);
 		this.magic = magic;
 		this.cloth = close;
 		this.magicItem = magicItem;
