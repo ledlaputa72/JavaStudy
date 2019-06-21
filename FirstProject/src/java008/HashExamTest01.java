@@ -54,17 +54,13 @@ public class HashExamTest01 {
 		HashMap <Integer, HashStudient> hms1=new HashMap <Integer, HashStudient>();
 		System.out.println(hms1.size()); //0
 		
-<<<<<<< HEAD
 		
 		}
-=======
 		HashStudient hs1=new HashStudient("¸ÚÀïÀÌ", 100, 100, 100);
 		HashStudient hs2=new HashStudient("¿ÕÀÚ", 90, 90, 100);
 		HashStudient hs3=new HashStudient("°øÁÖ", 100, 95, 100);
 		
 		for (int i = 0; i < 3; i++) {
-			System.out.println(hs1.getEng());
->>>>>>> refs/remotes/origin/master
 
 		}
 		
