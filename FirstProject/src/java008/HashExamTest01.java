@@ -53,9 +53,7 @@ public class HashExamTest01 {
 		
 		HashMap <Integer, HashStudient> hms1=new HashMap <Integer, HashStudient>();
 		System.out.println(hms1.size()); //0
-		
-		
-		}
+	
 		HashStudient hs1=new HashStudient("¸ÚÀïÀÌ", 100, 100, 100);
 		HashStudient hs2=new HashStudient("¿ÕÀÚ", 90, 90, 100);
 		HashStudient hs3=new HashStudient("°øÁÖ", 100, 95, 100);
@@ -72,7 +70,7 @@ public class HashExamTest01 {
 		Set<Integer> s1=hms1.keySet();
         System.out.println(s1);
         
-        Collection <HashStudient> v1=hms1.values();
-        System.out.println(v1);
+//        Collection <HashStudient> v1= 
+//        System.out.println(v1);
 	}
 }
