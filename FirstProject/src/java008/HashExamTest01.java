@@ -54,8 +54,6 @@ public class HashExamTest01 {
 		HashMap <Integer, HashStudient> hms1=new HashMap <Integer, HashStudient>();
 		System.out.println(hms1.size()); //0
 		
-		 
-		
 		
 		}
 
