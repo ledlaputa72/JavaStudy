@@ -49,7 +49,7 @@ class SMarket{
 	//출력//////////////////////////////////////////////////
 	@Override
 	public String toString() {
-		return "SMarket [name=" + name + ", price=" + price + ", counter=" + counter + "]";
+		return "[제품명 : " + name +"\t"+ "| 가격 : " + price +"\t"+ "| 매대 : " + counter+" ]";
 	}
 	
 }// SMarket end
@@ -97,14 +97,14 @@ public class Main {
 				selectMenu=kajaYes(selectMenu);	
 				break;
 			case 5: //5) 종료 
-				System.out.println("------------------------------");
+				System.out.println("------------------------------------------");
 				System.out.println("프로그램을 종료합니다. ");
 				System.exit(0);
 				break;
 			default:
-				System.out.println("------------------------------");
+				System.out.println("------------------------------------------");
 				System.out.println("선택을 잘못 했습니다. 다시하세요");
-				System.out.println("------------------------------");
+				System.out.println("------------------------------------------");
 			}
 		} while (selectMenu!=0 && selectMenu!=1 && selectMenu!=2 && selectMenu!=3 && selectMenu!=4&& selectMenu!=5);
 		
@@ -129,30 +129,30 @@ public class Main {
 	//관리 메뉴 /////////////////////////////////////////////
 	private static void kajaMenu() {
 
-		System.out.println("==== SMarket 관리 프로그램 메뉴 ====");
+		System.out.println("=========== SMarket 관리 프로그램 메뉴 ===========");
 		System.out.println("0) 전체 상품 보기");
 		System.out.println("1) 상품 입력");
 		System.out.println("2) 상품 수정");
 		System.out.println("3) 상품 검색");
 		System.out.println("4) 상품 삭제");
 		System.out.println("5) 종료");
-		System.out.println("------------------------------");
-		System.out.println("                  선택하세요 (0-5)");
-		System.out.println("==============================");
+		System.out.println("------------------------------------------");
+		System.out.println("\t"+"\t"+"\t"+"메뉴를 선택하세요 (0-5)");
+		System.out.println("==========================================");
 		
 	}
 
 	//메뉴 이동 메소드////////////////////////////////////////
 	private static int kajaYes(int selectMenu) {
 		Scanner sc=new Scanner(System.in);
-		System.out.println("------------------------------");
-		System.out.println("메뉴로 이동하시겠습니까? 1.Yes/2.No");
+		System.out.println("------------------------------------------");
+		System.out.println("\t"+"\t"+"메뉴로 이동하시겠습니까? 1.Yes/2.No");
 		int YesOrNo=sc.nextInt();
 		if (YesOrNo==1) {
 			selectMenu=-1;
 		}
 		else {
-			System.out.println("------------------------------");
+			System.out.println("------------------------------------------");
 			System.out.println("프로그램을 종료합니다. ");
 			selectMenu=sc.nextInt();
 			System.exit(0);
@@ -164,16 +164,16 @@ public class Main {
 	//0) 전체 상품 보기 메소드 ///////////////////////////////////
 	private static void kajaList(ArrayList<SMarket> arr1) {
 		
-		System.out.println("========== 전체 상품 보기 ==========");
+		System.out.println("===============  전체 상품 보기  ===============");
         for (int i = 0; i < arr1.size(); i++) {
             System.out.println(arr1.get(i));
        }
-        System.out.println("==============================");
+//        System.out.println("==========================================");
 	}
 
 	//1) 상품 입력 메소드///////////////////////////////////////
 	private static void kajaCreate(ArrayList<SMarket> arr1) {
-		System.out.println("-----------상품을 입력하세요 -------------");
+		System.out.println("---------------상품을 입력하세요 ---------------");
 		System.out.println("현재 총 "+(arr1.size())+"개 입니다. ");
 		
  		Scanner sc=new Scanner(System.in); //입력 받기 
@@ -187,16 +187,17 @@ public class Main {
  		
  		arr1.add(new SMarket(sc11, sc12, sc13));//입력 받은 값을 클래스에 입력 
  		
- 		System.out.println("==============================");
- 		System.out.println("추가된 상품은 "+arr1.get(arr1.size()-1));
+ 		System.out.println("==========================================");
+ 		System.out.println("추가된 상품의 정보입니다. ");
+ 		System.out.println(arr1.get(arr1.size()-1));
         System.out.println("현재 총 "+(arr1.size())+"개 입니다. ");
-        System.out.println("==============================");
+//        System.out.println("==========================================");
            
 	}
 
 	//2) 상품 수정 메소드/////////////////////////////////////////
 	private static void kajaUpdate(ArrayList<SMarket> arr1) {
-		System.out.println("--------------상품 수정--------------");
+		System.out.println("------------------상품 수정------------------");
 		System.out.print("검색할 상품명을 입력하세요 : ");
  		
  		Scanner sc=new Scanner(System.in);
@@ -205,7 +206,8 @@ public class Main {
  		//검색찾고 수정될 항목을 입력 받아 수정함 
 		for (int i = 0; i < arr1.size(); i++) {
 				if (sc1.equals(arr1.get(i).getName())) { //항목 검색
-					System.out.println("검색된 상품은 "+arr1.get(i)); //
+					System.out.println("검색된 상품의 결과는 아래와 같습니다.");
+					System.out.println(arr1.get(i)); //
 					
 					System.out.print("이름을 수정하세요 : ");
 					String sc11=sc.next();
@@ -215,26 +217,39 @@ public class Main {
 					String sc13=sc.next();
 					System.out.println("----------------------------------------");
 					arr1.set(i, new SMarket(sc11, sc12, sc13));
-					System.out.println("수정된 "+arr1.get(i));
+					System.out.println("수정된 상품은 아래와 같습니다. ");
+					System.out.println(arr1.get(i));
 			}
 		}
-        System.out.println("========================================");
+//        System.out.println("==========================================");
 	} //상품 수정 메소드 end
 	
 	//3) 상품 검색 메소드////////////////////////////////////////
 	private static void kajaSearch(ArrayList<SMarket> arr1) {
-		System.out.println("--------------상품 검색----------------");
+		System.out.println("------------------상품 검색-------------------");
 		System.out.print("검색할 상품명을 입력하세요 : ");
 		
 		Scanner sc=new Scanner(System.in);
 		String sc1=sc.next(); //입력받은 값을 String sc1으로 
 		
 		//검색찾기 
+		int sw=0;
 		for (int i = 0; i < arr1.size(); i++) {
-			if (sc1.equals(arr1.get(i).getName())) { //sc1과 배열의 Name의 내용을 비교 어렵다. 
-				System.out.println(arr1.get(i));
+			if (sc1.equals(arr1.get(i).getName())) { //항목 검색
+				System.out.println("검색된 상품의 결과는 아래와 같습니다.");
+				System.out.println(arr1.get(i)); //
+				sw=1;
+			}
+			else {
+				break;
 			}
 		}
+		if (sw==0) {
+			System.out.println("!!!!!검색한 물품을 찾을 수 없습니다.!!!!! ");
+		}
+		
+		
+		
 		
 	} //상품 검색 메소드 end
 	
@@ -254,11 +269,11 @@ public class Main {
 				int YesOrNo=sc.nextInt();
 				if (YesOrNo==1) {
 					arr1.remove(i); //해당 제품을 삭제 
-					System.out.println("------------------------------");
+					System.out.println("----------------------------------------");
 					System.out.println(sc1+"제품이 삭제되었습니다.");
 				}
 				else {
-					System.out.println("------------------------------");
+					System.out.println("----------------------------------------");
 					System.out.println("취소되었습니다."); 
 					break;
 				}
