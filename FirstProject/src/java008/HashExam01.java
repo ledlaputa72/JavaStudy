@@ -36,7 +36,6 @@ public class HashExam01 {
 			System.out.println(hm1.size()); //2, 하나 지워서 
 		}
 		
-		
 		//----------------------------------------
 		//key 모음 출력
 		Set<Integer> s1=hm1.keySet();
@@ -46,7 +45,28 @@ public class HashExam01 {
 		Collection <String> v1=hm1.values();
 		System.out.println(v1);
 		
+		//key와 value를 같이 출력 모음 
+		//key-value 출력 1
+		System.out.println("----key-value 출력 1----");
+		for (Integer i:s1) {
+			System.out.println(i+"\t"+hm1.get(i));
+		}                     //key     //value
 		
+		//key-value 출력 2 (사용 빈도가 떨어짐)
+		System.out.println("----key-value 출력 2----");
+		Iterator <Integer> itr2=s1.iterator();
+		while (itr2.hasNext()) { //key 모음 종이 상자에서 뽑아내자. 
+			Integer j=itr2.next();
+			System.out.println(j+"\t"+hm1.get(j));
+		}                     //key     //value
+		
+		//key-value 출력 3(k-v모음)
+		System.out.println("----key-value 출력 3----");
+		Set <Map.Entry<Integer, String>> set3=hm1.entrySet();
+		for (Map.Entry<Integer, String> k : set3) {
+			System.out.println(k.getKey()+"\t"+k.getValue());
+			
+		}
 		
 	}
 }
