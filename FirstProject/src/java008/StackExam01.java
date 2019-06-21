@@ -1,4 +1,4 @@
-package java008_Stack;
+package java008;
 
 import java.util.*;
 //재귀 알고리즘 - 하노이 타워 - 스택 
