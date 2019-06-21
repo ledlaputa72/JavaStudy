@@ -6,7 +6,21 @@ public class Human {
 	private int age;
 	private int height;
 	private int health;
+	private int positionX;
+	private int positionY;
 	
+	public int getPositionX() {
+		return positionX;
+	}
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+	public int getPositionY() {
+		return positionY;
+	}
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
 	public String getName() {
 		return name;
 	}
@@ -37,14 +51,15 @@ public class Human {
 	public void setHealth(int health) {
 		this.health = health;
 	}
-
-	public Human(String name, String race, int age, int height, int health) {
+	
+	public Human(String name, String race, int age, int height, int health,int positionX, int positionY) {
 		super();
 		this.name = name;
 		this.race = race;
 		this.age = age;
 		this.height = height;
 		this.health = health;
+		this.positionX=positionX;
 	}
 	
 }
