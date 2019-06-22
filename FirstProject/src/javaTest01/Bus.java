@@ -10,7 +10,7 @@ public class Bus {
 		this.busNumber = busNumber;
 	}
 	
-	public void take(int money) {
+	public void takeBus(int money) {
 		this.money += money;
 		passengerCount++;
 	}

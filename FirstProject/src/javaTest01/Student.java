@@ -12,13 +12,16 @@ public class Student {
 		}
 		
 		//버스 메소드
-	/*public void takeBus(Bus bus) {
-		bus.take(1000);
+	public void takeBus(Bus bus) {
+		bus.takeBus(1000);
 		this.money -= 1000;
-	}*/
+	}
 		
 		//지하철 메소드 
-		
+	public void takeSubesy(Subway subway) {
+		subway.takeSubway(1000);
+		this.money -= 1000;
+	}	
 		
 		public void showInfo() {
 			System.out.println(studentName + "님의 남은 돈은 "+money+"입니다. ");
