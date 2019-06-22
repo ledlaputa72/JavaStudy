@@ -70,7 +70,7 @@ public class HashExamTest01 {
 		Set<Integer> s1=hms1.keySet();
         System.out.println(s1);
         
-//        Collection <HashStudient> v1= 
-//        System.out.println(v1);
+        Collection <HashStudient> v1=hms1.values();
+        System.out.println(v1);
 	}
 }
