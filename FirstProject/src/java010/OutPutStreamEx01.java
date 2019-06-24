@@ -1,4 +1,4 @@
-package java010_outputStream;
+package java010;
 //outputStream
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -7,10 +7,10 @@ public class OutPutStreamEx01 {
 
 	public static void main(String[] args) throws IOException {
 
-//		FileOutputStream fo1=new FileOutputStream("E:/dd.txt", true);
-		//메모리에 있는걸 파일로 저장하는 것
+		FileOutputStream fo1=new FileOutputStream("E:/dd.txt", true);
+		//메모리에 있는걸 파일로 저장하는 것 (경로가 모두 있는 경우) 
 		
-		FileOutputStream fo1=new FileOutputStream("dd.txt", true); 
+//		FileOutputStream fo1=new FileOutputStream("dd.txt", true); 
 		//앞에 E:/를 뺴면 프로젝트 이름 안에 있어야 한다. (src,package가 아니라) 
 		
 		System.out.println("글자 입력한다. ");
