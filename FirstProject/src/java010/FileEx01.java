@@ -1,5 +1,5 @@
 package java010;
-
+// inputStream 
 import java.io.FileInputStream;
 import java.io.IOException;
 
