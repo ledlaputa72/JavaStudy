@@ -15,7 +15,7 @@ public class FileEx01 {
 		while ((cnt = f1.available())>0) { //읽어올수 있는 바이트 수가0바이트 이상이면
 			byte[] b1=new byte[cnt];
 			int bada = f1.read(b1); //b1크기만큼 읽기
-			//sysout(bada);
+			//System.out.println(bada); //글자수 출력
 			if(bada==-1) //bada는 더이상 읽을게 없으면 -1값을 갖는다. 
 				break;
 			String str1=new String(b1); //char->String으로 바꿈 
