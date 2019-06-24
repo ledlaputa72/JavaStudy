@@ -1,4 +1,4 @@
-package java010;
+package java009;
 
 import java.util.Scanner;
 
@@ -9,12 +9,12 @@ public class ThrowsEx01 {
 		Scanner sc1=new Scanner(System.in);
 		
 		System.out.print("첫번째수는 : ");
-		String one1=sc1.nextLine();
-		int soo1=Integer.parseInt(one1);
+		String one2=sc1.nextLine();
+		int soo1=Integer.parseInt(one2);
 		
 		System.out.print("두번째수는 : ");
-		String two1=sc1.nextLine();
-		int soo2=Integer.parseInt(two1);
+		String two2=sc1.nextLine();
+		int soo2=Integer.parseInt(two2);
 		
 		int bada=kaja(soo1,soo2);
 		System.out.println(bada);
