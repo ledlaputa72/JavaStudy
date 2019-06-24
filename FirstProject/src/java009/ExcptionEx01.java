@@ -18,10 +18,20 @@ public class ExcptionEx01 {
 		String two1=sc1.nextLine();
 		int soo2=Integer.parseInt(two1);
 		
+		/*
+	 	//main args를 활용한 예시
+		int soo1=Integer.parseInt(args[0]);
+		int soo2=Integer.parseInt(args[1]);
+		*/
+		
 		System.out.println(soo1/soo2);
 		
 		}catch(ArithmeticException e){ // 세부 먼저 실행 
 			System.out.println("0이 아닌 두개의 정수를 입력하시오");
+		}catch(ArrayIndexOutOfBoundsException e){ // 세부 예외 처리는 순서 무관
+			System.out.println("2개의 값을 입력하시오");
+		}catch(NumberFormatException e) {
+			System.out.println("숫자를 입력하세요");
 		}catch(Exception e) {////예외 처리 조상
 			System.out.println("그밖의 예외를 처리합니다. ");
 			System.out.println(e); //.toString())
