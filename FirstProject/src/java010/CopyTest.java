@@ -8,8 +8,8 @@ public class CopyTest {
 
 	public static void main(String[] args) throws IOException {
 
-		FileInputStream fi1=new FileInputStream();
-		FileOutputStream fo1=new FileOutputStream();
+		FileInputStream fi1=new FileInputStream("e:/aa.txt");
+		FileOutputStream fo1=new FileOutputStream("e:/cc.txt");
 		
 		int cnt;
 		byte[] b1=null;
