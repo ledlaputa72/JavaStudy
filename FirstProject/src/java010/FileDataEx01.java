@@ -1,5 +1,5 @@
 package java010;
-
+//바이트 단위 데이터 파일 저장
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

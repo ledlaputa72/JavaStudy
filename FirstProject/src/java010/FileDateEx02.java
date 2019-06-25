@@ -1,5 +1,5 @@
 package java010;
-
+//바이트 단위 데이터 파일 읽기
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
