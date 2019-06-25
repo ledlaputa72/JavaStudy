@@ -7,7 +7,7 @@ public class OutPutStreamEx01 {
 
 	public static void main(String[] args) throws IOException {
 
-		FileOutputStream fo1=new FileOutputStream("E:/dd.txt", true);
+		FileOutputStream fo1=new FileOutputStream("dd.txt", true);
 		//메모리에 있는걸 파일로 저장하는 것 (경로가 모두 있는 경우) 
 		
 //		FileOutputStream fo1=new FileOutputStream("dd.txt", true); 

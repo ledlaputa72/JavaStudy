@@ -31,11 +31,12 @@ public class CopyArgsTest {
 			}
 		}//while for output
 		*/				
+		
 		int i=0;
 		FileInputStream fis=null;
 		FileOutputStream fos=null;
 		
-		if(args.lend) >=2) {
+		if(args.length >=2) {
 			fis = new FileInputStream (args[0]);
 			fos = new FileOutputStream (args[0]);
 		}

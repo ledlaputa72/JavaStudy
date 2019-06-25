@@ -8,7 +8,7 @@ public class FileEx01 {
 	public static void main(String[] args) throws IOException {
 
 		//파일 오픈 inputStream
-		FileInputStream f1=new FileInputStream("E:/dd.txt");
+		FileInputStream f1=new FileInputStream("dd.txt");
 		
 		//파일 읽고 쓰기  ouputStream
 		int cnt;
