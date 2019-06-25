@@ -35,7 +35,7 @@ public class CopyArgsTest {
 		FileInputStream fis=null;
 		FileOutputStream fos=null;
 		
-		if(args.lend) >=2) {
+		if(args.length>=2) {
 			fis = new FileInputStream (args[0]);
 			fos = new FileOutputStream (args[0]);
 		}
