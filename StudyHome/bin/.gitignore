@@ -1,13 +1,5 @@
-/Buen.class
-/Child2.class
-/DataType.class
-/Parent2.class
-/StudyExam.class
-/classHuman/
-/homestudy/
-/java001/
-/java002/
-/java003/
+/java009/
+/java010/
 /java004/
 /java005/
 /java006_Class2/
@@ -18,4 +10,13 @@
 /java008/
 /javaTest01/
 /javastudy/
+<<<<<<< HEAD
 /javaTest02/
+=======
+/java010_Test/
+/java010_Toy/
+/toyStore/
+/toyStore2/
+>>>>>>> refs/remotes/origin/master
+/classHuman/
+/java003/
