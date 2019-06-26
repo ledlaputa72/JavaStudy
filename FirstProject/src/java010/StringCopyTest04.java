@@ -29,5 +29,13 @@ public class StringCopyTest04 {
 	     while ((imsi=br5.readLine())!=null) 
             pw4.println(imsi);  
 	     pw4.close(); br5.close();
+	     
+	     //ccc파일 지우기
+	     File f1=new File("e:/ccc.txt");
+	     if(f1.delete())
+	    	 System.out.println("파일 ccc를 지웁니다. ");
+	     else
+	    	 System.out.println("에러");
+	   
 	}
 }
