@@ -47,7 +47,5 @@ public class Toys {
 	public String toString() {
 		return tID + "  \t" + tName +  "  \t" + tType +  "    \t" + tPrice ;
 	}
-	
-	
 
 }
