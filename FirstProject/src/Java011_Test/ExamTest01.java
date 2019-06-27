@@ -4,7 +4,7 @@ public class ExamTest01 {
 
 	public static void main(String[] args) {
 		
-		String love=args[0]; //첫번째 인자
+		/*String love=args[0]; //첫번째 인자
 		System.out.println("첫번쨰 인자는 ");
 		System.out.println(love);
 		String[] loveArr=love.split("-"); //인자로 받은 String을 배열로 나눈다. 
@@ -19,9 +19,9 @@ public class ExamTest01 {
 			loveArr[2]="LEE";
 		}
 		System.out.println("두번째 인자는 : "+star);
-		System.out.println(loveArr[0]+"-"+loveArr[1]+"-"+loveArr[2]);
+		System.out.println(loveArr[0]+"-"+loveArr[1]+"-"+loveArr[2]);*/
 		
-		/*
+		
 		 //stringBuffer를 통해 해결 방안 
 		StringBuffer s = new StringBuffer(args[0]);
 		switch(Integer.valueOf(args[1]))
@@ -37,7 +37,7 @@ public class ExamTest01 {
 			break;				
 		}
 		System.out.println(s);
-		*/
+		
 	}
 
 }
