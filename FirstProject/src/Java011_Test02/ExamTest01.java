@@ -8,7 +8,13 @@ public class ExamTest01 {
 		
 		Scanner sc=new Scanner(System.in);
 		
-		String sc1="I-love-You";
+		String sc1="I-Love-You";
+		String[] arr=sc1.split("-");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i].substring(0,1)+",");
+		}
+		System.out.println();
+		
 		StringBuffer str=new StringBuffer(sc1);
 		
 		System.out.println("숫자를 입력하세요 1~3");
@@ -27,6 +33,7 @@ public class ExamTest01 {
 			break;
 		default:
 			str.reverse();
+			System.out.println(str.substring(0, 1));
 			break;
 		}
 		System.out.println(str);

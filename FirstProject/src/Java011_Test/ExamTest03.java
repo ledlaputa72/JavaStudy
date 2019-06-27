@@ -59,7 +59,7 @@ public class ExamTest03 {
 
 	public static void main(String[] args) {
 		
-		//1-1.일반 배열로 내용 입력
+		//1-1.일반 객 내용 입력
 		Market m1=new Market();
 		m1.setS_Name("우유");
 		m1.setS_Price(1200);
@@ -67,9 +67,12 @@ public class ExamTest03 {
 		m1.setS_Out(300);
 
 		System.out.println("일반 배열로 1-1 ----------------------------------------");
-		System.out.println(m1.toString());
+//		System.out.println(m1.toString());
+		for (int i = 0; i < args.length; i++) {
+			System.out.println(m1);
+		}
 		
-		//1-2.일반 배열로 한번에 입력 
+		//1-2.일반 객체 한번에 입력 
 		Market m2=new Market("빵",500,1000,400);
 		
 		System.out.println("일반 배열로 1-2 ----------------------------------------");
