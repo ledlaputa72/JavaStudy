@@ -1,4 +1,4 @@
-package Java011_Test;
+package Java011_Test02;
 
 public class ExamTest04 {
 
