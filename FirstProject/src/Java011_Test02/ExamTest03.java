@@ -62,8 +62,8 @@ public class ExamTest03 {
 		arr.setAmount(10);
 		
 			System.out.println(arr);
-			System.out.println("=================");
-		
+			System.out.println("==================================");
+		//add 추가하기 
 		ArrayList<Store> arr1=new ArrayList<Store>();	
 		arr1.add(new Store("과자1",1500,"밀가루",10));
 		arr1.add(new Store("과자2",1500,"밀가루",10));
@@ -72,6 +72,15 @@ public class ExamTest03 {
 		for (int i = 0; i < arr1.size(); i++) {
 			System.out.println(arr1.get(i));
 		}
+		//remove 삭제하기 
+		System.out.println("==================================");
+		arr1.remove(2); //배열의 순서 i값과 동일 
+		for (int i = 0; i < arr1.size(); i++) {
+			System.out.println(arr1.get(i));
+		}
+		//
+		System.out.println("==================================");
+		
 		
 	}
 
