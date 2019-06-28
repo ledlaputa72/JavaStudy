@@ -28,23 +28,23 @@ public class Main {
 		toyArr.add(new Toys("t043","레고3","퍼즐",5000));
 		
 		
-		/////////////////////////////////////////////////////
-		//객체를 이용한 방법 - 내방법 
-		Caculate c1=new Caculate(); //계산을 위한 객체
+		/*		/////////////////////////////////////////////////////
+				//객체를 이용한 방법 - 내방법 
+				Caculate c1=new Caculate(); //계산을 위한 객체
+				
+				c1.printList(toyArr); //c1객체를 이용해서 Caculate의 메소드를 사용 - 품목 출력
+				 
+				 //종류 검색해서 출력하기
+				 String type = null;
+				 for (int i = 0; i < toyArr.size(); i++) {
+					 if(i%3==0) {
+						 type=toyArr.get(i).gettType(); //종류 구하기 
+						 c1.typeSum2(toyArr, type); //c1객체를 이용해서 Caculate의 메소드를 사용 - 종류 합계 출력
+					 }
+				}
 		
-		c1.printList(toyArr); //c1객체를 이용해서 Caculate의 메소드를 사용 - 품목 출력
-		 
-		 //종류 검색해서 출력하기
-		 String type = null;
-		 for (int i = 0; i < toyArr.size(); i++) {
-			 if(i%3==0) {
-				 type=toyArr.get(i).gettType(); //종류 구하기 
-				 c1.typeSum2(toyArr, type); //c1객체를 이용해서 Caculate의 메소드를 사용 - 종류 합계 출력
-			 }
-		}
-
-		 c1.sumTotal(toyArr);//c1객체를 이용해서 Caculate의 메소드를 사용 - 총합 출력 
-		 
+				 c1.sumTotal(toyArr);//c1객체를 이용해서 Caculate의 메소드를 사용 - 총합 출력 
+		*/		 
 		 ///////////////////////////////////////////////////////////////
 		 //ToyComputer 클래스를 이용할 때--선생님 방식 
 		
