@@ -3,6 +3,8 @@ package java_GUI01;
 import java.awt.Button;
 import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 class FlowLayoutMainClass extends Frame{
 	
@@ -22,8 +24,17 @@ class FlowLayoutMainClass extends Frame{
 		this.add(new Button("아무거나"));
 		this.setSize(300, 300);
 		this.setVisible(true);
-	}
-
+		
+		//창문 닫기 축약형/////////////////////////////////////////
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e1) {
+				dispose(); //개발자가 직접 메모리의 내용을 지우는 명령
+				System.exit(0);
+			}
+		});
+		/////////////////////////////////////////////////////
+	}//생성자 end
+	
 	public static void main(String[] args) {
 		//FlowLayoutMainClass.java
 		FlowLayoutMainClass flc1=new FlowLayoutMainClass(); //one class방식
@@ -31,6 +42,7 @@ class FlowLayoutMainClass extends Frame{
 		//생성자를 잘 사용하는 것이 중요
 		//원래 디폴트생성자는 자동으로 만들어져 있다.
 		//디폴드 생성자는 처리할 내용이 없으므로 여기서는  개발자가 직접 만듦
+	
 	}
 
 }
