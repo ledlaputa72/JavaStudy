@@ -3,6 +3,8 @@ package java_GUI01;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 class ButtonClass2 extends Frame implements ActionListener{ //창문 만들기 위해서 필수 
 	
@@ -29,6 +31,14 @@ class ButtonClass2 extends Frame implements ActionListener{ //창문 만들기 위해서
 		this.setSize(500, 500);//프레임 크기
 		this.setVisible(true);
 		
+		//창문 닫기
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e1) {
+				dispose(); //개발자가 직접 메모리의 내용을 지우는 명령
+				System.exit(0);
+			}
+		});
+		
 	}//생성자 end
 
 	//이벤트 처리할 내용을 적는 자리 
@@ -37,7 +47,10 @@ class ButtonClass2 extends Frame implements ActionListener{ //창문 만들기 위해서
 		if (e.getSource()==b1) { //버튼이 눌러졌으면 처리 (이벤트 핸들러)
 			la1.setText("안녕~~ 자바");
 		}
-	}
+	} //actionPerformed end
+	
+	
+	
 }//ButtonClass2 end
 
 public class ButtonClass {
