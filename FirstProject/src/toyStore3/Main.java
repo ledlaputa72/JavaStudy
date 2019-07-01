@@ -3,9 +3,6 @@ package toyStore3;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import toyStore.Car;
-import toyStore.Puzzle;
-
 public class Main {
 
 	public static void main(String[] args) {
