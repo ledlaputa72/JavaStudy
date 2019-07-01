@@ -1,4 +1,4 @@
-package Java_GUI01;
+package java_GUI01;
 
 import java.awt.Frame;
 
