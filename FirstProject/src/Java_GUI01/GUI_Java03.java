@@ -1,4 +1,4 @@
-package guiJava01;
+package Java_GUI01;
 
 import java.awt.Cursor;
 import java.awt.Frame;
