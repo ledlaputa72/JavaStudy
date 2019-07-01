@@ -4,12 +4,12 @@ import java.awt.Frame;
 
 class FlowLayoutMainClass extends Frame{
 	
-	public FlowLayoutMainClass() {
+	public FlowLayoutMainClass() { //积己磊
 		
 	}
 
 	public static void main(String[] args) {
-		//setLayout(null); 慢绊
+		//setLayout(null); 曼绊
 		//FlowLayoutMainClass.java
 		FlowLayoutMainClass flc1=new FlowLayoutMainClass(); //one class规侥
 		//按眉 积己 饶 力老刚历 啊悼 >> 积己磊 
