@@ -3,6 +3,7 @@ package homestudy;
 import java.awt.*;
 import java.awt.event.*;
 
+//main BookStore Class /////////////////////////////////////////
 class BookStore extends Frame implements ActionListener{
 	
 	//Components /////////////////////////////////////////////
@@ -31,7 +32,7 @@ class BookStore extends Frame implements ActionListener{
 	private TextArea ta1=new TextArea("텍스트 에어리어",5,20);
 	
 	//생성자 //////////////////////////////////////////////////////////
-	public BookStore(int frameWeith, int frameHeigth) {
+	public BookStore(int frameWeith, int frameHeigth,boolean visBool ) {
 		//라벨
 		lb1.setText("서점 관리 프로그램");
 		lb1.setFont(new Font("돋음",Font.BOLD,20));
@@ -41,7 +42,6 @@ class BookStore extends Frame implements ActionListener{
 		//텍스트 에어리어 
 		ta1.setSize(300, 300);
 		ta1.setVisible(true);
-		
 		
 		//버튼
 		bt1.setFont(new Font("굴림",Font.BOLD,18));
@@ -85,7 +85,7 @@ class BookStore extends Frame implements ActionListener{
 		mf.add("North",p0);
 		mf.add("Center",p3);
 		mf.setSize(frameWeith, frameHeigth);
-		mf.setVisible(true);
+		mf.setVisible(visBool);
 		mf.setResizable(false);
 		
 		//닫기 
@@ -101,30 +101,31 @@ class BookStore extends Frame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e1) {
 		if(e1.getSource()==bt1) {
-			BookStore1 bs2=new BookStore1(500,500);
+			
 		}
 		if(e1.getSource()==bt2) {
-			BookStore2 bs2=new BookStore2(500,500);
+			
 		}
 		if(e1.getSource()==bt3) {
-			BookStore3 bs2=new BookStore3(500,500);
+			
 		}
 		if(e1.getSource()==bt4) {
-			BookStore4 bs2=new BookStore4(500,500);
+			
 		}
 	}
 	
 }// BookStore class end
 
+
 //서브 클래스 - BookStore1//////////////////////////////////////////
 class BookStore1 extends Frame implements ActionListener{
 	private Frame f1=new Frame();
 	
-	public BookStore1(int subFrameW, int subFrameH) {
+	public BookStore1(int subFrameW, int subFrameH, boolean visBool) {
 
 		f1.setTitle("도서 검색");
 		f1.setSize(subFrameW, subFrameH);
-		f1.setVisible(true);
+		f1.setVisible(visBool);
 		f1.setResizable(false);
 		
 		//닫기 
@@ -143,15 +144,16 @@ class BookStore1 extends Frame implements ActionListener{
 
 }//서브 클래스 - BookStore1 end
 
+
 //서브 클래스 - BookStore2 //////////////////////////////////////////////
 class BookStore2 extends Frame implements ActionListener{
 	private Frame f2=new Frame();
 	
-	public BookStore2(int subFrameW, int subFrameH) {
+	public BookStore2(int subFrameW, int subFrameH,boolean visBool) {
 		
 		f2.setTitle("도서 추가");
 		f2.setSize(subFrameW, subFrameH);
-		f2.setVisible(true);
+		f2.setVisible(visBool);
 		f2.setResizable(false);
 		
 		//닫기 
@@ -170,15 +172,16 @@ class BookStore2 extends Frame implements ActionListener{
 
 }//서브 클래스 - BookStore2 end
 
+
 //서브 클래스 - BookStore3/////////////////////////////////////////////////////
 class BookStore3 extends Frame implements ActionListener{
 	private Frame f3=new Frame();
 	
-	public BookStore3(int subFrameW, int subFrameH) {
+	public BookStore3(int subFrameW, int subFrameH,boolean visBool) {
 		
 		f3.setTitle("도서 수정");
 		f3.setSize(subFrameW, subFrameH);
-		f3.setVisible(true);
+		f3.setVisible(visBool);
 		f3.setResizable(false);
 		
 		//닫기 
@@ -197,15 +200,16 @@ class BookStore3 extends Frame implements ActionListener{
 
 }//서브 클래스 - BookStore3 end
 
+
 //서브 클래스 - BookStore4/////////////////////////////////////////////////////
 class BookStore4 extends Frame implements ActionListener{
 	private Frame f4=new Frame();
 	
-	public BookStore4(int subFrameW, int subFrameH) {
+	public BookStore4(int subFrameW, int subFrameH,boolean visBool) {
 
 		f4.setTitle("도서 삭제");
 		f4.setSize(subFrameW, subFrameH);
-		f4.setVisible(true);
+		f4.setVisible(visBool);
 		f4.setResizable(false);
 		
 		//닫기 
@@ -224,11 +228,16 @@ class BookStore4 extends Frame implements ActionListener{
 
 }//서브 클래스 - BookStore3 end
 
-// main 
+
+// main ///////////////////////////////////////////////////////////////////
 public class BookStoreGUI {
 
 	public static void main(String[] args) {
-		BookStore bs1=new BookStore(700,700);
+		BookStore bs=new BookStore(700,700,true);
+		BookStore1 bs1=new BookStore1(500,500,false);
+		BookStore2 bs2=new BookStore2(500,500,false);
+		BookStore3 bs3=new BookStore3(500,500,false);
+		BookStore4 bs4=new BookStore4(500,500,false);
 		
 	}
 
