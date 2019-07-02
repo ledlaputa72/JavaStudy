@@ -55,7 +55,7 @@ class RollDice extends Frame implements ActionListener{
 	
 }//클래스 종료
 
-public class TextFeildTest2 {
+public class TextFieldTest2 {
 
 	public static void main(String[] args) {
 
