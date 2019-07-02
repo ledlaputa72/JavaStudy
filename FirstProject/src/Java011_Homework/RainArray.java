@@ -5,7 +5,7 @@ public class RainArray {
 	public static void main(String[] args) {
 
 		int num=1;
-		int n=5;
+		int n=3;
 		int[][] arr=new int[n][n]; 
 		int h=0, y=0;
 		
