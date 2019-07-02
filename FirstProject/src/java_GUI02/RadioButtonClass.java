@@ -18,7 +18,7 @@ public class RadioButtonClass extends Frame {
 		rbc1.add(cb1);
 		rbc1.add(cb2);
 		rbc1.add(cb3);
-		//cbc1.pack();//프레임크기를 포함된 컴포넌트에 맞추라는 것 
+		//rbc1.pack();//프레임크기를 포함된 컴포넌트에 맞추라는 것 
 		rbc1.setSize(300, 300);
 		rbc1.setVisible(true);
 		
