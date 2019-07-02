@@ -14,7 +14,21 @@ public class CheckBoxClass extends Frame {
 		Checkbox cb2=new Checkbox("배",true);
 		Checkbox cb3=new Checkbox("감",true);
 		
+		cbc1.setLayout(new FlowLayout());//가로 정렬
+		cbc1.add(cb1);
+		cbc1.add(cb2);
+		cbc1.add(cb3);
+		//cbc1.pack();//프레임크기를 포함된 컴포넌트에 맞추라는 것 
+		cbc1.setSize(300, 300);
+		cbc1.setVisible(true);
 		
-	}
+		cbc1.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e1) {
+				cbc1.dispose(); //개발자가 직접 메모리의 내용을 지우는 명령
+				System.exit(0);
+			}
+		});	//창 닫기
+		
+	}//main end
 
 }
