@@ -13,7 +13,9 @@ class BookStore extends Frame implements ActionListener{
 	private Panel p2=new Panel(); //버튼 패널
 	private Panel p3=new Panel(); //텍스트 패널
 	
-	private BorderLayout b1= new BorderLayout();
+	private BorderLayout blo= new BorderLayout();
+	private FlowLayout flo=new FlowLayout();
+	
 	private GridLayout g0=new GridLayout(2,1); //상위 패널용
 	private GridLayout g1=new GridLayout(1,1); //타이틀 패널용
 	private GridLayout g2=new GridLayout(1,4); //버튼 패널용
@@ -34,7 +36,7 @@ class BookStore extends Frame implements ActionListener{
 		lb1.setText("서점 관리 프로그램");
 		lb1.setFont(new Font("돋음",Font.BOLD,20));
 		lb1.setAlignment(Label.CENTER);
-		lb1.setBounds(0, 50, 400, 50);
+//		lb1.setBounds(0, 50, 400, 50);
 		
 		//텍스트 에어리어 
 		ta1.setSize(300, 300);
@@ -79,9 +81,9 @@ class BookStore extends Frame implements ActionListener{
 		p3.add(ta1);
 		
 		//메인 프레임
-		f1.setLayout(b1);
+		f1.setLayout(blo);
 		f1.add("North",p0);
-//		f1.add(p3);
+		f1.add("Center",p3);
 		f1.setSize(frameWeith, frameHeigth);
 		f1.setVisible(true);
 		f1.setResizable(false);
