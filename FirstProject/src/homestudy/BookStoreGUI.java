@@ -6,7 +6,7 @@ import java.awt.event.*;
 class BookStore extends Frame implements ActionListener{
 	
 	//Components /////////////////////////////////////////////
-	private Frame f1=new Frame();
+	private Frame mf=new Frame();
 	
 	private Panel p0=new Panel(); //상위 패널
 	private Panel p1=new Panel(); //타이틀 패널
@@ -81,17 +81,17 @@ class BookStore extends Frame implements ActionListener{
 		p3.add(ta1);
 		
 		//메인 프레임
-		f1.setLayout(blo);
-		f1.add("North",p0);
-		f1.add("Center",p3);
-		f1.setSize(frameWeith, frameHeigth);
-		f1.setVisible(true);
-		f1.setResizable(false);
+		mf.setLayout(blo);
+		mf.add("North",p0);
+		mf.add("Center",p3);
+		mf.setSize(frameWeith, frameHeigth);
+		mf.setVisible(true);
+		mf.setResizable(false);
 		
 		//닫기 
-		f1.addWindowListener(new WindowAdapter() {
+		mf.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				f1.dispose();
+				mf.dispose();
 				System.exit(0);
 			}
 		});
@@ -101,11 +101,128 @@ class BookStore extends Frame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e1) {
 		if(e1.getSource()==bt1) {
-			
+			BookStore1 bs2=new BookStore1(500,500);
+		}
+		if(e1.getSource()==bt2) {
+			BookStore2 bs2=new BookStore2(500,500);
+		}
+		if(e1.getSource()==bt3) {
+			BookStore3 bs2=new BookStore3(500,500);
+		}
+		if(e1.getSource()==bt4) {
+			BookStore4 bs2=new BookStore4(500,500);
 		}
 	}
 	
 }// BookStore class end
+
+//서브 클래스 - BookStore1//////////////////////////////////////////
+class BookStore1 extends Frame implements ActionListener{
+	private Frame f1=new Frame();
+	
+	public BookStore1(int subFrameW, int subFrameH) {
+
+		f1.setTitle("도서 검색");
+		f1.setSize(subFrameW, subFrameH);
+		f1.setVisible(true);
+		f1.setResizable(false);
+		
+		//닫기 
+		f1.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				f1.dispose();
+			}
+		});
+	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}//서브 클래스 - BookStore1 end
+
+//서브 클래스 - BookStore2 //////////////////////////////////////////////
+class BookStore2 extends Frame implements ActionListener{
+	private Frame f2=new Frame();
+	
+	public BookStore2(int subFrameW, int subFrameH) {
+		
+		f2.setTitle("도서 추가");
+		f2.setSize(subFrameW, subFrameH);
+		f2.setVisible(true);
+		f2.setResizable(false);
+		
+		//닫기 
+		f2.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				f2.dispose();
+			}
+		});
+	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}//서브 클래스 - BookStore2 end
+
+//서브 클래스 - BookStore3/////////////////////////////////////////////////////
+class BookStore3 extends Frame implements ActionListener{
+	private Frame f3=new Frame();
+	
+	public BookStore3(int subFrameW, int subFrameH) {
+		
+		f3.setTitle("도서 수정");
+		f3.setSize(subFrameW, subFrameH);
+		f3.setVisible(true);
+		f3.setResizable(false);
+		
+		//닫기 
+		f3.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				f3.dispose();
+			}
+		});
+	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}//서브 클래스 - BookStore3 end
+
+//서브 클래스 - BookStore4/////////////////////////////////////////////////////
+class BookStore4 extends Frame implements ActionListener{
+	private Frame f4=new Frame();
+	
+	public BookStore4(int subFrameW, int subFrameH) {
+
+		f4.setTitle("도서 삭제");
+		f4.setSize(subFrameW, subFrameH);
+		f4.setVisible(true);
+		f4.setResizable(false);
+		
+		//닫기 
+		f4.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				f4.dispose();
+			}
+		});
+	
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+}//서브 클래스 - BookStore3 end
 
 // main 
 public class BookStoreGUI {
