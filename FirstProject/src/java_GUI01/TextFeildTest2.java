@@ -46,9 +46,10 @@ class RollDice extends Frame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==bt001) {
 			int num=(int)Math.ceil(6*Math.random());
-			tf01.setText(num+"");
+			//Random r1=new Random();
+			//int num=r1.nextInt(6)+1;
+			tf01.setText(Integer.toString(num));
 			System.out.println(tf01.getText());
-			
 		}
 	}//이벤트 종료
 	
