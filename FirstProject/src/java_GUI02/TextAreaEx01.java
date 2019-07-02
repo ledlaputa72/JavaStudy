@@ -8,7 +8,7 @@ class TextAreaClass extends Frame  {
 	TextArea ta1=new TextArea("댓글을 쓰세요",5,50); //5행 50열
 	
 	public TextAreaClass() {
-//		ta1.setSize(100, 400);
+		ta1.setSize(700, 700);
 		ta1.setFont(new Font("굴림",Font.BOLD, 20));
 		ta1.append("(추가되는군요)"); //문자열 추가시 사용
 		//String str1="이걸로 댓글 기본글자 정함";
