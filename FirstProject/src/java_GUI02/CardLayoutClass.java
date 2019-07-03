@@ -3,7 +3,7 @@ package java_GUI02;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CardLayoutClass extends Frame {
+public class CardLayoutClass extends Frame implements MouseListener {
 	
 	//객체 선언
 	Frame f1;
@@ -21,16 +21,19 @@ public class CardLayoutClass extends Frame {
 		pan1=new Panel();
 		pan1.setBackground(Color.red);
 		f1.add(pan1,"pan1");//pan1의 별명은 pan1
+		pan1.addMouseListener(this); //마우스 이벤트 리스너
 		
 		pan2=new Panel();
 		pan2.setBackground(Color.yellow);
 		f1.add(pan2,"pan2");//pan2의 별명은 pan2
+		pan2.addMouseListener(this); //마우스 이벤트 리스너
 		
 		pan3=new Panel();
 		pan3.setBackground(Color.blue);
 		f1.add(pan3,"pan3");//pan3의 별명은 pan3
+		pan3.addMouseListener(this); //마우스 이벤트 리스너
 		
-		clo1.show(f1, "pan3");
+		clo1.show(f1, "pan1"); //3장의 카드중에 초기에 보이는 것은 pan1
 		
 		f1.setSize(500, 500);
 		f1.setVisible(true);
@@ -43,10 +46,43 @@ public class CardLayoutClass extends Frame {
 			}
 		});	//창 닫기
 	}//생성자 종료 
+	
+	//마우스 이벤트 
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		clo1.previous(f1); //앞 패널로 이동
+		//clo1.next(f1); //뒤 패널로 이동 
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//main 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CardLayoutClass flc1=new CardLayoutClass();
 	}
-
+	
 }
