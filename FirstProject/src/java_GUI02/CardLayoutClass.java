@@ -22,10 +22,23 @@ public class CardLayoutClass extends Frame {
 		pan1.setBackground(Color.red);
 		f1.add(pan1,"pan1");//pan1의 별명은 pan1
 		
+		pan2=new Panel();
+		pan2.setBackground(Color.yellow);
+		f1.add(pan2,"pan2");//pan2의 별명은 pan2
+		
+		pan3=new Panel();
+		pan3.setBackground(Color.blue);
+		f1.add(pan3,"pan3");//pan3의 별명은 pan3
+		
+		clo1.show(f1, "pan3");
+		
+		f1.setSize(500, 500);
+		f1.setVisible(true);
+		
 		//닫기
-		this.addWindowListener(new WindowAdapter() {
+		f1.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e1) {
-				dispose(); 
+				f1.dispose(); 
 				System.exit(0);
 			}
 		});	//창 닫기
