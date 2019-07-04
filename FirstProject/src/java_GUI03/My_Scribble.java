@@ -8,11 +8,11 @@ public class My_Scribble extends Frame implements MouseListener, MouseMotionList
 	private int witchiX=0, witchiY=0; //마우스의 좌표 , 클래스 밑에 생긴 전역 변수 
 	
 	public My_Scribble() { //생성자
-		addMouseListener(this); //마우스 이벤트 등록
-		addMouseMotionListener(this); //마우스 액션 이벤트 등록
+		this.addMouseListener(this); //마우스 이벤트 등록
+		this.addMouseMotionListener(this); //마우스 액션 이벤트 등록
 		
 		//닫기
-		addWindowListener(new WindowAdapter() {
+		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e1) {
 				dispose(); 
 				System.exit(0);
@@ -32,16 +32,16 @@ public class My_Scribble extends Frame implements MouseListener, MouseMotionList
 	//이벤트 핸들러 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		Graphics g=getGraphics(); //그래픽의 객체를 만듬 
-		g.setColor(Color.red); //칼라를 설정 
-		Graphics2D g2d = (Graphics2D)g;
+		Graphics g1=getGraphics(); //그래픽의 객체를 만듬 
+		g1.setColor(Color.red); //칼라를 설정 
+		Graphics2D g2d = (Graphics2D)g1;
 		g2d.setStroke(new BasicStroke(10));
 		
 		//whichiX,whichiY : 처음위치 
 		int badaX=e.getX(); //방금(끝) 마우스 위치 
 		int badaY=e.getY();
 		
-		g.drawLine(witchiX, witchiY, badaX, badaY); //처음 -> 끝 위치까지 선 그리기
+		g1.drawLine(witchiX, witchiY, badaX, badaY); //처음 -> 끝 위치까지 선 그리기
 		witchiX=badaX; //다시 처음 위치 값에 끝 값을 넣는다. 
 		witchiY=badaY;
 		//다시 위의 것을 반복한다. 

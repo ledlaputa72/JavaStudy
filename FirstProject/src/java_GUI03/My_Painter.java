@@ -24,14 +24,18 @@ class My_Painter00 extends Frame implements MouseListener, MouseMotionListener, 
 			}
 		});	//창 닫기
 	} //생성자 끝
-	
-	
-	//이벤트 핸들러 
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		Graphics g=getGraphics(); //그래픽의 객체를 만듬 
+		Graphics g=f1.getGraphics(); //그래픽의 객체를 만듬 
 		g.setColor(Color.red); //칼라를 설정 
-		Graphics2D g2d = (Graphics2D)g;
+		Graphics2D g2d = (Graphics2D)g; // 형변환
 		g2d.setStroke(new BasicStroke(10));
 		
 		//whichiX,whichiY : 처음위치 
@@ -51,37 +55,31 @@ class My_Painter00 extends Frame implements MouseListener, MouseMotionListener, 
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e) {
+	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mouseExited(MouseEvent e) {
+	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mousePressed(MouseEvent e) { //마우스가 누르고 있을 때
-		witchiX=e.getX(); //마우스X의 현재 위치 
-		witchiY=e.getY(); //마우스Y의 현재 위치 
+	public void mousePressed(MouseEvent arg0) {
+		witchiX=arg0.getX(); //마우스X의 현재 위치 
+		witchiY=arg0.getY(); //마우스Y의 현재 위치 
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
