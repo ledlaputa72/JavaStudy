@@ -4,13 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class My_calculator extends Frame implements ActionListener {
-	
-	static int num1=0;
-	static int num2=0;
-	static int result=0;
-	static double resultD=0.0;
-	static String imsi;
-	static int plag=0; //0:초기, 1:+, 2:-, 3:*, 4:/
+	//변수 선언
+	static long num1=0; //첫번째 값
+	static long num2=0; //두번째 값
+	static long result=0; //계산 결과
+	static String imsi; //계산화면의 값을 저장하는 String
+	static int flag=0; //연산을 파악하기 위한 변수, 0:연산 없음, 1:+, 2:-, 3:*, 4:/
 	
 	//컴퍼넌트//////////////////////////////////////////
 	//프레임, 레이아웃, 패널
@@ -52,6 +51,7 @@ public class My_calculator extends Frame implements ActionListener {
 		//메인 프레임
 		f1.setLayout(g1); //5행1열
 		f1.setSize(300, 500); 
+		f1.setTitle("My 계산기");
 		f1.setVisible(true);
 		f1.add(p1);  //1행
 		f1.add(p2);  //2행
@@ -156,52 +156,49 @@ public class My_calculator extends Frame implements ActionListener {
 		//연산 버튼
 		else if (e.getSource()==btn_add) {
 				imsi=lblWindow.getText(); //숫자창의 숫자를 String imsi로 할당
-				num1=Integer.parseInt(imsi); //imsi의 숫자를 num1(첫숫자)로 
-				plag=1; //더하기 플래그 1 
+				num1=Long.parseLong(imsi); //imsi의 숫자를 num1(첫숫자)로 
+				flag=1; //더하기 플래그 1 
 				lblWindow.setText(""); //숫자창 초기화
 		}else if (e.getSource()==btn_sub) {
 				imsi=lblWindow.getText();
-				num1=Integer.parseInt(imsi);
-				plag=2; //빼기 플래그 2
+				num1=Long.parseLong(imsi);
+				flag=2; //빼기 플래그 2
 				lblWindow.setText("");
 		}else if (e.getSource()==btn_mlt) {
 				imsi=lblWindow.getText();
-				num1=Integer.parseInt(imsi);
-				plag=3; //곱하기 플래그 3
+				num1=Long.parseLong(imsi);
+				flag=3; //곱하기 플래그 3
 				lblWindow.setText("");
 		}else if (e.getSource()==btn_div) {
 				imsi=lblWindow.getText();
-				num1=Integer.parseInt(imsi);
-				plag=4; //나누기 플래그 4
+				num1=Long.parseLong(imsi);
+				flag=4; //나누기 플래그 4
 				lblWindow.setText("");
 		}
 		
 		//결과 구하기 
 		else if (e.getSource()==btn_result) {
+			imsi=lblWindow.getText(); //뒷 숫자를 imsi(String)로 저장 
+			num2=Long.parseLong(imsi); //imsi의 값을 num2로 저장 
 			//연산 +-*/를 하고 난 뒤에만 결과를 낸다. 
-			if(plag==1) {
-				imsi=lblWindow.getText();
-				num2=Integer.parseInt(imsi);
-				result=num1+num2;
-				imsi=Integer.toString(result);
+			if(flag==1) {
+				result=num1+num2; //연산
+				imsi=Long.toString(result);//연산된 값을 다시 imsi(String)로 
 				lblWindow.setText(imsi);
-			}else if(plag==2) {
-				imsi=lblWindow.getText();
-				num2=Integer.parseInt(imsi);
+			}
+			else if(flag==2) {
 				result=num1-num2;
-				imsi=Integer.toString(result);
+				imsi=Long.toString(result);
 				lblWindow.setText(imsi);
-			}else if(plag==3) {
-				imsi=lblWindow.getText();
-				num2=Integer.parseInt(imsi);
+			}
+			else if(flag==3) {
 				result=num1*num2;
-				imsi=Integer.toString(result);
+				imsi=Long.toString(result);
 				lblWindow.setText(imsi);
-			}else if(plag==4) {	
-				imsi=lblWindow.getText();
-				num2=Integer.parseInt(imsi);
+			}
+			else if(flag==4) {	
 				result=num1/num2;
-				imsi=Integer.toString(result);
+				imsi=Long.toString(result);
 				lblWindow.setText(imsi);
 			}
 			else { //연산이 없는 경우 plag==0

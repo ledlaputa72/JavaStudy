@@ -24,8 +24,8 @@ public class ChoiceClass extends Frame{
 		cc1.setSize(300, 300);
 		cc1.setVisible(true);
 		
-		JOptionPane.showMessageDialog(null, "아이템 갯수 : "+c1.getItemCount()+"\n 0번째 아이템 : "+c1.getItem(0)); 
-		System.out.println("내가 고른것 : "+c1.getSelectedItem());
+		/*JOptionPane.showMessageDialog(null, "아이템 갯수 : "+c1.getItemCount()+"\n 0번째 아이템 : "+c1.getItem(0)); 
+		System.out.println("내가 고른것 : "+c1.getSelectedItem());*/
 		
 		cc1.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e1) {
