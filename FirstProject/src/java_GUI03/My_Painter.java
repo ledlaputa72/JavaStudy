@@ -3,18 +3,23 @@ package java_GUI03;
 import java.awt.*;
 import java.awt.event.*;
 
-class My_Painter2 extends Frame implements MouseListener, MouseMotionListener, ActionListener{
+class My_Painter00 extends Frame implements MouseListener, MouseMotionListener, ActionListener{
 
 	private int witchiX=0, witchiY=0; //마우스의 좌표 , 클래스 밑에 생긴 전역 변수 
+	private Frame f1=new Frame();
 	
-	public My_Painter2() { //생성자
-		addMouseListener(this); //마우스 이벤트 등록
-		addMouseMotionListener(this); //마우스 액션 이벤트 등록
+	public My_Painter00 () { //생성자
+		f1.addMouseListener(this); //마우스 이벤트 등록
+		f1.addMouseMotionListener(this); //마우스 액션 이벤트 등록
+		
+		f1.setSize(700, 700);
+		f1.setTitle("마음대로 낙서장");
+		f1.setVisible(true); 
 		
 		//닫기
-		addWindowListener(new WindowAdapter() {
+		f1.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e1) {
-				dispose(); 
+				f1.dispose(); 
 				System.exit(0);
 			}
 		});	//창 닫기
@@ -83,12 +88,14 @@ class My_Painter2 extends Frame implements MouseListener, MouseMotionListener, A
 	
 }
 
+public class My_Painter{ 
+
 public static void main(String[] args) {
-	My_Painter2 sc=new My_Painter2();
+	My_Painter00 sc=new My_Painter00();
 	
-	sc.setSize(700, 700);
-	sc.setTitle("마음대로 낙서장");
-	sc.setVisible(true);
+		/*sc.setSize(700, 700);
+		sc.setTitle("마음대로 낙서장");
+		sc.setVisible(true);*/
 	
 	}
 }

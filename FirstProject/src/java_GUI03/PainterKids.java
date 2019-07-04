@@ -37,8 +37,8 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 	
 	
 	public Painter() { //생성자//////////////////////////////////////////////////////
-		addMouseListener(this); //마우스 이벤트 등록
-		addMouseMotionListener(this); //마우스 액션 이벤트 등록
+		f1.addMouseListener(this); //마우스 이벤트 등록
+		f1.addMouseMotionListener(this); //마우스 액션 이벤트 등록
 		
 		//메인 프레임 
 		f1.setSize(700, 700);
@@ -53,10 +53,10 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 		p1.setBackground(Color.RED);
 		
 		//p2 중앙 캔버스
-		p1.setBackground(Color.GRAY);
+//		p2.setBackground(Color.GRAY);
 		
 		//p3 하단 정보 
-		p1.setBackground(Color.BLUE);
+		p3.setBackground(Color.BLUE);
 		
 		
 		//닫기
