@@ -3,22 +3,11 @@ package java_GUI03;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PanterKids extends Frame implements MouseListener, MouseMotionListener, ActionListener{
+class My_Painter2 extends Frame implements MouseListener, MouseMotionListener, ActionListener{
 
 	private int witchiX=0, witchiY=0; //마우스의 좌표 , 클래스 밑에 생긴 전역 변수 
-
-	private Button btnBG=new Button("배경색");
-	private Button btnBColor=new Button("브러쉬 칼러");
-	private Button btnBSizeUp=new Button("브러쉬크기+");
-	private Button btnBSizeDn=new Button("브러쉬크기-");
-	private Button btnReset=new Button("그림 지우기");
 	
-	private Label lblBG=new Label(""); //현재 배경 색을 표시해 줌
-	private Label lblBColor=new Label(""); //현재 브러시 색을 표시해 줌
-	private Label lblBSize=new Label(""); //현재 브러시 사이즈를 표시해 줌 (숫자로) 
-	
-	
-	public PanterKids() { //생성자
+	public My_Painter2() { //생성자
 		addMouseListener(this); //마우스 이벤트 등록
 		addMouseMotionListener(this); //마우스 액션 이벤트 등록
 		
@@ -31,14 +20,6 @@ public class PanterKids extends Frame implements MouseListener, MouseMotionListe
 		});	//창 닫기
 	} //생성자 끝
 	
-	public static void main(String[] args) {
-		PanterKids sc=new PanterKids();
-		
-		sc.setSize(700, 700);
-		sc.setTitle("마음대로 낙서장");
-		sc.setVisible(true);
-		
-	}
 	
 	//이벤트 핸들러 
 	@Override
@@ -99,6 +80,15 @@ public class PanterKids extends Frame implements MouseListener, MouseMotionListe
 		// TODO Auto-generated method stub
 		
 	}
+	
+}
 
-
+public static void main(String[] args) {
+	My_Painter2 sc=new My_Painter2();
+	
+	sc.setSize(700, 700);
+	sc.setTitle("마음대로 낙서장");
+	sc.setVisible(true);
+	
+	}
 }
