@@ -33,15 +33,18 @@ public class JButtonClass extends JFrame{
 		add(jb1); //this.add(jb1);과 동일 this가 생략 
 		add(jb2);
 		add(jb3);*/
+		this.setTitle("버튼이야");
+		this.setSize(300,200);
+		this.setVisible(true);
 		
 	}
 	
 	public static void main(String[] args) {
 
 		JButtonClass jbc1=new JButtonClass();
-		jbc1.setTitle("버튼이야");
-		jbc1.setSize(300,200);
-		jbc1.setVisible(true);
+		/*		jbc1.setTitle("버튼이야");
+				jbc1.setSize(300,200);
+				jbc1.setVisible(true);*/
 	}
 
 }
