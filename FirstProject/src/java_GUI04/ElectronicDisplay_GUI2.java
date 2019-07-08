@@ -72,11 +72,13 @@ class EDislpay extends Frame implements ActionListener{
 					e.printStackTrace();}
 				} //run end //new TimerTask(처리할 내용, delay, period)
 			},0,250); //0초 delay 후 가동, 250ms단위 일정한 간격으로 반복 
+			sw=1;
 		}
 		
-		
-		else if(e.getSource()==b2) {
-			
+		else if(e.getSource()==b2 && sw==1) {
+			b1.setEnabled(true);
+			t1.cancel();
+			sw=0;
 		}
 	}//이벤트 종료 
 	
