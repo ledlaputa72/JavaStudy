@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
 public class JButtonMainClass extends JFrame implements ActionListener{
 
 	JButton jb1;
@@ -20,12 +19,16 @@ public class JButtonMainClass extends JFrame implements ActionListener{
 		
 		setVisible(true);
 		setSize(1000, 1000);
+		//½ºÅ©¸° Áß¾Ó¿¡ ¶ç¿ì±â 
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		int xpos = (int)(screen.getWidth()/2-this.getWidth()/2);
+		int ypos = (int)(screen.getHeight()/2-this.getHeight()/2);
+		setLocation(xpos, ypos);
 	}
 	
 	public static void main(String[] args) {
 
 		JButtonMainClass jbtn=new JButtonMainClass();
-		
 	}
 
 	@Override
