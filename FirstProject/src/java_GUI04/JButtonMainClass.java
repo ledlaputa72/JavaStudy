@@ -30,7 +30,10 @@ public class JButtonMainClass extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		jb1.setIcon(new ImageIcon("bb.png"));
+		jb1.setText("Have a Good Time!");
+		jb1.setFont(new Font("±¼¸²",Font.BOLD,22));
+		jb1.setBackground(Color.yellow);
 		
 	}
 
