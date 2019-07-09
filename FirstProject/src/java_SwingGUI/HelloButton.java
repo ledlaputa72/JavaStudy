@@ -12,7 +12,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class HelloB extends JFrame {
+public class HelloButton extends JFrame {
 	
 	private JPanel contentPane;
 	private JLabel lblNewLabel = new JLabel(""); //lblNewLabel를 전역 변수로 변경
@@ -24,7 +24,7 @@ public class HelloB extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HelloB frame = new HelloB();
+					HelloButton frame = new HelloButton();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class HelloB extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HelloB() {
+	public HelloButton() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
