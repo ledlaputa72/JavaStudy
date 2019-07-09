@@ -1,4 +1,4 @@
-package java_GUI04;
+package java_SwingGUI;
 
 import java.awt.*;
 import java.awt.event.*;

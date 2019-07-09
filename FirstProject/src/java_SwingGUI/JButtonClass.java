@@ -1,4 +1,4 @@
-package java_GUI04;
+package java_SwingGUI;
 //one class ¹æ½Ä
 
 import java.awt.FlowLayout;
