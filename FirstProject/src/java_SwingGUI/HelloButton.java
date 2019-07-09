@@ -11,11 +11,15 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import javax.swing.JList;
+import javax.swing.JComboBox;
 
 public class HelloButton extends JFrame {
 	
 	private JPanel contentPane;
 	private JLabel lblNewLabel = new JLabel(""); //lblNewLabel를 전역 변수로 변경
+	private final JList list = new JList();
 
 	/**
 	 * Launch the application.
@@ -58,5 +62,9 @@ public class HelloButton extends JFrame {
 		lblNewLabel.setFont(new Font("굴림", Font.PLAIN, 25));
 		lblNewLabel.setBounds(115, 36, 199, 54);
 		contentPane.add(lblNewLabel);
+		list.setBounds(29, 64, 88, 97);
+		
+		contentPane.add(list);
+		
 	}
 }
