@@ -1,4 +1,4 @@
-package java_SwingGUI;
+package java_SwingGUI02;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,6 +7,9 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import java_SwingGUI.WindowOpenClass;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;

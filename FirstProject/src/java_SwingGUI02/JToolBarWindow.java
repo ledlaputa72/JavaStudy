@@ -1,4 +1,4 @@
-package java_SwingGUI;
+package java_SwingGUI02;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
