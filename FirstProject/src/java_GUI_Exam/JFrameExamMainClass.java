@@ -11,8 +11,6 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 	JLabel jlb2=new JLabel("label2",JLabel.CENTER);
 	JLabel jlb3=new JLabel("label3",JLabel.CENTER);
 	
-	JButton[] jbt=new JButton[7];
-	
 	JButton jbt1=new JButton("+10");
 	JButton jbt2=new JButton("+50");
 	JButton jbt3=new JButton("+100");
@@ -39,29 +37,24 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 		add(jlb2);
 		add(jlb3);
 
-		jbt[0]=new JButton("10");
-		jbt[1]=new JButton("50");
-		jbt[2]=new JButton("100");
+		jbt1=new JButton("10");
+		jbt2=new JButton("50");
+		jbt3=new JButton("100");
 		
-		jbt[3]=new JButton("200");
-		jbt[4]=new JButton("500");
-		jbt[5]=new JButton("1000");
+		jbt4=new JButton("200");
+		jbt5=new JButton("500");
+		jbt6=new JButton("2000");
 		
-		jbt[6]=new JButton("result");
-		
-		for (int i = 0; i <7; i++) {
-			add(jbt[i]);
-		}
+		jbt7=new JButton("result");
 		
 		add(jbt1);
 		add(jbt2);
 		add(jbt3);
-		
 		add(jbt4);
 		add(jbt5);
 		add(jbt6);
-		
 		add(jbt7);
+
 		add(jcombo);
 		add(jlist);
 		
@@ -90,37 +83,35 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 			sum=sum+10;
 			str=str+jbt1.getText()+"\n";
 		}
-		if (e.getSource()==jbt2) {
+		else if (e.getSource()==jbt2) {
 			sum=sum+10;
 			str=str+jbt1.getText()+"\n";
 		}
-		if (e.getSource()==jbt2) {
+		else if (e.getSource()==jbt2) {
 			sum=sum+10;
 			str=str+jbt3.getText()+"\n";
 		}
-		if (e.getSource()==jbt3) {
+		else if (e.getSource()==jbt3) {
 			sum=sum+10;
 			str=str+jbt3.getText()+"\n";
 		}
-		if (e.getSource()==jbt4) {
+		else if (e.getSource()==jbt4) {
 			sum=sum+10;
 			str=str+jbt4.getText()+"\n";
 		}
-		if (e.getSource()==jbt5) {
+		else if (e.getSource()==jbt5) {
 			sum=sum+10;
 			str=str+jbt5.getText()+"\n";
 		}
-		if (e.getSource()==jbt6) {
+		else if (e.getSource()==jbt6) {
 			sum=sum+10;
 			str=str+jbt6.getText()+"\n";
 		}
 		
-		if (e.getSource()==jbt7) {
+		else if (e.getSource()==jbt7) {
 			JOptionPane.showMessageDialog(null, str+"sum : "+sum);
 			sum=0;
 			str="";
-			for (int i = 0; i < jbt.length-1; i++) {
-			}
 		}
 		else if (e.getSource()==jcombo) {
 			JOptionPane.showMessageDialog(null, jcombo.getSelectedItem());

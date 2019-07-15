@@ -67,7 +67,7 @@ class JFrameExamClass2 extends JFrame implements ActionListener, ListSelectionLi
 				str=str+jbt[i].getText()+"\n";
 				sum=sum+Integer.parseInt(jbt[i].getText());
 			}
-			jbt[i].setEnabled(false);
+//			jbt[i].setEnabled(false);
 			System.out.println(jbt[i].getText()+"\n");
 		}
 		if (e.getSource()==jbt[6]) {
