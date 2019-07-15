@@ -2,6 +2,7 @@ package java_SwingGUI02;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import javax.swing.*;
 
 class JFileChooserClass extends JFrame implements ActionListener {
@@ -31,8 +32,29 @@ class JFileChooserClass extends JFrame implements ActionListener {
 	} //constructor end
 	
 	@Override //event //////////////////////////
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent e) {
+		//파일 열기
+		if (e.getSource()==jbutton1) {
+			int isOpenClose = jfilechooser1.showOpenDialog(jbutton1); 
+			//showOpenDialog = 열기 대화상자, 반대는 showSaveDialog
+			File filePath1 = jfilechooser1.getSelectedFile();
+			//getSelectedFile = 대화상자에서 내가 파일을 선택하면 - 경로처리 
+			//String fileString2 = jfilechooser1.getSelectedFile().getName();
+			if(isOpenClose==JFileChooser.APPROVE_OPTION)
+			{//0은 열기, 1은 저장
+				jlabel1.setText("파일경로및 이름 :"+filePath1);
+				//System.out.println(filePath1);
+			}
+		}
+		//파일 저장
+		if(e.getSource()==jbutton3) {
+			int isOpenClose3 = jfilechooser1.showSaveDialog(jbutton3); 
+			File filePath3 = jfilechooser1.getSelectedFile();
+			if(isOpenClose3==JFileChooser.APPROVE_OPTION)
+			{//0은 열기, 1은 저장
+				jlabel1.setText("파일경로및 이름 :"+filePath3);
+			}
+		}
 		
 	} // event end
 	
