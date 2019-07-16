@@ -53,6 +53,7 @@ class JList_ExamClass extends JFrame implements ActionListener, ListSelectionLis
 		for (int i = 0; i < jList.length; i++) {
 			add(jList[i]);
 			jList[i].addListSelectionListener(this);
+			jList[i].setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		}
 		
 		this.setSize(700,700);
@@ -62,7 +63,11 @@ class JList_ExamClass extends JFrame implements ActionListener, ListSelectionLis
 	
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
-		
+		for (int i = 0; i < 3; i++) {
+			if (e.getSource()==jList[i]) {
+				JOptionPane.showMessageDialog(this, jList[i].getSelectedValue());
+			}
+		}
 	}
 
 	@Override
@@ -74,7 +79,6 @@ class JList_ExamClass extends JFrame implements ActionListener, ListSelectionLis
 			else if (e.getSource()==jCombo[i]) {
 				JOptionPane.showMessageDialog(this, jCombo[i].getSelectedItem());
 			}
-			
 		}
 	}
 	
