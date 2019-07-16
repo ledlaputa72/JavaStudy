@@ -1,11 +1,11 @@
-package java_GUI_Exam;
+package homestudy_swing;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-class JFrameExamClass extends JFrame implements ActionListener, ListSelectionListener  {
+class ExamClass extends JFrame implements ActionListener, ListSelectionListener  {
 	
 	JLabel jlb1=new JLabel("label1",JLabel.CENTER);
 	JLabel jlb2=new JLabel("label2",JLabel.CENTER);
@@ -30,23 +30,13 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 	static int sum=0;
 	static String str="";
 	
-	public JFrameExamClass() {
+	public ExamClass() {
 		setLayout(new GridLayout(0,3,30,30));
 		
 		add(jlb1);
 		add(jlb2);
 		add(jlb3);
 
-		jbt1=new JButton("10");
-		jbt2=new JButton("50");
-		jbt3=new JButton("100");
-		
-		jbt4=new JButton("200");
-		jbt5=new JButton("500");
-		jbt6=new JButton("2000");
-		
-		jbt7=new JButton("result");
-		
 		add(jbt1);
 		add(jbt2);
 		add(jbt3);
@@ -56,7 +46,9 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 		add(jbt7);
 
 		add(jcombo);
+		
 		add(jlist);
+		jlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);//단일 선택 
 		
 		jbt1.addActionListener(this);
 		jbt2.addActionListener(this);
@@ -69,7 +61,7 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 		jbt7.addActionListener(this);
 		
 		jcombo.addActionListener(this);
-		jlist.addListSelectionListener(this);
+		jlist.addListSelectionListener(this); //list는 listSelectionListener로 이벤트 
 		
 		setSize(500,500);
 		setVisible(true);
@@ -121,16 +113,31 @@ class JFrameExamClass extends JFrame implements ActionListener, ListSelectionLis
 
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
-		// TODO Auto-generated method stub
-		
+		if ("A".equals(jlist.getSelectedValue())) {
+			//if(e.getItem().equals("서울"))
+			//"열기".equals(e.getActionCommand())
+			JOptionPane.showMessageDialog(this, "A");
+		}
+		if ("B".equals(jlist.getSelectedValue())) {
+			JOptionPane.showMessageDialog(this, "BB");
+		}
+		if ("C".equals(jlist.getSelectedValue())) {
+			JOptionPane.showMessageDialog(this, "CCC");
+		}
+		if ("D".equals(jlist.getSelectedValue())) {
+			JOptionPane.showMessageDialog(this, "DDDD");
+		}
+		if ("E".equals(jlist.getSelectedValue())) {
+			JOptionPane.showMessageDialog(this, "EEEEE");
+		}
 	}
 	
 }
 
-public class JFrameExamMainClass {
+public class ExamMainClass {
 
 	public static void main(String[] args) {
-		JFrameExamClass2 jFrame=new JFrameExamClass2();
+		ExamClass jFrame=new ExamClass();
 
 	}
 }

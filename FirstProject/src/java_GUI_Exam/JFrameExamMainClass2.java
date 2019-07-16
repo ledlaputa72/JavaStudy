@@ -7,10 +7,7 @@ import javax.swing.event.*;
 
 class JFrameExamClass2 extends JFrame implements ActionListener, ListSelectionListener  {
 	
-	JLabel jlb1=new JLabel("label1",JLabel.CENTER);
-	JLabel jlb2=new JLabel("label2",JLabel.CENTER);
-	JLabel jlb3=new JLabel("label3",JLabel.CENTER);
-	
+	JLabel[] jlb=new JLabel[3];	
 	JButton[] jbt=new JButton[7];
 	
 	String[] strarr1= {"1","2","3","4","5"};
@@ -25,9 +22,9 @@ class JFrameExamClass2 extends JFrame implements ActionListener, ListSelectionLi
 	public JFrameExamClass2() {
 		setLayout(new GridLayout(0,3,30,30));
 		
-		add(jlb1);
-		add(jlb2);
-		add(jlb3);
+		jlb[0]=new  JLabel("label1",JLabel.CENTER);
+		jlb[1]=new  JLabel("label2",JLabel.CENTER);
+		jlb[2]=new  JLabel("label3",JLabel.CENTER);
 
 		jbt[0]=new JButton("10");
 		jbt[1]=new JButton("50");
@@ -39,16 +36,14 @@ class JFrameExamClass2 extends JFrame implements ActionListener, ListSelectionLi
 		
 		jbt[6]=new JButton("result");
 		
-		for (int i = 0; i <7; i++) {
-			add(jbt[i]);
-		}
+		for (int i = 0; i <jlb.length; i++)			add(jlb[i]);
+		for (int i = 0; i <jbt.length; i++)			add(jbt[i]);
 		
 		add(jcombo);
 		add(jlist);
+		jlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
-		for (int i = 0; i < jbt.length; i++) {
-			jbt[i].addActionListener(this);
-		}
+		for (int i = 0; i < jbt.length; i++)		jbt[i].addActionListener(this);
 		
 		jcombo.addActionListener(this);
 		jlist.addListSelectionListener(this);
@@ -63,31 +58,30 @@ class JFrameExamClass2 extends JFrame implements ActionListener, ListSelectionLi
 		
 		for (int i = 0; i < 6; i++) {
 			if (e.getSource()==jbt[i]) {
-//				StringBuffer sb=new StringBuffer(jbt[i].getText());
 				str=str+jbt[i].getText()+"\n";
 				sum=sum+Integer.parseInt(jbt[i].getText());
+				jbt[i].setEnabled(false);
 			}
-//			jbt[i].setEnabled(false);
-			System.out.println(jbt[i].getText()+"\n");
 		}
 		if (e.getSource()==jbt[6]) {
 			JOptionPane.showMessageDialog(null, str+"sum : "+sum);
 			sum=0;
 			str="";
-			for (int i = 0; i < jbt.length-1; i++) {
-				jbt[i].setEnabled(true);
-			}
+			for (int i = 0; i < jbt.length-1; i++) 		jbt[i].setEnabled(true);
 		}
 		else if (e.getSource()==jcombo) {
 			JOptionPane.showMessageDialog(null, jcombo.getSelectedItem());
 		}
 	}
 
-
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
-		// TODO Auto-generated method stub
-		
+		/*		if ("A".equals(jlist.getSelectedValue())) {
+					JOptionPane.showMessageDialog(this, "A");
+				}*/
+		if(e.getSource()==jlist) {
+			JOptionPane.showMessageDialog(this,jlist.getSelectedValue());
+		}
 	}
 	
 }
@@ -95,7 +89,7 @@ class JFrameExamClass2 extends JFrame implements ActionListener, ListSelectionLi
 public class JFrameExamMainClass2 {
 
 	public static void main(String[] args) {
-		JFrameExamClass jFrame=new JFrameExamClass();
+		JFrameExamClass2 jFrame=new JFrameExamClass2();
 
 	}
 }
