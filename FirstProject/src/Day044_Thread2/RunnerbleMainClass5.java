@@ -1,6 +1,6 @@
 package Day044_Thread2;
 
-class TheadClass41 implements Runnable{
+class RunnerbleClass51 implements Runnable{
 	public void run() { //!flase ==> ture동안 돌아라 
 		while(!Thread.currentThread().isInterrupted()) { //인터럽터가 아닌경우 - 무한루프
 			System.out.print(Thread.currentThread().isInterrupted()); //false
@@ -11,7 +11,7 @@ class TheadClass41 implements Runnable{
 	}
 }
 
-class TheadClass42 implements Runnable{
+class RunnerbleClass52 implements Runnable{
 	public void run() { //!flase ==> ture동안 돌아라 
 		while(!Thread.currentThread().isInterrupted()) { //인터럽터가 아닌경우 - 무한루프
 			System.out.print(Thread.currentThread().isInterrupted()); //false
@@ -22,19 +22,19 @@ class TheadClass42 implements Runnable{
 	}
 }
 
-public class ThreadMainClass4 {
+public class RunnerbleMainClass5 {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		Thread tr41=new Thread(new TheadClass41());
-		Thread tr42=new Thread(new TheadClass42());
+		Thread tr51=new Thread(new RunnerbleClass51());
+		Thread tr52=new Thread(new RunnerbleClass52());
 		
-		tr41.start();
-		tr42.start();
+		tr51.start();
+		tr52.start();
 		
 		Thread.sleep(5000);
-		tr41.interrupt();
-		tr42.interrupt();
+		tr51.interrupt();
+		tr52.interrupt();
 		
 	}
 
