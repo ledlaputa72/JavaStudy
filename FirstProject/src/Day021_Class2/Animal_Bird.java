@@ -1,4 +1,4 @@
-package java005;
+package Day021_Class2;
 
 class Animal{
 	String noon;

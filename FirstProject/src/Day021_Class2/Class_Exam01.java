@@ -1,4 +1,4 @@
-package java004;
+package Day021_Class2;
 
 import java.io.ObjectInputStream.GetField;
 

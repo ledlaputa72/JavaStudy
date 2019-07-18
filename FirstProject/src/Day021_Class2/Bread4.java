@@ -1,4 +1,4 @@
-package Day020_Class;
+package Day021_Class2;
 
 import java.util.Scanner;
 

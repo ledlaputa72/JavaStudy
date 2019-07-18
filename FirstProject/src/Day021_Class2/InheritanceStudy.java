@@ -1,4 +1,4 @@
-package java005;
+package Day021_Class2;
 //상속 
 class Boomo { // 부모 클래스
 	String juso; //부모의 속성(필드), 접근지정자의 Default(앞에 public 같은게 없음)  

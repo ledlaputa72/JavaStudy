@@ -1,4 +1,4 @@
-package java004;
+package Day021_Class2;
 
 class Sangpum{
 	private String irum;
