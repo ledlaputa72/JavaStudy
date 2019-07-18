@@ -1,5 +1,5 @@
 // github연결하기 
-package java003;
+package Day017_Array;
 
 import java.util.Scanner;
 

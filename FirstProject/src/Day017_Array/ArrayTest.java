@@ -1,4 +1,4 @@
-package java003;
+package Day017_Array;
 
 public class ArrayTest {
 
