@@ -4,18 +4,23 @@ class RunnerbleClass6 implements Runnable{
 
 	@Override
 	public void run() {
-		while (!Thread.currentThread().isInterrupted()) { 
+		//try위치가 바꾸면 에러 
+		try { //try1)
+			while (!Thread.currentThread().isInterrupted()) { 
+
 			System.out.print(Thread.currentThread().isInterrupted());
 			System.out.println("쓰레드1");
-			try {//try문 위치가 중요:인터럽트 후 다시 false가 되면서 while문 반복
+			//try {//try2)try문 위치가 중요:인터럽트 후 다시 false가 되면서 while문 반복
 				Thread.sleep(200);
+			} //try1)end
 			} catch (InterruptedException e) {
 				System.out.println("catch");
 				System.out.println(Thread.currentThread().isInterrupted());
 				e.printStackTrace();
 			}
 			System.out.println(Thread.currentThread().isInterrupted());
-		}
+			System.out.println("***5초뒤에 멈춤***");
+		//} //try2)end
 	}
 	
 }
