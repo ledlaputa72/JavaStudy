@@ -1,4 +1,4 @@
-package Day043_Thread;
+package Day043_Thread1;
 
 class ThreadClass01 extends Thread {
 	

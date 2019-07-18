@@ -1,4 +1,4 @@
-package Day044_Thread;
+package Day044_Thread2;
 
 class ThreeThreadClass extends Thread {
 	
