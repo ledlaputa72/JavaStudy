@@ -1,4 +1,4 @@
-package java003;
+package Day019_args;
 
 public class ArrayArg {
 	//명령어와 명령행 인자 만들기 

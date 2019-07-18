@@ -1,4 +1,4 @@
-package java003;
+package Day018_Search_Hangman;
 
 public class HomeworkArray2 {
 
