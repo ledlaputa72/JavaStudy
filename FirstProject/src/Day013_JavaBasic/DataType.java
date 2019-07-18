@@ -1,4 +1,4 @@
-package Day013;
+package Day013_JavaBasic;
 import java.util.Scanner;
 
 public class DataType {

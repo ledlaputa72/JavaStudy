@@ -1,4 +1,4 @@
-package Day013; // 패키지
+package Day013_JavaBasic; // 패키지
 
 import java.util.Scanner;
 

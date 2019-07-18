@@ -1,4 +1,4 @@
-package Day013;
+package Day013_JavaBasic;
 
 public class Buen {
 
