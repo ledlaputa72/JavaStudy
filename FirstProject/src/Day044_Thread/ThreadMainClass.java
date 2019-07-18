@@ -1,4 +1,4 @@
-package java_Thread01;
+package Day044_Thread;
 
 class CustomerInfo {
 	private String name;
@@ -81,7 +81,7 @@ class ThreadBank2 extends Thread{
 	
 }//2번 손님 클래스 
 
-public class ThreadMainClass6 {
+public class ThreadMainClass {
 
 	public static void main(String[] args) {
 		

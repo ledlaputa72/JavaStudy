@@ -1,4 +1,4 @@
-package java_Thread01;
+package Day044_Thread;
 
 class Account{
 	private String kokaek; //°í°´
@@ -83,7 +83,7 @@ class ThreadClass62 extends Thread{
 	}
 } //ThreadClass62 end
 
-public class ThreadMainClass61 {
+public class ThreadMainClass1 {
 
 	public static void main(String[] args) {
 		
