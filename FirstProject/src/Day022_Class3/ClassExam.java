@@ -1,4 +1,4 @@
-package java005;
+package Day022_Class3;
 
 class AA{
 	public void car() {

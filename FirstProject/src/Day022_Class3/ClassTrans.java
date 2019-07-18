@@ -1,5 +1,5 @@
 //객체의 형변환
-package java005;
+package Day022_Class3;
 
 
 class Parent{

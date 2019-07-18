@@ -1,4 +1,4 @@
-package java005;
+package Day022_Class3;
 
 import java.util.Scanner;
 class Parent2{
