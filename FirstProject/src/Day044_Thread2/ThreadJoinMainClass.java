@@ -22,7 +22,7 @@ public class ThreadJoinMainClass {
 		tcj1.start();
 		System.out.println("나는 쓰레드메인클래스");
 		tcj1.join();
-		System.out.println("쓰레드");
+		System.out.println("쓰레드 마지막");
 	}
 
 }
