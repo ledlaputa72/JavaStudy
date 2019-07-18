@@ -1,4 +1,4 @@
-package java001;
+package Day015_While_Switch_Method;
 
 import java.util.Scanner;
 

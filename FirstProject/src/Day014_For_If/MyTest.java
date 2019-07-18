@@ -1,4 +1,4 @@
-package java001;
+package Day014_For_If;
 
 public class MyTest {
 
