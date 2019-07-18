@@ -1,4 +1,4 @@
-package java_GUI02;
+package Day033_GUI_AWT1;
 //one class·Î ¼³¸í 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package java_GUI02;
+package Day035_GUI_AWT3;
 //선생니 문제 풀이 
 import java.awt.*;
 import java.awt.event.*;

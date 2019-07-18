@@ -1,4 +1,4 @@
-package java_GUI01;
+package Day033_GUI_AWT1;
 
 import java.awt.Button;
 import java.awt.Color;
