@@ -20,7 +20,7 @@ public class ThreadJoinMainClass {
 	public static void main(String[] args) throws InterruptedException {
 		ThreadJoinClass tcj1=new ThreadJoinClass();
 		tcj1.start();
-		System.out.println("나는 스레드메인");
+		System.out.println("나는 쓰레드메인클래스");
 		tcj1.join();
 		System.out.println("쓰레드");
 	}
