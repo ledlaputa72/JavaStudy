@@ -1,4 +1,4 @@
-package java004;
+package Day020_Class;
 
 class BBang3 { 
 	private String jong; // °´Ã¼ ¼Ó¼º 

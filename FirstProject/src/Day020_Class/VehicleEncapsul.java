@@ -1,4 +1,4 @@
-package java004;
+package Day020_Class;
 
 class Car2 {
 	private String color; // 접근지정자 public Vehicle class에서 접근이 가능하다. 

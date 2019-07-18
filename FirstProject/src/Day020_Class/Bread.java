@@ -1,4 +1,4 @@
-package java004;
+package Day020_Class;
 
 class BBang { //정의 : 빵가게 클래스 (설계도:메모리에 만들어지지 않았다.)
 	public String jong; //빵의 종류 (속성,필드)

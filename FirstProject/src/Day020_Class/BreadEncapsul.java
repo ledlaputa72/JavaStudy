@@ -1,4 +1,4 @@
-package java004;
+package Day020_Class;
 
 class BBang2 { //정의 
 	private String jong; //캡슐화,  private로 외부 클래스에서 접급이 불가능 한다. 

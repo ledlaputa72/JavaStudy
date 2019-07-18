@@ -1,4 +1,4 @@
-package java004;
+package Day020_Class;
 
 public class ClassStudy01 {
 
