@@ -1,5 +1,5 @@
 // github연결하기 
-package Day017_Array;
+package Day017_Array_Sort;
 
 import java.util.Scanner;
 
