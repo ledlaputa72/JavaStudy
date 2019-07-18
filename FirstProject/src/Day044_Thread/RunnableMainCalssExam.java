@@ -1,17 +1,17 @@
 package Day044_Thread;
 
-class Account1{
+class Account2{
 	private String kokaek; //고객
 	private int janaek; //잔액
 	
 	//생성자
-	public Account1(String kokaek, int janaek) {
+	public Account2(String kokaek, int janaek) {
 		super();
 		this.kokaek = kokaek;
 		this.janaek = janaek;
 	}
 	
-	public Account1(int janaek){
+	public Account2(int janaek){
 		this.janaek=janaek;
 	}
 
@@ -53,8 +53,13 @@ class Account1{
 } //Account end
 
 //Thread 1 class///////////////////
-class ThreadClass61 extends Thread{
-	Account1 ac1=new Account1("정은주",300); //초기치
+class Bank01 implements Runnable{
+	
+	public Bank01() {
+		
+	}
+	
+	Account2 ac1=new Account2("정은주",300); //초기치
 	public void run() {
 		System.out.println("1st 고객입장");
 //		Account ac1=new Account("정은주",300); //초기치
@@ -69,8 +74,13 @@ class ThreadClass61 extends Thread{
 } //ThreadClass61 end
 
 //Thread 2 class/////////////////
-class ThreadClass62 extends Thread{
-	Account1 ac2=new Account1("서원국",500); //초기치
+class Bank02 implements Runnable{
+	
+	public Bank02() {
+		
+	}
+	
+	Account2 ac2=new Account2("서원국",500); //초기치
 	public void run() {
 		System.out.println("2nd 고객입장");
 //		Account ac2=new Account("서원국",500); //초기치
@@ -83,15 +93,17 @@ class ThreadClass62 extends Thread{
 	}
 } //ThreadClass62 end
 
-public class ThreadMainClass1 {
+
+public class RunnableMainCalssExam {
 
 	public static void main(String[] args) {
+
+		Thread b01=new Thread(new Bank01());
+		Thread b02=new Thread(new Bank02());
 		
-		ThreadClass61 tc61=new ThreadClass61();
-		ThreadClass62 tc62=new ThreadClass62();
+		 b01.start();
+		 b02.start();
 		
-		tc61.start();
-		tc62.start();
 	}
 
 }

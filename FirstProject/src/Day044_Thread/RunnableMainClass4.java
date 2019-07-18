@@ -17,12 +17,14 @@ class RunnableClass40 implements Runnable{
 	public void run() {
 		 for (int i = 1; i <= 10; i++) {
              System.out.println(i+"번 " + this.str);
-             //아래 딜레이를 줄 경우 결과 차이가 발생 
+             //아래 딜레이를 줄 경우 결과 차이가 발생
+             int time=((int)Math.ceil(Math.random()*5000));
 			try {
-			Thread.sleep(100);
+			Thread.sleep(time);
 			} catch (InterruptedException e) {
 			e.printStackTrace();
 			}
+			
         }
 	}
 }
