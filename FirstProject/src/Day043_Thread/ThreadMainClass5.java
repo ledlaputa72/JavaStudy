@@ -1,4 +1,4 @@
-package java_Thread01;
+package Day043_Thread;
 
 class ThreadClassTest1 extends Thread{
 	String irum; //초기치로 경석 

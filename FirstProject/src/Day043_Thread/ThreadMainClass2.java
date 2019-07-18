@@ -1,4 +1,4 @@
-package java_Thread01;
+package Day043_Thread;
 
 class ThreadClass2 extends Thread {
 	
