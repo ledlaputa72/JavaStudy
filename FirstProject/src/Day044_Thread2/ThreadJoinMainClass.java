@@ -21,8 +21,10 @@ public class ThreadJoinMainClass {
 		ThreadJoinClass tcj1=new ThreadJoinClass();
 		tcj1.start();
 		System.out.println("나는 쓰레드메인클래스");
-		tcj1.join();
+//		tcj1.join();
+		tcj1.join(3000);
 		System.out.println("쓰레드 마지막");
 	}
 
 }
+
