@@ -1,4 +1,4 @@
-package Day045;
+package Day045_Thread3_Network;
 
 //ThreadClass2///////////////////////////////////////
 class ThreadClass2 extends Thread{

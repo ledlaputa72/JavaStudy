@@ -1,4 +1,4 @@
-package Day045;
+package Day045_Thread3_Network;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
