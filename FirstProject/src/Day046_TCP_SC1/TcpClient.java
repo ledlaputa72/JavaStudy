@@ -5,10 +5,12 @@ import java.net.*;
 import java.io.*;
 
 public class TcpClient {
+	
 	public static void main(String args[]) 
 			throws UnknownHostException, IOException {
 
-		Socket s1 = new Socket("127.0.0.1", 7817);//client socket 持失 
+		Socket s1 = new Socket("127.0.0.1", 7818);//client socket 持失 
+		
 		BufferedReader br1 = 
 		new BufferedReader(new InputStreamReader(s1.getInputStream()));
 			//	BufferedWriter bw1 = 

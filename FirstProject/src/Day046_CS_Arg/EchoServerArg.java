@@ -1,4 +1,4 @@
-package Day046_Client_Server2;
+package Day046_CS_Arg;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 public class TcpServer {
 	public static void main(String args[]) throws IOException {
 
-		ServerSocket ss1 = new ServerSocket(7778);
+		ServerSocket ss1 = new ServerSocket(7777);
 		System.out.println("전화는 준비되어 있음....");
 
 		while (true) {

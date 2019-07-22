@@ -6,9 +6,12 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class TcpServer {//저장시 .class 생성되고 실행은 x
+	
 	public static void main(String args[]) throws IOException {
-	ServerSocket ss1 = new ServerSocket(7817); //port no.
+		
+	ServerSocket ss1 = new ServerSocket(7818); //port no.
 		System.out.println("전화는 준비되어 있음....");
+		
 		while (true) {////////////
 			System.out.println("전화기다리는 중....");
 

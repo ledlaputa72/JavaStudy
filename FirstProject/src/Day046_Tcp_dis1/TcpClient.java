@@ -6,7 +6,7 @@ import java.io.*;
 public class TcpClient {
 	public static void main(String args[]) throws UnknownHostException, IOException {
 
-		Socket s1 = new Socket("127.0.0.1", 7778);
+		Socket s1 = new Socket("127.0.0.1", 7777);
         
 		///////////////////////////////////////////////
 		DataInputStream dis1 = new DataInputStream(s1.getInputStream());
