@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 public class TcpServer {
 	public static void main(String args[]) throws IOException {
 
-		ServerSocket ss1 = new ServerSocket(7778);
+		ServerSocket ss1 = new ServerSocket(7777);
 		System.out.println("전화는 준비되어 있음....");
 
 		while (true) {
@@ -19,10 +19,9 @@ public class TcpServer {
 			System.out.println(s1.getInetAddress() + "에서 전화왔네");
              
 			/////////////////////////////
-			DataOutputStream dos1 
-			  = new DataOutputStream(s1.getOutputStream());
+			DataOutputStream dos1 = new DataOutputStream(s1.getOutputStream());
 
-			dos1.writeUTF("야 ~~오랜만이네");//경석과미래
+			dos1.writeUTF("Long time no see man");//경석과미래
 			
             //////////////////////////////////
 			

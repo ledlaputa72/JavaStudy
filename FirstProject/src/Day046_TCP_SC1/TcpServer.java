@@ -21,7 +21,7 @@ public class TcpServer {//저장시 .class 생성되고 실행은 x
 			BufferedWriter bw1 = 
 		new BufferedWriter(new OutputStreamWriter(s1.getOutputStream()));
 			                               
-			bw1.write ("어떻게 지내~~~~");////////
+			bw1.write ("How are you today.");////////
 			bw1.newLine();   bw1.flush();///////////
 			
 			System.out.println("뚝~~~");

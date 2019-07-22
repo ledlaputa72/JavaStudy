@@ -12,7 +12,7 @@ public class EchoServerArg {
 
 	public static void main(String[] args) throws NumberFormatException, IOException{
 		
-		if(args.length != 1) {
+		if(args.length != 1) { //명령인자가 1개 (포트) 
 			System.out.println("사용법: 명령어인자로 포트번호를 넣으세요");
 			System.exit(0);
 		}

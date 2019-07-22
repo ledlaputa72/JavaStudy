@@ -10,17 +10,16 @@ public class TcpClient {
            	 System.exit(1);
       }
           
-      
-	
-        Socket s1 = new Socket(args[0], Integer.parseInt(args[1]));
-                                       //ip address와 포트번호넣자는  
+        Socket s1 = new Socket(args[0], Integer.parseInt(args[1]));  //ip address와 포트번호넣자는  
+        
 		/////////////////////////////////////////
         ThreadSend tsendcli1 = new ThreadSend(s1);//서버에서 정의됨 
           //객체만 추가하여 만들면된다 (class추가 안해도됨) 
+        
 		ThreadRcv trcvcli1 = new ThreadRcv(s1);  // 1: 1채팅 
 
-		tsendcli1.start();
-		trcvcli1.start();
+		tsendcli1.start(); //Thread 
+		trcvcli1.start(); //Thread 
 		/////////////////////////////////////
 		
 	}
