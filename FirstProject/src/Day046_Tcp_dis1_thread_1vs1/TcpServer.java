@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 
+//  Thread 1 - 주기 //////////////////////////
 class ThreadSend extends Thread {//주거니 
 
 	Socket s1;//from Client
@@ -20,7 +21,7 @@ class ThreadSend extends Thread {//주거니
 		what1 = "미팅중==>"; //대화시 앞에 항상 붙는 단어
      	}
 	
-	public void run() {
+	public void run() { //Thread 구동 run 
 		Scanner sc1 = new Scanner(System.in);//화면입력받아 
 		while (dos1 != null) {//chat 있으면 
 			try {
@@ -30,13 +31,11 @@ class ThreadSend extends Thread {//주거니
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 		}//while-end
 	}//run-end
 }//threadSend-end
 
-
-
+//Thread 2 - 받기 //////////////////////////
 class ThreadRcv extends Thread { //받거니 
 	Socket s1;
 	DataInputStream dis1;
@@ -57,31 +56,31 @@ class ThreadRcv extends Thread { //받거니
 	}
 }
 
+
+//main //////////////////////////////////////////////
 public class TcpServer {
 	public static void main(String args[]) throws IOException {
-		 if(args.length !=1) {
+		
+		 if(args.length !=1) { //인자 1개 포트번호 
         	 System.out.println("사용법은 java 파일명 포트번호");
         	 System.exit(1);
          }
 		 
-		 
-		ServerSocket ss1 = new ServerSocket(Integer.parseInt(args[0]));
-		                                        //포트번호 넣자는~~~
+		ServerSocket ss1 = new ServerSocket(Integer.parseInt(args[0])); //인자로 받은 포트번호를 ss1에  
 		System.out.println("서버 잘 준비됨 ...");
 
+		//반복
 		while (true) {
 
 			System.out.println("미팅 대화 기다리는 중....");
-
-			Socket s1 = ss1.accept();
+			Socket s1 = ss1.accept(); // 수신 
     		
 			////////////////////////////  무전기 방식 아님 
-			ThreadSend tsendSer1 = new ThreadSend(s1);//초기치 ///주거니
-			ThreadRcv trcvSer1 = new ThreadRcv(s1);///받거니를 위해 
+			ThreadSend tsendSer1 = new ThreadSend(s1);//초기치 주거니, ThreadSend Class  객체 생성 
+			ThreadRcv trcvSer1 = new ThreadRcv(s1);///받거니를 위해 , ThreadRcv Class 객체 생성 
 
-			tsendSer1.start();
-			trcvSer1.start();
-			///////////////////////////////
+			tsendSer1.start(); //Thread 실행
+			trcvSer1.start(); //Thread 실행 
 
 		}
 	}//메인-end
