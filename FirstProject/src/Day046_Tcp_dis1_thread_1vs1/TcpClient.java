@@ -2,6 +2,7 @@ package Day046_Tcp_dis1_thread_1vs1;
 
 import java.net.*;
 import java.io.*;
+import Day046_Tcp_dis1.TcpServer.*;
 
 public class TcpClient {
 	public static void main(String args[]) throws UnknownHostException, IOException {
