@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+//////////////////////////////////////////////////////////
 class ServerClass {
 	//collection에 들어가는 것은 ThreadServerClass only 
 	//Vector
@@ -26,20 +27,27 @@ class ServerClass {
 			tServer1.start();
 			threadList.add(tServer1);//컬랙션에 add
 			//=====================================================
-			System.out.println("접속자 수 : " + threadList.size());
-		}//while end
-	}
+			System.out.println("접속자 수 : " + threadList.size()+" 명");
+		}// while end
+	}// 생성자 end
 	
-}
+	
+	//////////////////////////////////////////////////
+	class ThreadServerClass extends Thread {
+		Socket socket1;
+		DataInputStream inputStream;
+		DataOutputStream outputStram;
 
-class ThreadServerClass{
-
-	public ThreadServerClass(Socket s1) {
+		public ThreadServerClass(Socket s1) throws IOException { //생성자 
+			socket1 = s1;
+			inputStream = new DataInputStream(s1.getInputStream());
+			outputStream = new DataOutputStream(s1.getOutputStream());
+			//입출력 스트림
+		}//생성자 end
 		
-	}
+	}// ThreadServerClass end
 	
-}
-
+}// ServerClass end
 
 public class TcpMulServer {
 
