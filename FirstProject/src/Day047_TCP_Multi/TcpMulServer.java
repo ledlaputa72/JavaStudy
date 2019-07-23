@@ -4,6 +4,8 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+import Day045_Thread3_Network.IPMainClass;
+
 //////////////////////////////////////////////////////////
 class ServerClass {
 	//collection에 들어가는 것은 ThreadServerClass only 
@@ -31,7 +33,6 @@ class ServerClass {
 		}// while end
 	}// 생성자 end
 	
-	
 	//////////////////////////////////////////////////
 	class ThreadServerClass extends Thread {
 		Socket socket1;
@@ -45,6 +46,25 @@ class ServerClass {
 			//입출력 스트림
 		}//생성자 end
 		
+		public void run() { //run
+			String nickname = "";
+			try {
+				if(inputStream != null) {
+					nickname = inputStream.readUTF();
+					sendChat(nickname + " 님 입장 !!!(^^)");
+				}
+				while (inputStream !=null) {
+					//System.out.printlin(inputStream.readUTF();
+					sendChat(inputStream.readUTF());
+					//클라이언트가 보낸 채팅 내용을 접속한 모두에게 보냄
+				}
+			}
+			catch(IOException e) {
+				e.printStackTrace();//에러내용 출력을 안하려면 주석단다
+			}
+				
+		} //run end
+			
 	}// ThreadServerClass end
 	
 }// ServerClass end
