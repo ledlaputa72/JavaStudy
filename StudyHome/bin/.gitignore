@@ -1,5 +1,4 @@
 /.DS_Store
-/Child2.class
 /Day013_JavaBasic/
 /Day014_For_If/
 /Day015_While_Switch_Method/
@@ -44,8 +43,7 @@
 /Day046_TCP_SC1/
 /Day046_Tcp_dis1/
 /Day046_Tcp_dis1_thread_1vs1/
-/Parent2.class
-/StudyExam.class
+/Day047_TCP/
 /aaa.txt
 /bbb.txt
 /bookstore/
@@ -66,3 +64,6 @@
 /toyStore3/
 /toyStore4/
 /~$out.txt
+/Child2.class
+/Parent2.class
+/StudyExam.class
