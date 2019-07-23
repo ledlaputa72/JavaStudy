@@ -62,11 +62,24 @@ class ServerClass {
 			catch(IOException e) {
 				e.printStackTrace();//에러내용 출력을 안하려면 주석단다
 			}
-				
+			finally {//나간 쓰레드의 인덱스 찾기 
+				for (int i = 0; i < threadList.size(); i++) {
+					if(socket.equals(threadList.get(i).socket1)) {
+						threadList.remove(i);
+						//===============
+						try {
+							sendChat(nickname + " 님 퇴장~~~ (ㅠㅠ)");
+						}catch(IOException e) {
+							e.printStackTrace();
+						}
+						//===============
+					}//if end
+					
+				}// for end
+				System.out.println("접속자 수 : " + threadList.size()+ " 명");
+			} // finally end
 		} //run end
-			
 	}// ThreadServerClass end
-	
 }// ServerClass end
 
 public class TcpMulServer {
