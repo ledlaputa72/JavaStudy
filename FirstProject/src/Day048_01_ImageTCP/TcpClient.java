@@ -12,7 +12,7 @@ public class TcpClient {
 		DataInputStream dis1=new DataInputStream(s1.getInputStream());
 		
 		int len1=dis1.readInt(); //서버가 보낸 파일 길이 먼저 받아옴 
-		byte[] byteBae2=new byte[len1];
+		byte[] byteBae2=new byte[len1]; //길이만큼 배열을 잡음 
 		dis1.readFully(byteBae2); //그리고 내용을 받아트배열로 
 		
 		FileOutputStream fos1 = new FileOutputStream("e:/bb.jpg");
@@ -20,5 +20,4 @@ public class TcpClient {
 		
 		System.out.println("끝~~~");
 	}
-
 }
