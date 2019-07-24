@@ -24,7 +24,7 @@ public class TcpServerIMG {
 
 			/////////////////////////////
 			//전송 from 서버 to client
-			 File file1 = new File("d:/spring.jpg");
+			 File file1 = new File("e:/img01.jpg");
 		     //System.out.println(file1.canRead());
 		   	 BufferedImage buffimage1= ImageIO.read(file1); 
 		              //기존 파일 read하여   이미지화 한다음 

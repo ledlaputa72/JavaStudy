@@ -33,11 +33,20 @@ class ServerClass {
 		}// while end
 	}// 생성자 end
 	
+	// 접속 중인 쓰레드에게 chat 내용 보낸다.
+	// sendChat() 메소드 정의문
+	public void sendChat(String chat) throws IOException {
+		
+		for (int i=0; i<threadList.size(); i++)
+			threadList.get(i).outputStream.writeUTF(chat);
+		
+	}
+	
 	//////////////////////////////////////////////////
 	class ThreadServerClass extends Thread {
 		Socket socket1;
 		DataInputStream inputStream;
-		DataOutputStream outputStram;
+		DataOutputStream outputStream;
 
 		public ThreadServerClass(Socket s1) throws IOException { //생성자 
 			socket1 = s1;
@@ -84,7 +93,7 @@ class ServerClass {
 
 public class TcpMulServer {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws IOException {
 		if(args.length != 1) {
 			System.out.println("사용법 : 서버실행은 "+" \'java 패키지명.파일명 포트번호\' 형식으로 입력");
 		}
