@@ -1,4 +1,4 @@
-package Day047_ImageIO_FILE_Load_Save;
+package Day0470_ImageIO_FILE_Load_Save;
 
 
 import java.awt.image.BufferedImage;
