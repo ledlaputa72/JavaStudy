@@ -1,4 +1,4 @@
-package Day047_ImageIO_Socketing_dataStream;
+package Day048_ImageIO_Socketing_dataStream;
 
 import java.net.*;
 import java.awt.image.BufferedImage;
