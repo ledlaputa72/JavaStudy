@@ -1,25 +1,24 @@
 package Day049_03_Exam3;
 
-import java.io.IOException;
-import java.net.Socket;
-import java.net.UnknownHostException;
+import java.net.*;
+import java.io.*;
 
 public class TcpClient {
 
-	public static void main(String[] args) throws IOException {
-
-		if (args.length != 2) {
-			System.out.println("java package.javaclass IP portNO");
+	public static void main(String[] args) throws  IOException {
+		if (args.length!=2) {
+			System.out.println("java");
 			System.exit(0);
 		}
+			Socket s1=new Socket(args[0], Integer.parseInt(args[1]));
 		
-		Socket s1=new Socket(args[0], Integer.parseInt(args[1]));
-		
-		ThreadSend ts1=new ThreadSend(s1);
-		ThreadRcv tr1=new ThreadRcv(s1);
-		
-		ts1.start();
-		tr1.start();
+			//½º·¹µå
+			ThreadSend ts1=new ThreadSend(s1);
+			ThreadRcv tr1=new ThreadRcv(s1);
+			
+			ts1.start();
+			tr1.start();
+
 	}
 
 }
