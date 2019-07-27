@@ -1,4 +1,4 @@
-package Day050_ScketchQuizTest3;
+package Day050_ScketchQuizTest4;
 
 import java.awt.*;
 import java.awt.event.*;

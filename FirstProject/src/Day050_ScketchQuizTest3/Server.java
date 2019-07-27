@@ -32,7 +32,6 @@ class ThreadSend extends Thread{
 	}
 }
 
-
 public class Server {
 	
 	//상수 서버 화면크기, 좌표(모니터 중앙) 
@@ -73,7 +72,6 @@ public class Server {
 			//이미지를 받아오는 동시에 화면에 그림
 			while(true) {
 			frame.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bin)), 0, 0, w, h, frame);
-
 			}
 
 		} catch (Exception e) {
