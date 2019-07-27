@@ -1,4 +1,4 @@
-package Day050_ScketchQuizTest;
+package Day050_ScketchQuizTest2;
 
 import java.awt.Rectangle;
 import java.awt.Robot;
@@ -17,8 +17,7 @@ import javax.swing.JTextField;
 public class Client {
 
 	//툴킷으로 컴퓨터의 해상도를 받아옴 (화면 캡쳐에 필요해)
-	//final int w = Toolkit.getDefaultToolkit().getScreenSize().width, h = Toolkit.getDefaultToolkit().getScreenSize().height;
-	
+	final int w = Toolkit.getDefaultToolkit().getScreenSize().width, h = Toolkit.getDefaultToolkit().getScreenSize().height;
 	
 	//창, ip를 입력할 텍스트필드, 접속버튼
 	JFrame frame;
@@ -33,7 +32,7 @@ public class Client {
 	//메인에서 호출시킨 생성자부분
 	public Client() {
 		frame = new JFrame("Client"); //창 생성
-		frame.setBounds(0, 0, 1280, 720);//창 위치,크기 조절
+		frame.setBounds(0, 0, 300, 100);//창 위치,크기 조절
 		frame.setLayout(null); //레이아웃 없게 함.
 		
 		//JFrame 윈도우창 초기화
@@ -61,7 +60,8 @@ public class Client {
 		frame.add(button);
 		frame.setVisible(true);
 	}
-	
+
+
 	//클라이언트의 기능들을 때려 박아놓은 창고
 	public void client_work() {
 
@@ -82,7 +82,7 @@ public class Client {
 	
 			while(true) {
 			//image.getGraphics().drawImage(r.createScreenCapture(new Rectangle(0,0,w,h)).getScaledInstance(1280, 720, Image.SCALE_SMOOTH), 0, 0, null);
-			image = r.createScreenCapture(new Rectangle(frame.getLocation().x, frame.getLocation().y, frame.getWidth(), frame.getHeight()));
+			image = r.createScreenCapture(new Rectangle(0, 0, w, h));
 			//스크린샷을 찍어서 image에 저장해
 			ImageIO.write(image, "bmp", bout);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			bout.flush();   //버퍼에 쓰인 이미지를 서버로 보냄

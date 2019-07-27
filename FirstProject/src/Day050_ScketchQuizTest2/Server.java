@@ -1,4 +1,4 @@
-package Day050_ScketchQuizTest;
+package Day050_ScketchQuizTest2;
 
 import java.awt.Toolkit;
 import java.io.BufferedInputStream;
