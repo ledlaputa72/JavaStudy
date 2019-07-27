@@ -17,7 +17,7 @@ public class TcpServer {
 			System.out.println(s1.getInetAddress()+"에서 접속");
 			
 			//받기 위해 처리 (입력)
-			File file1=new File("e:/aa.jpg");
+			File file1=new File("aa.png");
 			FileInputStream fis1=new FileInputStream(file1);
 			DataInputStream dis1=new DataInputStream(fis1);
 			//DataInputStream dis1=new DataInputStream(new FileInputStream(file1));

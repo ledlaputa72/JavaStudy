@@ -60,7 +60,7 @@ public class JButtonImageClass extends JFrame {
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon("E:\\aa.png"));
-		btnNewButton.setBounds(53, 62, 653, 665);
+		btnNewButton.setBounds(71, 64, 653, 665);
 		contentPane.add(btnNewButton);
 		
 		//Áß¾Ó¿¡ Ã¢ ¶ç¿ì±â 

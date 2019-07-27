@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class ImageClass extends Frame {
 	
 	static Image img1; //프로그램 종료까지 유지되는 static 
-	static String krim="e:/img01.jpg";
+	static String krim="aa.png";
 	
 	public void paint(Graphics g) {
 		g.drawImage(img1, 0, 0, 640, 480, this);
