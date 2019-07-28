@@ -18,16 +18,16 @@ class ThreadSend extends Thread{
 	Socket socket;
 	BufferedImage image;
 	Robot r;
-	BufferedOutputStream bout; 
+	BufferedOutputStream bos1; 
 	
 	public ThreadSend(Socket socket) throws IOException, AWTException {
 		this.socket = socket;
 		r = new Robot();
-		bout = new BufferedOutputStream(socket.getOutputStream()); 
+		bos1 = new BufferedOutputStream(socket.getOutputStream()); 
 		while(true) {
-			image = r.createScreenCapture(new Rectangle(0, 0, 1280, 720));//스크린샷을 찍어서 image에 저장해
-			ImageIO.write(image, "bmp", bout);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
-			bout.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
+			image = r.createScreenCapture(new Rectangle(0, 0, 400, 400));//스크린샷을 찍어서 image에 저장해
+			ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
+			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
 		}
 	}
 }
@@ -35,7 +35,7 @@ class ThreadSend extends Thread{
 public class Server {
 	
 	//상수 서버 화면크기, 좌표(모니터 중앙) 
-	final int w = 1280, h = 720; 
+	final int w = 400, h = 400; 
 	final int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 
 	JFrame frame;

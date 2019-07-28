@@ -32,15 +32,13 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 	
 	static Button btnStream=new Button("화면 전송");
 	
-	
-	
 	//생성자/////////////////////////////////////////////////////////
 	public Painter() { 
 		p2.addMouseListener(this); //중요!!!! 마우스 이벤트 등록
 		p2.addMouseMotionListener(this); //중요!!! 마우스 액션 이벤트 등록
 		
 		//메인 프레임 
-		f1.setSize(1280, 720);
+		f1.setSize(400, 400);
 		f1.setTitle("Scketch Quiz Client");
 		f1.setLayout(blo1);
 		f1.setVisible(true);

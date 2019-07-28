@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -32,7 +33,8 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 	
 	static Button btnStream=new Button("화면 전송");
 	
-	
+	//이미지 읽기 저
+	static BufferedImage buffimage1;
 	
 	//생성자/////////////////////////////////////////////////////////
 	public Painter() { 
@@ -125,6 +127,25 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}*/
+		
+		//이미지 읽기 
+		File file1 = new File("aa.png"); // 원본
+		try {
+			buffimage1 = ImageIO.read(file1);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		//이미지 저
+		File file2 = new File("aa2.png"); // 사본
+		try {
+			ImageIO.write(buffimage1, "png", file2);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} // .jpg 에 이미지를 write
+		System.out.println("jpg 가 저장되었습니다.");
 		
 	}
 }//Painter class end
