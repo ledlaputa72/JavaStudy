@@ -1,4 +1,4 @@
-package Day050_ScketchQuizTest3;
+package step10_ScketchCanvas;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -38,7 +38,7 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 		p2.addMouseMotionListener(this); //중요!!! 마우스 액션 이벤트 등록
 		
 		//메인 프레임 
-		f1.setSize(400, 400);
+		f1.setSize(800, 800);
 		f1.setTitle("Scketch Quiz Client");
 		f1.setLayout(blo1);
 		f1.setVisible(true);
@@ -140,7 +140,7 @@ public class Client {
 	
 		try {
 			//소켓으로 접속
-			socket = new Socket(serverip, 12345); 
+			socket = new Socket(serverip, 8888); 
 			System.out.println("접속완료 - 클라이언트");
 			
 			
@@ -149,19 +149,9 @@ public class Client {
 			System.out.println("그림판 작동 - 클라이언트");
 			sc.ss=socket;
 			
-			/*//이미지 전송 - 스크린샵을 이용 --> server에 ThreadSend 클래스로 변경 /////////////////////////
-			BufferedImage image; //스크린샷이 저장될 버퍼공간
-			Robot r = new Robot(); //스크린샷을 찍는 로봇클래스
-			BufferedOutputStream bout = new BufferedOutputStream(socket.getOutputStream()); //아웃풋스트림을 버퍼아웃풋으로
-			
-			while(true) {
-			image = r.createScreenCapture(new Rectangle(0, 0, 1280, 720));//스크린샷을 찍어서 image에 저장해
-			ImageIO.write(image, "bmp", bout);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
-			bout.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
-			}*/
-			
+		
 			//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
-			ThreadSend ts1=new ThreadSend(socket);
+			ThreadSend1 ts1=new ThreadSend1(socket);
 			ts1.start();
 			
 		} catch (Exception e) {

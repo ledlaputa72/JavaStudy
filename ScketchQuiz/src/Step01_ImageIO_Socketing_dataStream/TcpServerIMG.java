@@ -1,4 +1,4 @@
-package Step01_imageDataStreaming;
+package Step01_ImageIO_Socketing_dataStream;
 
 import java.net.*;
 import java.awt.image.BufferedImage;

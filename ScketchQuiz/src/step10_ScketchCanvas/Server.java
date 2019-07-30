@@ -1,4 +1,4 @@
-package ScketchCanvas;
+package step10_ScketchCanvas;
 
 import java.awt.AWTException;
 import java.awt.BorderLayout;

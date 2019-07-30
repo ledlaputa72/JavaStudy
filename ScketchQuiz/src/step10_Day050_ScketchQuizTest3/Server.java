@@ -1,4 +1,4 @@
-package Day050_ScketchQuizTest3;
+package step10_Day050_ScketchQuizTest3;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
