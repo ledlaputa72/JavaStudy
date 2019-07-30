@@ -1,4 +1,4 @@
-package step10_ScreenCaptureStreamingTest2;
+package step01_ScreenCaptureStreamingTest2;
 
 import java.awt.*;
 import javax.swing.*;
@@ -15,7 +15,7 @@ class JFramTest2 extends JFrame implements MouseListener, MouseMotionListener, A
 	//레이아웃용 컴포넌트
 	private JPanel contentPane;
 	private JPanel panelCanvas;
-	private JPanel panelView;
+	private static JPanel panelView;
 	private JPanel panelChat;
 	private JTextField textField;
 	private JTextArea textArea;
@@ -144,7 +144,7 @@ public class JFrameClient {
 	public static void main(String[] args) throws IOException, AWTException {
 		
 		//소켓으로 접속//////////////
-		Socket s1 = new Socket("127.0.0.1", 9999); 
+		Socket s1 = new Socket("127.0.0.1", 8888); 
 		System.out.println("접속완료 - 클라이언트");
 		
 		//그림 기능 작동////////////// 
