@@ -1,8 +1,9 @@
-package Test;
+package test_ScreenCaptureStreaming;
 
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
+
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.Socket;

@@ -36,7 +36,7 @@ class ImageSendThread extends Thread {
 public class TcpClientIMG  { //extends JFrame { ////////////////
 	public static void main(String args[]) 
 			    throws UnknownHostException, IOException {
-		Socket s1 = new Socket("127.0.0.1", 5999);
+		Socket s1 = new Socket("127.0.0.1", 8888);
     	///////////////////////////////////////////////
 		BufferedImage buffimage1 = ImageIO.read(s1.getInputStream());//////
 		            //소켓의 i/o stream으로 부터 받아 

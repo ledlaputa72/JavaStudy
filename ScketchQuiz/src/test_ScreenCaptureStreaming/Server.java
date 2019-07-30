@@ -1,4 +1,4 @@
-package Test;
+package test_ScreenCaptureStreaming;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;

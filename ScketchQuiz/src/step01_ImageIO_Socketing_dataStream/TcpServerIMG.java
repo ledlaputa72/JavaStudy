@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 public class TcpServerIMG {
 	public static void main(String args[]) throws IOException {
 		
-		ServerSocket ss1 = new ServerSocket(5999);
+		ServerSocket ss1 = new ServerSocket(8888);
 		System.out.println("서버 준비되어 있음....");
 		
 		while (true) {

@@ -1,4 +1,4 @@
-package Test;
+package test_ScreenCaptureStreaming;
 
 import java.awt.*;
 import java.awt.event.*;
