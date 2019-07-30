@@ -1,4 +1,4 @@
-package Test;
+package step10_dPaintTest;
 import javax.imageio.ImageIO;
 
 import java.io.BufferedOutputStream;

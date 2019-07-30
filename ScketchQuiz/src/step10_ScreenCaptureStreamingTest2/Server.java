@@ -1,4 +1,4 @@
-package step10_Day050_ScketchQuizTest3;
+package step10_ScreenCaptureStreamingTest2;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 class ThreadSend extends Thread{
 	
 	Socket socket;
-	BufferedImage image;
+	BufferedImage bi1;
 	Robot r;
 	BufferedOutputStream bos1; 
 	
@@ -25,8 +25,8 @@ class ThreadSend extends Thread{
 		r = new Robot();
 		bos1 = new BufferedOutputStream(socket.getOutputStream()); 
 		while(true) {
-			image = r.createScreenCapture(new Rectangle(0, 0, 400, 400));//스크린샷을 찍어서 image에 저장해
-			ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
+			bi1 = r.createScreenCapture(new Rectangle(0, 0, 400, 400));//스크린샷을 찍어서 image에 저장해
+			ImageIO.write(bi1, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
 		}
 	}
@@ -62,7 +62,7 @@ public class Server {
 		
 		try {
 			//클라이언트와 접속함
-			socket_s = new ServerSocket(12345); //포트 열기 
+			socket_s = new ServerSocket(9999); //포트 열기 
 			socket = socket_s.accept(); // Listen 
 			System.out.println("클라이언트 연결 완료! - 서버" + socket);
 		

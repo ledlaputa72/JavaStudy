@@ -1,4 +1,4 @@
-package Test;
+package step10_dPaintTest;
 
 import java.net.*;
 

@@ -1,4 +1,4 @@
-package test_ScreenCaptureStreaming;
+package step10_ScreenCaptureStreamingTest2;
 
 import java.awt.*;
 import javax.swing.*;

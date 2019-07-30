@@ -1,4 +1,4 @@
-package step10_Day050_ScketchQuizTest3;
+package step10_ScreenCaptureStreamingTest1;
 
 import java.awt.*;
 import java.awt.event.*;
