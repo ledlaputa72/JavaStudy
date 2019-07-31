@@ -1,4 +1,4 @@
-package step01_ScreenCaptureStreamingTest2;
+package step02_ScreenCaptureStreamingTest2.copy;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
@@ -43,7 +43,6 @@ class ThreadSend extends Thread{
 			bi1 = r.createScreenCapture(new Rectangle(0, 0, 400, 400));//스크린샷을 찍어서 image에 저장해
 			ImageIO.write(bi1, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
-			System.out.println("보내는 이미지 : " + bi1);
 		}
 	}
 }
@@ -60,7 +59,6 @@ class ThreadRcv extends Thread{
 		//이미지를 받아오는 동시에 화면에 그림
 		while(true) {
 		sf1.frame.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bin)), 0, 0, 400, 700, sf1.frame);
-		System.out.println("받은 이미지 : " + bin);
 		}
 	}
 	

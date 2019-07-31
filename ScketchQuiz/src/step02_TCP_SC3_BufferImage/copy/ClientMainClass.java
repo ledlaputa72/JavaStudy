@@ -1,4 +1,4 @@
-package step02_TCP_SC3_BufferImage;
+package step02_TCP_SC3_BufferImage.copy;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -146,15 +146,15 @@ class ThreadSend extends Thread{
 	static final int w = 800, h = 700; 
 	static final int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 
-	Socket s1;
+	Socket socket;
 	BufferedImage image;
 	Robot robot;
 	BufferedOutputStream bos1; 
-	TestFrameClass mainFrame;
+	JPanel panelCanvas;
 	
-	public ThreadSend(Socket s1, TestFrameClass mainFrame) throws IOException, AWTException {
-		this.s1 = s1;
-		this.mainFrame = mainFrame;		
+	public ThreadSend(Socket s1, JPanel panelCanvas) throws IOException, AWTException {
+		this.socket = s1;
+		this.panelCanvas = panelCanvas;
 		
 		robot = new Robot();
 		bos1 = new BufferedOutputStream(s1.getOutputStream()); 
@@ -164,7 +164,6 @@ class ThreadSend extends Thread{
 			ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			System.out.println("보내는 이미지 : " + bos1);
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
-			System.out.println("보내는 이미지 : " + bos1);
 		}
 	}
 }////////////////////////////////////////
@@ -173,18 +172,18 @@ class ThreadSend extends Thread{
 //받기 쓰레드 ////////////////////////////////////////
 class ThreadRcv extends Thread{
 	
-	Socket s1;
-	BufferedInputStream bis1=null;
-	TestFrameClass mainFrame;
+	Socket socket;
+	BufferedInputStream bis1;
+	JPanel panelView;
 	
-	public ThreadRcv(Socket s1, TestFrameClass mainFrame) throws IOException, AWTException {
-		this.s1 = s1;
-		this.mainFrame = mainFrame;
+	public ThreadRcv(Socket s1, JPanel panelView) throws IOException, AWTException {
+		this.socket = s1;
+		this.panelView = panelView;
 		bis1 = new BufferedInputStream(s1.getInputStream());
 		//소켓의 입력스트림을 버퍼스트림으로
 
 		while(true) {
-			mainFrame.getPanelView().getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 400, mainFrame.getPanelView());
+			panelView.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 300, panelView);
 			System.out.println("받은 이미지 : " + bis1);
 		}
 	}
@@ -194,21 +193,28 @@ class ThreadRcv extends Thread{
 
 //#########################################################
 public class ClientMainClass {
-public static void main(String[] args) throws IOException, AWTException {
+public static void main(String[] args) throws IOException {
 	
-		Socket s1=new Socket("127.0.0.1", 9999);
+		Socket s1=new Socket("127.0.0.1", 8888);
 		System.out.println("접속완료 - 클라이언트");
 	
 		TestFrameClass mainFrame=new TestFrameClass(); //그림 그리기 작동
 		mainFrame.setVisible(true);
 		
 		//######쓰레드 #######################################
-
-		ThreadSend st = new ThreadSend(s1,mainFrame);
-		st.start();
 		
-		ThreadRcv rt = new ThreadRcv(s1,mainFrame);
-		rt.start();
+		ThreadSend st;
+		ThreadRcv rt;
+		try {
+			st=new ThreadSend(s1,mainFrame.getPanelCanvas());
+			rt = new ThreadRcv(s1,mainFrame.getPanelView());
+			st.start();
+			rt.start();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		//######쓰레드 #######################################
 		

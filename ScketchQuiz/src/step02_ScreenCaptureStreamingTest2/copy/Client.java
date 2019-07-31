@@ -1,4 +1,4 @@
-package step01_ScreenCaptureStreamingTest2;
+package step02_ScreenCaptureStreamingTest2.copy;
 
 import java.awt.*;
 import java.awt.event.*;
