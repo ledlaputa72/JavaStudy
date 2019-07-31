@@ -192,7 +192,7 @@ class ThreadRcv extends Thread{
 
 
 //#########################################################
-public class TestFrame {
+public class ClientMainClass {
 public static void main(String[] args) throws IOException {
 	
 		Socket s1=new Socket("127.0.0.1", 8888);
