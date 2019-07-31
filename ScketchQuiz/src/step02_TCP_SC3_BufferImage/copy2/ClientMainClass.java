@@ -57,25 +57,17 @@ class TestFrameClass extends JFrame implements MouseListener, MouseMotionListene
 		return panelCanvas;
 	}
 
-
-
 	public void setPanelCanvas(JPanel panelCanvas) {
 		this.panelCanvas = panelCanvas;
 	}
-
-
 
 	public JPanel getPanelView() {
 		return panelView;
 	}
 
-
-
 	public void setPanelView(JPanel panelView) {
 		this.panelView = panelView;
 	}
-
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -141,54 +133,42 @@ class TestFrameClass extends JFrame implements MouseListener, MouseMotionListene
 
 //#########################################################
 //보내기 쓰레드 ////////////////////////////////////////
-class ThreadSend extends Thread{
+class ThreadSendRcv extends Thread{
 	
 	static final int w = 800, h = 700; 
 	static final int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 
 	Socket s1;
-	BufferedImage image;
 	Robot robot;
+	
+	BufferedImage image=null;
 	BufferedOutputStream bos1; 
+	BufferedInputStream bis1;
+	
 	TestFrameClass mainFrame;
 	
-	public ThreadSend(Socket s1, TestFrameClass mainFrame) throws IOException, AWTException {
+	public ThreadSendRcv(Socket s1, TestFrameClass mainFrame) throws IOException, AWTException {
 		this.s1 = s1;
 		this.mainFrame = mainFrame;		
 		
 		robot = new Robot();
 		bos1 = new BufferedOutputStream(s1.getOutputStream()); 
-		
-		while(true) {
+
+//		while(true) {
+			//보내기 
 			image = robot.createScreenCapture(new Rectangle(0, 60, 800, 300));//스크린샷을 찍어서 image에 저장해
-			ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
-			System.out.println("보내는 이미지 : " + bos1);
+			ImageIO.write(image, "png", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
 			System.out.println("보내는 이미지 : " + bos1);
-		}
+			
+			//받기
+			bis1 = new BufferedInputStream(s1.getInputStream());
+			mainFrame.getPanelView().getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 400, mainFrame.getPanelView());
+			System.out.println("받은 이미지 : " + bis1);
+//		}
 	}
 }////////////////////////////////////////
 
-//#########################################################
-//받기 쓰레드 ////////////////////////////////////////
-class ThreadRcv extends Thread{
-	
-	Socket s1;
-	BufferedInputStream bis1=null;
-	TestFrameClass mainFrame;
-	
-	public ThreadRcv(Socket s1, TestFrameClass mainFrame) throws IOException, AWTException {
-		this.s1 = s1;
-		this.mainFrame = mainFrame;
-		bis1 = new BufferedInputStream(s1.getInputStream());
-		//소켓의 입력스트림을 버퍼스트림으로
-
-		while(true) {
-			mainFrame.getPanelView().getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 400, mainFrame.getPanelView());
-			System.out.println("받은 이미지 : " + bis1);
-		}
-	}
-}/////////////////////////////////////////////
 
 
 
@@ -196,7 +176,7 @@ class ThreadRcv extends Thread{
 public class ClientMainClass {
 public static void main(String[] args) throws IOException, AWTException {
 	
-		Socket s1=new Socket("127.0.0.1", 9999);
+		Socket s1=new Socket("127.0.0.1", 8888);
 		System.out.println("접속완료 - 클라이언트");
 	
 		TestFrameClass mainFrame=new TestFrameClass(); //그림 그리기 작동
@@ -204,12 +184,9 @@ public static void main(String[] args) throws IOException, AWTException {
 		
 		//######쓰레드 #######################################
 
-		ThreadSend st = new ThreadSend(s1,mainFrame);
-		st.start();
-		
-		ThreadRcv rt = new ThreadRcv(s1,mainFrame);
-		rt.start();
-		
+		ThreadSendRcv tsr = new ThreadSendRcv(s1,mainFrame);
+		tsr.start();
+		System.out.println("쓰레드밖 ");
 		//######쓰레드 #######################################
 		
 		System.out.println("클라이언트 끝");

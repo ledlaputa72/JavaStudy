@@ -46,10 +46,13 @@ class ServerRcvSend extends Thread {
 		System.out.println("받은 이미지 버퍼: " + bufferImage1); // 버퍼내용 확인
 		
 		while (true) {
-			//받기 
+			//받기 먼저#######################################
 			sf1.frame.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 0, 800, 400, sf1.frame);
 			System.out.println("받은 이미지 스트림 : " + bis1);
 			//보내기 
+			System.out.println("받은 이미지 :  " + bis1);
+			
+			//보내기 다음######################################
 			ImageIO.write(bufferImage1, "bmp", bos1);// 그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			System.out.println("보내는  이미지 버퍼: " + bufferImage1);
 			bos1.flush(); // 버퍼에 쓰인 이미지를 서버로 보
@@ -66,9 +69,8 @@ public class ServerMainClass {
 		ServerFrame sf1 = new ServerFrame();
 		sf1.setVisible(true);
 
-		ServerSocket ss1 = new ServerSocket(9999);
+		ServerSocket ss1 = new ServerSocket(8888);
 		System.out.println("서버 대기중 ....");
-		
 
 		while (true) {
 			Socket s1 = ss1.accept();
@@ -76,7 +78,7 @@ public class ServerMainClass {
 			//쓰레드 /////////////////////////////
 			ServerRcvSend srs1 = new ServerRcvSend(s1,sf1);
 			srs1.start();
-			
+			System.out.println("쓰레드밖 ");
 
 		}
 	}
