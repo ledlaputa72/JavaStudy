@@ -26,30 +26,34 @@ class ServerFrame extends JFrame {
 //서버 <--> 클라 받기 보내기 하나로 통한 ###############################################
 class ServerRcvSend extends Thread {
 	Socket s1;
-	JFrame sf1;
+	JFrame frame;
 	
 	BufferedImage bufferImage1=null;
 	BufferedInputStream bis1;
+	
 	BufferedImage bufferImage2=null;
 	BufferedOutputStream bos1;
 	
 	public ServerRcvSend(Socket s1, ServerFrame sf1) throws IOException {
 		this.s1 = s1;
-		this.sf1 = sf1;
+		this.frame = sf1;
+		
 		// 받아오기 ///////////////////////////////////////
 		bis1 = new BufferedInputStream(s1.getInputStream());
 		bos1 = new BufferedOutputStream(s1.getOutputStream());
 		
 		bufferImage1= ImageIO.read(bis1); //받은 데이터를 버퍼에 저장
-		System.out.println("받은 이미지 : " + bufferImage1); // 버퍼내용 확인
+		System.out.println("받은 이미지 버퍼: " + bufferImage1); // 버퍼내용 확인
+		
 		while (true) {
 			//받기 
 			sf1.frame.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 0, 800, 400, sf1.frame);
-			System.out.println("받은 이미지 : " + bis1);
+			System.out.println("받은 이미지 스트림 : " + bis1);
 			//보내기 
 			ImageIO.write(bufferImage1, "bmp", bos1);// 그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
+			System.out.println("보내는  이미지 버퍼: " + bufferImage1);
 			bos1.flush(); // 버퍼에 쓰인 이미지를 서버로 보
-			System.out.println("보내는 이미지 : " + bos1);
+			System.out.println("보내는 이미지 스트림 : " + bos1);
 		}
 	}
 }//ServerRcv end
