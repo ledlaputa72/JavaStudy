@@ -1,4 +1,4 @@
-package step10_ScketchCanvas;
+package step10_ScreenCaptureStreamingTest2;
 
 import java.awt.*;
 import javax.swing.*;
@@ -13,9 +13,10 @@ class JFramTest2 extends JFrame implements MouseListener, MouseMotionListener, A
 	//레이아웃용 컴포넌트
 	private JPanel contentPane;
 	private JTextField textField;
-	static JPanel panelCanvas;
-//	static JPanel panelView;
-	
+	static JPanel panelCanvas=new JPanel();
+	static JPanel panelView=new JPanel();
+	static int panelCanvasX;
+	static int panelCanvasY;
 	
 	//그리기용 컴포넌트
 	static int w = Toolkit.getDefaultToolkit().getScreenSize().width, h = Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -34,6 +35,9 @@ class JFramTest2 extends JFrame implements MouseListener, MouseMotionListener, A
 	public JFramTest2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1200, 900);
+		setResizable(false);
+		setAlwaysOnTop(true);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -46,18 +50,19 @@ class JFramTest2 extends JFrame implements MouseListener, MouseMotionListener, A
 		contentPane.add(panelTop); //추가
 
 		
-		panelCanvas = new JPanel();
+
 		panelCanvas.setBackground(Color.YELLOW);
-		panelCanvas.setBounds(0, 60, 800, 400);
+		panelCanvas.setBounds(0, 60, 800, 700);
 		panelCanvas.setVisible(true);
 		contentPane.add(panelCanvas);//추가
 		
-		/*panelView = new JPanel();
+		panelView = new JPanel();
 		panelView.setBackground(Color.RED);
-		panelView.setBounds(0, 460, 800, 300);
+		panelView.setBounds(0, 60, 800, 700);
 		panelView.setVisible(false);
 		contentPane.add(panelView);//추가
-		*/		
+				
+		
 		JPanel panelChat = new JPanel();
 		panelChat.setBackground(Color.GRAY);
 		panelChat.setBounds(800, 60, 384, 700);
@@ -149,6 +154,8 @@ public class JFrameClient {
 		//그림 기능 작동 
 		JFramTest2 sc=new JFramTest2(); //그림 그리기 작동
 		sc.setVisible(true);
+
+		
 		System.out.println("그림판 작동 - 클라이언트");
 		JPanel panelView = new JPanel();
 		panelView.setBackground(Color.RED);

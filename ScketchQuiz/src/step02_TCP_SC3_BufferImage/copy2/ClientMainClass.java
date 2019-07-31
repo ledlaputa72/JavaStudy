@@ -135,15 +135,15 @@ class TestFrameClass extends JFrame implements MouseListener, MouseMotionListene
 //보내기 쓰레드 ////////////////////////////////////////
 class ThreadSendRcv extends Thread{
 	
-	static final int w = 800, h = 700; 
-	static final int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
+	private static  int w = 800, h = 700; 
+	private static  int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 
 	Socket s1;
 	Robot robot;
 	
-	BufferedImage image=null;
-	BufferedOutputStream bos1; 
-	BufferedInputStream bis1;
+	static BufferedImage image=null;
+	static BufferedOutputStream bos1; 
+	static BufferedInputStream bis1;
 	
 	TestFrameClass mainFrame;
 	
@@ -152,31 +152,34 @@ class ThreadSendRcv extends Thread{
 		this.mainFrame = mainFrame;		
 		
 		robot = new Robot();
-		bos1 = new BufferedOutputStream(s1.getOutputStream()); 
 
-//		while(true) {
+		while(true) {
+			//보내기//////////////////////////////////
+			bos1 = new BufferedOutputStream(s1.getOutputStream()); 
 			//보내기 
 			image = robot.createScreenCapture(new Rectangle(0, 60, 800, 300));//스크린샷을 찍어서 image에 저장해
 			ImageIO.write(image, "png", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
+			System.out.println("보내는 이미지1 : " + image);
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
-			System.out.println("보내는 이미지 : " + bos1);
+			System.out.println("보내는 이미지2 : " + bos1);
+			
 			
 			//받기
 			bis1 = new BufferedInputStream(s1.getInputStream());
-			mainFrame.getPanelView().getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 400, mainFrame.getPanelView());
-			System.out.println("받은 이미지 : " + bis1);
-//		}
+			//
+			System.out.println("받은 이미지3 : " + bis1);
+			mainFrame.panelView.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), mainFrame.panelView.getX(), mainFrame.panelView.getY(), 800, 400, mainFrame.panelView);
+			System.out.println("받은 이미지4 : " + bis1);
+		}
 	}
 }////////////////////////////////////////
-
-
 
 
 //#########################################################
 public class ClientMainClass {
 public static void main(String[] args) throws IOException, AWTException {
 	
-		Socket s1=new Socket("127.0.0.1", 8888);
+		Socket s1=new Socket("127.0.0.1", 7777);
 		System.out.println("접속완료 - 클라이언트");
 	
 		TestFrameClass mainFrame=new TestFrameClass(); //그림 그리기 작동
@@ -186,7 +189,7 @@ public static void main(String[] args) throws IOException, AWTException {
 
 		ThreadSendRcv tsr = new ThreadSendRcv(s1,mainFrame);
 		tsr.start();
-		System.out.println("쓰레드밖 ");
+		System.out.println("쓰레드밖5 ");
 		//######쓰레드 #######################################
 		
 		System.out.println("클라이언트 끝");

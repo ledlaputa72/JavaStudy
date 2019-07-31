@@ -38,7 +38,7 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 		p2.addMouseMotionListener(this); //중요!!! 마우스 액션 이벤트 등록
 		
 		//메인 프레임 
-		f1.setSize(800, 800);
+		f1.setSize(400, 400);
 		f1.setTitle("Scketch Quiz Client");
 		f1.setLayout(blo1);
 		f1.setVisible(true);
@@ -140,7 +140,7 @@ public class Client {
 	
 		try {
 			//소켓으로 접속
-			socket = new Socket(serverip, 8888); 
+			socket = new Socket(serverip, 9999); 
 			System.out.println("접속완료 - 클라이언트");
 			
 			

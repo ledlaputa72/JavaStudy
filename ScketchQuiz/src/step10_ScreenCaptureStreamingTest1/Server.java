@@ -25,7 +25,11 @@ class ThreadSend extends Thread{
 		r = new Robot();
 		bos1 = new BufferedOutputStream(socket.getOutputStream()); 
 		while(true) {
-			image = r.createScreenCapture(new Rectangle(0, 0, 400, 400));//스크린샷을 찍어서 image에 저장해
+			//좌표 핵심##################################################################
+			Painter.p2X=(int)Painter.p2.getLocationOnScreen().getX(); //좌표 변수를 만들고  static으로 변경
+			Painter.p2Y=(int)Painter.p2.getLocationOnScreen().getY();
+			//###########################################################################
+			image = r.createScreenCapture(new Rectangle(Painter.p2X-4, Painter.p2Y-60, 400, 400));//스크린샷을 찍어서 image에 저장해
 			ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
 		}
@@ -35,8 +39,8 @@ class ThreadSend extends Thread{
 public class Server {
 	
 	//상수 서버 화면크기, 좌표(모니터 중앙) 
-	final int w = 400, h = 400; 
-	final int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
+	private int w = 400, h = 400; 
+	private int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 
 	JFrame frame;
 
@@ -55,6 +59,7 @@ public class Server {
 		frame.setBounds(x, y, w, h); //상수 크기 받아오기 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.setResizable(false);
 	
 		//통신 준비 
 		ServerSocket socket_s = null;
@@ -62,7 +67,7 @@ public class Server {
 		
 		try {
 			//클라이언트와 접속함
-			socket_s = new ServerSocket(12345); //포트 열기 
+			socket_s = new ServerSocket(9999); //포트 열기 
 			socket = socket_s.accept(); // Listen 
 			System.out.println("클라이언트 연결 완료! - 서버" + socket);
 		
