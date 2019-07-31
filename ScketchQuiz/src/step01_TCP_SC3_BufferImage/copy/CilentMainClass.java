@@ -1,4 +1,4 @@
-package step01_TCP_SC3_BufferImage;
+package step01_TCP_SC3_BufferImage.copy;
 
 import java.net.*;
 
@@ -225,7 +225,7 @@ class MainFrameLayout extends JFrame  implements MouseListener, MouseMotionListe
 	}
 } // MainFrameLayout end
 
-/*class SendThread extends Thread {
+class SendThread extends Thread {
 	//클라이언트에서 서버로 데이타 보내기 
 	Socket s1;
 	MainFrameLayout mainFrame;
@@ -275,7 +275,7 @@ class RcvThread extends Thread {
 			System.out.println(e);
 		}
 	}
-}*/
+}
 
 //메인 클래스 #######################################################
 public class CilentMainClass {
