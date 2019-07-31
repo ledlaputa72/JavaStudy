@@ -27,15 +27,15 @@ class ThreadSend extends Thread{
 
 	Socket socket;
 	BufferedImage image;
-	Robot r;
+	Robot robot;
 	BufferedOutputStream bos1; 
 	
 	public ThreadSend(Socket s1) throws IOException, AWTException {
 		this.socket = s1;
-		r = new Robot();
+		robot = new Robot();
 		bos1 = new BufferedOutputStream(s1.getOutputStream()); 
 		while(true) {
-			image = r.createScreenCapture(new Rectangle(0, 60, 800, 700));//스크린샷을 찍어서 image에 저장해
+			image = robot.createScreenCapture(new Rectangle(0, 60, 800, 700));//스크린샷을 찍어서 image에 저장해
 			ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
 		}

@@ -1,4 +1,4 @@
-package step01_TCP_SC3_BufferImage;
+package step01_TCP_SC3_Screen;
 
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -36,7 +36,7 @@ public class ServerMainClass {
 	public static void main(String[] args) throws IOException {
 		
 		try {
-			ServerSocket ss1=new ServerSocket(7777);
+			ServerSocket ss1=new ServerSocket(9999);
 			System.out.println("서버 대기중 ....");
 			
 			while(true) {

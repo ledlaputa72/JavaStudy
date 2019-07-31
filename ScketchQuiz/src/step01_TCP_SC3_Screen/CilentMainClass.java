@@ -1,4 +1,4 @@
-package step01_TCP_SC3_BufferImage;
+package step01_TCP_SC3_Screen;
 
 import java.net.*;
 
@@ -150,7 +150,7 @@ class MainFrameLayout extends JFrame  implements MouseListener, MouseMotionListe
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
-		//
+		
 		panelCanvas = new JPanel();
 		panelCanvas.setBackground(Color.YELLOW);
 		panelCanvas.setBounds(0, 60, 800, 300);
@@ -225,25 +225,32 @@ class MainFrameLayout extends JFrame  implements MouseListener, MouseMotionListe
 	}
 } // MainFrameLayout end
 
+//#####################################################################
 class SendThread extends Thread {
 	//클라이언트에서 서버로 데이타 보내기 
+	static final int w = 800, h = 700; 
+	static final int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
+
 	Socket s1;
-	MainFrameLayout mainFrame;
-	
-	public SendThread(Socket s1,MainFrameLayout mainFrame) throws IOException {
+	BufferedImage image;
+	Robot robot;
+	BufferedOutputStream bos1; 
+	JPanel panelCanvas=null;
+
+	public SendThread(Socket s1,JPanel panelCanvas) throws IOException, AWTException {
 		this.s1 = s1;
-		this.mainFrame = mainFrame;
+		this.panelCanvas = panelCanvas;
+		robot = new Robot();
+		bos1 = new BufferedOutputStream(s1.getOutputStream()); 
+		
 	}
-	
 	public void run(){
 		try {
-			File file1=new File("aa.png");
-			//BufferedImage bufferImage = ImageIO.read(file1); // 기존 파일 read 하여 이미지화한다.
-			BufferedImage bufferImage = ImageIO.read((ImageInputStream)mainFrame.getPanelCanvas()); // 캔버스 이미지를 읽어 이미지버터에 저장
-			ImageIO.write(bufferImage, "png", s1.getOutputStream()); // 소켓의 io stream 을 통해 보낸다.
-			
-			System.out.print("클라이언트 : 이미지를 서버로 보냄"+"\t");
-			System.out.println("보낸 파일 : " + bufferImage);
+			while(true) {
+				image = robot.createScreenCapture(new Rectangle(0, 0, 800, 300));//스크린샷을 찍어서 image에 저장해
+				ImageIO.write(image, "bmp", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
+				bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
+			}
 			
 		}catch(IOException e) {
 			System.out.println(e);
@@ -251,25 +258,22 @@ class SendThread extends Thread {
 	}
 }
 
-
+//#####################################################################
 class RcvThread extends Thread {
 	//클라이언트에서 서버로 부터 받은 데이터 처리 
-	Socket s1;
-	MainFrameLayout mainFrame;
+	Socket socket;
+	BufferedInputStream bis1;
+	JPanel panelView=null;
 	
-	public RcvThread(Socket s1,MainFrameLayout mainFrame) throws IOException {
-		this.s1 = s1;
-		this.mainFrame = mainFrame;
+	public RcvThread(Socket s1,JPanel panelView) throws IOException {
+		this.socket = s1;
+		this.panelView = panelView;
+		bis1 = new BufferedInputStream(s1.getInputStream());
 	}
 	
 	public void run(){
 		try {
-			BufferedImage bufferImage = ImageIO.read(s1.getInputStream());//read - 네트웍에서 받은
-			ImageIO.write(bufferImage, "png", (ImageOutputStream) mainFrame.getPanelView()); //
-			//ImageIO.write(bufferImage, "png", viewPanel); //viewPanel에 그리기 
-			
-			System.out.print("클라이언트 : 서버에서 받은 이미지 그리기"+"\t");
-			System.out.println("받은 파일 : " + bufferImage);
+			panelView.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 0, 700, 300, panelView);
 			
 		}catch(IOException e) {
 			System.out.println(e);
@@ -280,24 +284,26 @@ class RcvThread extends Thread {
 //메인 클래스 #######################################################
 public class CilentMainClass {
 	
-	public static void main(String[] args) throws IOException {
-		MainFrameLayout mainFrame;
+	public static void main(String[] args) throws IOException, AWTException {
 		
-		mainFrame=new MainFrameLayout(); //그림 그리기 작동
+		
+		Socket s1=new Socket("127.0.0.1", 7890);
+		System.out.println("접속완료 - 클라이언트");
+		
+		MainFrameLayout mainFrame=new MainFrameLayout(); //그림 그리기 작동
 		mainFrame.setVisible(true);
+
 		
-		try {
-			Socket s1=new Socket("127.0.0.1", 8888);
-			
-			SendThread st=new SendThread(s1,mainFrame);
-			RcvThread rt=new RcvThread(s1,mainFrame);
+		/*try {
+			SendThread st=new SendThread(s1,mainFrame.panelCanvas);
+			RcvThread rt=new RcvThread(s1,mainFrame.panelView);
 			
 			st.start();
 			rt.start();
 			
 		} catch (UnknownHostException e) {
 			System.out.println(e);
-		}
+		}*/
 		System.out.println("클라이언트 끝");
 	}
 
