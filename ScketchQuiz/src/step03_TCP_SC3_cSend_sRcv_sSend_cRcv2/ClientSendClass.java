@@ -63,25 +63,17 @@ class TestFrameClass extends JFrame implements MouseListener, MouseMotionListene
 		return panelCanvas;
 	}
 
-
-
 	public void setPanelCanvas(JPanel panelCanvas) {
 		this.panelCanvas = panelCanvas;
 	}
-
-
 
 	public JPanel getPanelView() {
 		return panelView;
 	}
 
-
-
 	public void setPanelView(JPanel panelView) {
 		this.panelView = panelView;
 	}
-
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -165,8 +157,8 @@ class ThreadSend extends Thread{
 		
 		robot = new Robot();
 		
-		
 		while(true) {
+			//보내기 ######################################################
 			bos1 = new BufferedOutputStream(s1.getOutputStream()); 
 			
 			//좌표 핵심##################################################################
@@ -206,7 +198,7 @@ class ThreadRcv extends Thread{
 			bufferImage2=ImageIO.read(bis1); //받은 이미지를 버퍼에
 			System.out.println("CR2) 받은 이미지 : " + bufferImage2);
 			
-			TestFrameClass.panelView.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 400, TestFrameClass.panelView);
+			mainFrame.panelView.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), 0, 360, 800, 400, mainFrame.panelView);
 			System.out.println("CR3) 받은 이미지 : " + bis1);
 		}
 	}
@@ -215,26 +207,21 @@ class ThreadRcv extends Thread{
 
 
 //#########################################################
-public class ClientMainClass {
+public class ClientSendClass {
 public static void main(String[] args) throws IOException, AWTException {
 	
-		Socket s1=new Socket("127.0.0.1", 9999);
+		Socket s1=new Socket("127.0.0.1", 7777);
 		System.out.println("접속완료 - 클라이언트");
 	
-		TestFrameClass mainFrame=new TestFrameClass(); //그림 그리기 작동
-		mainFrame.setVisible(true);
+		TestFrameClass ClientSend=new TestFrameClass(); //그림 그리기 작동
+		ClientSend.setVisible(true);
 		
 		//######쓰레드 #######################################
+		while (true) {
+			ThreadSend ts = new ThreadSend(s1,ClientSend);
+			ts.start();
+		}
 
-		ThreadSend st = new ThreadSend(s1,mainFrame);
-		st.start();
-		
-		ThreadRcv rt = new ThreadRcv(s1,mainFrame);
-		rt.start();
-		
-		//######쓰레드 #######################################
-		
-		System.out.println("클라이언트 끝");
 	}
 	
 }

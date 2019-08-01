@@ -14,9 +14,11 @@ import javax.swing.border.*;
 
 
 class TestFrameClass extends JFrame implements MouseListener, MouseMotionListener, ActionListener  {
-	JPanel contentPane; //메인 컨텐츠페인
-	JPanel panelCanvas; //그림 그리는 패널
-	JPanel panelView; //그림 그리는 패널
+	static JPanel contentPane; //메인 컨텐츠페인
+	static JPanel panelCanvas; //그림 그리는 패널
+	static JPanel panelView; //그림 그리는 패널
+	static int panelCanvasX;
+	static int panelCanvasY;
 	
 	int w = Toolkit.getDefaultToolkit().getScreenSize().width, h = Toolkit.getDefaultToolkit().getScreenSize().height;
 	int witchiX=0, witchiY=0; //마우스의 좌표 , 클래스 밑에 생긴 전역 변수
@@ -141,7 +143,8 @@ class ThreadSendRcv extends Thread{
 	Socket s1;
 	Robot robot;
 	
-	static BufferedImage image=null;
+	static BufferedImage bufferImage1=null;
+	static BufferedImage bufferImage2=null;
 	static BufferedOutputStream bos1; 
 	static BufferedInputStream bis1;
 	
@@ -154,22 +157,33 @@ class ThreadSendRcv extends Thread{
 		robot = new Robot();
 
 		while(true) {
-			//보내기//////////////////////////////////
+			//보내기 ######################################################
 			bos1 = new BufferedOutputStream(s1.getOutputStream()); 
-			//보내기 
-			image = robot.createScreenCapture(new Rectangle(0, 60, 800, 300));//스크린샷을 찍어서 image에 저장해
-			ImageIO.write(image, "png", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
-			System.out.println("CS1) 보내는 이미지1 : " + image);
+			
+			//좌표 핵심##################################################################
+			TestFrameClass.panelCanvasX=(int)TestFrameClass.panelCanvas.getLocationOnScreen().getX(); //좌표 변수를 만들고  static으로 변경
+			TestFrameClass.panelCanvasY=(int)TestFrameClass.panelCanvas.getLocationOnScreen().getY();
+			//###########################################################################
+			bufferImage1 = robot.createScreenCapture(new Rectangle(TestFrameClass.panelCanvasX-4, TestFrameClass.panelCanvasY-60, 800, 700));//스크린샷을 찍어서 image에 저장해
+			//image = robot.createScreenCapture(new Rectangle(0, 60, 800, 300));//스크린샷을 찍어서 image에 저장해
+			System.out.println("CS1) 보내는 이미지1 : " + bufferImage1);
+			
+			ImageIO.write(bufferImage1, "png", bos1);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
+			System.out.println("CS2) 보내는 이미지2 : " + bufferImage1);
+			
 			bos1.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
-			System.out.println("CS2) 보내는 이미지2 : " + bos1);
+			System.out.println("CS3) 보내는 이미지3 : " + bos1);
 			
 			
 			//받기
 			bis1 = new BufferedInputStream(s1.getInputStream());
-			//
-			System.out.println("CR3) 받은 이미지3 : " + bis1);
+			System.out.println("CR1) 받은 이미지1 : " + bis1);
+			
+			/*bufferImage2=ImageIO.read(bis1); //받은 이미지를 버퍼에
+			System.out.println("CR2) 받은 이미지 : " + bufferImage2);*/
+			
 			mainFrame.panelView.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(bis1)), mainFrame.panelView.getX(), mainFrame.panelView.getY(), 800, 400, mainFrame.panelView);
-			System.out.println("CR4) 받은 이미지4 : " + bis1);
+			System.out.println("CR3) 받은 이미지2 : " + bis1);
 		}
 	}
 }////////////////////////////////////////
