@@ -1,4 +1,4 @@
-package step03_ScreenCaptureStreamingTest3;
+package step03_ScreenCaptureWindowFix_fullWindow;
 
 import java.awt.*;
 

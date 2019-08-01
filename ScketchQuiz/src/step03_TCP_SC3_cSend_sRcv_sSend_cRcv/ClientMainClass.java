@@ -1,4 +1,4 @@
-package step03_TCP_SC3_BufferImage3;
+package step03_TCP_SC3_cSend_sRcv_sSend_cRcv;
 
 import java.awt.*;
 import java.awt.event.*;
