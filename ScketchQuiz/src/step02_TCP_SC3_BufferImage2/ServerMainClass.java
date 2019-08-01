@@ -1,4 +1,4 @@
-package step02_TCP_SC3_BufferImage.copy;
+package step02_TCP_SC3_BufferImage2;
 
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
