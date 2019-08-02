@@ -1,4 +1,4 @@
-package step03_TCP_SC3_cSend_sRcv_sSend_cRcv;
+package step03_TCP_SC3_1ThreadSendRcv2;
 
 import java.awt.*;
 import java.awt.event.*;

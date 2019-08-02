@@ -4,7 +4,6 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-import Day045_Thread3_Network.IPMainClass;
 
 //////////////////////////////////////////////////////////
 class ServerClass {
