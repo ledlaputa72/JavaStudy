@@ -1,4 +1,4 @@
-package step04_multiServerTest_GUI;
+package step04_multiServerTest_GUI2;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
