@@ -55,12 +55,12 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 		f1.setResizable(false);
 		
 		
-		//p2 중앙 캔버스
+		//p1 상단 캔버스
 		p1.setBackground(Color.YELLOW);
 		p1.setBounds(0,0,400,400);
 
 		
-		//p3 하단 정보 
+		//p2 하단 정보 
 		p2.setBackground(Color.CYAN);
 		p2.setBounds(0,400,400,400);
 		
@@ -158,37 +158,6 @@ class ThreadClientSendClass extends Thread {
 	}
 		
 }
-	
-/*class ThreadClientRcvClass extends Thread {
-
-	Socket socket;
-	DataInputStream inputStream;
-	
-	// 생성자
-	public ThreadClientRcvClass(Socket socket) throws IOException {
-		
-		this.socket = socket;
-		
-		inputStream = new DataInputStream(socket.getInputStream()); // read
-		
-	}
-	
-	public void run() {
-		
-		while (inputStream != null) {
-			
-			try {
-				
-				System.out.println(inputStream.readUTF());
-				
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-		}
-	}
-
-}*/
 
 public class TcpMulClient {
 
@@ -213,14 +182,12 @@ public class TcpMulClient {
 			ThreadClientSendClass tcc1 = new ThreadClientSendClass(s1, "Test"); // 닉네임
 			Thread tsend1 = new Thread(tcc1); // 보내는 chat 위해
 			tsend1.start();
+
 			
-			/*//받고 출력하기 쓰레드
-			ThreadRcv threadR =new ThreadRcv(s1);
-			threadR.start();*/
-			
-			//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
+			//화면 이미지 스크린샷 전송 - 쓰레드 처리###############################################
 			ThreadSend threadS=new ThreadSend(s1);
 			threadS.start();
+			//#########################################################################
 			
 		} catch (Exception e) {
 			

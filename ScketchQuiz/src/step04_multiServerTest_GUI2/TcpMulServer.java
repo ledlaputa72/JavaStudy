@@ -85,47 +85,6 @@ class ThreadRcv extends Thread{
 }//ThreadRcv end////////////////////////////////////////////
 
 //########################################################
-//ServerClass
-//########################################################
-class ServerClass {
-	//collection에 들어가는 것은 ThreadServerClass only 
-	//Vector
-	//HashMap, Collection.synchronizedMap
-	static ArrayList<ThreadServerClass> threadList = new ArrayList<ThreadServerClass>(); //제네릭
-	
-	DataOutputStream outputStream; //출력 스트림 
-	
-	public ServerClass(int portno) throws IOException { //생성자 
-		Socket s1 = null;
-		ServerSocket ss1 = new ServerSocket(portno); //서버소켓 생성 Listen 
-		System.out.println("서버가동......");
-		
-		while (true ) {
-			s1 = ss1.accept(); //기다리는 중 
-			System.out.println("접속주소 : "+ s1.getInetAddress() + ", 접속포트: "+s1.getPort());
-			
-			//===================================================
-			ThreadServerClass tServer1 = new ThreadServerClass(s1);//s1초기치 
-			tServer1.start();
-			threadList.add(tServer1);//컬랙션에 add
-			//=====================================================
-			
-			System.out.println("접속자 수 : " + threadList.size()+" 명");
-		}// while end
-	}// 생성자 end
-	
-	// 접속 중인 쓰레드에게 chat 내용 보낸다.
-	// sendChat() 메소드 정의문
-	static void sendChat(String chat) throws IOException {
-		
-		for (int i=0; i<threadList.size(); i++)
-			threadList.get(i).outputStream.writeUTF(chat);
-	}
-	
-}// ServerClass end////////////////////////////////////////////
-
-
-//########################################################
 //서버를 위한 받기 쓰레드
 //########################################################
 class ThreadRcvServer extends Thread{
@@ -160,6 +119,7 @@ class ThreadRcvServer extends Thread{
 	}//run end
 }//ThreadRcv end////////////////////////////////////////////
 
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //########################################################
 //서버를 위한 보내기 쓰레드
 //########################################################
@@ -189,6 +149,52 @@ class ThreadSendServer extends Thread{
 		}//try end
 	}//run end
 }//ThreadRcv end////////////////////////////////////////////
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+//########################################################
+//ServerClass
+//########################################################
+class ServerClass {
+	//collection에 들어가는 것은 ThreadServerClass only 
+	//Vector
+	//HashMap, Collection.synchronizedMap
+	static ArrayList<ThreadServerClass> threadList = new ArrayList<ThreadServerClass>(); //제네릭
+	
+	DataOutputStream outputStream; //출력 스트림 
+	
+	public ServerClass(int portno) throws IOException, AWTException { //생성자 
+		Socket s1 = null;
+		ServerSocket ss1 = new ServerSocket(portno); //서버소켓 생성 Listen 
+		System.out.println("서버가동......");
+		
+		while (true ) {
+			s1 = ss1.accept(); //기다리는 중 
+			System.out.println("접속주소 : "+ s1.getInetAddress() + ", 접속포트: "+s1.getPort());
+			
+			//===================================================
+			ThreadServerClass tServer1 = new ThreadServerClass(s1);//s1초기치 
+			tServer1.start();
+			threadList.add(tServer1);//컬랙션에 add
+			
+			//=====================================================
+			
+			System.out.println("접속자 수 : " + threadList.size()+" 명");
+		}// while end
+	}// 생성자 end
+	
+	// 접속 중인 쓰레드에게 chat 내용 보낸다.
+	// sendChat() 메소드 정의문
+	static void sendChat(String chat) throws IOException {
+		
+		for (int i=0; i<threadList.size(); i++)
+			threadList.get(i).outputStream.writeUTF(chat);
+	}
+	
+}// ServerClass end////////////////////////////////////////////
+
+
 
 //########################################################
 //ThreadServerClass
@@ -229,6 +235,7 @@ class ThreadServerClass extends Thread {
 			//화면 이미지 스크린샷 전송 - 쓰레드 처리
 			ThreadSend ts1=new ThreadSend(socket1);
 			ts1.start();*/
+			
 			//서버 받기
 			ThreadRcvServer threadRserver = new ThreadRcvServer(socket1);
 			threadRserver.start();
@@ -240,7 +247,7 @@ class ThreadServerClass extends Thread {
 			//##############################################
 			
 			}
-		catch(IOException | AWTException e) {
+		catch(IOException | AWTException e) { //
 			e.printStackTrace();//에러내용 출력을 안하려면 주석단다
 			}
 		finally {//나간 쓰레드의 인덱스 찾기 
@@ -272,7 +279,7 @@ public class TcpMulServer {
 		
 		//new ServeClass()
 		new ServerClass(8888);
-
+		
 	}
 
 }
