@@ -69,7 +69,7 @@ public class TcpMulClientRcv {
 			tsend1.start();
 			
 			//받고 출력하기 쓰레드
-			ThreadRcv threadR =new ThreadRcv(s1);
+			ThreadRcvClient threadR =new ThreadRcvClient(s1);
 			threadR.start();
 
 			

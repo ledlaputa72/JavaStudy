@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
+
 class Painter extends Frame implements MouseListener, MouseMotionListener, ActionListener{
 	//필드 맴
 	static int w = Toolkit.getDefaultToolkit().getScreenSize().width, h = Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -125,17 +126,17 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 
 class ThreadClientSendClass extends Thread {
 	
-	Socket socket;
-	DataOutputStream outputStream;
+	Socket s1;
+	DataOutputStream DataOutputStream;
 	String nickname;
 	
 	// 초기치로 소켓 객체, 닉네임이 넘어온다.
-	public ThreadClientSendClass(Socket socket, String nickname) throws IOException {
+	public ThreadClientSendClass(Socket s1, String nickname) throws IOException {
 
-		this.socket = socket;
+		this.s1 = s1;
 		this.nickname = nickname;
 		
-		outputStream = new DataOutputStream(socket.getOutputStream());
+		DataOutputStream = new DataOutputStream(s1.getOutputStream());
 		
 	}
 	
@@ -145,8 +146,8 @@ class ThreadClientSendClass extends Thread {
 			
 		try {
 				
-			if (outputStream != null)
-				outputStream.writeUTF(nickname); // 닉네임 send
+			if (DataOutputStream != null)
+				DataOutputStream.writeUTF(nickname); // 닉네임 send
 				
 			/*while (outputStream != null) 
 				outputStream.writeUTF("(** " + nickname + " **) " + in1.nextLine()); // io 스트림을 통해 상대방에게 chat 보낸다.
@@ -156,7 +157,6 @@ class ThreadClientSendClass extends Thread {
 			e.printStackTrace();
 		}
 	}
-		
 }
 
 public class TcpMulClient {
@@ -167,32 +167,31 @@ public class TcpMulClient {
 
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-
 			
-		try {
+		Socket s1 = new Socket("127.0.0.1", 8888); // ip 주소, 포트 번호
+		
+		System.out.println("서버에 연결...");
+		
+		//그림 기능 작동 
+		Painter sendClient=new Painter(); //그림 그리기 작동
+		System.out.println("그림판 작동 - 클라이언트");
+		
+		ThreadClientSendClass tcc1 = new ThreadClientSendClass(s1, "Test"); // 닉네임
+		Thread tsend1 = new Thread(tcc1); // 보내는 chat 위해
+		tsend1.start();
+		
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리###############################################
+		//받고 출력하기 쓰레드
+		ThreadRcvClient threadR =new ThreadRcvClient(s1);
+		threadR.start();
+		Thread.sleep(100);
+		
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
+		ThreadSendClient ts1=new ThreadSendClient(s1);
+		ts1.start();
+		Thread.sleep(100);
+		//#########################################################################
 			
-			Socket s1 = new Socket("127.0.0.1", 8888); // ip 주소, 포트 번호
-			
-			System.out.println("서버에 연결...");
-			
-			//그림 기능 작동 
-			Painter sendClient=new Painter(); //그림 그리기 작동
-			System.out.println("그림판 작동 - 클라이언트");
-			
-			ThreadClientSendClass tcc1 = new ThreadClientSendClass(s1, "Test"); // 닉네임
-			Thread tsend1 = new Thread(tcc1); // 보내는 chat 위해
-			tsend1.start();
-
-			
-			//화면 이미지 스크린샷 전송 - 쓰레드 처리###############################################
-			ThreadSend threadS=new ThreadSend(s1);
-			threadS.start();
-			//#########################################################################
-			
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
 	}
 
 }
