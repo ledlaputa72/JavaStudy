@@ -1,4 +1,4 @@
-package step06_02_multiServerTest_Server_ReSend_1Class_Test;
+package step06_02_multiServerTest_Server_ReSend_1Class_Test.copy;
 
 import java.awt.*;
 import java.awt.event.*;

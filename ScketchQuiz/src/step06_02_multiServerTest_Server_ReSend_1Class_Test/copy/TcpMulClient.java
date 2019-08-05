@@ -1,4 +1,4 @@
-package step05_01_multiServerTest_Server_ReSend_1Class;
+package step06_02_multiServerTest_Server_ReSend_1Class_Test.copy;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
