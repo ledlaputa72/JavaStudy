@@ -1,4 +1,4 @@
-package step05_02_SC2window_pireSendRcv_OK_4way_Test;
+package step06_02_SC2window_pireSendRcv_OK_4way_OK;
 
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
@@ -28,11 +28,8 @@ public class ThreadRcvClient  extends Thread{
 	
 		try {
 			while(true) {
-//				imageRcvC = ImageIO.read(inputStreamC); // 데이터를 받아서 버퍼에 저장
-					System.out.println("###클라 받기1) inputStreamC: " + inputStreamC);
-//					System.out.println("###클라 받기2) imageRcvC: " + imageRcvC);
+				System.out.println("###클라 받기1) inputStreamC: " + inputStreamC);
 				Painter.p2.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(inputStreamC)), 0, 0, w, h, Painter.p2);
-//				Thread.sleep(100);
 				}
 			}
 		catch(Exception e) {

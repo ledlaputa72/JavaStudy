@@ -1,4 +1,4 @@
-package step05_02_SC2window_pireSendRcv_OK_4way_Test;
+package step06_02_SC2window_pireSendRcv_OK_4way_OK;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -32,15 +32,6 @@ public class Server {
 			
 			EchoThreadServer ets=new EchoThreadServer(s1);
 			ets.start();
-			
-			//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
-//			ThreadSendServer threadSS=new ThreadSendServer(s1);
-//			threadSS.start();
-			
-			//받고 출력하기 쓰레드
-			/*ThreadRcvServer threadRS =new ThreadRcvServer(s1);
-			threadRS.start();
-			Thread.sleep(500);*/
 			
 		}//쓰레드////////////////////////////////////////
 		

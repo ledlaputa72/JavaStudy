@@ -1,4 +1,4 @@
-package step05_02_SC2window_pireSendRcv_OK_4way_Test;
+package step06_02_SC2window_pireSendRcv_OK_4way_OK;
 
 import java.awt.*;
 import java.awt.event.*;

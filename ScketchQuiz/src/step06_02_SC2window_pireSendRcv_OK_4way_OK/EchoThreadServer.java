@@ -1,4 +1,4 @@
-package step05_02_SC2window_pireSendRcv_OK_4way_Test;
+package step06_02_SC2window_pireSendRcv_OK_4way_OK;
 
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
@@ -31,40 +31,15 @@ public class EchoThreadServer extends Thread{
 			while(true) {
 				//받기 
 						System.out.println("## 서버 받기1 inputStreamS : " + inputStreamS);
-//				imageRcvS = ImageIO.read(inputStreamS); // 데이터를 받아서 버퍼에 저장
-//				imageSendS=imageRcvS;
-//						System.out.println("## 서버 받기2 imageRcvS : " + imageRcvS);
 				Painter.p2.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(inputStreamS)), 0, 0, w, h, Painter.p2);
 						System.out.println("## 서버 받기3 inputStreamS : " + inputStreamS);
 				//보내기 
-//						System.out.println("## 서버 보내기1 imageSendS : " + imageSendS);
-				ImageIO.write(ImageIO.read(inputStreamS), "bmp", outputStreamServer); //얘가 문젠데.....
+				ImageIO.write(ImageIO.read(inputStreamS), "bmp", outputStreamServer); //
 						System.out.println("## 서버 보내기2 outputStreamServer : " + outputStreamServer);
 				outputStreamServer.flush(); //버퍼에 쓰인 이미지를d 서버로 보냄
 						System.out.println("############서버 엔드 ################");
 			}
 		}
 		catch(Exception e) {}
-		
-		
-		
 	}
-	
-	/*public synchronized void serverRcv () throws IOException {
-		System.out.println("## 서버 받기1 inputStreamS : " + inputStreamS);
-		imageRcvS = ImageIO.read(inputStreamS); // 데이터를 받아서 버퍼에 저장
-		imageSendS=imageRcvS;
-		System.out.println("## 서버 받기2 imageRcvS : " + imageRcvS);
-		Painter.p2.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(inputStreamS)), 0, 0, w, h, Painter.p2);
-		System.out.println("## 서버 받기3 inputStreamS : " + inputStreamS);
-	}
-	
-	public synchronized void serverSend () throws IOException {
-		System.out.println("## 서버 보내기1 imageSendS : " + imageSendS);
-		ImageIO.write(imageSendS, "bmp", outputStreamServer);
-		System.out.println("## 서버 보내기2 outputStreamServer : " + outputStreamServer);
-		outputStreamServer.flush(); //버퍼에 쓰인 이미지를d 서버로 보냄
-		System.out.println("############서버 엔드 ################");
-	}*/
-	
 }
