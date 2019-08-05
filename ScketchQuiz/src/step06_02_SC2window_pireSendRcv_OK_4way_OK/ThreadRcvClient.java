@@ -16,7 +16,6 @@ public class ThreadRcvClient  extends Thread{
 	
 	//필드 컴포넌트 
 	Socket s1;
-	BufferedImage imageRcvC; //받기용 버퍼
 	BufferedInputStream inputStreamC;
 	
 	public ThreadRcvClient(Socket socket) throws IOException {//생성자////////////////
