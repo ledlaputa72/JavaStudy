@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.Socket;
 import javax.imageio.ImageIO;
 
+//서버 받기 스레드 클래스 
 public class ThreadSendServer  extends Thread  {
 	Socket socket; //소켓
 	BufferedImage imageSendS; //보내기 용 버퍼

@@ -8,6 +8,7 @@ import java.net.Socket;
 
 import javax.imageio.ImageIO;
 
+//서버 보내기 스레드 클래스 
 public class ThreadRcvServer  extends Thread {
 	// 상수 서버 화면크기, 좌표(모니터 중앙)
 		static int w = 400, h = 400;
