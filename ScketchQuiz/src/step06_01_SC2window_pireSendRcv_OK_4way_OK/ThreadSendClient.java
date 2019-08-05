@@ -1,4 +1,4 @@
-package step06_02_SC2window_pireSendRcv_OK_4way_OK;
+package step06_01_SC2window_pireSendRcv_OK_4way_OK;
 
 import java.awt.AWTException;
 import java.awt.Rectangle;
