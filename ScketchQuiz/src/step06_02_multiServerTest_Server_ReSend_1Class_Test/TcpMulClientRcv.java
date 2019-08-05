@@ -22,44 +22,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 
-
-
-class ThreadClientSendClass extends Thread {
-	
-	Socket s1;
-	DataOutputStream DataOutputStream;
-	String nickname;
-	
-	// 초기치로 소켓 객체, 닉네임이 넘어온다.
-	public ThreadClientSendClass(Socket s1, String nickname) throws IOException {
-
-		this.s1 = s1;
-		this.nickname = nickname;
-		
-		DataOutputStream = new DataOutputStream(s1.getOutputStream());
-		
-	}
-	
-	public void run() {
-			
-		Scanner in1 = new Scanner(System.in);
-			
-		try {
-				
-			if (DataOutputStream != null)
-				DataOutputStream.writeUTF(nickname); // 닉네임 send
-				
-			/*while (outputStream != null) 
-				outputStream.writeUTF("(** " + nickname + " **) " + in1.nextLine()); // io 스트림을 통해 상대방에게 chat 보낸다.
-				*/
-		} catch (IOException e) {
-				
-			e.printStackTrace();
-		}
-	}
-}
-
-public class TcpMulClient {
+public class TcpMulClientRcv {
 
 	//상수 서버 화면크기, 좌표(모니터 중앙) 
 	static int w = 400, h = 400; 
@@ -82,16 +45,15 @@ public class TcpMulClient {
 		
 		//화면 이미지 스크린샷 전송 - 쓰레드 처리###############################################
 		//받고 출력하기 쓰레드
-		ThreadRcvClient threadR =new ThreadRcvClient(s1);
-		threadR.start();
-		Thread.sleep(100);
-		
-		//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
-//		while(true) {
-			ThreadSendClient ts1=new ThreadSendClient(s1);
-			ts1.start();
+		while(true) {
+			ThreadRcvClient threadR =new ThreadRcvClient(s1);
+			threadR.start();
 			Thread.sleep(100);
-//		}
+		}
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
+		/*ThreadSendClient ts1=new ThreadSendClient(s1);
+		ts1.start();
+		Thread.sleep(100);*/
 		//#########################################################################
 			
 	}

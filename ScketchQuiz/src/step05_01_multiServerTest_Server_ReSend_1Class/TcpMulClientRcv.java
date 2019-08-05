@@ -68,9 +68,9 @@ public class TcpMulClientRcv {
 			Thread tsend1 = new Thread(tcc1); // 보내는 chat 위해
 			tsend1.start();
 			
-			//받고 출력하기 쓰레드
-			ThreadRcvClient threadR =new ThreadRcvClient(s1);
-			threadR.start();
+//			//받고 출력하기 쓰레드
+//			ThreadRcvClient threadR =new ThreadRcvClient(s1);
+//			threadR.start();
 
 			
 		} catch (Exception e) {

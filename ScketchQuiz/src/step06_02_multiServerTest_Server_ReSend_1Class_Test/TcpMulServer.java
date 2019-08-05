@@ -11,7 +11,6 @@ import java.util.*;
 
 import javax.imageio.ImageIO;
 
-
 // ########################################################
 // ServerClass
 // ########################################################
@@ -37,9 +36,14 @@ class ServerClass {
 			tServer1.start();
 			threadList.add(tServer1);// 컬랙션에 add
 
+			System.out.println("접속자 수 : " + threadList.size() + " 명");
+
+			// 서버 받기 //////////////////////////////
+			EchoThreadServer ets = new EchoThreadServer(s1);
+			ets.start();
+			/////////////////////////////////////////
 			// =====================================================
 
-			System.out.println("접속자 수 : " + threadList.size() + " 명");
 		} // while end
 	}// 생성자 end
 
@@ -70,8 +74,9 @@ class ThreadServerClass extends Thread {
 		// 입출력 스트림
 	}// 생성자 end
 
-	public void run() { // run
-		String nickname = "";
+	public void run() {
+		// run
+		/*String nickname = "";
 		try {
 			if (dataInputStream != null) {
 				nickname = dataInputStream.readUTF();
@@ -82,7 +87,7 @@ class ThreadServerClass extends Thread {
 			EchoThreadServer ets=new EchoThreadServer(s1);
 			ets.start();
 			/////////////////////////////////////////
-
+			
 		} catch (IOException e) { //
 			e.printStackTrace();// 에러내용 출력을 안하려면 주석단다
 		} finally {// 나간 쓰레드의 인덱스 찾기
@@ -97,11 +102,11 @@ class ThreadServerClass extends Thread {
 					}
 					// ===============
 				} // if end
-
+		
 			} // for end
 			System.out.println("접속자 수 : " + ServerClass.threadList.size() + " 명");
 		} // finally end
-	} // run end
+		*/ } // run end
 }// ThreadServerClass end
 
 public class TcpMulServer {
@@ -112,7 +117,7 @@ public class TcpMulServer {
 		System.out.println("그림판 작동 - 서버");
 
 		// new ServeClass()
-		new ServerClass(8888);
+		new ServerClass(9999);
 
 	}
 
