@@ -20,11 +20,11 @@ public class Client {
 		
 		
 		String serverip = "127.0.0.1";//접속 IP
-		Socket socket = null; //통신 준비 
+		Socket s1; //통신 준비 
 		System.out.println("클라이언트 준비완료");//일단 소켓생성
 	
 		//소켓으로 접속
-		socket = new Socket(serverip, 9999); 
+		s1 = new Socket(serverip, 8989); 
 		System.out.println("접속완료 - 클라이언트1");
 		
 		//그림 기능 작동 
@@ -32,18 +32,16 @@ public class Client {
 		System.out.println("그림판 작동 - 클라이언트");
 		
 		//쓰레드////////////////////////////////////////
-		try {
-			//받고 출력하기 쓰레드
-			ThreadRcvClient threadR =new ThreadRcvClient(socket);
-			threadR.start();
-			
-			//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
-			ThreadSendClient ts1=new ThreadSendClient(socket);
-			ts1.start();
-		}
-		catch(Exception e) {
-			System.out.println(e);
-		}//try end
+		//받고 출력하기 쓰레드
+		ThreadRcvClient threadR =new ThreadRcvClient(s1);
+		threadR.start();
+		Thread.sleep(100);
+		
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
+		ThreadSendClient ts1=new ThreadSendClient(s1);
+		ts1.start();
+		Thread.sleep(100);
+		
 		//쓰레드////////////////////////////////////////
 	}//main end
 }//Client class end

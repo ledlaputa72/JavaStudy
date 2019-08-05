@@ -15,24 +15,29 @@ public class ThreadRcvServer  extends Thread {
 	static int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 
 	// 필드 컴포넌트
-	Socket socket;
-	BufferedImage imageRcvS=null; // 받기용 버퍼
-	static BufferedImage imsi=null; // 받기용 버퍼 ####방법2)
-	BufferedInputStream inputStreamS;
+	Socket s1;
+	BufferedImage imageRcvS; // 받기용 버퍼
+//	BufferedImage imsi; // 받기용 버퍼 ####방법2)
+	static BufferedInputStream inputStreamS;
 
-	public ThreadRcvServer(Socket socket) throws IOException {// 생성자////////////////
-		this.socket = socket;
-		inputStreamS = new BufferedInputStream(socket.getInputStream());
+	public ThreadRcvServer(Socket s1) throws IOException {// 생성자////////////////
+		this.s1 = s1;
+		inputStreamS = new BufferedInputStream(s1.getInputStream());
 	}// 생성자 끝
 
 	public void run() {// run 메소드 //////////////
 
+		
 		try {
-			while (true) {
+			while(true) {
+				System.out.println("## 서버 받기1 inputStreamS : " + inputStreamS);
 				imageRcvS = ImageIO.read(inputStreamS); // 데이터를 받아서 버퍼에 저장
-				imsi = imageRcvS; //임시 버퍼로 저장
+					System.out.println("## 서버 받기2 imageRcvS : " + imageRcvS);
+				Server.imsi = imageRcvS; //임시 버퍼로 저장
+					System.out.println("## 서버 받기3 Server.imsi : " + Server.imsi);
 				Painter.p2.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(inputStreamS)), 0, 0, w, h, Painter.p2);
-				Thread.sleep(200);
+				//				Thread.sleep(100);
+				System.out.println("## 서버 받기4 inputStreamS : " + inputStreamS);
 			}
 		} catch (Exception e) {
 			System.out.println("에러출력 : " + e);
