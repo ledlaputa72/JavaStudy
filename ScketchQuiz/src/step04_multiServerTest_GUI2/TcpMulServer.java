@@ -63,12 +63,10 @@ class ThreadRcv extends Thread{
 	static BufferedImage imageRcv=null; //받기용 버퍼
 	BufferedInputStream inputStream;
 	
-	
 	public ThreadRcv(Socket socket) throws IOException {//생성자////////////////
 		this.socket = socket;
 		inputStream = new BufferedInputStream(socket.getInputStream());
 	}//생성자 끝
-	
 	
 	public void run() {//run 메소드 //////////////
 	
@@ -84,18 +82,23 @@ class ThreadRcv extends Thread{
 	}//run end
 }//ThreadRcv end////////////////////////////////////////////
 
+
+
+
+
+
 //########################################################
 //서버를 위한 받기 쓰레드
 //########################################################
 class ThreadRcvServer extends Thread{
 	//상수 서버 화면크기, 좌표(모니터 중앙) 
-		static int w = 400, h = 400; 
-		static int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
+	static int w = 400, h = 400; 
+	static int x = Toolkit.getDefaultToolkit().getScreenSize().width / 2 - w / 2, y = Toolkit.getDefaultToolkit().getScreenSize().height / 2 - h / 2;
 		
-	
 	//필드 컴포넌트 
 	Socket socket;
 	static BufferedImage imageRcv=null; //받기용 버퍼
+//	static BufferedImage imsi=null; // 받기용 버퍼 ########################
 	BufferedInputStream inputStreamServer;
 	
 	public ThreadRcvServer(Socket socket) throws IOException {//생성자////////////////
@@ -108,10 +111,13 @@ class ThreadRcvServer extends Thread{
 		try {
 			while(true) {
 				imageRcv=ImageIO.read(inputStreamServer); //데이터를 받아서 버퍼에 저장
-				System.out.println("$$$$$$서버 받기1)소켓에서 받음 : " + inputStreamServer);
+				System.out.println("$$$$$$서버 받기1 : inputStreamServer)소켓에서 받음 : " + inputStreamServer);
+				System.out.println("$$$$$$서버 받기2 : imageRcv )소켓에서 받음 : " + imageRcv);
 				ThreadSendServer.imageSend=imageRcv; //받기 버퍼에 보내기용 버퍼 내용 붙임
 				Painter.p2.getGraphics().drawImage(ImageIO.read(ImageIO.createImageInputStream(inputStreamServer)), 0, 0, w, h, Painter.p2);
-				System.out.println("$$$$$$서버 받기2)소켓에서 받음 : " + ThreadSendServer.imageSend);
+				System.out.println("$$$$$$서버 받기3 : imageSend)소켓에서 받음 : " + ThreadSendServer.imageSend);
+				System.out.println("$$$$$$서버 받기4 : imageRcv )소켓에서 받음 : " + imageRcv);
+				Thread.sleep(100);
 			}}
 		catch(Exception e) {
 			System.out.println("에러출력 : "+ e);
@@ -119,7 +125,6 @@ class ThreadRcvServer extends Thread{
 	}//run end
 }//ThreadRcv end////////////////////////////////////////////
 
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //########################################################
 //서버를 위한 보내기 쓰레드
 //########################################################
@@ -141,16 +146,19 @@ class ThreadSendServer extends Thread{
 				System.out.println("&&&&&&&&&서버보내기1)소켓으로 보냄  : " + outputStreamServer);
 //				ThreadRcvServer.imageRcv=imageSend; //받기 버퍼에 보내기용 버퍼 내용 붙임 
 				System.out.println("&&&&&&&&&서버 보내기2)소켓에서 받음 : " + imageSend);
+				
 				ImageIO.write(imageSend, "bmp", outputStreamServer);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 				outputStreamServer.flush(); //버퍼에 쓰인 이미지를 서버로 보냄
-			}}
+				Thread.sleep(100);
+			}
+			}
 		catch(Exception e) {
 			System.out.println("에러출력 : "+ e);
 		}//try end
 	}//run end
 }//ThreadRcv end////////////////////////////////////////////
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
 
 
 //########################################################
@@ -220,21 +228,7 @@ class ThreadServerClass extends Thread {
 				nickname = inputStream.readUTF();
 				ServerClass.sendChat(nickname + " 님 입장 !!!(^^)");
 			}
-//			while (inputStream !=null) {
-//				//System.out.printlin(inputStream.readUTF();
-//				ServerClass.sendChat(inputStream.readUTF());
-//				//클라이언트가 보낸 채팅 내용을 접속한 모두에게 보냄
-//			}
-			//##############################################
-			//받고 출력하기 쓰레드
-			//##############################################
-			/*//클라이언트 받기 
-			ThreadRcv threadR =new ThreadRcv(socket1);
-			threadR.start();
-			
-			//화면 이미지 스크린샷 전송 - 쓰레드 처리
-			ThreadSend ts1=new ThreadSend(socket1);
-			ts1.start();*/
+
 			
 			//서버 받기
 			ThreadRcvServer threadRserver = new ThreadRcvServer(socket1);
@@ -275,7 +269,7 @@ public class TcpMulServer {
 	public static void main(String[] args) throws IOException, AWTException {
 		Socket socket1 = null;
 		Painter frameServer=new Painter(); //그림 그리기 포함 작동
-		System.out.println("그림판 작동 - 클라이언트");
+		System.out.println("그림판 작동 - 서버");
 		
 		//new ServeClass()
 		new ServerClass(8888);
