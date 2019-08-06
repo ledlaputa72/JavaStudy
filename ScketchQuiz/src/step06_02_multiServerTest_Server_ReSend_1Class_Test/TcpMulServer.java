@@ -11,9 +11,7 @@ import java.util.*;
 
 import javax.imageio.ImageIO;
 
-// ########################################################
 // ServerClass
-// ########################################################
 class ServerClass {
 	// collection에 들어가는 것은 ThreadServerClass only
 	// Vector
@@ -37,12 +35,13 @@ class ServerClass {
 			threadList.add(tServer1);// 컬랙션에 add
 
 			System.out.println("접속자 수 : " + threadList.size() + " 명");
-
-			// 서버 받기 //////////////////////////////
+			
+			//##########################################################
+			// 에코 서버  ##################################################
 			EchoThreadServer ets = new EchoThreadServer(s1);
 			ets.start();
-			/////////////////////////////////////////
-			// =====================================================
+			//##########################################################
+			//##########################################################
 
 		} // while end
 	}// 생성자 end
@@ -57,10 +56,7 @@ class ServerClass {
 
 }// ServerClass end////////////////////////////////////////////
 
-// ########################################################
 // ThreadServerClass
-// 이안에 받기와 보내기 쓰레드를 포함 시킨다.
-// ########################################################
 class ThreadServerClass extends Thread {
 	Socket s1;
 	DataInputStream dataInputStream;

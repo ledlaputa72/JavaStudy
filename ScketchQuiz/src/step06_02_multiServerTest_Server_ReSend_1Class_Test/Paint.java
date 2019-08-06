@@ -25,17 +25,18 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 	
 	private int witchiX=0, witchiY=0; //마우스의 좌표 , 클래스 밑에 생긴 전역 변수 
 	
+	//그리기 옵션 기능 
 	static  Color bgColor=Color.WHITE; //background color
 	private int brSize=10; //brush Size
 	static Color brColor=Color.BLUE; //bruch color
 	static int sw=0; //배경색 sw=1, 붓색 sw=2
 	
-	//컴퍼넌트 /////////////////////////////////////////////////////////////
+	//컴퍼넌트 
 	private Frame f1=new Frame();
 	static Panel p1=new Panel();
 	static Panel p2=new Panel();
 	
-	//생성자/////////////////////////////////////////////////////////
+	//생성자
 	public Painter() { 
 		p1.addMouseListener(this); //중요!!!! 마우스 이벤트 등록
 		p1.addMouseMotionListener(this); //중요!!! 마우스 액션 이벤트 등록
@@ -50,13 +51,13 @@ class Painter extends Frame implements MouseListener, MouseMotionListener, Actio
 		f1.setAlwaysOnTop(true);
 		f1.setResizable(false);
 		
-		
-		//p1 상단 캔버스
+		//p1 상단 캔버스####################
+		//그림 그리는 캔버스 타겟 패널
 		p1.setBackground(Color.YELLOW);
 		p1.setBounds(0,0,400,400);
 
-		
-		//p2 하단 정보 
+		//p2 뷰패널  ######################
+		//서버로부터 실시간 이미지를 전송받아 그리는 패널
 		p2.setBackground(Color.CYAN);
 		p2.setBounds(0,400,400,400);
 		

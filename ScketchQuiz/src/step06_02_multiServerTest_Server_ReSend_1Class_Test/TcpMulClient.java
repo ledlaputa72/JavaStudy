@@ -72,28 +72,23 @@ public class TcpMulClient {
 		
 		System.out.println("서버에 연결...");
 		
-		//그림 기능 작동 
+		//##########################################################
+		//그림 기능 작동#################################################
 		Painter sendClient=new Painter(); //그림 그리기 작동
 		System.out.println("그림판 작동 - 클라이언트");
 		
-		/*ThreadClientSendClass tcc1 = new ThreadClientSendClass(s1, "Test"); // 닉네임
-		Thread tsend1 = new Thread(tcc1); // 보내는 chat 위해
-		tsend1.start();*/
-		
-		//화면 이미지 스크린샷 전송 - 쓰레드 처리###############################################
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리
 		//받고 출력하기 쓰레드
 		ThreadRcvClient threadR =new ThreadRcvClient(s1);
 		threadR.start();
 		Thread.sleep(100);
 		
-		//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
-//		while(true) {
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리 
 			ThreadSendClient ts1=new ThreadSendClient(s1);
 			ts1.start();
 			Thread.sleep(100);
-//		}
-		//#########################################################################
-			
+		//###########################################################
+		//##########################################################	
 	}
 
 }

@@ -26,8 +26,10 @@ public class ThreadSendClient extends Thread {
 
 		try {
 			while(true) {
+				//스크린캡쳐를 받을 화면 영역 (이동에 따른 영역 변화감지)
 				Painter.p2X=(int)Painter.p2.getLocationOnScreen().getX(); //좌표 변수를 만들고  static으로 변경
 				Painter.p2Y=(int)Painter.p2.getLocationOnScreen().getY();
+				//스크린 캡쳐 받아 이미지 버퍼에 저장 
 				imageSendC = robot.createScreenCapture(new Rectangle(Painter.p2X-0, Painter.p2Y-400, 400, 400));//스크린샷을 찍어서 image에 저장해
 				ImageIO.write(imageSendC, "bmp", outputStreamC);//그 이미지를 png파일로 소켓 아웃풋스트림으로 쏴줌
 				System.out.println("###클라 보내기 1) imageSendC: " + imageSendC);

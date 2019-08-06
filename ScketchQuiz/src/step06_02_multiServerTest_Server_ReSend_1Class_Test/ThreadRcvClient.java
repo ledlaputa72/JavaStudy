@@ -24,7 +24,6 @@ public class ThreadRcvClient  extends Thread{
 	}//생성자 끝
 	
 	public void run() {//run 메소드 //////////////
-	
 		try {
 			while(true) {
 				System.out.println("###클라 받기1) inputStreamC: " + inputStreamC);

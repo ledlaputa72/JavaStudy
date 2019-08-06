@@ -20,9 +20,9 @@ public class EchoThreadServer extends Thread{
 	public EchoThreadServer(Socket s1) throws IOException {
 		this.s1 = s1;
 		inputStreamS = new BufferedInputStream(s1.getInputStream());
-		outputStreamServer = new BufferedOutputStream(s1.getOutputStream()); //소켓 출력
+		outputStreamServer = new BufferedOutputStream(s1.getOutputStream());
 	}
-	
+	//############################################################################
 	//사용자의 포트번호를 알아야 한다. 
 	//클라이언트 들은 자신의 포트 번호를 기억해야한다. 
 	//그림 그리는 사람의 포트 번호를 서버가 알아야 한다. 
@@ -30,7 +30,6 @@ public class EchoThreadServer extends Thread{
 	//보내기는 for문으로 유저수 만큼을  보내야 한다. 유저 포트번호 배열 이용 
 	
 	public void run() {
-
 		try{
 			while(true) {
 				//받기/////////////////////////// 
