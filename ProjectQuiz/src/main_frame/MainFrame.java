@@ -106,7 +106,7 @@ public class MainFrame extends JFrame implements Runnable {
 					changeCard(WaitingRoomPanel.cardName);
 					userInfo = cmp.getUserInfo();
 					setTitle("접속자 대화명: " + userInfo.getNickName());
-//					wrp.clearTextArea();
+					grp.clearTextArea();
 					break;
 				case CatchMindProtocol.UPDATE_WAIT_USER_LIST:
 					wrp.updateWaitingUserList(cmp.getWaitingRoomUserList());
@@ -165,9 +165,10 @@ public class MainFrame extends JFrame implements Runnable {
 					grp.updateGameRoom();
 					break;
 				case CatchMindProtocol.GAME_CHAT:
-					String msg = cmp.getMsg();
-					int gameSlotIndex = cmp.getChatSlotIndex();
-					grp.updateChatMsg(msg, gameSlotIndex);
+//					String msg = cmp.getMsg();
+//					int gameSlotIndex = cmp.getChatSlotIndex();
+//					grp.updateChatMsg(msg, gameSlotIndex);
+					grp.appendChatArea(cmp.getMsg());
 					break;
 				case CatchMindProtocol.CORRECT_ANSWER:
 					grp.clearCanvas();
@@ -219,7 +220,7 @@ public class MainFrame extends JFrame implements Runnable {
 
 	public void startThread(UserInfo userInfo) { // NickNamePanel 에서 대화명 입력 후 확인 버튼 눌렀을 때 부름
 		try {
-			s = new Socket("127.0.0.1", 9997);
+			s = new Socket("127.0.0.1", 1112);
 			in = new ObjectInputStream(s.getInputStream());
 			out = new ObjectOutputStream(s.getOutputStream());
 

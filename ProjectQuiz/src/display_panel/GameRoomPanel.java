@@ -27,6 +27,7 @@ import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -70,6 +71,7 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 	JPanel stopwatch; // 게임당 남은 시간을 표시할 패널
 	JLabel mm, ss, colon1;
 	JPanel bottom_p;
+	JPanel east_p;
 
 	JPanel center_p; // 센터패널에는 게임을 진행하기 위한 컴포넌트를 배치..
 	JPanel quiz_p; // 문제를 나타낼 패널, 그림을 그릴 사람에게만 보여짐. : north
@@ -92,7 +94,9 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 	JPanel time_chat_p;
 	JPanel chat_p; // 정답을 맞추거나 채팅 내용을 전송하기 위한 UI를 담는 패널 :game_p_southP 의
 					// gridLayout 두번째 패널
-	JTextArea chat_ta;
+	JScrollPane chatScrollPane;
+	JPanel panelInput;
+	JTextArea taChat;
 	JTextField chat_tf;
 	JButton chat_btn;
 	JPanel exitp;
@@ -166,6 +170,20 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 		center_p.add(quiz_p, BorderLayout.NORTH);
 		// :west, eastv영역
 		
+		east_p = new JPanel(new BorderLayout()); // 대화창과 입력란 보내기 버튼을 담을 남쪽 패널
+		chatScrollPane = new JScrollPane(taChat = new JTextArea(0, 25));
+		taChat.setEditable(false);
+		
+		panelInput = new JPanel(new BorderLayout());
+		panelInput.add(chat_tf = new JTextField());
+		panelInput.add(chat_btn = new JButton("보내기"), BorderLayout.EAST);
+		
+		east_p.add(chatScrollPane);
+		east_p.add(panelInput, BorderLayout.SOUTH);
+		
+		this.add(east_p);
+		
+		
 		bottom_p = new JPanel();
 		bottom_slot_p = new JPanel(new GridLayout(1, 4));
 		bottom_slot_p.setBackground(bg);
@@ -175,10 +193,10 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 		game_p = new JPanel(new BorderLayout());
 		game_p.setBackground(bg);
 		can_p = new JPanel(new BorderLayout());
-		can_p.add(can_p_south = new JPanel(new BorderLayout()), BorderLayout.SOUTH);
-		can_p.add(can_p_west = new JPanel(new BorderLayout()), BorderLayout.WEST);
-		can_p.add(can_p_east = new JPanel(new BorderLayout()), BorderLayout.EAST);
-		can_p.add(can_p_north = new JPanel(new BorderLayout()), BorderLayout.NORTH);
+//		can_p.add(can_p_south = new JPanel(new BorderLayout()), BorderLayout.SOUTH);
+//		can_p.add(can_p_west = new JPanel(new BorderLayout()), BorderLayout.WEST);
+//		can_p.add(can_p_east = new JPanel(new BorderLayout()), BorderLayout.EAST);
+//		can_p.add(can_p_north = new JPanel(new BorderLayout()), BorderLayout.NORTH);
 //		can_p_south.add(new JLabel(
 //				new ImageIcon("src/images/canvas_bottom.jpg")));
 //		can_p_north.add(new JLabel(new ImageIcon("src/images/canvas_top.jpg")));
@@ -222,14 +240,12 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 		chat_p = new JPanel(new FlowLayout(FlowLayout.RIGHT)); // :
 																// game_p_southP의
 																// 두번째 패널
-		chat_p.add(chat_ta = new JTextArea());
-		chat_p.add(chat_tf = new JTextField(20));
-		chat_p.add(chat_btn = new JButton("보내기"));
-		chat_p.setBackground(bg);
+		
 		game_p_southP.add(chat_p);
 
 		this.add(north_p, BorderLayout.NORTH);
 		this.add(center_p);
+		this.add(east_p, BorderLayout.EAST);
 		this.add(bottom_p, BorderLayout.SOUTH);
 	}
 
@@ -454,6 +470,7 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 			can.setEnabled(true);
 			chat_p.setVisible(false);
 			gameUI_p.setVisible(true);
+			chat_tf.setEditable(false);
 		} else {
 			// quiz_p.setVisible(false);
 			quizContentTf.setText("......");
@@ -570,8 +587,8 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 	}
 
 	public void updateChatMsg(String msg, int index) {
-		slotArr[index].tf.setText("");
-		slotArr[index].tf.setText(msg);
+//		slotArr[index].tf.setText("");
+//		slotArr[index].tf.setText(msg);
 		// BubblePopThread t = new BubblePopThread(100,100,msg, slotArr[index]);
 		// t.start();
 		// setFocusTf();
@@ -684,6 +701,18 @@ public class GameRoomPanel extends javax.swing.JPanel implements Runnable {
 			// cmp.setStarter_out(starter_out);
 			mainFrame.sendProtocol(cmp);
 		}
+	}
+
+	public void appendChatArea(String msg) {
+		taChat.append(msg+"\r\n");
+    	taChat.setCaretPosition(taChat.getText().length());
+    	taChat.invalidate();
+		
+	}
+
+	public void clearTextArea() {
+		taChat.setText("");
+		
 	}
 }
 

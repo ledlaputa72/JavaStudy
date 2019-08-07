@@ -95,11 +95,11 @@ public class CopyClient extends Thread{
 					}
 					server.getWaitingRoom().sendUpdateGameRoomInfo();
 					break bk;
-				case CatchMindProtocol.WAIT_ROOM_SEND_MSG:
-					CatchMindProtocol cmp2 = new CatchMindProtocol(CatchMindProtocol.WAIT_ROOM_SEND_MSG); //대기실 사용자에게 메세지 전달
-					cmp2.setMsg(userInfo.getNickName()+" : "+ p.getMsg());
-					server.getWaitingRoom().sendMsg(cmp2);  //대기실 입장 메세지 전달
-					break;
+//				case CatchMindProtocol.WAIT_ROOM_SEND_MSG:
+//					CatchMindProtocol cmp2 = new CatchMindProtocol(CatchMindProtocol.WAIT_ROOM_SEND_MSG); //대기실 사용자에게 메세지 전달
+//					cmp2.setMsg(userInfo.getNickName()+" : "+ p.getMsg());
+//					server.getWaitingRoom().sendMsg(cmp2);  //대기실 입장 메세지 전달
+//					break;
 				case CatchMindProtocol.EXIT_WAIT_ROOM:
 					CatchMindProtocol cmp3 = new CatchMindProtocol(CatchMindProtocol.EXIT_WAIT_ROOM); 
 					out.writeObject(cmp3);
@@ -191,8 +191,8 @@ public class CopyClient extends Thread{
 						currentGameRoom.startGame();
 					}
 					CatchMindProtocol game_chat = new CatchMindProtocol(CatchMindProtocol.GAME_CHAT);
-					game_chat.setChatSlotIndex(getUserInfo().getGameSlotIndex());
-					game_chat.setMsg(game_msg);
+//					game_chat.setChatSlotIndex(getUserInfo().getGameSlotIndex());
+					game_chat.setMsg(userInfo.getNickName() + " : " + game_msg);
 					currentGameRoom.sendGameRoomProtocol(game_chat);
 					break;
 				case CatchMindProtocol.CANVAS_CLEAR:

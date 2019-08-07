@@ -20,7 +20,7 @@ public class CatchMindServer extends Thread{
 		clsArr.add(new CanvasLineSegment());
 		cArr = new ArrayList<CopyClient>();
 		try {
-			ss = new ServerSocket(9997);
+			ss = new ServerSocket(1112);
 			//서버 시작
 			System.out.println("서버 시작!");
 		} catch (Exception e) {
