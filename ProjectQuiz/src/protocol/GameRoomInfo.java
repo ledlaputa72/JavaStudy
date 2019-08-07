@@ -8,11 +8,8 @@ public class GameRoomInfo implements Serializable{
 	String gamePassword;
 	int gameUserNum;
 	boolean isPlayingGame;
-	public GameRoomInfo(String roomName, boolean isPublicGameRoom,
-			String gamePassword, int gameUserNum) {
+	public GameRoomInfo(String roomName, int gameUserNum) {
 		this.roomName = roomName;
-		this.isPublicGameRoom = isPublicGameRoom;
-		this.gamePassword = gamePassword;
 		this.gameUserNum = gameUserNum;
 	}
 	public String getRoomName() {
@@ -21,18 +18,7 @@ public class GameRoomInfo implements Serializable{
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
-	public boolean isPublicGameRoom() {
-		return isPublicGameRoom;
-	}
-	public void setPublicGameRoom(boolean isPublicGameRoom) {
-		this.isPublicGameRoom = isPublicGameRoom;
-	}
-	public String getGamePassword() {
-		return gamePassword;
-	}
-	public void setGamePassword(String gamePassword) {
-		this.gamePassword = gamePassword;
-	}
+	
 	public int getGameUserNum() {
 		return gameUserNum;
 	}

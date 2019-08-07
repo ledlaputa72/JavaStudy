@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import canvas.CanvasLine;
-import canvas.CanvasLineSegment;
+import canvas.CanvasElement;
+import canvas.CanvasSegment;
 
-public class CatchMindProtocol implements Serializable{
+public class SketchQuiz implements Serializable{
 	//사용자의 입장 퇴장등 종료 등과 관련된 프로토콜은 1의 자리수 사용(ex 방만들기)
 	public static final int USER_ACCEPT = 1;  
 	public static final int USER_DUPLICATED = 2;  
@@ -37,8 +37,8 @@ public class CatchMindProtocol implements Serializable{
 	public static final int CANVAS_CLEAR=104;
 	
 	int cmd;
-	ArrayList<CanvasLineSegment> clsArr;
-	CanvasLine canvasLine;
+	ArrayList<CanvasSegment> clsArr;
+	CanvasElement canvasLine;
 	Color color = Color.black;
 	int lineThick=5; //라인 두께
 	UserInfo userInfo;
@@ -137,7 +137,7 @@ public class CatchMindProtocol implements Serializable{
 		this.waitingRoomUserList = waitingRoomUserList;
 	}
 
-	public CatchMindProtocol(int cmd) {
+	public SketchQuiz(int cmd) {
 		this.cmd = cmd;
 	}
 
@@ -149,19 +149,19 @@ public class CatchMindProtocol implements Serializable{
 		this.cmd = cmd;
 	}
 
-	public ArrayList<CanvasLineSegment> getClsArr() {
+	public ArrayList<CanvasSegment> getClsArr() {
 		return clsArr;
 	}
 
-	public void setClsArr(ArrayList<CanvasLineSegment> clsArr) {
+	public void setClsArr(ArrayList<CanvasSegment> clsArr) {
 		this.clsArr = clsArr;
 	}
 
-	public CanvasLine getCanvasLine() {
+	public CanvasElement getCanvasLine() {
 		return canvasLine;
 	}
 
-	public void setCanvasLine(CanvasLine canvasLine) {
+	public void setCanvasLine(CanvasElement canvasLine) {
 		this.canvasLine = canvasLine;
 	}
 

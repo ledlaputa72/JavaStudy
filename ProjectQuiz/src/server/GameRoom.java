@@ -3,12 +3,12 @@ package server;
 
 import java.util.ArrayList;
 
-import protocol.CatchMindProtocol;
+import protocol.SketchQuiz;
 import protocol.GameRoomInfo;
 import protocol.UserInfo;
 
 public class GameRoom{
-	CopyClient[] gameRoomUsers;
+	AllClient[] gameRoomUsers;
 	GameRoomInfo gri;
 	int isJoined = -1;
 	int userNum=0;
@@ -20,7 +20,7 @@ public class GameRoom{
 	
 	public GameRoom(GameRoomInfo gri){
 		this.gri = gri;
-		gameRoomUsers = new CopyClient[gri.getGameUserNum()];
+		gameRoomUsers = new AllClient[gri.getGameUserNum()];
 	}
 	public String getGameRoomName(){
 		StringBuffer sb = new StringBuffer();
@@ -32,7 +32,7 @@ public class GameRoom{
 		sb.append(")");
 		return sb.toString();
 	}
-	public int joinGameRoom(CopyClient cc){
+	public int joinGameRoom(AllClient cc){
 		for(int i=0; i<gameRoomUsers.length; i++){
 			if(gameRoomUsers[i] == null){
 				gameRoomUsers[i] = cc;
@@ -47,7 +47,7 @@ public class GameRoom{
 	}
 	
 	//게임방 나가기
-	public void outGameRoom(CopyClient cc){
+	public void outGameRoom(AllClient cc){
 		for(int i =0; i<gameRoomUsers.length; i++){
 			if(gameRoomUsers[i] != null && gameRoomUsers[i].getUserInfo().getNickName().equals(cc.getUserInfo().getNickName())){
 				gameRoomUsers[i] = null;
@@ -70,7 +70,7 @@ public class GameRoom{
 			}			
 			criterionIndex%=validIndexArr.size();
 			criterionIndex = validIndexArr.get(criterionIndex);
-			CatchMindProtocol cmp20 = new CatchMindProtocol(CatchMindProtocol.GAME_START);	
+			SketchQuiz cmp20 = new SketchQuiz(SketchQuiz.GAME_START);	
 			cmp20.setUserInfoArr(getUserInfoArr());
 			cmp20.setMsg(question);			
 			cmp20.setGameStaterIndex(criterionIndex);
@@ -91,7 +91,7 @@ public class GameRoom{
 		inGame = false;
 		gri.setPlayingGame(false);
 		try {
-			CatchMindProtocol cmp21 = new CatchMindProtocol(CatchMindProtocol.GAME_STOP);
+			SketchQuiz cmp21 = new SketchQuiz(SketchQuiz.GAME_STOP);
 			setAllUserState(UserInfo.WAIT_STATE);
 			cmp21.setUserInfoArr(getUserInfoArr());
 			cmp21.setTimeout(isTimeout());
@@ -107,12 +107,12 @@ public class GameRoom{
 	public void setGri(GameRoomInfo gri) {
 		this.gri = gri;
 	}
-	public CopyClient getCopyClientBySlotIndex(int index){
+	public AllClient getCopyClientBySlotIndex(int index){
 		return gameRoomUsers[index];
 	}
-	public void sendGameRoomProtocol(CatchMindProtocol cmp){
+	public void sendGameRoomProtocol(SketchQuiz cmp){
 		try {
-			for(CopyClient cc : gameRoomUsers){
+			for(AllClient cc : gameRoomUsers){
 				if(cc !=null){
 					cc.getOut().writeObject(cmp);
 				}
@@ -151,7 +151,7 @@ public class GameRoom{
 		this.inGame = inGame;
 	}
 	public void updateGameRoomUI(){
-		CatchMindProtocol cmp = new CatchMindProtocol(CatchMindProtocol.UPDATE_GAME_ROOM_UI);
+		SketchQuiz cmp = new SketchQuiz(SketchQuiz.UPDATE_GAME_ROOM_UI);
 		cmp.setUserInfoArr(getUserInfoArr());
 		sendGameRoomProtocol(cmp);
 	}

@@ -2,20 +2,20 @@ package server;
 
 import java.util.ArrayList;
 
-import protocol.CatchMindProtocol;
+import protocol.SketchQuiz;
 
-public class WaitingRoom {
-	ArrayList<CopyClient> waitingRoomUsers;
+public class RoomListInfo {
+	ArrayList<AllClient> waitingRoomUsers;
 	ArrayList<GameRoom> gameRoomList;
 	
-	public WaitingRoom(){
+	public RoomListInfo(){
 		waitingRoomUsers = new ArrayList<>();
 		gameRoomList = new ArrayList<>();
 	}
-	public ArrayList<CopyClient> getWaitingRoomUsers() {
+	public ArrayList<AllClient> getWaitingRoomUsers() {
 		return waitingRoomUsers;
 	}
-	public void setWaitingRoomUsers(ArrayList<CopyClient> waitingRoomUsers) {
+	public void setWaitingRoomUsers(ArrayList<AllClient> waitingRoomUsers) {
 		this.waitingRoomUsers = waitingRoomUsers;
 	}
 	public ArrayList<GameRoom> getGameRoomList() {
@@ -26,9 +26,9 @@ public class WaitingRoom {
 	}
 	
 	public void sendUpdateUserInfo(){
-		CatchMindProtocol cmp = new CatchMindProtocol(CatchMindProtocol.UPDATE_WAIT_USER_LIST);
+		SketchQuiz cmp = new SketchQuiz(SketchQuiz.UPDATE_WAIT_USER_LIST);
 		cmp.setWaitingRoomUserList(getWaitingRoomUserList());
-		for(CopyClient cc : waitingRoomUsers){
+		for(AllClient cc : waitingRoomUsers){
 			try {
 				cc.getOut().writeObject(cmp);
 			} catch (Exception e) {
@@ -37,9 +37,9 @@ public class WaitingRoom {
 		}
 	}
 	public void sendUpdateGameRoomInfo(){
-		CatchMindProtocol cmp = new CatchMindProtocol(CatchMindProtocol.UPDATE_GAME_ROOM_LIST);
+		SketchQuiz cmp = new SketchQuiz(SketchQuiz.UPDATE_GAME_ROOM_LIST);
 		cmp.setGameRoomList(getGameRoomListToStr());
-		for(CopyClient cc : waitingRoomUsers){
+		for(AllClient cc : waitingRoomUsers){
 			try {
 				cc.getOut().writeObject(cmp);
 			} catch (Exception e) {
@@ -47,8 +47,8 @@ public class WaitingRoom {
 			}
 		}
 	}
-	public void sendMsg(CatchMindProtocol cmp){
-		for(CopyClient cc : waitingRoomUsers){
+	public void sendMsg(SketchQuiz cmp){
+		for(AllClient cc : waitingRoomUsers){
 			try {
 				cc.getOut().writeObject(cmp);
 			} catch (Exception e) {

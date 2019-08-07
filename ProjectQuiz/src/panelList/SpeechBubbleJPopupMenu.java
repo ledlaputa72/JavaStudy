@@ -1,4 +1,4 @@
-package display_panel;
+package panelList;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
