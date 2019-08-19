@@ -3,10 +3,19 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<script>
+	document.onmousemove=function(){ //그림자표(100,50)<--마우스좌표(100,50)
+		document.getElementById("f1").style.left=event.clientX+"px"
+		//document.getElementById("f1").style.top=event.clientY+"px"
+        document.all.f1.style.top=event.clientY+"px"; //정상 작동됨 
+        //이건 IE 스타일 (에전에 사용했던 방식 하지만 표준화 되지 않았다.)
+        //IE:document.all.f1
+	}
+</script>
 </head>
 <body>
-<span id="f1" style="position:absolute;"> <!-- 자바 스크립트에서 접근하기 위해서 id="f1" 필요 -->
-<img src="fox.gif" border="0" name="krim">
+<span id="f1" style="position:absolute;"> 
+	<img src="fox.gif" border="0" name="krim">
 </span>
 </body>
 </html>
