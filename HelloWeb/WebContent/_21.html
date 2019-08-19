@@ -3,6 +3,41 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+/*
+	inline element (줄바꿈 아닌 가로로 진행하는) 
+ 	예) b, textarea, span, image등 
+ 	block element (줄바꿈 형태)
+ 	예0 p, pre, audio, div, h1 등 
+ */
+#head1 {
+	width : 100%;
+	height : 50px;
+	background-color : cyan;
+}
+
+#menu1{
+	float : left; /******/
+	width : 20%;
+	height : 300px;
+	background-color : pink;
+}
+
+#content1{
+	float : right; /******/
+	width : 80%;
+	height : 300px;
+	background-color : yellow;
+}
+
+#foot1{
+	float : left; 
+	width : 100%; /******/
+	/* (참고)clear: both */
+	height : 100px;
+	background-color : green;
+}
+</style>
 </head>
 <body>
 <!-- 화면 배치
