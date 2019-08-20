@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>회원가입</title>
+<script type="text/javascript">
+function kajaCheck(){
+	/* ************* 가입나이 조건 *************** */
+	if(f1.na2.value<20 || f1.na2.value>50){ //value : 입력칸에 들어간 내용
+		//documnent.f1.
+		alert("20-50세 나이만 가능")
+		f1.na2.focus(); //입력대기 커서가 향하는 위치 
+		return
+	} //if end
+	
+	/* ************* 이메일 조건 *************** */
+	var reg1 = /^[A-Za-z0-9.]{3,}@[A-Za-Z0-9]{3,}\.[A-Za-Z0-9.]{3,7}$/
+	if(!reg1.test(f1.email1.value)){
+		alert("email 입력에러")
+		f1.email1.focus();
+		return
+	}
+	
+	/* ************* 아이디 조건 *************** */
+	var reg2 = /^[A-Za-z]{1,14}[0-9]{1,14}$/
+	if(f1.id1.value.length<8 || f1.id1.value.length<15 || !reg2.test(f1.id1.value)){
+		alert("아이디는 8-15자 사이의 영문자 이어서 숫자의 조합으로 입력")
+		f1.id1.focus();
+		return
+	}  
+	
+	/* ************* 서버로 보내기 *************** */
+	f1.submit(); //서버로 가자 document.f1.submit()
+}// check end
+
+</script>
+</head>
+<body>
+<h2>회 원 가 입</h2>
+<form name="f1" action="hello1.jsp" method="get">
+이 름 <input type="text" name="irum1" required autofocus><p>
+전화번호 <input type="text" name="tel1" required ><p>
+생년월일 <input type="date" min="1900-01-01" max="1999-12-31" name="date1"><p>
+나 이 <input type="text" name="na2"><p> <!-- 20 - 50 세만 입력 가능 -->
+이메일 <input type="text" name="email1" ><p>
+아이디생성 <input type="text" name="id1" ><p>
+암호생성 <input type="password" name="pw1"><p>
+사용할닉네임(영문자만) <input type="text" name="nickname1" onkeypress="kajaNick();"><p>
+가입시하고 싶은말<br>
+<textarea name="mal1" rows="2" cols="70" id="tarea1" onclick="kajatArea();">여기에 말씀하세요</textarea><p>
+성별 남<input type="radio" name="gender1" value="male" checked> 여<input type="radio" name="gender1" value="female"><p>
+여행가고 싶은 곳 <br>
+	<select name="travel1" size="5" multiple>
+		<option>유럽
+		<option>미주
+		<option>동남아
+		<option selected>아마존
+		<option>심해탐험
+		<option>섬여행
+		<option>북극 남극
+	</select><p>
+취미 <input type="checkbox" name="hobby1" value="golf" checked>골프
+<input type="checkbox" name="hobby1" value="sccore" >축구
+<input type="checkbox" name="hobby1" value="baseball" >야구
+<input type="checkbox" name="hobby1" value="basketball" >농구
+<p>
+공지 받는 곳 <br>
+	<select name="kongji1">
+		<option>이메일
+		<option>문자메시지
+		<option>전화연락
+	</select><p> 
+가입시 하고 싶은 말<br> 
+<textarea " name="hello1" rows=2 cols=70 wrap=off>
+여기에 말씀하세요</textarea>
+<p>
+<!-- <input type="submit" value="가 입"> -->
+<input type="button" value="가 입" onclick="kajaCheck();"> <!-- submit을 button으로 변경 -->
+<input type="reset" value="취 소">
+</form>
+</body>
+</html>
