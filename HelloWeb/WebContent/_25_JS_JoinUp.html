@@ -4,6 +4,7 @@
 <meta charset="EUC-KR">
 <title>회원가입</title>
 <script type="text/javascript">
+
 function kajaCheck(){
 	/* ************* 가입나이 조건 *************** */
 	if(f1.na2.value<20 || f1.na2.value>50){ //value : 입력칸에 들어간 내용
@@ -33,7 +34,7 @@ function kajaCheck(){
 	f1.submit(); //서버로 가자 document.f1.submit()
 }// check end
 
-function kajaNick(){
+/* function kajaNick(){
 	if( !(event.keyCode >= 65 && event.keyCode <=90 || event.keyCode >=97 && event.keyCode <= 122)){
 		if(event.returnValue){ //chrome
 			event.returnValue = false //입력막음
@@ -41,10 +42,21 @@ function kajaNick(){
 			event.preventDefault(); //ie
 		}
 	}
-}
+} */
+
 
 function kajatArea(){
 	document.getElementById("tarea1").select();
+}
+
+function kajaNick(bada){
+	var reg2 = /[^(A-Za-z)]/
+	if (reg2.test(bada.value)){
+		alert("nickname은 영어만 가능합니다. ")
+		bada.value="";
+		bada.focus();
+		return false;
+	}
 }
 
 </script>
@@ -56,10 +68,12 @@ function kajatArea(){
 전화번호 <input type="text" name="tel1" required ><p>
 생년월일 <input type="date" min="1900-01-01" max="1999-12-31" name="date1"><p>
 나 이 <input type="text" name="na2"><p> <!-- 20 - 50 세만 입력 가능 -->
-이메일 <input type="text" name="email1" ><p>
+이메일 <input type="email" name="email1" ><p>
 아이디생성 <input type="text" name="id1" ><p>
 암호생성 <input type="password" name="pw1"><p>
-사용할닉네임(영문자만) <input type="text" name="nickname1" onkeypress="kajaNick();"><p>
+사용할닉네임(영문자만) <input type="text" name="nickname1" onkeyup="kajaNick(this);"><p>
+<!-- onkeydown=으로 해도되나 키를 누를때 이벤트 발생이므로 한글이 들어올때, 백스페이스로 글자울때 버벅거림 
+inkeyup은 글자 입력후 이벤트 발생이므로 한글 입력시 입력된 후 경고가 나오고 부드럽게 지워짐  -->
 가입시하고 싶은말<br>
 <textarea name="mal1" rows="2" cols="70" id="tarea1" onclick="kajatArea();">여기에 말씀하세요</textarea><p>
 성별 남<input type="radio" name="gender1" value="male" checked> 여<input type="radio" name="gender1" value="female"><p>
@@ -85,7 +99,7 @@ function kajatArea(){
 		<option>전화연락
 	</select><p> 
 가입시 하고 싶은 말<br> 
-<textarea " name="hello1" rows=2 cols=70 wrap=off>
+<textarea  name="hello1" rows=2 cols=70 wrap=off>
 여기에 말씀하세요</textarea>
 <p>
 <!-- <input type="submit" value="가 입"> -->
