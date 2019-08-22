@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-request.setCharacterEncoding("euc-kr"); //post의 한글처리 방식
+<% request.setCharacterEncoding("euc-kr"); //post의 한글처리 방식
 response.setCharacterEncoding("euc-kr");
 
 String irum=request.getParameter("irum"); //홍길동
@@ -28,8 +27,7 @@ else if(bmi >= 25.0)
 else if(bmi >= 20.0)  
 	result="보통";
 else 
-	result="저체중";
-%>
+	result="저체중"; %>
 <h2>당신의 키와 몸무게BMI는 </h2><br>
 이름 : <%=irum %><br> 
 키 : <%=dKi %> 몸무게  : <%=dMom %> <br>
