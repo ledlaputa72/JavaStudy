@@ -10,7 +10,7 @@
 
 	<%
 	
-		// return Type : Object -> String
+		 // return Type : Object -> String
 		// pageContext.setAttribute("page1", "pagelove");
 		out.println((String)pageContext.getAttribute("page1")); // null
 		
@@ -24,9 +24,17 @@
 		
 		// WAS도
 		// application.setAttribute("app1", "applove");
-		out.println((String)application.getAttribute("app1")); // applove
+		out.println((String)application.getAttribute("app1")); // applove	
 	
 	%>
+	<hr>
+	
+	<!-- EL 표현식 -->
+	${ pageScope.page1 }<br>
+	${ requestScope.req1 }<br>
+	${ sessionScope.ses1 }<br>
+	<!-- out.println((String)session.getAttribute("ses1")); -->
+	${ applicationScope.app1 }<br>
 	
 	<a href="./scope3.jsp">scope3.jsp 한 번 가볼까?</a>
 	
