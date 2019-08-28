@@ -88,5 +88,20 @@ public class TelInfoDAO {
 		return true;
 	}//update_nametel end //////////////////////////////////////
 	
+	//회원을 삭제하기 - 삭제 메소드 ////////////////////////////////////
+	public boolean delete_nametel (String name3){
+		String sql = "DELETE FROM TelTable5 WHERE name=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1,  name3);
+			
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("update Exception");
+			e.printStackTrace();
+		}
+		return true;
+	} //delete_nametel ////////////////////////////////////////
+	
 	
 }//class end
