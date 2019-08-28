@@ -1,20 +1,23 @@
 package telinfoVO;
 
+import java.util.*;
+
 public class TelInfoVO {
 	private int id;
 	private String name;
 	private String tel;
 	private String d;
 	
-	public TelInfoVO() {	}
+	public TelInfoVO() {	} //디폴트 생성자 
 
-	public TelInfoVO(int id, String name, String tel, String d) {
+	public TelInfoVO(int id, String name, String tel, String d) { //생성자 오버로딩
 		this.id = id;
 		this.name = name;
 		this.tel = tel;
 		this.d = d;
 	}
-
+	
+	//getter setter
 	public int getId() {
 		return id;
 	}
@@ -46,7 +49,6 @@ public class TelInfoVO {
 	public void setD(String d) {
 		this.d = d;
 	}
-	
 	
 }
 
