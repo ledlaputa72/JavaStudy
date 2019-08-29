@@ -99,9 +99,39 @@ public class TelInfoDAO {
 		}catch(SQLException e) {
 			System.out.println("update Exception");
 			e.printStackTrace();
+			return false;
 		}
 		return true;
 	} //delete_nametel ////////////////////////////////////////
 	
+	//새로 데이터를 추가  == 삽입 메소드 /////////////////////////////
+	public boolean insert_nametel (int id,  String name, String tel, String sDate) {
+		String sql = "insert into TELTABLE5 values (?, ?, ?, ?)";
+		try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1,  id);
+				pstmt.setString(2,  name);
+				pstmt.setString(3,  tel);
+				int year = Integer.parseInt(sDate.substring(0,4))-1900;
+				int month = Integer.parseInt(sDate.substring(4,6))-1;
+				int day = Integer.parseInt(sDate.substring(6,8));
+				Date d = new Date(year,month,day);
+				pstmt.setDate(4, d);
+				pstmt.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("update Exception");
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}//insert_nametel end //////////////////////////////////////
+	/*
+	 * 자바와 sql의 Date처리는 다르다 . - Java.util.Date java.sql.Date 
+	 * 1) to_date(?,'yyyy-MM-dd')
+	 * 2) SimpleDateFormat
+	 *     .parse(날짜->문자)   .format(문자->날짜)
+	 * 3) java 특성 이용 + substring 사용     
+	 */
+    	
 	
 }//class end
