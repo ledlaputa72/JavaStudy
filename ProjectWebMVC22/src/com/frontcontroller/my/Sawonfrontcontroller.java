@@ -1,6 +1,8 @@
 package com.frontcontroller.my;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -52,22 +54,63 @@ public class Sawonfrontcontroller extends HttpServlet {
 		/*****************************************/
 		
 		String str =null;
-		HaevaImpl scmd1 = null;
+		HaevaImpl h1 = null; //부모
 		
 		switch (c) {
+		//전체 정보를 보여주기 ////////////////
 		case "/getAllInfo.do":
-			scmd1 = new HaevaGetAllInfo();
-			try {
-				scmd1.haeva(request, response);
+			h1 = new HaevaGetAllInfo();
+			try { // 부모것으로 자식을 가리키는 것
+				h1.haeva(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			break;
-
-		default:
-			break;
+			str = "getAllInfo.jsp";
+		break;
+		//한명의 정보를 보여주기 ////////////////
+		case "/telSearchOne.do":
+			h1 = new HaevaSearchone();
+			try {
+				h1.haeva(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			str = "sawonUpdateForm.jsp";
+		break;
+		//정보 추가하기 /////////////////////
+		case "/telInsert.do":
+			h1 = new HaevaInsert();
+			try {
+				h1.haeva(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			str = "getAllInfo.jsp";
+		break;
+		//업데이트 보여주기 ///////////////////
+		case "/telUpdate.do":
+			h1 = new HaevaUpdate();
+			try {
+				h1.haeva(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			str = "getAllInfo.jsp";
+		break;
+		//데이터 지우기 //////////////////////
+		case "/telDelete.do":
+			h1 = new HaevaDelete();
+			try {
+				h1.haeva(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			str = "getAllInfo.jsp";
+		break;
 		}
+		
+		RequestDispatcher rd1 = request.getRequestDispatcher(str);
+		rd1.forward(request, response);
 		
 	}
 
