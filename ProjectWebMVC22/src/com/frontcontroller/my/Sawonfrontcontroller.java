@@ -14,7 +14,7 @@ import com.haeva.my.HaevaImpl;
  * Servlet implementation class Sawonfrontcontroller
  */
 //@WebServlet("/Sawonfrontcontroller")
-@WebServlet("*.do")
+@WebServlet("*.do") //1)
 public class Sawonfrontcontroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,12 +32,23 @@ public class Sawonfrontcontroller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//2)을 확인하기 위해서 콘솔에서 확인 /////////////
+		String ru1 = request.getRequestURI();
+		System.out.println(ru1);
+		
+		String cp1 = request.getContextPath();
+		System.out.println(cp1);
+		
+		String c1 = ru1.substring(cp1.length());
+		System.out.println(c1);
+		//////////////////////////////////////////
 
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
 		/*****************************************/
-		String c = request.getRequestURI().substring(request.getContextPath().length());
+		String c = request.getRequestURI().substring(request.getContextPath().length()); //2)
 		/*****************************************/
 		
 		String str =null;
