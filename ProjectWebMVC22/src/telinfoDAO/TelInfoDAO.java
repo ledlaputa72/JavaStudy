@@ -50,7 +50,7 @@ public class TelInfoDAO {
 	}// getAllInfo() end///////////////////////////////////////
 	
 	//원하는 한사람 찾는 메소드 ///////////////////////////////////////
-	public TelInfoVO search_nametel(String oriName) throws SQLException { 
+	public TelInfoVO getInfo(String oriName) throws SQLException { 
 		TelInfoVO tv = null; //한사람만 찾음 
 		String sql = "SELECT * FROM TelTable5 WHERE NAME=?"; //? : 원하는 사람 이름 선택문
 		
