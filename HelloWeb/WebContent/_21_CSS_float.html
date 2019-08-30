@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	inline element (줄바꿈 아닌 가로로 진행하는) 
+ 	예) b, textarea, span, image등 
+ 	block element (줄바꿈 형태)
+ 	예0 p, pre, audio, div, h1 등 
+ */
+#head1 {
+	width : 100%;
+	height : 50px;
+	background-color : cyan;
+}
+
+#menu1{
+	float : left; /******/
+	width : 20%;
+	height : 300px;
+	background-color : pink;
+}
+
+#content1{
+	float : right; /******/
+	width : 80%;
+	height : 300px;
+	background-color : yellow;
+}
+
+#foot1{
+	float : left; 
+	width : 100%; /******/
+	/* (참고)clear: both */
+	height : 100px;
+	background-color : green;
+}
+</style>
+</head>
+<body>
+<!-- 화면 배치
+	1) 테이블에 넣어 배치 2) div-float로 배치 3) HTML5 배치  -->
+<div>
+	<div id="head1">
+		<img src="fox.gif" width=10% height=30px>나는 헤드 부분	
+	</div>
+	<div id="menu1">나는 메뉴가 나오는 부분</div>
+	<div id="content1">나는 내용이 나오는 부분</div>
+	<div id="foot1">나는 맨 아래 주소등이 나오는 부분</div>
+</div>
+</body>
+</html>
