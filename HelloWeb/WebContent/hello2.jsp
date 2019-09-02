@@ -12,7 +12,6 @@
 	
 	<%
 		int aa = 30;
-	
 		out.println("good!!!");
 	%>
 	
