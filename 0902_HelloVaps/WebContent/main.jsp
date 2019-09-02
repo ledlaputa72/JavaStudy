@@ -14,11 +14,11 @@
 <div class="header">
 	<div class="container clearfix">
 		<div class="menu clearfix">
-			<div class="menu-item"><a href="http://www.naver.com"><img src="./img/menu.png" alt="menu"></a></div>
-			<div class="menu-item"><a href="http://www.daum.net"><img src="./img/menu.png" alt="menu"></a></div>
+			<div class="menu-item"><a href="./menu.jsp"><img src="./img/menu.png" alt="menu"></a></div>
+			<div class="menu-item"><a href="./storeinfo.jsp"><img src="./img/menu.png" alt="storeInfo"></a></div>
 			<div class="menu-item logo"><img src="./img/logo.png" alt="logo"></div>
-			<div class="menu-item"><a href="http://www.google.com"><img src="./img/menu.png" alt="menu"></a></div>
-			<div class="menu-item"><a href="http://www.nate.com"><img src="./img/menu.png" alt="menu"></a></div>
+			<div class="menu-item"><a href="./border1.jsp"><img src="./img/menu.png" alt="menu"></a></div>
+			<div class="menu-item"><a href="./border2.jsp"><img src="./img/menu.png" alt="menu"></a></div>
 		</div>
 	</div>	
 </div>
