@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	
+		<!-- get 방식 : hello1.jsp?name=value&name=value&... 으로 주소창에 보인다. -->
+		<!-- 보안을 위해 post 방식으로 해야 한다. -->
+		<form action="hello1.jsp" method="post">
+		
+			<!-- 입력 부분을 그룹화, div 참조 -->
+			<fieldset>
+			
+				<legend>이름 입력</legend>
+				
+				<ul>
+				
+					<li>
+						<!-- gui : textfield -->
+						<label for="name">
+							이름 <input type="text" name="irum" autofocus required placeholder="가자 이름 입력">
+						</label>
+					</li>
+					
+					<li><input type="date" name="nalja"></li>
+					
+					<!-- multiple : 이메일 주소 목록을 컴마로 구분하여 2개 -->
+					<li><input type="email" name="mymail" required="required" placeholder="a@a.com" multiple>
+					
+					<li><input type="password" name="amho1"></li>
+					
+					<!-- type="button" -->
+					<li><input type="submit" value="가자 서버로"></li>
+					
+					<li><input type="reset" value="취소"></li>
+					
+				</ul>
+				
+				
+				
+			</fieldset>
+			
+		</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<meta name="viewpot"  content="initial-scale=1.0, user-scalable=no">
+<!-- 내용화면 크기 (contents영역), apple에서 시작, 
+1.0 : 뷰포트의 초기 화며배율은 1 (0~10사용) 
+(device-width, device-height)
+no : 크기조절 안함 -->
+<!-- **************google map code**************** -->
+<!-- <script src="https://maps.google.com/maps/api/js?senseor=false"></script>
+<script>
+	window.onload=function(){
+		var joongang1 = new google.maps.LatLng(37.571001,126.992529);
+		//해당 위도, 경도를 지도의 중앙으로 위치하기 위한 것 
+		//var mapDesign1 = {zoom: 15, center: joongang1, mapTypeId : google.maps.MapTypeId.ROADMAP};
+		var mapDesign1 = {zoom: 15, center: joongang1, mapTypeId : google.maps.MapTypeId.HYBRID};
+		var map = new google.maps.Map(document.getElementById("jido1"),mapDesign1);
+	}
+</script> -->
+
+<!-- **************Kakao map code -->
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=64f6763c9924687b7137155622f0b0e0"></script>
+<script ">
+	window.onload = function(){
+		var joongang1 = new daum.maps.LatLng(37.571001,126.992529);
+		//var mapDesign1 = {zoom: 15, center: joongang1, mapTypeId : daum.maps.MapTypeId.ROADMAP};
+		var mapDesign1 = {zoom: 15, center: joongang1, mapTypeId : daum.maps.MapTypeId.HYBRID};	
+		var map = new daum.maps.Map(document.getElementById("jido1"),mapDesign1);
+	}
+</script>
+</head>
+<body>
+	<div id="jido1" style="width: 700px; height:700px"> 이안에 지도 너있다.</div>
+</body>
+</html>
