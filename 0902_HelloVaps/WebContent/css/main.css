@@ -10,9 +10,35 @@ body {
 
 .main-body{
   height: 900px;
-  /* background-color:red;	 */
 }
 
+.main-menu{
+  height: 500px;
+  width: 1000px;
+  margin: auto;  
+  background-color:yellowgreen;	
+}
+
+.main-store{
+  height: 500px;
+  width: 1000px;
+  margin: auto;  
+  background-color:olive;	
+}
+
+.main-notice{
+  height: 500px;
+  width: 1000px;
+  margin: auto;  
+  background-color:tomato;	
+}
+
+.main-border{
+  height: 500px;
+  width: 1000px;
+  margin: auto;  
+  background-color:yellow;	
+}
 .footer{
   height: 200px;
   /* background-color:green;	 */	

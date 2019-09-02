@@ -23,8 +23,8 @@
 	</div>	
 </div>
 <!-- 메인 영역 -->
-<div class="main-body">
-	<div class="main-container">
+<div class="main-menu">
+	<div class="main-menu">
 		메인 메뉴 
 	</div>
 </div>

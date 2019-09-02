@@ -23,8 +23,8 @@
 	</div>	
 </div>
 <!-- 메인 영역 -->
-<div class="main-body">
-	<div class="main-container">
+<div class="main-store">
+	<div class="main-store">
 		스토어 정보
 	</div>
 </div>

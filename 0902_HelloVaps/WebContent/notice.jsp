@@ -23,8 +23,8 @@
 	</div>	
 </div>
 <!-- 메인 영역 -->
-<div class="main-body">
-	<div class="main-container">
+<div class="main-notice">
+	<div class="main-notice">
 		공지사항
 	</div>
 </div>

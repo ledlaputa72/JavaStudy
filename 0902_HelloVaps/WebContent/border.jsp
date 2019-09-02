@@ -23,8 +23,8 @@
 	</div>	
 </div>
 <!-- 메인 영역 -->
-<div class="main-body">
-	<div class="main-container">
+<div class="main-border">
+	<div class="main-border">
 		게시판
 	</div>
 </div>
