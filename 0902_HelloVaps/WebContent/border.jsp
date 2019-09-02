@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>VAPS - Store Information</title>
+<title>VAPS - Border</title>
 <link rel="stylesheet" href="./css/main.css">
 </head>
 <body background="./img/woodBg.png">
@@ -25,7 +25,7 @@
 <!-- 메인 영역 -->
 <div class="main-body">
 	<div class="main-container">
-		스토어 정보
+		게시판
 	</div>
 </div>
 
