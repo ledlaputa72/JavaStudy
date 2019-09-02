@@ -62,7 +62,7 @@ public class TelInfoDAO {
 			int id = rs.getInt("id");
 			String name = rs.getString("name");
 			String tel = rs.getString("tel");
-			Date d = rs.getDate("d"); //홍길동 정보 전부 꺼내서 
+			Date d = rs.getDate("d"); //홍길동 정보 전부 꺼내서
 			
 			tv=new TelInfoVO(id,name,tel,d); //vo 그릇에 넣고 //생성자로 가서 
 		} else { //그런 이름이 없으면
@@ -132,6 +132,22 @@ public class TelInfoDAO {
 	 *     .parse(날짜->문자)   .format(문자->날짜)
 	 * 3) java 특성 이용 + substring 사용     
 	 */
+
+	public boolean update_all(int id1, String name1, String tel1, String d, String sname) throws SQLException{
+		// TODO Auto-generated method stub
+		String sql = "update TelTable5 set id=?, name=?, tel=?, d=TO_DATE(?, 'YYYY-MM-DD') where name=?";
+		
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1, id1);
+		pstmt.setString(2, name1);
+		pstmt.setString(3, tel1);
+		pstmt.setString(4, d);
+		pstmt.setString(5, sname);
+		
+		pstmt.executeUpdate();
+		return true;
+		
+	}
     	
 	
 }//class end

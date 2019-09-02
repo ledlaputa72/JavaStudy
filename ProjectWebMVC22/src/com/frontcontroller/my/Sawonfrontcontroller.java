@@ -15,8 +15,7 @@ import com.haeva.my.HaevaImpl;
 /**
  * Servlet implementation class Sawonfrontcontroller
  */
-//@WebServlet("/Sawonfrontcontroller")
-@WebServlet("*.do") //1)
+@WebServlet("*.do")
 public class Sawonfrontcontroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,86 +31,81 @@ public class Sawonfrontcontroller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		//2)을 확인하기 위해서 콘솔에서 확인 /////////////
-		String ru1 = request.getRequestURI();
-		System.out.println(ru1);
-		
-		String cp1 = request.getContextPath();
-		System.out.println(cp1);
-		
-		String c1 = ru1.substring(cp1.length());
-		System.out.println(c1);
-		//////////////////////////////////////////
 
+//		String ru1 = request.getRequestURI();		
+//		System.out.println(ru1); // /HelloServletJsp/*.do		
+//		String cp1 = request.getContextPath();		
+//		System.out.println(cp1); // /HelloServletJsp		
+//		String c1 = ru1.substring(cp1.length());		
+//		System.out.println(c1); // /*.do		
+		
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		/*****************************************/
 		String c = request.getRequestURI().substring(request.getContextPath().length()); //2)
-		/*****************************************/
-		
-		String str =null;
-		HaevaImpl h1 = null; //부모
+		String str = null;
+		HaevaImpl h1 = null;
 		
 		switch (c) {
-		//전체 정보를 보여주기 ////////////////
-		case "/getAllInfo.do":
-			h1 = new HaevaGetAllInfo();
-			try { // 부모것으로 자식을 가리키는 것
+		case "/getAllInfo.do" :
+			
+			h1 = new HaevaGetAllInfo(); // 부모의 것으로 자식을 가리키는 것			
+			try {
 				h1.haeva(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			str = "getAllInfo.jsp";
-		break;
-		//한명의 정보를 보여주기 ////////////////
-		case "/telSearchOne.do":
-			h1 = new HaevaSearchone();
+			
+			break;
+/*			
+		case "/telSearchOne.do" :
+			h1 = new HaevaSearchone(); //HaevaSearchone.java
 			try {
-				h1.haeva(request, response);
+					h1.haeva(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			str = "sawonUpdateForm.jsp";
-		break;
-		//정보 추가하기 /////////////////////
-		case "/telInsert.do":
-			h1 = new HaevaInsert();
+			
+			break;
+			
+		case "/telInsert.do" :
+			h1 = new HaevaInsert(); //HaevaInsert.java
 			try {
 				h1.haeva(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			str = "getAllInfo.jsp";
-		break;
-		//업데이트 보여주기 ///////////////////
-		case "/telUpdate.do":
-			h1 = new HaevaUpdate();
+			
+			break;
+			
+		case "/telUpdate.do" :
+			h1 = new HaevaUpdate(); //HaevaUpdate.java
 			try {
 				h1.haeva(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			str = "getAllInfo.jsp";
-		break;
-		//데이터 지우기 //////////////////////
-		case "/telDelete.do":
-			h1 = new HaevaDelete();
+			
+			break;
+			
+		case "/telDelete.do" :
+			h1 = new HaevaDelete(); //HaevaDelete.java
 			try {
 				h1.haeva(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			str = "getAllInfo.jsp";
-		break;
+			
+			break;
+*/			
 		}
-		
 		RequestDispatcher rd1 = request.getRequestDispatcher(str);
 		rd1.forward(request, response);
-		
 	}
 
 	/**

@@ -1,11 +1,9 @@
-package com.frontcontroller.my;
+package com.haeva.my;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.haeva.my.HaevaImpl;
-
-public class HaevaUpdate implements HaevaImpl {
+public class HaevaInsert implements HaevaImpl {
 
 	@Override
 	public void haeva(HttpServletRequest request, HttpServletResponse response) throws Exception {

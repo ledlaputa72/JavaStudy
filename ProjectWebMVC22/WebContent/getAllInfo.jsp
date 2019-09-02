@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    
+    pageEncoding="EUC-KR"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
 <table border="1">	
 	<tr>		
 		<td colspan="4">			
-		<form action="getAllinfo.do">				
+		<form action="getAllInfo.do">				
 			<!-- business logic 처리하러 서블릿으로 이동 -->
 			<input type="submit" value="모두 보기">					
 		</form>
