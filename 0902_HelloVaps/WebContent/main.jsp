@@ -6,7 +6,32 @@
 <head>
 <meta charset="EUC-KR">
 <title>VAPS - 밥스</title>
+
+<!-- CSS  -->
 <link rel="stylesheet" href="./css/main.css">
+
+<!-- 슬라이드 제이쿼리  -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="css/jquery.bxslider.min.css">
+<style>
+	*{margin: 0;padding: 0;}
+	#gallery_wrap{
+		margin: 0 auto;
+		width: 1000px;
+	}
+</style>
+<script>
+$(function() {
+	$('.slide_gallery').bxSlider({
+		auto: true,
+		autoControls: true,
+		stopAutoOnClick: true,
+		pager: true
+	});
+});
+</script>
+<!-- 슬라이드 제이쿼리  -->
 </head>
 <body background="./img/woodBg.png">
 
@@ -22,14 +47,13 @@
 		</div>
 	</div>	
 </div>
-<!-- 메인 영역 -->
-<div class="main-body">
-	<div class="main-eventImg">
-		<img src="./img/event_img1.png" alt="evnet">
-	</div>
-	<div class="main-container">
-		메인 메뉴 
-	</div>
+
+<!-- 메인 영역 슬라이드 -->
+<div id="gallery_wrap">
+	<ul class="slide_gallery">
+		<li><img src="./img/event_img1.png" alt="evnet"></li>
+		<li><img src="./img/event_img2.png" alt="evnet"></li>
+	</ul>
 </div>
 
 <!-- 하단 영역  -->

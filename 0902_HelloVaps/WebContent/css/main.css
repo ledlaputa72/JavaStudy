@@ -39,6 +39,7 @@ body {
   margin: auto;  
   background-color:yellow;	
 }
+
 .footer{
   height: 200px;
   /* background-color:green;	 */	
@@ -63,6 +64,10 @@ body {
   width: 1000px;
   margin: auto;  
   background-color:pink;	
+}
+
+.event-image{
+width: 1000px;
 }
 
 .footer-container{
