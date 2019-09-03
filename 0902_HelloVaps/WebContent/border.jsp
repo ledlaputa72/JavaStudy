@@ -10,8 +10,15 @@
 </head>
 <body background="./img/woodBg.png">
 
+<!-- 로그인 정보 -->
+<div class="login">
+	<div class="login-box">
+	[관리자님]
+	</div>
+</div>
+
 <!-- 상단 영역 -->
-<div class="header" >
+<header>
 	<div class="container clearfix">
 		<div class="menu clearfix" id="topImg">
 			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
@@ -21,20 +28,20 @@
 			<div class="menu-item"><a href="./border.jsp"><img src="./img/top5.png" alt="border"></a></div>
 		</div>
 	</div>	
-</div>
+</header>
 <!-- 메인 영역 -->
-<div class="main-border">
-	<div class="main-border">
+<div class="border_wrap">
+	<div class="border_header">
 		게시판
 	</div>
 </div>
 
 <!-- 하단 영역  -->
-<div class="footer">
+<footer>
 	<div class="footer-container">
-		하단 메뉴  
+		 <img src="./img/footer.png" alt="company info">
 	</div>
-</div>
+</footer>
 
 </table>
 </body>

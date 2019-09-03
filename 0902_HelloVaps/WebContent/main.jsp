@@ -19,6 +19,7 @@
 	#gallery_wrap{
 		margin: 0 auto;
 		width: 1000px;
+		background-color:#2B2119;	
 	}
 </style>
 <script>
@@ -35,8 +36,15 @@ $(function() {
 </head>
 <body background="./img/woodBg.png">
 
+<!-- 로그인 정보 -->
+<div class="login">
+	<div class="login-box">
+	[관리자님]
+	</div>
+</div>
+
 <!-- 상단 영역 -->
-<div class="header" >
+<header>
 	<div class="container clearfix">
 		<div class="menu clearfix" id="topImg">
 			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
@@ -46,28 +54,35 @@ $(function() {
 			<div class="menu-item"><a href="./border.jsp"><img src="./img/top5.png" alt="border"></a></div>
 		</div>
 	</div>	
-</div>
+</header>
 
-<!-- 메인 영역 슬라이드 -->
-<div id="gallery_wrap">
-	<ul class="slide_gallery">
-		<li><a href="./menu.jsp"><img src="./img/event_img1.jpg" alt="evnet"></a></li>
-		<li><a href="./menu.jsp"><img src="./img/event_img2.jpg" alt="evnet"></a></li>
-		<li><a href="./menu.jsp"><img src="./img/event_img3.jpg" alt="evnet"></a></li>
-		<li><a href="./menu.jsp"><img src="./img/event_img4.jpg" alt="evnet"></a></li>
-		<li><a href="./menu.jsp"><img src="./img/event_img5.jpg" alt="evnet"></a></li>
-		<li><a href="./menu.jsp"><img src="./img/event_img6.jpg" alt="evnet"></a></li>
-		<li><a href="./menu.jsp"><img src="./img/event_img7.jpg" alt="evnet"></a></li>
-	</ul>
+<!-- 메인 전체  -->
+<div class="main_wrap">
+	<!-- 메인 영역 슬라이드 -->
+	<div id="gallery_wrap">
+		<ul class="slide_gallery">
+			<li><a href="./menu.jsp"><img src="./img/event_img1.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img2.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img3.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img4.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img5.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img6.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img7.jpg" alt="evnet"></a></li>
+		</ul>
+	</div>
+	<!-- 메인 컨텐츠  -->
+	<div class="main-container">
+		<div>
+			메인 영역
+		</div>
+	</div>
 </div>
-
 <!-- 하단 영역  -->
-<div class="footer">
+<footer>
 	<div class="footer-container">
 		 <img src="./img/footer.png" alt="company info">
 	</div>
-</div>
-
+</footer>
 </table>
 </body>
 </html>
