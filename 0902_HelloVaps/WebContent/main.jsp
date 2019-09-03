@@ -61,13 +61,13 @@ $(function() {
 	<!-- 메인 영역 슬라이드 -->
 	<div id="gallery_wrap">
 		<ul class="slide_gallery">
-			<li><a href="./menu.jsp"><img src="./img/event_img1.jpg" alt="evnet"></a></li>
-			<li><a href="./menu.jsp"><img src="./img/event_img2.jpg" alt="evnet"></a></li>
-			<li><a href="./menu.jsp"><img src="./img/event_img3.jpg" alt="evnet"></a></li>
-			<li><a href="./menu.jsp"><img src="./img/event_img4.jpg" alt="evnet"></a></li>
-			<li><a href="./menu.jsp"><img src="./img/event_img5.jpg" alt="evnet"></a></li>
-			<li><a href="./menu.jsp"><img src="./img/event_img6.jpg" alt="evnet"></a></li>
-			<li><a href="./menu.jsp"><img src="./img/event_img7.jpg" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img1.png" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img2.png" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img3.png" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img4.png" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img5.png" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img6.png" alt="evnet"></a></li>
+			<li><a href="./menu.jsp"><img src="./img/event_img7.png" alt="evnet"></a></li>
 		</ul>
 	</div>
 	<!-- 메인 컨텐츠  -->

@@ -29,6 +29,7 @@
 		</div>
 	</div>	
 </header>
+
 <!-- 메인 영역 -->
 <div class="main_wrap">
 	<div class="menu_wrap">
@@ -39,18 +40,19 @@
 			<div class="menu-list">
 				<div>스테이크</div>
 				<div>
-					<div id="menu_img"><img src="./img/event_img1.jpg" alt="evnet" border="2"></div><div>설명 내용 주절</div>
+					<div id="menu_img"><img src="./img/event_img1.png" alt="evnet" border="2"></div><div>설명 내용 주절</div>
 				</div>
-				<div>햄버거</div><div id="menu_img"><img src="./img/event_img2.jpg" alt="evnet" border="2"></div>
-				<div>피자</div><div id="menu_img"><img src="./img/event_img3.jpg" alt="evnet" border="2"></div>
-				<div>김밥</div><div id="menu_img"><img src="./img/event_img4.jpg" alt="evnet" border="2"></div>
-				<div>라멘</div><div id="menu_img"><img src="./img/event_img5.jpg" alt="evnet" border="2"></div>
-				<div>집밥</div><div id="menu_img"><img src="./img/event_img6.jpg" alt="evnet" border="2"></div>
-				<div>편의점도시락</div><div id="menu_img"><img src="./img/event_img7.jpg" alt="evnet" border="2"></div>
+				<div>햄버거</div><div id="menu_img"><img src="./img/event_img2.png" alt="evnet" border="2"></div>
+				<div>피자</div><div id="menu_img"><img src="./img/event_img3.png" alt="evnet" border="2"></div>
+				<div>김밥</div><div id="menu_img"><img src="./img/event_img4.png" alt="evnet" border="2"></div>
+				<div>라멘</div><div id="menu_img"><img src="./img/event_img5.png" alt="evnet" border="2"></div>
+				<div>집밥</div><div id="menu_img"><img src="./img/event_img6.png" alt="evnet" border="2"></div>
+				<div>편의점도시락</div><div id="menu_img"><img src="./img/event_img7.png" alt="evnet" border="2"></div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- 하단 영역  -->
 <footer>
 	<div class="footer-container">

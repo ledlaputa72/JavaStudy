@@ -21,7 +21,6 @@ body {
 	padding : 5px;
 }
 
-/******************************************/
 
 /**************** 상단 메뉴  ******************/
 header {
@@ -45,7 +44,7 @@ header {
 }
 .menu-item {
   font-size: 16px;
-  background : withe;
+  /* background : white; */
   
   width: 200px;
   height: 133px;
@@ -90,14 +89,20 @@ header {
 
 /* 매장 정보 */
 .store_wrap{
-  height: 500px;
   width: 1000px;
-  margin: auto;  
-  background-color:olive;	
+    margin: auto;  
+  background-color: #e9eec9;	
 }
 
 .store_header{
-	
+  width: 600px;
+   padding : 10px;
+    margin: auto;  
+  background-color:white;
+	}
+
+.store_map{
+
 }
 
 /* 공지사항 */
