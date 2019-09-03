@@ -51,15 +51,20 @@ $(function() {
 <!-- 메인 영역 슬라이드 -->
 <div id="gallery_wrap">
 	<ul class="slide_gallery">
-		<li><img src="./img/event_img1.png" alt="evnet"></li>
-		<li><img src="./img/event_img2.png" alt="evnet"></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img1.jpg" alt="evnet"></a></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img2.jpg" alt="evnet"></a></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img3.jpg" alt="evnet"></a></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img4.jpg" alt="evnet"></a></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img5.jpg" alt="evnet"></a></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img6.jpg" alt="evnet"></a></li>
+		<li><a href="./menu.jsp"><img src="./img/event_img7.jpg" alt="evnet"></a></li>
 	</ul>
 </div>
 
 <!-- 하단 영역  -->
 <div class="footer">
 	<div class="footer-container">
-		하단 메뉴  
+		 <img src="./img/footer.png" alt="company info">
 	</div>
 </div>
 

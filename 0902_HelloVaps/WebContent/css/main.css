@@ -42,7 +42,6 @@ body {
 
 .footer{
   height: 200px;
-  /* background-color:green;	 */	
 }
 
 .container {
@@ -74,7 +73,7 @@ width: 1000px;
   height: 200px;
   width: 1000px;
   margin: auto;   
-  background-color:lime;	
+  background-color:maroon;	
 }
 
 .logo {
