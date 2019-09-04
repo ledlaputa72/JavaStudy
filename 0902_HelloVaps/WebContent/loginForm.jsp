@@ -54,14 +54,14 @@
 				<td colspan="2"><h2>회원 로그인</h2></td>
 			</tr>
 			<tr>
-				<td>ID</td>
-				<td> <input type="text" name="id"> </td>
+				<td><b>ID</b></td>
+				<td> <input type="text" name="id" ></td>
 			</tr>
 			<tr>
 				<td colspan="2"><br></td>
 			</tr>
 			<tr>
-				<td>Password</td>
+				<td><b>Password</b></td>
 				<td> <input type="password" name="pw"> </td>
 			</tr>
 			<tr>
