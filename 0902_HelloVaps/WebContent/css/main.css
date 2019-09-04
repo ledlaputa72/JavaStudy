@@ -8,7 +8,7 @@ body {
 .login{
 	position: fixed;
 	width : 100px;
-	height: 50px;
+	height: 80px;
 	top:10px;
 	right: 0px;
 	background-color: #2B2119;
@@ -21,13 +21,11 @@ body {
 	padding : 5px;
 }
 
-
 /**************** 상단 메뉴  ******************/
 header {
   height: 150px;
  /*  border-bottom: 1px solid lightgray; 요소테두리선-아래: 1px두께 가는실선 밝은회색; - header 하단에 회색의 선이 표시됩니다. */
 }
-
 
 .main-body{
   height: 900px;
@@ -54,19 +52,90 @@ header {
 }
 
 
+/************* 메인 ******************/
+
+ #bg {
+        background-image: url( "img/contents_bg2.jpg" );
+      }
+
+.container {
+  height: 133px;
+  width: 1000px;
+  margin: auto; /* 요소바깥여백: 여백자동; - 이 속성과 값은 container를 수평 가운데 정렬하는 속성으로 쓰입니다. */
+
+}
+
+.main_wrap{
+  /* background-color:#2B2119; */	
+  width: 1000px;
+  margin: auto;
+	 background-color: black;  
+}
+
+.main-eventImg{
+  height: 460px;
+  width: 1000px;
+  margin: auto;  
+  background-color: aqua;
+}
+
+.main-container{
+  height: 440px;
+  width: 1000px;
+  margin: auto;  
+  /* background-color:#c9ab5c;	 */
+}
+
+#gallery_wrap{
+	background-color:pink;
+}
+
+.event-image{
+width: 1000px;
+}
+
+.main_table{
+	position : relative;
+	top: 20px;
+	width : 800px;
+	height : 400px;
+	margin: auto;  
+	
+}
+
+.main_table #colum1{
+	position : relative;
+	color : red;
+	float: left;
+	width : 380px;
+	height : 400px;
+	background-color: olive;		
+}
+
+.main_table #colum2{
+	position : relative;
+	left : 40px;
+	color : blue;
+	float: left;
+	width : 380px;
+	height : 400px;
+	background-color: yellowgreen;	
+}
+
 /**************** 서브 페이지 메인  *****************/
 /* 메뉴  */
 .menu_wrap{
   width: 1000px;
-  margin: auto;  
-  background-color: #c9ab5c;	
-  position: top;
+  margin: auto;
+  
 }
 
 .menu_header{
 	height : 40px;  
 	margin: auto;
-	background-color: #c9ab5c;	
+	padding : 0px;
+	top : 0px;
+	/* background-color: #c9ab5c;	 */
 }
 
 .menu-list{
@@ -80,25 +149,34 @@ header {
 .menu-list img{
 	max-width: 500px;
 	padding : 5px;
+	
 	/* display: block; */
 }
 
 #menu_img{	
-	background-color: white;		
+	background-color: maroon;	
+		
 }
+
+.menu_dis{
+	font-size : 20px;
+	color : white;
+	float: right;
+}
+
 
 /* 매장 정보 */
 .store_wrap{
-  width: 1000px;
-    margin: auto;  
-  background-color: #e9eec9;	
+	width: 1000px;
+	height : 1000px;
+	margin: auto;  
 }
 
 .store_header{
   width: 600px;
    padding : 10px;
-    margin: auto;  
-  background-color:white;
+    margin: auto;
+    background-color: white;  
 	}
 
 .store_map{
@@ -122,49 +200,12 @@ header {
   height: 500px;
   width: 1000px;
   margin: auto;  
-  background-color:yellow;	
 }
 
 .border_header{
-	
-}
-
-/************************************************/
-
-.container {
-  height: 133px;
-  width: 1000px;
-  margin: auto; /* 요소바깥여백: 여백자동; - 이 속성과 값은 container를 수평 가운데 정렬하는 속성으로 쓰입니다. */
 
 }
 
-.main_wrap{
-  background-color:#2B2119;	
-  width: 1000px;
-  margin: auto;
-}
-
-.main-eventImg{
-  height: 460px;
-  width: 1000px;
-  margin: auto;  
-  background-color: aqua;
-}
-
-.main-container{
-  height: 440px;
-  width: 1000px;
-  margin: auto;  
-  background-color:#c9ab5c;	
-}
-
-#gallery_wrap{
-	background-color:pink;
-}
-
-.event-image{
-width: 1000px;
-}
 
 /****************** 푸터 ********************/
 

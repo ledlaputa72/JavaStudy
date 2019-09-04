@@ -106,5 +106,46 @@ public class VapsDAO {
 		return vv;
 			
 	}
+	
+	public int getNo(String sid) throws SQLException {
+		
+		String sql = "SELECT no FROM member WHERE id = ?";
+		
+		pstmt = con.prepareStatement(sql);
+		
+		pstmt.setString(1, sid);
+		
+		pstmt.executeQuery();
+		
+		int no = 0;
+		
+		if (rs.next()) 
+			no = rs.getInt(1);
+		
+		System.out.println(no);
+		
+		return no;
+		
+	}
+
+	// 자신의 정보를 수정할 수 있는 메소드
+	public boolean update_all(int no, String id, String name, String email, String tel, String sid) throws SQLException {
+		
+		String sql = "UPDATE member SET no = ?, id = ?, name = ?, email = ?, tel = ? WHERE id = ?";
+		
+		pstmt = con.prepareStatement(sql);
+		
+		pstmt.setInt(1, no);
+		pstmt.setString(2, id);
+		pstmt.setString(3, name);
+		pstmt.setString(4, email);
+		pstmt.setString(5, tel);
+		pstmt.setString(6, sid); // 링크로 넘어온 아이디
+		
+		pstmt.executeUpdate();
+		
+		return true;
+		
+	}
 
 }

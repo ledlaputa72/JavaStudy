@@ -1,36 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>VAPS - Notice</title>
+<title>VAPS - 밥스</title>
 
-<style>
-#main_bg{
-	background-size : contain;
-	/* 
-	cover : 배경 크기 참조하여 이미지를 확대 or 축소, 
-	auto :  크기 그대로,  
-	contain : 배경 크기 참조하되 가로세율 비율 맞추어 
-	 */
- 	background-image : url("./img/contents_bg2.jpg");
- 	background-position : cneter; /* resize시 그림 가운가 보이게  */
- 	min-height : 100%;
- 	border : 0%;
- 	padding : 0%;
-}
-</style>
-
+<!-- CSS  -->
 <link rel="stylesheet" href="./css/main.css">
+
+<!-- 슬라이드 제이쿼리  -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="css/jquery.bxslider.min.css">
+<style>
+	*{margin: 0;padding: 0;}
+	#gallery_wrap{
+		margin: 0 auto;
+		width: 1000px;
+		background-color:#2B2119;	
+	}
+</style>
+<script>
+$(function() {
+	$('.slide_gallery').bxSlider({
+		auto: true,
+		autoControls: true,
+		stopAutoOnClick: true,
+		pager: true
+	});
+});
+</script>
+<!-- 슬라이드 제이쿼리  -->
 </head>
 <body background="./img/woodBg.png">
 
 <!-- 로그인 정보 -->
 <div class="login">
 	<div class="login-box">
-	[관리자님]
+	
+		${ svv.name } 님
+		
+		<a href="logout.do">로그아웃</a>
+	
 	</div>
 </div>
 
@@ -46,25 +58,3 @@
 		</div>
 	</div>	
 </header>
-<!-- 메인 영역 -->
-<div class="login">
-   <div class="login-box">
-   
-      ${ svv.name } 님 <br>
-      
-      <a href="logout.do">로그아웃</a> <br>
-      <a href="myPage.do?id=${ svv.id }">마이 페이지</a>
-   
-   </div>
-</div>
-
-<!-- 하단 영역  -->
-<footer>
-	<div class="footer-container">
-		 <img src="./img/footer.png" alt="company info">
-	</div>
-</footer>
-
-</table>
-</body>
-</html>

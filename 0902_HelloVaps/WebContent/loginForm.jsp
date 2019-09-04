@@ -46,16 +46,10 @@
 	
 		String msg = (String)request.getAttribute("msg");
 	
+	
 	%>
 	
 	<%-- <h1> <%= msg %> </h1> --%>
-	
-	<script>
-		
-		<%-- if (<%=msg%> != null) --%>
-			<%-- alert('<%=msg%>'); --%>
-	
-	</script>
-	
+
 </body>
 </html>
