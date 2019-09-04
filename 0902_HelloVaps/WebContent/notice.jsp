@@ -29,25 +29,6 @@
 
 <!-- 로그인 정보 -->
 <div class="login">
-	<div class="login-box">
-	[관리자님]
-	</div>
-</div>
-
-<!-- 상단 영역 -->
-<header>
-	<div class="container clearfix">
-		<div class="menu clearfix" id="topImg">
-			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
-			<div class="menu-item"><a href="./storeinfo.jsp"> <img src="./img/top2.png" alt="storeInfo"></a></div>
-			<div class="menu-item logo"><a href="./main.jsp"><img src="./img/top3.png" alt="logo"></a></div>
-			<div class="menu-item"><a href="./notice.jsp"><img src="./img/top4.png" alt="notice"></a></div>
-			<div class="menu-item"><a href="./border.jsp"><img src="./img/top5.png" alt="border"></a></div>
-		</div>
-	</div>	
-</header>
-<!-- 메인 영역 -->
-<div class="login">
    <div class="login-box">
    
       ${ svv.name } 님 <br>
@@ -56,6 +37,25 @@
       <a href="myPage.do?id=${ svv.id }">마이 페이지</a>
    
    </div>
+</div>
+
+<!-- 상단 영역 -->
+<header>
+	<div class="container clearfix">
+		<div class="top_menu clearfix" id="topImg">
+			<div class="top_menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
+			<div class="top_menu-item"><a href="./storeinfo.jsp"> <img src="./img/top2.png" alt="storeInfo"></a></div>
+			<div class="top_menu-item logo"><a href="./main.jsp"><img src="./img/top3.png" alt="logo"></a></div>
+			<div class="top_menu-item"><a href="./notice.jsp"><img src="./img/top4.png" alt="notice"></a></div>
+			<div class="top_menu-item"><a href="./border.jsp"><img src="./img/top5.png" alt="border"></a></div>
+		</div>
+	</div>	
+</header>
+<!-- 메인 영역 -->
+<div class="notice_wrap" id="main_bg">
+	<div class="notice_header">
+		공지사항
+	</div>
 </div>
 
 <!-- 하단 영역  -->

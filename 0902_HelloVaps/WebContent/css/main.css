@@ -7,15 +7,22 @@ body {
 /* ********** 로그인 정보 ************** */
 .login{
 	position: fixed;
-	width : 100px;
-	height: 80px;
+	width : 120px;
+	height: 100px;
 	top:10px;
 	right: 0px;
-	background-color: #2B2119;
+	background-color: olive;
 	padding-top : 5px;
 }	
 
 .login-box{
+	font: 15px;
+	color: white; 
+	padding : 5px;
+	float: right;
+}
+
+.login-box a{
 	font: 15px;
 	color: white; 
 	padding : 5px;
@@ -37,10 +44,10 @@ header {
 .logo img { /* logo의 자식 요소인 img 태그 - 선택자에서 띄어쓰기는 자식요소를 의미합니다. */
   display: block; /* 요소특성: 형태위주; - img(이미지) 하단에 생기는 불필요한 여백을 없애기 위해서 사용되었습니다. */
 }
-.menu {
+.top_menu {
   float: left; /* logo와 menu를 수평 정렬하기 위해 사용되었습니다. */
 }
-.menu-item {
+.top_menu-item {
   font-size: 16px;
   /* background : white; */
   
