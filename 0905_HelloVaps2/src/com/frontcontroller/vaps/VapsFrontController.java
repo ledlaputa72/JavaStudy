@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.haeva.vaps.HaevaBoardList;
 import com.haeva.vaps.HaevaImpl;
 import com.haeva.vaps.HaevaLogin;
 import com.haeva.vaps.HaevaLogout;
@@ -134,6 +135,24 @@ public class VapsFrontController extends HttpServlet {
 			}
 			
 			str = "myPage.jsp";
+			
+			break;
+			
+		case "/boder.do" :
+			
+			h1 = new HaevaBoardList();
+			
+			try {
+				
+				h1.haeva(request, response);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+				
+			}
+			
+			str = "border.jsp";
 			
 			break;
 					

@@ -36,7 +36,7 @@
 			<tr>
 				<td colspan="5">
 					<input type="submit" value="수정 화면으로">
-					<input type="button" value="메인으로" onclick="history.back()">
+					<input type="button" value="뒤로 가기" onclick="history.back()">
 				</td>
 			</tr>			
 		

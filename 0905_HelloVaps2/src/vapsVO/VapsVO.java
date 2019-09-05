@@ -1,5 +1,7 @@
 package vapsVO;
 
+import java.sql.Date;
+
 public class VapsVO {
 	
 	private int no;

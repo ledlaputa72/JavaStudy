@@ -58,34 +58,7 @@
 <div class="border_wrap" id="main_bg">
 	<div class="border_header">
 		
-		<form action="border.do">
-			<input type="submit" value="모두 보기">
-			<input type="button" value="게시글 작성" onclick="location.href='./postForm.jsp'">
-		</form> 
 		
-		<table border="1" width="100%">
-		
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				<th>작성 날짜</th>
-				<th>조회수</th>
-			</tr>	
-			
-			<c:forEach var="vo1" items="${ alist1 }">
-			
-				<tr>
-					<td> ${ vo1.bno } </td>
-					<td> ${ vo1.title } </td>
-					<td> ${ vo1.author } </td>
-					<td> ${ vo1.regDate } </td>
-					<td> ${ vo1.hitCount } </td>
-				</tr>
-				
-			</c:forEach>	
-				
-		</table>
 		
 	</div>
 </div>

@@ -30,7 +30,13 @@
 <!-- 로그인 정보 -->
 <div class="login">
 	<div class="login-box">
-	[관리자님]
+	
+		<%-- ${ svv.name } 님 <br>  --%>
+		<%= session.getAttribute("sessid") %> 님 <br>
+		
+		<a href="logout.jsp">로그아웃</a> <br>
+		<a href="myPage.do?id=<%= session.getAttribute("sessid") %>">마이 페이지</a>
+	
 	</div>
 </div>
 
