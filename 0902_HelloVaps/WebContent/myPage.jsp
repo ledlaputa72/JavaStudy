@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<h1>¸¶ÀÌ ÆäÀÌÁö</h1>
+	<h1> <%= session.getAttribute("sessid") %> ë‹˜ì˜ ë§ˆì´ íŽ˜ì´ì§€</h1>
 	
 	<hr>
 	
@@ -17,15 +17,14 @@
 		<table border="1">
 		
 			<tr>
-				<td>¾ÆÀÌµð</td>
-				<td>ºñ¹Ð¹øÈ£</td>
-				<td>ÀÌ¸§</td>
-				<td>ÀÌ¸ÞÀÏ</td>
-				<td>ÀüÈ­¹øÈ£</td>
+				<td>ì•„ì´ë””</td>
+				<td>ë¹„ë°€ë²ˆí˜¸</td>
+				<td>ì´ë¦„</td>
+				<td>ì´ë©”ì¼</td>
+				<td>ì „í™”ë²ˆí˜¸</td>
 			</tr>
 			
 			<tr>
-				<input type="hidden" value="${ svv.no }" name="no">
 				<td> ${ svv.id } </td>
 				<td> ${ svv.pw } </td>
 				<td> ${ svv.name } </td>
@@ -36,8 +35,8 @@
 			
 			<tr>
 				<td colspan="5">
-					<input type="submit" value="¼öÁ¤">
-					<input type="reset" value="Ãë¼Ò">
+					<input type="submit" value="ìˆ˜ì • í™”ë©´ìœ¼ë¡œ">
+					<input type="button" value="ë©”ì¸ìœ¼ë¡œ" onclick="history.back()">
 				</td>
 			</tr>			
 		
@@ -46,8 +45,6 @@
 	</form>
 	
 	<br>
-	
-	<input type="button" onclick="history.back()" value="¸ÞÀÎÀ¸·Î">
 	
 </body>
 </html>

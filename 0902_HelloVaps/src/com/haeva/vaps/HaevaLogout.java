@@ -2,6 +2,7 @@ package com.haeva.vaps;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import vapsDAO.VapsDAO;
 import vapsVO.VapsVO;
@@ -24,8 +25,13 @@ public class HaevaLogout implements HaevaImpl {
 //		request.getSession().removeAttribute("sid");
 //		request.getSession().removeAttribute("svv");
 		
-		request.removeAttribute("sid");
 		request.removeAttribute("svv");
+		
+		HttpSession session = request.getSession(false);
+		
+		session.invalidate();
+		
+		response.sendRedirect("loginForm.jsp");
 		
 	}
 	

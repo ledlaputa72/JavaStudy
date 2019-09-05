@@ -7,9 +7,9 @@
 <div class="login">
    <div class="login-box">
    
-      <b>${ svv.name } 님 </b><br><br>
+      <%= session.getAttribute("sessid") %> 님 <br> 
       
-      <a href="logout.do">로그아웃</a> <br>
+      <a href="logout.jsp">로그아웃</a> <br>
       <a href="myPage.do?id=${ svv.id }">마이 페이지</a>
    
    </div>

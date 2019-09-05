@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<h1>���� ������</h1>
+	<h1> <%= session.getAttribute("sessid") %> 님의 마이 페이지 수정 화면</h1>
 	
 	<hr>
 	
@@ -17,11 +17,11 @@
 		<table border="1">
 		
 			<tr>
-				<td>���̵�</td>
-				<td>��й�ȣ</td>
-				<td>�̸�</td>
-				<td>�̸���</td>
-				<td>��ȭ��ȣ</td>
+				<td>아이디</td>
+				<td>비밀번호</td>
+				<td>이름</td>
+				<td>이메일</td>
+				<td>전화번호</td>
 			</tr>
 			
 			<tr>
@@ -35,8 +35,9 @@
 			
 			<tr>
 				<td colspan="5">
-					<input type="submit" value="����">
-					<input type="reset" value="���">
+					<input type="submit" value="수정">
+					<input type="reset" value="취소">
+					<input type="button" onclick="history.back()" value="마이페이지로">
 				</td>
 			</tr>			
 		
@@ -45,8 +46,6 @@
 	</form>
 	
 	<br>
-	
-	<input type="button" onclick="history.back()" value="��������">
-	
+
 </body>
 </html>

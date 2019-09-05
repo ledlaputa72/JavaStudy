@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>È¸ ¿ø °¡ ÀÔ</title>
+<meta charset="UTF-8">
+<title>íšŒ ì› ê°€ ìž…</title>
 <style>
 
 
@@ -14,53 +14,53 @@
 <body background="gray" >
 
 
-<h1  align="center">È¸¿ø°¡ÀÔ</h1>
+<h1  align="center">íšŒì›ê°€ìž…</h1>
 <form action="joinpro.jsp" method="post">
 
 <table width="410" height="300" border =1 align="center">
 <tr>
-<td align="center">ÀÌ¸§</td>
-<td style=padding-left:10px;><input  type="text" name="name" size=20 maxlength =50 placeholder="ÀÌ ¸§ ÀÔ ·Â" ></td>
+<td align="center">ì´ë¦„</td>
+<td style=padding-left:10px;><input  type="text" name="name" size=20 maxlength =50 placeholder="ì´ ë¦„ ìž… ë ¥" ></td>
 </tr>
 
 <tr>
 <td align="center">ID</td>
-<td style=padding-left:10px;><input type="text" name="id"size=20 maxlength =50 placeholder="ID ÀÔ·Â">&nbsp;
-<input type="button" value="Áßº¹È®ÀÎ"></td>
+<td style=padding-left:10px;><input type="text" name="id"size=20 maxlength =50 placeholder="ID ìž…ë ¥">&nbsp;
+<input type="button" value="ì¤‘ë³µí™•ì¸"></td>
 </tr>
 
 <tr>
-<td align="center">ºñ¹Ð¹øÈ£</td>
-<td style=padding-left:10px;><input type="password" name="pw"size=20 maxlength =16 placeholder="6~16 ¼ýÀÚ/¼ýÀÚ"required ></td>
+<td align="center">ë¹„ë°€ë²ˆí˜¸</td>
+<td style=padding-left:10px;><input type="password" name="pw"size=20 maxlength =16 placeholder="6~16 ìˆ«ìž/ìˆ«ìž"required ></td>
 </tr>
 
 <tr>
-<td align="center">ºñ¹Ð¹øÈ£ È®ÀÎ</td>
-<td style=padding-left:10px;><input type="password" name="pw2" size=20 maxlength =16 placeholder="6~16 ¼ýÀÚ/¼ýÀÚ"required></td>
+<td align="center">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</td>
+<td style=padding-left:10px;><input type="password" name="pw2" size=20 maxlength =16 placeholder="6~16 ìˆ«ìž/ìˆ«ìž"required></td>
 </tr>
 
 
 
 <tr>
-<td align="center">ÀÌ¸ÞÀÏ</td>
+<td align="center">ì´ë©”ì¼</td>
 <td style=padding-left:10px;><input type="text" name="email" size=20 placeholder="aa@naver.com" required ></td>
 </tr>
 
 <tr>
-<td align="center">ÀüÈ­¹øÈ£</td>
+<td align="center">ì „í™”ë²ˆí˜¸</td>
 <td style=padding-left:10px;><input type="text" name="tel" size=20 maxlength=20 placeholder="010-1111-2222" required></td>
 </tr>
 <tr>
-<td colspan=2 align="center"><input type="submit" value ="°¡ÀÔÇÏ±â">
-           <input type="reset" value ="Ãë¼Ò">
+<td colspan=2 align="center"><input type="submit" value ="ê°€ìž…í•˜ê¸°">
+           <input type="reset" value ="ì·¨ì†Œ">
 </td>
 </tr>
 </table><br>
 </form>
 
 
-<!-- <input type="submit" value="°¡ÀÔÇÏ±â">
-<input type="button" value="Ãë¼Ò"> -->
+<!-- <input type="submit" value="ê°€ìž…í•˜ê¸°">
+<input type="button" value="ì·¨ì†Œ"> -->
 
 </body>
 </html>

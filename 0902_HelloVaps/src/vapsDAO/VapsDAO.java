@@ -115,7 +115,7 @@ public class VapsDAO {
 		
 		pstmt.setString(1, sid);
 		
-		pstmt.executeQuery();
+		rs = pstmt.executeQuery();
 		
 		int no = 0;
 		

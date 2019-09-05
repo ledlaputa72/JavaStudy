@@ -65,7 +65,7 @@ public class VapsFrontController extends HttpServlet {
 			
 			break;
 			
-		case "/logout.do" :
+		/*case "/logout.do" :
 			
 			h1 = new HaevaLogout();
 			
@@ -81,7 +81,7 @@ public class VapsFrontController extends HttpServlet {
 			
 			str = "loginForm.jsp";
 			
-			break;
+			break;*/
 			
 		case "/myPage.do" :
 			

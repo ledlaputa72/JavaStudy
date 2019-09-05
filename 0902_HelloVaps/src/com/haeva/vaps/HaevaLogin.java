@@ -3,6 +3,7 @@ package com.haeva.vaps;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import vapsDAO.VapsDAO;
 import vapsVO.VapsVO;
@@ -24,6 +25,8 @@ public class HaevaLogin implements HaevaImpl {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
+		HttpSession session = request.getSession();
+		
 		int status = vdao.login(id, pw);
 		
 		vv = vdao.getInfo(id);
@@ -36,6 +39,8 @@ public class HaevaLogin implements HaevaImpl {
 			request.setAttribute("sid", id);
 			request.setAttribute("svv", vv);
 					
+			session.setAttribute("sessid", id);
+			
 		}
 				
 		// 로그인에 실패하였다면

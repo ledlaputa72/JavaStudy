@@ -20,8 +20,6 @@ public class HaevaUpdate implements HaevaImpl {
 		
 		// 수정된 내용이 넘어온다.
 		
-//		int no = Integer.parseInt(request.getParameter("no"));
-		
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
@@ -34,8 +32,15 @@ public class HaevaUpdate implements HaevaImpl {
 		
 		int no = vdao.getNo(sid);
 		
-		// DAO 에서 해당 이름이 수정되어 DB로
+		System.out.println(no);
+		
+		// DAO 에서 정보들이 수정되어 DB로
 		vdao.update_all(no, id, name, email, tel, sid);
+		
+		vv = vdao.getInfo(id);
+		
+		request.setAttribute("sid", id);
+		request.setAttribute("svv", vv);
 		
 	}
 

@@ -27,30 +27,56 @@
 	<div class="store_header">
 		<table width="600px" border="0" align="center">
 			<tr align="center">
-				<td>
+				<td colspan="2">
 					<div><h2>오시는 길</h2> </div>
 				</td>
 			</tr>
+			<!-- 지도 구현 -->
 			<tr align="center">
-				<td >
+				<td colspan="2">
 					<div class="store_map">
 				 		<div id="jido1" style="width: 500px; height:500px"></div>
-					</div>
+					</div><br><br>
 				</td>
 			</tr>
-			<tr  align="center">
-				<td>
+			
+			<!-- 주소 -->
+			<tr>
+				<td width="30%"  align="center">
 					<div><h3> 주소  </h3></div>
 				</td>
-			</tr>
-			<tr>
 				<td>
-					<div> <h4> 서울 종로구 종로3가 단성사 5층 ITBank </h4> </div>
+					<div> <h4> 서울 종로구 종로3가 단성사 5층 ITBank </h4> </div> <br>
 				</td>
 			</tr>
-			<tr>			
+	
+			
+			<!-- 담당자명 -->	
+			<tr align="center">
+				<td colspan="2">
+					<div><h3>2조 소개</h3> </div><br>
+				</td>
+			</tr>
+				
+			<tr >
+				<td width="30%"  align="center">
+					<div><h3> 맴버 </h3></div>
+				</td>
 				<td>
-					<div>   </div>
+					<ul>
+						<li> 이효정 - 메인 & 로그인 
+						<li> 노현우 - 팀장 & 발표자
+						<li> 최동규 - 게시판 
+						<li> 홍성혁 - 게시판 
+						<li> 정연섭 - 프론트엔드
+					</ul>
+				</td>
+			</tr>
+			
+			
+			<tr>			
+				<td colspan="2">
+					<div><br><br><br></div>
 				</td>
 			</tr>
 		</table>

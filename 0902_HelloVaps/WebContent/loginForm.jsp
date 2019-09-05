@@ -1,38 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="EUC-KR">
-	<title>∑Œ±◊¿Œ</title>
-	<style type="text/css">
-	
-	.login_logo{
-	background-size : contain;
- 	background-image : url("./img/top3.png");
- 	background-position : cneter; /* resizeΩ√ ±◊∏≤ ∞°øÓ∞° ∫∏¿Ã∞‘  */
-	width : 400px;
-	height: 100px;
-	margin: auto;	
-	}
-	
-	.login_form{
-	background-size : contain;
- 	background-image : url("./img/contents_bg2.jpg");
- 	background-position : cneter; /* resizeΩ√ ±◊∏≤ ∞°øÓ∞° ∫∏¿Ã∞‘  */
-	width : 400px;
-	height: 400px;
-	margin: auto;	
-	}
-	
-	#input_table{
-	position : relative;
-	top : 50px;
-	padding : 10px;
-	margin: auto;	
-	}
-	</style>
+	<meta charset="UTF-8">
+	<title>Î°úÍ∑∏Ïù∏</title>
+
 	<script>
 
 		function goSignUpForm() {
@@ -43,44 +17,51 @@
 	
 	</script>
 </head>
-<body  background="./img/woodBg.png">
-
-<form action="login.do" method="post">
-	<div class="login_logo">
-	</div>	
-	<div class="login_form" clearfix>
-		<table border="0" id="input_table">
-			<tr>
-				<td colspan="2"><h2>»∏ø¯ ∑Œ±◊¿Œ</h2></td>
-			</tr>
-			<tr>
-				<td><b>ID</b></td>
-				<td> <input type="text" name="id" ></td>
-			</tr>
-			<tr>
-				<td colspan="2"><br></td>
-			</tr>
-			<tr>
-				<td><b>Password</b></td>
-				<td> <input type="password" name="pw"> </td>
-			</tr>
-			<tr>
-				<td colspan="2"><br></td>
-			</tr>
-			<tr>
-				<td> <input type="submit" value="LOGIN"> </td>
-				<td> <input type="button" value="»∏ø¯∞°¿‘" onclick="goSignUpForm()"> </td>
-			</tr>			
-		
-		</table>
-	</div>	
-</form>
-
+<body>
 
 	<%
 	
-		String msg = (String)request.getAttribute("msg");
+		// Î°úÍ∑∏Ïù∏ÎêòÏñ¥ ÏûàÏßÄ ÏïäÏùÑ Îïå
+		if (session.getAttribute("sessid") == null) {
+			
+	%>
+
+	<form action="login.do" method="post">
 	
+		<table border="0">
+		
+			<tr>
+				<td>ID</td>
+				<td> <input type="text" name="id"> </td>
+			</tr>
+			
+			<tr>
+				<td>Password</td>
+				<td> <input type="password" name="pw"> </td>
+			</tr>
+			
+			<tr>
+				<td> <input type="submit" value="LOGIN"> </td>
+				<td> <input type="button" value="ÌöåÏõêÍ∞ÄÏûÖ" onclick="goSignUpForm()"> </td>
+			</tr>			
+		
+		</table>
+	
+	</form>
+	
+	<%
+	
+		}
+	
+/* 		// Î°úÍ∑∏Ïù∏ÎêòÏóàÏùÑ Îïå
+		else { */
+			
+	%>
+	
+		
+	<% 		
+	
+		String msg = (String)request.getAttribute("msg");
 	
 	%>
 	
