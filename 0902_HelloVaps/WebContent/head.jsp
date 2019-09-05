@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 </head>
 <body background="./img/woodBg.png">
 
-<!-- ·Î±×ÀÎ Á¤º¸ -->
+<!-- ë¡œê·¸ì¸ ì •ë³´ -->
 <div class="login">
    <div class="login-box">
    
-      <%= session.getAttribute("sessid") %> ´Ô <br> 
+      <%= session.getAttribute("sessid") %> ë‹˜ <br> 
       
-      <a href="logout.jsp">·Î±×¾Æ¿ô</a> <br>
-      <a href="myPage.do?id=${ svv.id }">¸¶ÀÌ ÆäÀÌÁö</a>
+      <a href="logout.jsp">ë¡œê·¸ì•„ì›ƒ</a> <br>
+      <a href="myPage.do?id=${ svv.id }">ë§ˆì´ íŽ˜ì´ì§€</a>
    
    </div>
 </div>
 
-<!-- »ó´Ü ¿µ¿ª -->
+<!-- ìƒë‹¨ ì˜ì—­ -->
 <header>
 	<div class="container clearfix">
 		<div class="top_menu clearfix" id="topImg">

@@ -6,6 +6,5 @@
 		 <img src="./img/footer.png" alt="company info">
 	</div>
 </footer>
-</table>
 </body>
 </html>

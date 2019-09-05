@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>VAPS - ¹ä½º</title>
+<meta charset="UTF-8">
+<title>VAPS - ë°¥ìŠ¤</title>
 
 <!-- CSS  -->
 <link rel="stylesheet" href="./css/main.css">
 
-<!-- ½½¶óÀÌµå Á¦ÀÌÄõ¸®  -->
+<!-- ìŠ¬ë¼ì´ë“œ ì œì´ì¿¼ë¦¬  -->
 <script src="js/jquery.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
 <link rel="stylesheet" href="css/jquery.bxslider.min.css">
@@ -25,12 +25,12 @@
 	#main_bg{
 	background-size : contain;
 	/* 
-	cover : ¹è°æ Å©±â ÂüÁ¶ÇÏ¿© ÀÌ¹ÌÁö¸¦ È®´ë or Ãà¼Ò, 
-	auto :  Å©±â ±×´ë·Î,  
-	contain : ¹è°æ Å©±â ÂüÁ¶ÇÏµÇ °¡·Î¼¼À² ºñÀ² ¸ÂÃß¾î 
+	cover : ë°°ê²½ í¬ê¸° ì°¸ì¡°í•˜ì—¬ ì´ë¯¸ì§€ë¥¼ í™•ëŒ€ or ì¶•ì†Œ, 
+	auto :  í¬ê¸° ê·¸ëŒ€ë¡œ,  
+	contain : ë°°ê²½ í¬ê¸° ì°¸ì¡°í•˜ë˜ ê°€ë¡œì„¸ìœ¨ ë¹„ìœ¨ ë§ì¶”ì–´ 
 	 */
  	background-image : url("./img/contents_bg2.jpg");
- 	background-position : cneter; /* resize½Ã ±×¸² °¡¿î°¡ º¸ÀÌ°Ô  */
+ 	background-position : center; /* resizeì‹œ ê·¸ë¦¼ ê°€ìš´ê°€ ë³´ì´ê²Œ  */
  	min-height : 100%;
  	border : 0%;
  	padding : 0%;
@@ -46,4 +46,4 @@ $(function() {
 	});
 });
 </script>
-<!-- ½½¶óÀÌµå Á¦ÀÌÄõ¸®  -->
+<!-- ìŠ¬ë¼ì´ë“œ ì œì´ì¿¼ë¦¬  -->

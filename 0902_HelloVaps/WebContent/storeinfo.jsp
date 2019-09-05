@@ -1,37 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <jsp:include page="top.jsp" flush="true"/>
 
-<!-- Áöµµ  -->
+<!-- ì§€ë„  -->
 <meta name="viewpot"  content="initial-scale=1.0, user-scalable=no">
 
 <script src="https://maps.google.com/maps/api/js?senseor=false"></script>
 <script>
        window.onload=function(){
               var joongang1 = new google.maps.LatLng(37.571001,126.992529);
-              //ÇØ´ç À§µµ, °æµµ¸¦ ÁöµµÀÇ Áß¾ÓÀ¸·Î À§Ä¡ÇÏ±â À§ÇÑ °Í
+              //í•´ë‹¹ ìœ„ë„, ê²½ë„ë¥¼ ì§€ë„ì˜ ì¤‘ì•™ìœ¼ë¡œ ìœ„ì¹˜í•˜ê¸° ìœ„í•œ ê²ƒ
               var mapDesign1 = {zoom: 17, center: joongang1, mapTypeId :  google.maps.MapTypeId.ROADMAP};
-              //var mapDesign1 = {zoom: 15, center: joongang1, mapTypeId :  google.maps.MapTypeId.HYBRID}; //À§¼º»çÁø
+              //var mapDesign1 = {zoom: 15, center: joongang1, mapTypeId :  google.maps.MapTypeId.HYBRID}; //ìœ„ì„±ì‚¬ì§„
               var map = new  google.maps.Map(document.getElementById("jido1"),mapDesign1);
-              //È­¸é¿¡ Ãâ·ÂÇÏ´Â °Í 
+              //í™”ë©´ì— ì¶œë ¥í•˜ëŠ” ê²ƒ 
        }
 </script>
-<!-- Áöµµ  -->	
+<!-- ì§€ë„  -->	
 
 <jsp:include page="head.jsp" flush="true"/>
 
 
-<!-- ¸ÞÀÎ ¿µ¿ª -->
+<!-- ë©”ì¸ ì˜ì—­ -->
 <div class="store_wrap" id="main_bg">
 	<br><br>	
 	<div class="store_header">
 		<table width="600px" border="0" align="center">
 			<tr align="center">
 				<td colspan="2">
-					<div><h2>¿À½Ã´Â ±æ</h2> </div>
+					<div><h2>ì˜¤ì‹œëŠ” ê¸¸</h2> </div>
 				</td>
 			</tr>
-			<!-- Áöµµ ±¸Çö -->
+			<!-- ì§€ë„ êµ¬í˜„ -->
 			<tr align="center">
 				<td colspan="2">
 					<div class="store_map">
@@ -40,35 +40,35 @@
 				</td>
 			</tr>
 			
-			<!-- ÁÖ¼Ò -->
+			<!-- ì£¼ì†Œ -->
 			<tr>
 				<td width="30%"  align="center">
-					<div><h3> ÁÖ¼Ò  </h3></div>
+					<div><h3> ì£¼ì†Œ  </h3></div>
 				</td>
 				<td>
-					<div> <h4> ¼­¿ï Á¾·Î±¸ Á¾·Î3°¡ ´Ü¼º»ç 5Ãþ ITBank </h4> </div> <br>
+					<div> <h4> ì„œìš¸ ì¢…ë¡œêµ¬ ì¢…ë¡œ3ê°€ ë‹¨ì„±ì‚¬ 5ì¸µ ITBank </h4> </div> <br>
 				</td>
 			</tr>
 	
 			
-			<!-- ´ã´çÀÚ¸í -->	
+			<!-- ë‹´ë‹¹ìžëª… -->	
 			<tr align="center">
 				<td colspan="2">
-					<div><h3>2Á¶ ¼Ò°³</h3> </div><br>
+					<div><h3>2ì¡° ì†Œê°œ</h3> </div><br>
 				</td>
 			</tr>
 				
 			<tr >
 				<td width="30%"  align="center">
-					<div><h3> ¸É¹ö </h3></div>
+					<div><h3> ë§´ë²„ </h3></div>
 				</td>
 				<td>
 					<ul>
-						<li> ÀÌÈ¿Á¤ - ¸ÞÀÎ & ·Î±×ÀÎ 
-						<li> ³ëÇö¿ì - ÆÀÀå & ¹ßÇ¥ÀÚ
-						<li> ÃÖµ¿±Ô - °Ô½ÃÆÇ 
-						<li> È«¼ºÇõ - °Ô½ÃÆÇ 
-						<li> Á¤¿¬¼· - ÇÁ·ÐÆ®¿£µå
+						<li> ì´íš¨ì • - ë©”ì¸ & ë¡œê·¸ì¸ 
+						<li> ë…¸í˜„ìš° - íŒ€ìž¥ & ë°œí‘œìž
+						<li> ìµœë™ê·œ - ê²Œì‹œíŒ 
+						<li> í™ì„±í˜ - ê²Œì‹œíŒ 
+						<li> ì •ì—°ì„­ - í”„ë¡ íŠ¸ì—”ë“œ
 					</ul>
 				</td>
 			</tr>

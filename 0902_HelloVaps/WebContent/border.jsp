@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <jsp:include page="top.jsp" flush="true"/>
 <jsp:include page="head.jsp" flush="true"/>
 
-<!-- ¸ÞÀÎ ¿µ¿ª -->
+<!-- ë©”ì¸ ì˜ì—­ -->
 <div class="border_wrap " id="main_bg">
 	<div class="border_header">
-		°Ô½ÃÆÇ
+		ê²Œì‹œíŒ
 	</div>
 </div>
 

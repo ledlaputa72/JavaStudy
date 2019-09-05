@@ -1,83 +1,83 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <jsp:include page="top.jsp" flush="true"/>
 <jsp:include page="head.jsp" flush="true"/>
 
-<!-- ¸ÞÀÎ ¿µ¿ª -->
+<!-- ë©”ì¸ ì˜ì—­ -->
 <div class="menu_wrap"  id="main_bg" >
 	<div class="menu_header" >
 
 	</div>
 	<div>
 		<div class="menu-list" >
-			<!-- ¸Þ´º1 -->
-			<div><h3>¸Þ´º 1</h3></div>
+			<!-- ë©”ë‰´1 -->
+			<div><h3>ë©”ë‰´ 1</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img1.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>¾Æ¿ô»ª ½ºÅ×ÀÌÅ©</b></h2><br>
-					100% Ã»Á¤ ÇÑ¿ì<br><br>
-					°¡°Ý : <b>30,000¿ø</b> <br> 
+					<h2 id="menu_name"><b>ì•„ì›ƒë¹½ ìŠ¤í…Œì´í¬</b></h2><br>
+					100% ì²­ì • í•œìš°<br><br>
+					ê°€ê²© : <b>30,000ì›</b> <br> 
 				</div>
 			</div>
-			<!-- ¸Þ´º2 -->
-			<div><h3>¸Þ´º 2</h3></div>
+			<!-- ë©”ë‰´2 -->
+			<div><h3>ë©”ë‰´ 2</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img2.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>»çµþ¶ó ¹ö°ÅÄý</b></h2><br>
-					ÇÏ·çÁ¾ÀÏ ¿Ãµ¥ÀÌ Äý<br><br>
-					°¡°Ý : <b>4,900¿ø</b> <br> 
+					<h2 id="menu_name"><b>ì‚¬ë”¸ë¼ ë²„ê±°í€¸</b></h2><br>
+					í•˜ë£¨ì¢…ì¼ ì˜¬ë°ì´ í€¸<br><br>
+					ê°€ê²© : <b>4,900ì›</b> <br> 
 				</div>
 			</div>
-			<!-- ¸Þ´º3 -->
-			<div><h3>¸Þ´º 3</h3></div>
+			<!-- ë©”ë‰´3 -->
+			<div><h3>ë©”ë‰´ 3</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img3.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>ÇÇÀÚ Çä!</b></h2><br>
-					²Ê¶ß·Î Ä¡Áî µë»Ò ÇÇÀÚ<br><br>
-					°¡°Ý : <b>15,000¿ø</b> <br> 
+					<h2 id="menu_name"><b>í”¼ìž í—‰!</b></h2><br>
+					ê½ˆëœ¨ë¡œ ì¹˜ì¦ˆ ë“¬ë¿ í”¼ìž<br><br>
+					ê°€ê²© : <b>15,000ì›</b> <br> 
 				</div>
 			</div>
-			<!-- ¸Þ´º4 -->
-			<div><h3>¸Þ´º 4</h3></div>
+			<!-- ë©”ë‰´4 -->
+			<div><h3>ë©”ë‰´ 4</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img4.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>¿·±¸¸® ±è¹ä</b></h2><br>
-					¿·±¸¸® ÅÍÁö°Ô »§»§ÇÑ ±è¹ä<br><br>
-					°¡°Ý : <b>3,000¿ø</b> <br> 
+					<h2 id="menu_name"><b>ì˜†êµ¬ë¦¬ ê¹€ë°¥</b></h2><br>
+					ì˜†êµ¬ë¦¬ í„°ì§€ê²Œ ë¹µë¹µí•œ ê¹€ë°¥<br><br>
+					ê°€ê²© : <b>3,000ì›</b> <br> 
 				</div>
 			</div>
-			<!-- ¸Þ´º5 -->
-			<div><h3>¸Þ´º 5</h3></div>
+			<!-- ë©”ë‰´5 -->
+			<div><h3>ë©”ë‰´ 5</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img5.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>Ã­½´ ¶ó¸à~</b></h2><br>
-					µÎÅùÇÑ Ã­½´¿Í ¹Ý¼÷°è¶õ<br><br>
-					°¡°Ý : <b>8,000¿ø</b> <br> 
+					<h2 id="menu_name"><b>ì± ìŠˆ ë¼ë©˜~</b></h2><br>
+					ë‘íˆ¼í•œ ì± ìŠˆì™€ ë°˜ìˆ™ê³„ëž€<br><br>
+					ê°€ê²© : <b>8,000ì›</b> <br> 
 				</div>
 			</div>
-			<!-- ¸Þ´º6 -->
-			<div><h3>¸Þ´º 6</h3></div>
+			<!-- ë©”ë‰´6 -->
+			<div><h3>ë©”ë‰´ 6</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img6.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>¾ö¸¶ µµ½Ã¶ô</b></h2><br>
-					¾ö¸¶ Á¤¼º ´ã±ä Áý¹ä µµ½Ã¶ô<br><br>
-					°¡°Ý : <b>6,000¿ø</b> <br> 
+					<h2 id="menu_name"><b>ì—„ë§ˆ ë„ì‹œë½</b></h2><br>
+					ì—„ë§ˆ ì •ì„± ë‹´ê¸´ ì§‘ë°¥ ë„ì‹œë½<br><br>
+					ê°€ê²© : <b>6,000ì›</b> <br> 
 				</div>
 			</div>
-			<!-- ¸Þ´º7 -->
-			<div><h3>¸Þ´º 7</h3></div>
+			<!-- ë©”ë‰´7 -->
+			<div><h3>ë©”ë‰´ 7</h3></div>
 			<div id="menu_img">
 				<img src="./img/event_img7.png" alt="evnet" border="2">
 				<div  class="menu_dis">
-					<h2 id="menu_name"><b>ÆíÀÇÁ¡ µµ½Ã¶ô</b></h2><br>
-					¹éÁ¾¿øÇýÀÚ µµ½Ã¶ô<br><br>
-					°¡°Ý : <b>4,500¿ø</b> <br> 
+					<h2 id="menu_name"><b>íŽ¸ì˜ì  ë„ì‹œë½</b></h2><br>
+					ë°±ì¢…ì›í˜œìž ë„ì‹œë½<br><br>
+					ê°€ê²© : <b>4,500ì›</b> <br> 
 				</div>
 			</div>
 			<br><br><br>			
