@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,20 @@
 		width: 1000px;
 		background-color:#2B2119;	
 	}
+	
+	#main_bg{
+	background-size : contain;
+	/* 
+	cover : 배경 크기 참조하여 이미지를 확대 or 축소, 
+	auto :  크기 그대로,  
+	contain : 배경 크기 참조하되 가로세율 비율 맞추어 
+	 */
+ 	background-image : url("./img/contents_bg2.jpg");
+ 	background-position : cneter; /* resize시 그림 가운가 보이게  */
+ 	min-height : 100%;
+ 	border : 0%;
+ 	padding : 0%;
+}
 </style>
 <script>
 $(function() {
@@ -32,29 +47,3 @@ $(function() {
 });
 </script>
 <!-- 슬라이드 제이쿼리  -->
-</head>
-<body background="./img/woodBg.png">
-
-<!-- 로그인 정보 -->
-<div class="login">
-	<div class="login-box">
-	
-		${ svv.name } 님
-		
-		<a href="logout.do">로그아웃</a>
-	
-	</div>
-</div>
-
-<!-- 상단 영역 -->
-<header>
-	<div class="container clearfix">
-		<div class="menu clearfix" id="topImg">
-			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
-			<div class="menu-item"><a href="./storeinfo.jsp"> <img src="./img/top2.png" alt="storeInfo"></a></div>
-			<div class="menu-item logo"><a href="./main.jsp"><img src="./img/top3.png" alt="logo"></a></div>
-			<div class="menu-item"><a href="./notice.jsp"><img src="./img/top4.png" alt="notice"></a></div>
-			<div class="menu-item"><a href="./border.jsp"><img src="./img/top5.png" alt="border"></a></div>
-		</div>
-	</div>	
-</header>
