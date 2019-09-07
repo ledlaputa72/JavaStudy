@@ -33,6 +33,33 @@ td {
 }
 </style>
 
+<!-- 테이블 칼라 -->   
+<style>
+  table {
+    width: 800px;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+        margin: auto;
+    
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+  }
+/*   thead tr {
+    background-color: #0d47a1;
+    color: #ffffff;
+  } */
+  tbody tr:nth-child(2n) {
+    background-color: lightgray;
+  }
+  tbody tr:nth-child(2n+1) {
+    background-color: white;
+  }
+</style>
+<!-- 테이블 칼라 --> 
+
 <link rel="stylesheet" href="./css/main.css">
 
 <script>
@@ -91,7 +118,7 @@ td {
 <!-- 메인 영역 -->
 <div class="border_wrap" id="main_bg">
 	<div class="border_header">
-		
+		<br>
 		<form id="boardForm" name="boardForm" action="updateBoard.do?bno=${ sbv.bno }" method="post">
 		
 			<table border="1" width="100%">
