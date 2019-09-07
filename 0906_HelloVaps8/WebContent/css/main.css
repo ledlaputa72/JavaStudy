@@ -119,7 +119,7 @@ header {
 
 /* 공지사항 */
 .notice_wrap{
-  height: 500px;
+  height: 1000px;
   width: 1000px;
   margin: auto;  
   background-color:tomato;	
@@ -131,7 +131,7 @@ header {
 
 /* 게시판 */
 .border_wrap{
-  height: 500px;
+  height: 1000px;
   width: 1000px;
   margin: auto;  
 

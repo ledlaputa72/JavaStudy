@@ -17,7 +17,7 @@
 	 */
  	background-image : url("./img/contents_bg2.jpg");
  	background-position : cneter; /* resize시 그림 가운가 보이게  */
- 	min-height : 100%;
+ 	min-height : 600px;
  	border : 0%;
  	padding : 0%;
 }
@@ -55,7 +55,7 @@
 <!-- 메인 영역 -->
 <div class="notice_wrap" id="main_bg">
 	<div class="notice_header">
-		공지사항
+		장바구니
 	</div>
 </div>
 
