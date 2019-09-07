@@ -117,13 +117,10 @@ input {
         
    <form action="login.do" method="post">
    
-   
           <input type="text" name="id" placeholder="아이디" required style="height:30px; width: 380px" >
           <input type="password" name="pw" placeholder="비밀번호" required style="height:30px; width: 380px">
           <input type="submit" value="LOGIN" class="login" required style="height:35px; width: 380px">
-            <input type="button" value="회원가입" onclick="goSignUpForm()" class="login" required style="height:35px; width: 380px"> 
-      
-      
+          <input type="button" value="회원가입" onclick="goSignUpForm()" class="login" required style="height:35px; width: 380px"> 
    
    </form>
    

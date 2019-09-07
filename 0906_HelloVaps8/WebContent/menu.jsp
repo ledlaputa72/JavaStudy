@@ -63,7 +63,6 @@
 
 <div class="menu_wrap"  id="main_bg" >
 	<div class="menu_header" >
-		<h2>메인 메뉴</h2> 
 	</div>
 	<div>
 		<div class="menu-list" >

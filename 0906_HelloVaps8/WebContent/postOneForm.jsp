@@ -19,7 +19,7 @@
 	 */
  	background-image : url("./img/contents_bg2.jpg");
  	background-position : cneter; /* resize시 그림 가운가 보이게  */
- 	min-height : 100%;
+ 	min-height : 600px;
  	border : 0%;
  	padding : 0%;
 }
@@ -32,6 +32,33 @@ td {
 	width : 80%;
 }
 </style>
+
+<!-- 테이블 칼라 -->   
+<style>
+  table {
+    width: 800px;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+        margin: auto;
+    
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+  }
+/*   thead tr {
+    background-color: #0d47a1;
+    color: #ffffff;
+  } */
+  tbody tr:nth-child(2n) {
+    background-color: lightgray;
+  }
+  tbody tr:nth-child(2n+1) {
+    background-color: white;
+  }
+</style>
+<!-- 테이블 칼라 --> 
 
 <link rel="stylesheet" href="./css/main.css">
 
@@ -91,7 +118,7 @@ td {
 <!-- 메인 영역 -->
 <div class="border_wrap" id="main_bg">
 	<div class="border_header">
-		
+		<br>
 		<form id="boardForm" name="boardForm" action="postUpdate.do?bno=${ sbv.bno }" method="post">
 		
 			<table border="1" width="100%">
