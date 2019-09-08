@@ -8,7 +8,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>로그인</title>
+<title>마이페이지 수정</title>
 <style>
 i {
    color: lightgray;
@@ -17,9 +17,7 @@ i {
 #title{
    position: absolute;
    top: 80px;
-	right : 100px;   
-  
-   margin: 0 400px;
+   margin: 0 200px;
    text-shadow: 4px 4px 4px #000;
 }
 

@@ -51,7 +51,7 @@ i {
 #title{
    position: absolute;
    top: 80px;
-   margin: 0 400px;
+   margin: 0 200px;
    text-shadow: 4px 4px 4px #000;
 }
 
