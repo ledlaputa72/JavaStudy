@@ -50,7 +50,7 @@
 <header>
 	<div class="container clearfix">
 		<div class="menu clearfix" id="topImg">
-			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
+			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1a.png" alt="menu"></a></div>
 			<div class="menu-item"><a href="./storeinfo.jsp"> <img src="./img/top2.png" alt="storeInfo"></a></div>
 			<div class="menu-item logo"><a href="./main.jsp"><img src="./img/top3.png" alt="logo"></a></div>
 			<div class="menu-item"><a href="./notice.jsp"><img src="./img/top4.png" alt="notice"></a></div>
@@ -63,7 +63,7 @@
 
 <div class="menu_wrap"  id="main_bg" >
 	<div class="menu_header" >
-		<h2>메인 메뉴</h2> 
+<!-- 		<h2>메인 메뉴</h2>  -->
 	</div>
 	<div>
 		<div class="menu-list" >

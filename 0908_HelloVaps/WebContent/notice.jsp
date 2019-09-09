@@ -49,7 +49,7 @@
 			<div class="menu-item"><a href="./menu.jsp"><img src="./img/top1.png" alt="menu"></a></div>
 			<div class="menu-item"><a href="./storeinfo.jsp"> <img src="./img/top2.png" alt="storeInfo"></a></div>
 			<div class="menu-item logo"><a href="./main.jsp"><img src="./img/top3.png" alt="logo"></a></div>
-			<div class="menu-item"><a href="./notice.jsp"><img src="./img/top4.png" alt="notice"></a></div>
+			<div class="menu-item"><a href="./notice.jsp"><img src="./img/top4a.png" alt="notice"></a></div>
 			<div class="menu-item"><a href="./border.do"><img src="./img/top5.png" alt="border"></a></div>
 		</div>
 	</div>	
