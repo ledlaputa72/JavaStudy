@@ -1,0 +1,9 @@
+@charset "EUC-KR";
+
+h1 {color : red; text-align:center; text-decoration:underline} /* 태그 선택자 */
+p { color : bule; font-size:30pt;} /* 태그 선택자 */
+/* selector(선택자) {속성:값, 속성:값 ;}*/
+
+.redred {color:red;} /* 클래스 선택자(.을 붙임, 자바 클래스와 1도 안같음 */
+#myid{color:green; font: bold 20pt Serif,Sans-serif} /* ID 선택자 , id:#붙어 있는 이름, 사용ㅅ #빼고 id를 사용 */
+/* font에서의 순서는 font-style font-size font-family .... 순  */  

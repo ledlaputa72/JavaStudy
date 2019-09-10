@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta charset="EUC-KR">
+   
+   <title>Insert title here</title>
+   
+   <script>
+   
+      function kajaCheck() {
+         
+         if (f1.na2.value < 20 || f1.na2.value > 50) {
+            
+            alert("20 ~ 50 세 나이만 가능")
+            
+            f1.na2.focus()
+            
+            return
+            
+         }
+         
+         // 정규 표현식 (Regular Expression)
+         // 자바스크립트 관련 사이트 : Michael Ash http://regexlib.com
+         //^ 시작 $끝 영어대소문자, 밑줄이 3자 이상 @
+         // 영어 대소문자 3자 이상.영어대소문자. 이 3-
+         // @ 앞 아이디 : A-Z 사이의 문자, a-z 사이의 문자, 0-9 사이의 숫자, 기호는 .만 허용 내에서 (3 뒤에 ,로 인해) 3글자 이상 입력해야 한다.
+         // @ 뒤 주소 : A-Z 사이의 문자, a-z 사이의 문자, 0-9 사이의 숫자, (3 뒤에 ,로 인해) 3글자 이상 입력해야 한다.
+         // @ 뒤 주소 뒤 . : 예를 들어 naver.com 일 때 .을 표현하려면 \.라고 써야 한다.
+         // @ 뒤 주소 뒤 . 뒤 나머지 주소 : 3-7 글자 수
+         var reg1 = /^[A-Za-z0-9.]{3,}@[A-Za-z0-9]{3,}\.[A-Za-z0-9.]{3,7}$/
+         
+         // [a-z0-9]... /i   -> 옵션으로 대소문자 ignore
+         if (!reg1.test(f1.email1.value)) {
+            
+            alert("email 입력 에러")
+            
+            f1.email1.focus()
+            
+            return
+            
+         }
+         
+         // A-Z 사이의 문자, a-z 사이의 문자를 1-14 글자 입력 가능하며 14개에서 영문자 개수를 제외한 개수만큼만 숫자 입력이 가능하다.
+         var reg2 = /^[A-Za-z]{1,14}[0-9]{1,14}$/
+         
+         if (f1.id1.value.length < 8 || f1.id1.value.length > 15 || !reg2.test(f1.id1.value)) {
+            
+            // 123avcdfd   x
+            // a1234567
+            // aaaaaA11111
+            alert("아이디는 8-15자 사이의 영문자 이어서 숫자의 조합으로 입력")
+            
+            f1.id1.focus()
+            
+            return
+            
+         }
+         
+         // 서버로 이동
+         f1.submit()
+         
+      }
+      
+      function kajaNick(bada) {
+         
+         var reg2 = /[^(A-Za-z)]/
+         
+         if (reg2.test(bada.value)) {
+            
+            alert("nickname 은 영어로만 가능합니다.");
+            
+            bada.value = "";
+            bada.focus();
+            
+            return false;
+            
+         }
+      }
+      
+      // 입력창을 클릭하여 글자를 입력하려고 하면 텍스트박스 안에 있던 "여기에 말씀하세요"라는 글자가 지워진다.
+      function kajatArea() {
+         
+         document.getElementById("tarea1").select();
+         
+      }
+   
+   </script>
+   
+</head>
+<body>
+
+   <h2>회 원 가 입</h2>
+   
+   <form name="f1" action="hello1.jsp" method="get">
+   
+      이름 <input type="text" name="irum1" required autofocus> <p>
+      전화번호 <input type="text" name="tel1" required> <p>
+      생년월일 <input type="date" min="1900-01-01" max="1999-12-31" name="date1"> <p>
+      나이 <input type="text" name="na2"> <p> <!-- 20 ~ 50 세만 입력 가능 -->
+      주소 <input type="text" name="juso1" size=70> <p>
+      이메일 <input type="text" name="email1"> <p>
+      아이디생성 <input type="text" name="id1"> <p>
+      암호생성 <input type="password" name="pw1"> <p>
+      
+      <!-- onkeydown 으로 해도 되나 키를 누를 때 이벤트 발생이므로 한글이 들어올 때, 백스페이스로 글자 지울 때 버벅거린다. -->
+      <!-- onkeyup 은 글자 입력 후 이벤트 발생이므로 한글 입력 시 입력된 후 경고 나오고 부드럽게 지워진다. -->
+      사용할 닉네임 (영문자만) <input type="text" name="nickname1" onkeyup="kajaNick(this)"> <p>
+      
+      성별 
+      <input type="radio" name="sung1" value="male" checked>남
+      <input type="radio" name="sung1" value="female">여 <p>
+      
+      여행가고 싶은 곳 <br>
+      <select name="travel1" size="5" multiple>
+      
+         <option>유럽
+         <option>미주
+         <option>동남아
+         <option selected>아마존
+         <option>심해 탐험
+         <option>섬 여행
+         <option>북극 남극
+         
+      </select> <p>
+      
+      취미 <br>
+      <input type="checkbox" name="golf" checked>골프
+      <input type="checkbox" name="fishing">낚시
+      <input type="checkbox" name="swimming">수영
+      <input type="checkbox" name="soccer">축구 <p>
+      
+      공지 받는 곳<br>
+      <select name="kongji1">
+      
+         <option>이메일
+         <option>문자 메시지
+         <option>전화로 연락
+         
+      </select> <p>
+      
+      가입 시 하고 싶은 말 <br>
+      <textarea name="mal1" rows="2" cols="70" id="tarea1" onclick="kajatArea()">여기에 말씀하세요.</textarea> <p>
+      
+      <input type="button" value="가입" onclick="kajaCheck();">
+      <input type="reset" value="취소">
+      
+      <br>
+      
+   </form>
+
+</body>
+</html>

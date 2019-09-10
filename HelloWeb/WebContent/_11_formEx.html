@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 서버에 있는 hello1.jsp를 찾아간다. -->
+	<!-- 기본이 get 방식 -->
+	<form action="hello2.jsp" method="post">
+		
+		이름 <input type="text" name="irum"> <br>
+		전화번호 <input type="text" name="tel"> <br>
+		<input type="submit" value="가자 서버로">
+			
+	</form>
+
+</body>
+</html>
+
+<!-- 
+	action : 서버의 누구를 찾아가는건지?	.jsp	servlet(.java)
+	method : 전송 방식 ( get(기본), post )
+	
+	http://www.naver.com
+	http ==> HyperText Transfer Protocol
+	
+					request
+	웹 브라우저 ========================> 서버
+			<========================
+					response
+					
+	<get 방식>
+	head, body 로 처리		-- 그 중 head : 이름, 전화 번호가 노출된다, 작은 용량, 길이가 고정 (속도가 up)
+	
+	<post 방식>
+	body 로 처리			-- 노출이 안 된다, 큰 용량, 길이, 속도가 상대적으로 down
+ -->

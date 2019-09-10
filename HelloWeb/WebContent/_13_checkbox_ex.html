@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="hello1.jsp" method="post">
+	
+		메일 전송 여부를 결정하세요. <br>
+	
+		<!-- 여러 개 선택이 가능, default 선택 : checked -->
+		<input type="checkbox" name="mailhow" checked>
+	
+		<input type="submit" value="가자 서버로">
+	
+		<br><br>
+		
+		좋아하는 운동은? <br><br>
+	
+		<input type="checkbox" name="soccer">축구<br>
+		<input type="checkbox" name="tennis">테니스<br>
+		<input type="checkbox" name="golf">골프<br>
+	
+		<br><br>
+	
+		<!-- 하나만 선택 가능, 이름이 같아야 -->
+		<input type="radio" name="kolla" value="ot">옷<br>
+		<input type="radio" name="kolla" value="koodoo">구두<br>
+		<input type="radio" name="kolla" value="kabang" checked>가방<br>
+	
+		<br><br>
+	
+		구매 의견<br>
+		<textarea rows=10 cols=50></textarea>
+	
+		<br><br>
+	
+		출발 공항 선택<br>
+	
+		<!-- 텍스트박스 + 리스트박스  = 콤보박스 -->
+		<select name="select1">
+	
+			<option value="케네디공항">케네디공항
+			<option value="인천공항" selected>인천공항
+			<option value="도쿄공항">도쿄공항
+		
+		</select>
+	
+		<br><br>
+	
+		<input type="submit" value="가자 서버로">
+		<input type="reset" value="취소">
+	
+	</form>
+
+</body>
+</html>
