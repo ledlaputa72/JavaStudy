@@ -23,7 +23,7 @@ public class SawonVO {
 	
 	@Override
 	public String toString() {
-		return "»ç¿øÀÇ id´Â " + id + ", »ç¿øÀÌ¸§Àº " + name + "ÀÌ¶ó´Â~~";
+		return "ì‚¬ì›ì˜ idëŠ” " + id + ", ì‚¬ì›ì´ë¦„ì€ " + name + "ì´ë¼ëŠ”~~";
 	}
 
 }

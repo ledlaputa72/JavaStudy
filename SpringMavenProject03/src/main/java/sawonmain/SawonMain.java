@@ -12,17 +12,17 @@ public class SawonMain {
 		GenericXmlApplicationContext ac1 = new GenericXmlApplicationContext("applicationContext2.xml"); 
 		
 		SawonVO b1 = (SawonVO) ac1.getBean("sawonBean1");
-											//xml¿¡¼­ ¸¸µç bean °´Ã¼
+											//xmlì—ì„œ ë§Œë“  bean ê°ì²´
 		
-		/*b1.setId(100); //main¿¡¼­ setId·Î ÀÔ·Â 
-			//SawonÅ¬·¡½ºÀÇ setter°¡ °¡µ¿µÇ°í
-			//ÀÌ¹Ì bean °´Ã¼¸¦ »ı¼ºÇÏ¸é¼­ p:name="ÅÂ¸®"‹š¹®¿¡ 
-			//setName("ÅÂ¸®")°¡ °¡µ¿µÇ¸é¼­ name¿¡´Â "ÅÂ¸®"°¡ µé¾î°¨ 
+		/*b1.setId(100); //mainì—ì„œ setIdë¡œ ì…ë ¥ 
+			//Sawoní´ë˜ìŠ¤ì˜ setterê°€ ê°€ë™ë˜ê³ 
+			//ì´ë¯¸ bean ê°ì²´ë¥¼ ìƒì„±í•˜ë©´ì„œ p:name="íƒœë¦¬"ë–„ë¬¸ì— 
+			//setName("íƒœë¦¬")ê°€ ê°€ë™ë˜ë©´ì„œ nameì—ëŠ” "íƒœë¦¬"ê°€ ë“¤ì–´ê° 
 */		
 		System.out.println(b1.toString());
-			//¹Ì¸® ¸¸µé¾î ³õÀº public String toString() { //Ãâ·Â Àü¹® ¸Ş¼Òµå
-			// return "»ç¿øÀÇ id´Â " + id + ", »ç¿øÀÌ¸§Àº " + name + "ÀÌ¶ó´Â~~";
-			//¶§¹®¿¡ °á°ú·Î id¿Í nameÀÌ Ãâ·Â 
+			//ë¯¸ë¦¬ ë§Œë“¤ì–´ ë†“ì€ public String toString() { //ì¶œë ¥ ì „ë¬¸ ë©”ì†Œë“œ
+			// return "ì‚¬ì›ì˜ idëŠ” " + id + ", ì‚¬ì›ì´ë¦„ì€ " + name + "ì´ë¼ëŠ”~~";
+			//ë•Œë¬¸ì— ê²°ê³¼ë¡œ idì™€ nameì´ ì¶œë ¥ 
 		
 		System.out.println(b1);
 	}
