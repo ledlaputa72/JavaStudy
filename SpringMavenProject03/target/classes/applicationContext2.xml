@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sawonBean1" class="sawonpkg.SawonVO" p:id="200" p:name="태리"> <!-- property로 name 입력 -->
+    <!-- <bean id="insaBean" class="insa.Insa">
+            <property name="name" value="태리" /> -->												
+	</bean>
+</beans>
