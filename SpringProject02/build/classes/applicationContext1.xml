@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="insaBean" class="insa.Insa">
+		<property name="name" value="홍길동" />
+	</bean>
+
+</beans>
+<!--1) property value 사용  -->
+<!--   insaBean은 객체명  
+		Insa insaBean = new Insa();
+		insaBean.setName("홍길동"); //초기치 인자를 줄 경우 
+		name, value를 처리 ==> setter인 setName()이 처리 
+-->
+
