@@ -1,0 +1,183 @@
+package step03_ScreenCaptureWindowFix_fullWindow;
+
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.awt.event.*;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+
+//최종 레이아웃에서 그림 그리기 & 보여주기 영역에 대해서 화면 이동과 무관하게 스크린샷을 보여주는 기능 구현  
+
+
+
+class JFramTest2 extends JFrame implements MouseListener, MouseMotionListener, ActionListener{
+	
+	//레이아웃용 컴포넌트
+	private JPanel contentPane;
+	private JTextField textField;
+	static JPanel panelCanvas=new JPanel();
+	static JPanel panelView=new JPanel();
+	static int panelCanvasX;
+	static int panelCanvasY;
+	
+	//그리기용 컴포넌트
+	static int w = Toolkit.getDefaultToolkit().getScreenSize().width, h = Toolkit.getDefaultToolkit().getScreenSize().height;
+	private int witchiX=0, witchiY=0; //마우스의 좌표 , 클래스 밑에 생긴 전역 변수
+	
+	//그리기 옵션용 컴포넌트
+	static  Color bgColor=Color.WHITE; //background color
+	private int brSize=10; //brush Size
+	static Color brColor=Color.BLUE; //bruch color
+	static int sw=0; //배경색 sw=1, 붓색 sw=2
+	
+	//통신용 컴포넌트
+	static Socket ss;
+	
+	//생성자 - 레이아웃 잡기 /////////////////////////////
+	public JFramTest2() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1200, 900);
+		setResizable(false);
+		setAlwaysOnTop(true);
+		
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		setContentPane(contentPane);
+		
+		JPanel panelTop = new JPanel();
+		panelTop.setBackground(Color.CYAN);
+		panelTop.setBounds(0, 0, 1184, 60);
+		panelTop.setLayout(null);
+		contentPane.add(panelTop); //추가
+
+		
+
+		panelCanvas.setBackground(Color.YELLOW);
+		panelCanvas.setBounds(0, 60, 800, 700);
+		panelCanvas.setVisible(true);
+		contentPane.add(panelCanvas);//추가
+		
+		panelView = new JPanel();
+		panelView.setBackground(Color.RED);
+		panelView.setBounds(0, 60, 800, 700);
+		panelView.setVisible(false);
+		contentPane.add(panelView);//추가
+				
+		
+		JPanel panelChat = new JPanel();
+		panelChat.setBackground(Color.GRAY);
+		panelChat.setBounds(800, 60, 384, 700);
+		panelChat.setLayout(null);
+		contentPane.add(panelChat);//추가
+		
+		
+		textField = new JTextField();
+		textField.setBounds(0, 664, 384, 38);
+		textField.setColumns(10);
+		panelChat.add(textField);//추가
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(0, 0, 384, 664);
+		panelChat.add(textArea);//추가
+		
+		JPanel panelUsers = new JPanel();
+		panelUsers.setBackground(Color.ORANGE);
+		panelUsers.setBounds(0, 759, 1184, 180);
+		contentPane.add(panelUsers);//추가
+		
+		
+		//마우스 그리기 이벤트용 생성자
+		panelCanvas.addMouseListener(this); //중요!!!! 마우스 이벤트 등록
+		panelCanvas.addMouseMotionListener(this); //중요!!! 마우스 액션 이벤트 등록
+	}//생성자 끝내기 ///////////////////////////////////////
+	
+	//이벤트 핸들러 //////////////////////////////////////////////////////
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		Graphics g=panelCanvas.getGraphics(); //중요!!! 그래픽의 객체를 만듬 (그림을 그릴 대상에)
+		g.setColor(brColor); //칼라를 설정 
+		Graphics2D g2d = (Graphics2D)g;
+		g2d.setStroke(new BasicStroke(brSize));
+		
+		//whichiX,whichiY : 처음위치 
+		int badaX=e.getX(); //방금(끝) 마우스 위치 
+		int badaY=e.getY();
+		
+		g.drawLine(witchiX, witchiY, badaX, badaY); //처음 -> 끝 위치까지 선 그리기
+		witchiX=badaX; //다시 처음 위치 값에 끝 값을 넣는다. 
+		witchiY=badaY;
+		//다시 위의 것을 반복한다. 
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) { //마우스가 누르고 있을 때
+		witchiX=e.getX(); //마우스X의 현재 위치 
+		witchiY=e.getY(); //마우스Y의 현재 위치 
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+	
+}
+
+
+//메인 클래스 
+public class JFrameClient {
+
+	public static void main(String[] args) throws IOException, AWTException {
+		
+		//소켓으로 접속
+		Socket s1 = new Socket("127.0.0.1", 9999); 
+		System.out.println("접속완료 - 클라이언트");
+		
+		//그림 기능 작동 
+		JFramTest2 sc=new JFramTest2(); //그림 그리기 작동
+		sc.setVisible(true);
+
+		
+		System.out.println("그림판 작동 - 클라이언트");
+		JPanel panelView = new JPanel();
+		panelView.setBackground(Color.RED);
+		panelView.setBounds(0, 460, 800, 300);
+		panelView.setVisible(false);
+//		sc.setContentPane(contentPane.add(panelView));
+//		contentPane.add(panelView);//추가
+		//****panelView add 필요
+		
+		//화면 이미지 스크린샷 전송 - 쓰레드 처리 /////////////////////////////////////////////
+		ThreadSend ts1=new ThreadSend(s1);
+		ts1.start();
+		
+		ThreadRcv tr1=new ThreadRcv(s1,panelView);
+		tr1.start();
+	
+	}//main class end
+		
+}
+
