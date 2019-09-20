@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sawonBean" class="sawonpkg.Sawon" p:name="김미래" p:id="100">											
+	</bean>
+	<!-- Hobby hobbyBean = new Hobby();
+		 hobbyBean.setSawon(sawonBean)-->
+	<bean id="hobbyBean" class="hobby.Hobby">
+		<property name="sawon" ref="sawonBean"/>
+		<!-- 앞에서 만든 swaonBean객체를 전달시는 ref 사용  -->
+		<!-- <bean id="hobbyBean" class="hobby.Hobby" p:sawon-ref="sawonBean"> -->
+	</bean>
+</beans>

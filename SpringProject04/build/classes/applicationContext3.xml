@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Insa insaBean = new Insa(); 
+		 insaBean.setName("홍길동"); -->
+	<bean id="insaBean" class="insa.Insa">
+		<property name="name" value="홍길동" />
+    </bean>
+    
+    <!-- Setter setterBean = new Setter();
+    	setterBean.setInsa(insaBean); //위치를 알고 있는 객체 참조 변수를 넘겨준다. 
+    	 -->
+	<bean id="setterBean" class="setter.Setter">
+		<property name="insa" ref="insaBean" />
+    </bean> <!-- setInsa(insaBean객체) -->
+</beans> <!-- 즉, Insa insa; 필드(속성) 선언   -->
