@@ -6,10 +6,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
 	<context:annotation-config/> <!-- 저쪽에서 @Autowired도 추가  -->
-		<bean id="insaBean" class="insa.Insa"> </bean>
-		<!-- <bean id="insaBean2" class="insa.Insa"> </bean> -->
-		<bean id="constargBean" class="constarg.Contarg"> </bean>
-		<!-- 왜  bean 태스를 기술하였지? 그것은 context:annotation-config 
-		되어있는 bean의 annotation을 적용(활성화) 시키는 것이지 
-		bean을 만들지는 않기 때문이다.-->
+		<bean id="insaBean" class="insapkg.Insa"> </bean>
+			<bean id="insaBean2" class="insapkg.Insa"> </bean>
+		<bean id="constargBean" class="constarg.Constarg"> </bean>
+			<!-- 왜  bean 태스를 기술하였지? 그것은 context:annotation-config 
+			되어있는 bean의 annotation을 적용(활성화) 시키는 것이지 
+			bean을 만들지는 않기 때문이다.-->
 </beans>

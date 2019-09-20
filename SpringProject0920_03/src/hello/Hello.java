@@ -1,5 +1,6 @@
 package hello;
 
+
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import constarg.Constarg;
@@ -15,14 +16,12 @@ public class Hello {
 
 		GenericXmlApplicationContext gxac1=new GenericXmlApplicationContext("applicationContext1.xml"); 
 
-		Insa insa1= gxac1.getBean("insa10", Insa.class);
+		Insa insa1= gxac1.getBean("insaBean", Insa.class);
 		System.out.println(insa1.helloName(str1)); //@Value("È«±æµ¿")
 		
-		/*public String helloName(String str1) {
-		 * --> ÀÌ°Í È£Ãâ½Ã @Value("È«±æµ¿")°¡ Àû¿ëµÊ 
-			return this.name + " ´Ô\n" + str1;
-		}*/
-		
+		Constarg con1 = gxac1.getBean("constargBean",Constarg.class);
+		System.out.println(con1.kajaHello(str1));
+				
 		gxac1.close();
 		
 	}
