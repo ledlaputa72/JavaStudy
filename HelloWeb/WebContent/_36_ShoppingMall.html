@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>상품구매</h1><p>
+<hr>
+<form name="f1" action="100_output.jsp" method="get">
+<table border=2 width=700>
+	<tr>
+		<td colspan=2  bgcolor='#aaaaaa'><b>제품 종류번호 선택</b></td>
+	</tr>
+	<tr>
+		<td colspan=2>
+		<select name="jong1">
+			<option value="100-최신신상">100-최신신상</option>
+			<option value="200-이월상품">200-이월상품</option>
+			<option value="300-매장진열상품">300-매장진열상품</option>
+		</select>
+		</td>
+	</tr>
+	<!-- --------------tr 구분선--------------------  -->
+	<tr>
+		<td colspan=2  bgcolor='#aaaaaa'><b>제품선택</b></td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<input type="checkbox" name="jepoom" value="구두" checked> 구두<br>
+			<input type="checkbox" name="jepoom" value="옷" checked> 옷<br>
+			<input type="checkbox" name="jepoom" value="가방" checked> 가방<br>
+			<input type="checkbox" name="jepoom" value="액서서리"> 액서서리<br>
+			<input type="checkbox" name="jepoom" value="무선이어폰"> 무선이어폰<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2  bgcolor='#aaaaaa'><b>구입방법</b></td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<input type="radio" name="way1" value="카드">카드<br>
+			<input type="radio" name="way1" value="현금" checked>현금<br>
+			<input type="radio" name="way1" value="상품권">상품권<br>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<input type="submit" value="구입결정!!!">
+			<input type="reset" value="취소">
+		</td>
+	</tr>
+</table>
+</body>
+</html>
