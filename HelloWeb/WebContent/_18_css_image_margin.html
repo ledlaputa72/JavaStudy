@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+html,body{ /* 기본적으로 해놓아야 되는 설정 margin,padding 값을 모두 0으로  */
+	height : 100%;
+	margin : 0;
+	padding : 0;
+}
+
+#aa{
+	background-size : cover;
+	/* 
+	cover : 배경 크기 참조하여 이미지를 확대 or 축소, 
+	auto :  크기 그대로,  
+	contain : 배경 크기 참조하되 가로세율 비율 맞추어 
+	 */
+ 	background-image : url("./krim/baekyung.jpg");
+ 	background-position : cneter; /* resize시 그림 가운가 보이게  */
+ 	min-height : 100%;
+ 	border : 0%;
+ 	padding : 0%;
+}
+
+</style>
+</head>
+<body>
+<div id="aa"></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function kaja(){
+			//window.location = "http://www.naver.com" //이문장 만나면 무조건 해당 url로 간다
+			//location.href="http://www.naver.com"
+			location.replace("http://www.naver.com")//뒤돌아 오기가 지원되지 않는다. 
+			//history.back();
+			//history.go(-1);
+		}
+	</script>
+</head>
+<body onload="setTimeout('kaja()', 5000)">
+<h1>
+우리 홈피 이사 했더든<br>
+조금 있어봐 http://www.naver.com 홈피로 간다~~
+</h1>
+</body>
+</html>
