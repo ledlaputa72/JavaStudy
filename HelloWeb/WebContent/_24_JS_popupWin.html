@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script> // <body onload=  :웹페이지가 열리자 마자 바로 발생하는 이벤트 (body onload는 HTML스타일 ) 
+	window.onload=function(){  //객체.속성=값 --> 객체.이벤트=이벤트처리함수 (window.onload는 자바스크립트 스타일 )
+		kaja(); //메소드(함수) 호출문
+	} 
+	function kaja() { //메소드(함수) 정의문
+		/* **********쿠키창 코드************* */
+		//alert(document.cookie); //쿠키 있는 것 모두 확인해보기 
+		if(document.cookie.indexOf("annaeCookie=kongji1") == -1) { //쿠기이름 = 쿠기값; 유효기간=...; //이런쿠키있냐 = 없으면 창문 열림
+	    //if(navigator....indexOf("Firefox")) -->현재부라우저 뭔지? 
+			window.open("cookiewin.html", "cookieWin1", "width=370,height=300,top=20,left=350,location=no,menubar=0");
+		}
+		/* **********팝업창 코드************* */
+		//window.open("popupwin.html", "popupWin1", "width=370,height=300,top=20,left=350,location=no,menubar=0");
+		//location=no를 해도 크롬에서 주소표시줄 보임, 보안문제로
+		//window.open(url, alias(name),"크기....")
+		/* 새창열기 */
+		//alert("쿠기한번보자" + document.cookie);
+	}
+	</script>
+
+</head>
+<body style="background-color : cyan;">
+<h3>Popup 창 열자</h3>
+<pre>
+	<h2>
+		팝업창이 멋있게 열리는 구만
+		팝업창이 멋있게 열리는 구만
+		팝업창이 멋있게 열리는 구만
+	</h2>
+</pre>
+</body>
+</html>
