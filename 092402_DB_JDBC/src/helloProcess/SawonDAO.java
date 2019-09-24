@@ -59,4 +59,8 @@ public class SawonDAO {
 	   return soo;
    } //kajasoo() end 
    
+   public void update1() {
+	   jt1.update("update TelTable set tel=? where name=?", new Object[] {"010-222-3333", "kongjoo"});
+   }
+   
 }
