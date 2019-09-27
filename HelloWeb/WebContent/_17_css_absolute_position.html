@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>17_css_absolute_position</title>
+<style>
+.krimja1{
+/* 	position : absolute; /* 절대 번지 */ */
+	color : #777777;
+	text-shadow : 3px 3px 5px #ff0000;
+	top : 100px; left : 100px;
+	/* (0,0)에서 시작하여 위에서 100px, 왼쪽에서 100px 떨어진 곳   */
+	background-color : #00FF00;
+}
+	
+.krimja2{
+/* 	position : absolute; */
+ 	position : relative;  /* 상대 번지 (바로 앞의 그림에서 거리 좌표 이동 ) */
+	color : #FF0000;
+	text-shadow : 3px 3px 5px #777777;
+	top : 120px; left : 120px;
+	background-color : #FFFF00;
+}
+</style>
+</head>
+<body>
+<div class="krimja1">position absolute ~~~~~</div>
+<div class="krimja2">position absolute ~~~~~</div>
+</body>
+</html>
