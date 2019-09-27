@@ -38,7 +38,7 @@ public class EmployeeDAO {
 	public static EmployeeVO employeeSearchData(int employee_id){
 		//employee-mapper.xml ÀÇ <select id="employeeSearchData
 		
-		return sqlSessionFactory1.openSession().selectOne("employeeSearchData", employee_id);
+		return (EmployeeVO) sqlSessionFactory1.openSession().selectOne("employeeSearchData", employee_id);
 	}
 	
 	
