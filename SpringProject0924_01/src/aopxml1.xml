@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+<aop:aspectj-autoproxy/>
+<!-- @Aspect에는 이것 사용해야 즉, AspectJ에 사용한다는  -->
+
+	<bean name="securityBean" class="helloProcess.Security" />
+	
+	<bean name="helloProcessBean" class="helloProcess.HelloProcess" />
+
+
+</beans>
