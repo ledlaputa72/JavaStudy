@@ -22,5 +22,29 @@
 		SELECT employee_id, first_name, last_name, email, phone_number,hire_date,salary FROM employees WHERE employee_id=#{employee_id}
 	</select>
 	
+	<!-- Hashmap이용   -->
+	<select id="employeeSearchData2" resultType="sawon" parameterType="hashmap">
+		SELECT employee_id, first_name, last_name, email, phone_number,hire_date,salary FROM employees WHERE employee_id=#{employee_id} and last_name=#{last_name}
+	</select>
+	
+	<!-- insert  -->
+	<insert id="employeeInsertData" parameterType="sawon">
+		INSERT INTO EMPLOYEES (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, SALARY, JOB_ID ) VALUES (#{employee_id},#{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, #{salary}, #{job_id});
+	</insert>
+	<!-- #{}쓸때 employeeVO와 대소문자 및 글자 전체 그대로 맞추럭 -->
+	<!-- EMPPOYEES 제약조건 알아보기 (이떄 EMPLOYEES 는 대문자)
+	 	select * from user_constraints
+		where table_name = 'EMPLOYEES'; -->
+	
+	<!-- update -->
+	<update id="employeeUpdateData" parameterType="sawon" >
+		UPDATE EMPLOYEES SET FIRST_NAME = #{first_name), LAST_NAME = #{last_name}, SALARY = #{salary} WHERE EMPLOYEE_ID = #{employee_id}
+	</update>
+	
+	<!-- Delete -->
+	<delete id="employeeDeleteData" parameterType="int">
+		DELETE EMPLOYEES WHERE EMPLOYEE_ID = #{employee_id}		
+	</delete>
+	<!-- #{employee_id}는 VO안에 있는 필드명과 대소문자까지 같아야 함  -->
 	
 </mapper>

@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"
-    import="java.util.*, com.Employee.DAOVO.*"%>
+    import="java.util.*"
+    import="com.Employee.DAOVO.*"
+%>
+
+<%
+
+EmployeeVO empvo2=new EmployeeVO("David", "Choi", 3000, 106);
+EmployeeDAO.employeeUpdateData(empvo2);
+List <EmployeeVO> list1=EmployeeDAO.employeeAllData();
+
+%>
 
 <!DOCTYPE html>
 <html>
@@ -8,14 +18,6 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
-<%
-	List <EmployeeVO> list1=EmployeeDAO.employeeAllData();
-	/*
-	나는 employeeAllData() 메소드 호출로 끝
-	selectList() --> <select * from employees 
-	이걸 처리한 결과값이 return되므로 list 컬렉션객체로 들어감 
-	*/
-%>
 <body>
 	<table border="2">
 		<tr>
@@ -28,7 +30,7 @@
 			<th>급여</th>
 		</tr>
 		<%
-			for(EmployeeVO imsi:list1){				
+		for(EmployeeVO imsi:list1){
 		%>
 		<tr>
 			<td> <%=imsi.getEmployee_id() %></td>
@@ -38,7 +40,8 @@
 			<td> <%=imsi.getPhone_number() %></td>
 			<td> <%=imsi.getHire_date() %></td>
 			<td> <%=imsi.getSalary() %></td>
-		<%} %> 
+			<td> <%=imsi.getJob_id() %></td>
+		<% } %>
 		</tr>
 	</table>
 </body>

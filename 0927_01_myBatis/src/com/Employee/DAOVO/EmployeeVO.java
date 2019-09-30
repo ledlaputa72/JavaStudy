@@ -12,8 +12,32 @@ public class EmployeeVO {
 	
 	//getter setter 
 	private String phone_number;
-	private Date hire_date;
+	private String hire_date;
 	private int salary;
+	private String job_id;
+	
+	public EmployeeVO() {
+		
+	}
+	
+	public EmployeeVO(int employee_id, String first_name, String last_name, String email, String phone_number,
+			String hire_date, int salary, String job_id) {
+		this.employee_id = employee_id;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.email = email;
+		this.phone_number = phone_number;
+		this.hire_date = hire_date;
+		this.salary = salary;
+		this.job_id = job_id;
+	}
+	
+	public EmployeeVO(String first_name, String last_naem, int salary, int employee_id) {
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.salary = salary;
+		this.employee_id = employee_id;
+	}
 	
 	public int getEmployee_id() {
 		return employee_id;
@@ -45,10 +69,10 @@ public class EmployeeVO {
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
-	public Date getHire_date() {
+	public String getHire_date() {
 		return hire_date;
 	}
-	public void setHire_date(Date hire_date) {
+	public void setHire_date(String hire_date) {
 		this.hire_date = hire_date;
 	}
 	public int getSalary() {
@@ -57,6 +81,12 @@ public class EmployeeVO {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-		
-
+	public String getJob_id() {
+		return job_id;
+	}
+	public void setJob_id(String job_id) {
+		this.job_id = job_id;
+	}
+	
+	
 }
