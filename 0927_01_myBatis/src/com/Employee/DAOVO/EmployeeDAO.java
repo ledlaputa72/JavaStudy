@@ -15,11 +15,12 @@ public class EmployeeDAO {
 	
 	private static SqlSessionFactory sqlSessionFactory1;
 	
-	
-	/*(참고) ibatis에서는 com.ibatis...로 시작하는 것 사용
-	parameterType이 아닌 parameterMap 사용
-	dtd가 //mybatis.org//DTD Mapper 3.0//EN"인것이
-	mybatie
+	/*(참고) 
+	ibatis에서는 com.ibatis...로 시작하는 것 사용
+	mybatis라면 org.apache.ibatis로 시작
+	 
+	ibatis에서는 parameterType이 아닌 parameterMap 사용
+	dtd가 //mybatis.org//DTD Mapper 3.0//EN"인것이 	mybatie
 	resultType 대신에 resultClass이면 ibatis 
 	*/
 	/*
