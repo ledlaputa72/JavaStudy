@@ -20,8 +20,7 @@ public class EmployeeVO {
 		
 	}
 	
-	public EmployeeVO(int employee_id, String first_name, String last_name, String email, String phone_number,
-			String hire_date, int salary, String job_id) {
+	public EmployeeVO(int employee_id, String first_name, String last_name, String email, String phone_number, String hire_date, int salary, String job_id) {
 		this.employee_id = employee_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -32,7 +31,7 @@ public class EmployeeVO {
 		this.job_id = job_id;
 	}
 	
-	public EmployeeVO(String first_name, String last_naem, int salary, int employee_id) {
+	public EmployeeVO(String first_name, String last_name, int salary, int employee_id) {
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.salary = salary;

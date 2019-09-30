@@ -6,7 +6,7 @@
 
 <%
 
-EmployeeVO empvo2=new EmployeeVO("David", "Choi", 3000, 106);
+EmployeeVO empvo2=new EmployeeVO("David", "Choi", 3000, 105);
 EmployeeDAO.employeeUpdateData(empvo2);
 List <EmployeeVO> list1=EmployeeDAO.employeeAllData();
 

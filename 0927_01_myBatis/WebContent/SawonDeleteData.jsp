@@ -4,7 +4,7 @@
     import="com.Employee.DAOVO.*"
 %>
 <% 
-	EmployeeDAO.employeeDeleteData(105);
+	EmployeeDAO.employeeDeleteData(104);
 	List <EmployeeVO> list1=EmployeeDAO.employeeAllData();
 
 %>
