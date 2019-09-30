@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	window.alert("안녕 자바스크립트"); /* 브라우저 객체 */
+	//alert("안녕 자바스크립트); ==> 이경우 "없어 에러
+	/* 실행 시 화면 무반응이면 ㅂ라우저에서 마오-> 검사 -> 우상단 액박 믈릭  */
+	window.alert("안녕 자바스크립트"+"반갑네");
+	window.alert("안녕 자바스크립트","반갑네"); //(x) 브라우저에서 작동 안함 
+	document.write("<h1>그래 나도 안녕</h1>")
+		var aa=30;
+	var bb=56.7;
+	var irum=prompt("너 이름이 뭐니", "조미래") //조미래 예시 이름 
+	document.write("이름이", irum, "이군요"+"</br>")
+	document.write("이름이"+"\t"+irum+"\t"+"이군요"+"</br>")
+	var oneul1=new Date() //내장 객체 
+	document.write(oneul1+"날짜만 출력하면"+oneul1.getDate()) //날짜 처리 
+
+</script>
+</body>
+</html>
