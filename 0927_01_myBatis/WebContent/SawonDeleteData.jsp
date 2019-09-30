@@ -3,7 +3,11 @@
     import="java.util.*"
     import="com.Employee.DAOVO.*"
 %>
+<% 
+	EmployeeDAO.employeeDeleteData(105);
+	List <EmployeeVO> list1=EmployeeDAO.employeeAllData();
 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +15,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<table border="2">
+		<tr>
+			<th>사번</th>
+			<th>이름</th>
+			<th>성</th>
+			<th>이메일</th>
+			<th>전화번호</th>
+			<th>입사일</th>
+			<th>급여</th>
+		</tr>
+		<%
+		for(EmployeeVO imsi:list1){
+		%>
+		<tr>
+			<td> <%=imsi.getEmployee_id() %></td>
+			<td> <%=imsi.getFirst_name() %></td>
+			<td> <%=imsi.getLast_name() %></td>
+			<td> <%=imsi.getEmail() %></td>
+			<td> <%=imsi.getPhone_number() %></td>
+			<td> <%=imsi.getHire_date() %></td>
+			<td> <%=imsi.getSalary() %></td>
+			<td> <%=imsi.getJob_id() %></td>
+		<% } %>
+		</tr>
+	</table>
 </body>
 </html>
