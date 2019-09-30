@@ -16,6 +16,17 @@ public class EmployeeDAO {
 	private static SqlSessionFactory sqlSessionFactory1;
 	
 	
+	/*(참고) ibatis에서는 com.ibatis...로 시작하는 것 사용
+	parameterType이 아닌 parameterMap 사용
+	dtd가 //mybatis.org//DTD Mapper 3.0//EN"인것이
+	mybatie
+	resultType 대신에 resultClass이면 ibatis 
+	*/
+	/*
+	ibatis에서 MyBatis로 변하게 된것은 
+	apache에서 google되면서 명칭 변경
+	*/
+	
 	static {
 		String myxml="Mybatis-config.xml";
 		InputStream istream=null;

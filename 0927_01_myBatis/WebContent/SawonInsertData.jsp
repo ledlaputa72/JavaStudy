@@ -16,8 +16,7 @@
 /* employee_id email unique 에러 주의  */
 
 EmployeeVO empvo1=new EmployeeVO (230, "David", "Kim","DEFERDFD01", "010-7777-3333", "13-12-05", 3000, "ST_CLERK");
- EmployeeDAO.employeeInsertData(empvo1);
-/* EmployeeDAO.employeeInsertData(empvo1); */
+EmployeeDAO.employeeInsertData(empvo1);
 List <EmployeeVO> list1=EmployeeDAO.employeeAllData();
 
 %>
