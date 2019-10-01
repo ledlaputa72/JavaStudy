@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 생성자 인젝션 (constructor injection -->
+	<!-- Insa insaBean = new Insa("홍길동");
+	즉, property 자리에 constructor-arg를 써준다. 
+	 -->
+	
+	<bean id="insaBean" class="insa.Insa">
+		<constructor-arg name="name" value="홍길동" />
+	</bean>
+
+</beans>
