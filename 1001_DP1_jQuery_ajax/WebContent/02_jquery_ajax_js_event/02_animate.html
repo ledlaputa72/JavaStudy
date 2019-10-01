@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="EUC-KR">
+	
+	<title>Insert title here</title>
+	
+	<script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+
+	<h1>가자 거인나라</h1>
+	
+	<div> <img src="img/child.jpg" id="child" /> </div>
+	
+	<script>
+	
+		$(function() {
+			
+			$("img").attr("width", 100).attr("height", 70); // 처음 이미지 크기 설정
+			
+			setInterval(function () {
+				
+				$("#child").animate(
+				
+						{ width : "+=30" }, 3000).animate(
+								
+						{ height : "+=20" }, 2000);
+				
+			}, 3000); // 3초 간격
+			
+		});
+	
+	</script>
+
+</body>
+</html>
