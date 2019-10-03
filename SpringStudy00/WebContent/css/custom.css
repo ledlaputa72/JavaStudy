@@ -6,10 +6,15 @@
 *{
 	font-family: 'Nanum Gothic', serif;
 }
-h1 {
+#main_title {
 	/* font-family: 'Nanum Brush Script', serif; */
 	font-family: 'Jeju Hallasan', serif;
 }
-h3 {
+
+h4 {
 	font-family: 'Jeju Gothic', serif;
+}
+
+#nav_top {
+	background-color: silver;
 }

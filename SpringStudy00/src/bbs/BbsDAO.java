@@ -14,7 +14,8 @@ public class BbsDAO {
 	//立加 按眉 - Data Base 立加 
 	public BbsDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost/ledlaputa";
+//			String dbURL = "jdbc:mysql://localhost/ledlaputa";
+			String dbURL = "jdbc:mysql://ledlaputa.com:3306/ledlaputa";
 			String dbID = "ledlaputa";
 			String dbPassword = "Ilovejayjung1!";
 			Class.forName("com.mysql.jdbc.Driver");

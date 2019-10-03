@@ -24,14 +24,7 @@ public class HaevaJoin implements HaevaImpl {
 
 		VapsDAO vdao = null;
 		
-		try {
-			vdao = new VapsDAO();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		vdao = new VapsDAO();
 		
 		
 		try {

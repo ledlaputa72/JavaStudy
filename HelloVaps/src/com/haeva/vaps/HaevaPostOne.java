@@ -20,19 +20,7 @@ public class HaevaPostOne implements HaevaImpl {
 		BoardDAO bdao = null;
 		BoardVO bv = null;
 		
-		try {
-			
-			bdao = new BoardDAO();
-			
-		} catch (ClassNotFoundException e) {
-			
-			e.printStackTrace();
-			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-			
-		}
+		bdao = new BoardDAO();
 		
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		

@@ -20,19 +20,54 @@
 
 
 	<!-- 상단 네비게이션 바 -->
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default" id="nav_top">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">정연섭 포트폴리오 </a>
+			<a class="navbar-brand" href="main.jsp"><b>정연섭 포트폴리오</b> </a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="main.jsp">메인</a>
-				<li class="active"><a href="bbs.jsp">게시판</a>
+
+				<!-- 레스토랑 프로젝트  -->				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" 
+					data-toggle="dropdown" role="button" aria-haspopup="true" 
+					aria-expanded="false">레스토랑 프로젝트<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li ><a href="restoInfo.jsp">레스토랑 소개</a></li>
+						<li><a href="http://www.ledlaputa.com/HelloVaps/main.jsp">레스토랑 이동</a>
+					</ul>
+				</li>
+				
+				<!-- jsp 게시판 프로젝트  -->
+				<li class="dropdown  active">
+					<a href="#" class="dropdown-toggle" 
+					data-toggle="dropdown" role="button" aria-haspopup="true" 
+					aria-expanded="false">게시판 프로젝트<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="bbsInfo.jsp">게시판 소개</a></li>
+						<li class="active"><a href="bbs.jsp">게시판 이동</a>
+					</ul>
+				</li>
+				
+				<!-- 프로트앤드 프로젝트  -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" 
+					data-toggle="dropdown" role="button" aria-haspopup="true" 
+					aria-expanded="false">프론트앤드 스터디<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="studyInfo.jsp">예제 소개</a></li>
+						<li><a href="Portfolios/project02/index.html">[예제1] 반응형 웹 </a></li>
+						<li><a href="Portfolios/project08/index.html">[예제2] 회전 웹 </a></li>
+						<li><a href="Portfolios/project09/index.html">[예제3] Z축 스크롤 웹</a></li>
+					</ul>
+				</li>
+				
 			</ul>
 			
 			<%

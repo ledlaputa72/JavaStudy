@@ -2,6 +2,7 @@ package vapsDAO;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,10 +18,22 @@ public class BoardDAO {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	// 시작하자마자 생성자에서 접속 객체 get
+/*	// 시작하자마자 생성자에서 접속 객체 get
 	public BoardDAO() throws ClassNotFoundException, SQLException {
 			
 		con = new VapsDBConn().getConnection();
+	}*/
+	
+	public BoardDAO() {
+		try {
+			String dbURL = "jdbc:mysql://localhost/ledlaputa";
+			String dbID = "ledlaputa";
+			String dbPassword = "Ilovejayjung1!";
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(dbURL, dbID, dbPassword);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 		
 	public void pstmtClose() throws SQLException {
