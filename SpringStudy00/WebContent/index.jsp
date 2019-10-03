@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP 게시판 사이트 </title>
+<title>정연섭 포트폴리오 사이트</title>
 </head>
 <body>
-<script type="text/javascript">
-	location.href = 'login.jsp'
-</script>
+	<script>
+		location.href = 'main.jsp'
+	</script>
 </body>
 </html>

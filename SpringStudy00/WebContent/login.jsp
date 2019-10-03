@@ -6,9 +6,11 @@
 <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
 <meta name="Content-type" content="width=device-width", initial-scale="1"> 
 <link rel="stylesheet" href="css/bootstrap.css">
-<title>JSP 게시판 로그인</title>
+<link rel="stylesheet" href="css/custom.css">
+<title>정연섭 포트폴리오 사이트</title>
 </head>
 <body>
+	<!-- 상단 네비게이션 바 -->
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -16,7 +18,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트 </a>
+			<a class="navbar-brand" href="main.jsp">정연섭 포트폴리오 </a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
@@ -37,6 +39,7 @@
 		</div>
 	</nav>
 	
+	<!-- 로그인 화면 --> 
 	<div class="container">
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
