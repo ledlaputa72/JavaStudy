@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="EUC-KR">
+	
+	<title>Insert title here</title>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.autocomplete.js"></script>
+	
+	<script>
+	
+		var loveline = [
+			
+			"babo", "ondal", "kongjoo", "sinderella", "choonhyang", "leedoryung",
+			"바보", "온달", "신데렐라", "춘향", "이도령", "바다", "온도", "축구공", "신발", "향단이", "도자기"
+			
+		];
+	
+	</script>
+
+</head>
+<body>
+
+	<script>
+	
+		// 제시어 (suggest)
+		// 자동 완성 기능
+		$(document).ready(function () {
+			
+			// 입력한 제시어로 시작하는 단어가 뜨도록 해준다.
+//			$("#lovelinename").autocomplete(loveline);
+	
+			// 입력한 제시어가 들어간 모든 단어가 뜨도록 해준다.
+			$("#lovelinename").autocomplete(loveline, { matchContains : true });
+			
+		});
+	
+	</script>
+	
+	<form>
+	
+		러브라인 이름 : <input type="text" name="lln" id="lovelinename" />
+	
+	</form>
+
+</body>
+</html>

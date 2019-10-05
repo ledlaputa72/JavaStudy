@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Manager1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  
+  		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContextResources.xml</param-value>
+		
+  </context-param>
+  
+<!-- 
+  	ContextLoaderListener 는 contextConfigLocation 관련 .xml 들이 모두 load 되도록 한다.
+  	선언하지 않으면 /web-inf/applicationContext.xml 사용이 디폴트이다.
+-->
+  <listener>
+  	
+  		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  		
+  </listener>
+
+<!-- 
+	## 한글 처리 ##
+	
+	forceEncoding 이 true 이면 encoding 값 EUC-KR 에 의해 request.setCharacterEncoding("EUC-KR") / response.setCharacterEncoding("EUC-KR") 로 처리된다.
+	
+	*.do 파일에 모두 적용된다.
+-->  
+  <filter>
+  
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  	
+  	<init-param>
+  	
+  		<param-name>encoding</param-name>
+  		<param-value>EUC-KR</param-value>
+  	
+  	</init-param>
+  	
+  	<init-param>
+  	
+  		<param-name>forceEncoding</param-name>
+  		<param-value>true</param-value>
+  	
+  	</init-param>
+  
+  </filter>
+  
+  <filter-mapping>
+  
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  
+  </filter-mapping>
+  
+<!--
+	*.do 로 끝나는 url 의 경우 action 서블릿이름 <servlet-name> 을 찾아가고
+	그러면 DispatcherServlet 이 처리한다.
+	
+	처리 방법을 알려면 applicationContext.xml 을 본다. 
+	
+	즉, web 관련 설정 파일은 applicationContext.xml 에 적는다.
+	
+	(참고) action 을 생각
+		form action="aa.do" method="post"
+		
+	applicationContext.xml 이 maven 에서는 servlet-context.xml	
+-->
+  <servlet>
+  
+  	<servlet-name>action</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	
+  	<init-param>
+  	
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/config/applicationContext.xml</param-value>
+  	
+  	</init-param>
+  
+  </servlet>
+  
+  <servlet-mapping>
+  
+  	<servlet-name>action</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  
+  </servlet-mapping>
+  
+</web-app>
