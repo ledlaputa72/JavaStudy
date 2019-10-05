@@ -172,7 +172,6 @@
 				<div class="item">
 					<img src="images/b3.JPG">
 				</div>
-			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 			</a>
