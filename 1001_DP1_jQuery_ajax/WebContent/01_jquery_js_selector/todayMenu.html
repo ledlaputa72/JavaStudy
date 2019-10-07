@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="EUC-KR">
+	
+	<title>Insert title here</title>
+	
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+
+	<h1>오늘의 메뉴</h1>
+	
+	<div class="hansik">
+	
+		<p>한식 코너</p>
+		
+		<ol id="hansik" class="hansik">
+		
+			<li>백반</li>
+			<li>순대국</li>
+			<li>오므라이스</li>
+		
+		</ol>
+		
+		<p>일양식 코너</p>
+		
+		<ul id="yangsik">
+		
+			<li>돈까스</li>
+			<li>햄버거</li>
+			<li>새우까스</li>
+		
+		</ul>
+	
+	</div>
+	
+	<script>
+	
+		// document.getElementById("hansik")...innerText
+		// hansik id 를 참조하여 <li> 중 2호 요소의 문자열 출력
+		alert($("#hansik li:eq(2)").text()); // 오므라이스	
+		
+		// ol 요소의 하위 요소인 li 를 찾아 1호 요소의 문자열 출력
+		alert($("ol li:eq(1)").text());// 순대국
+		
+		// hansik class 를 참조하여 <li> 중 1호 요소의 문자열 출력
+		alert($(".hansik li:eq(1)").text());
+		
+		// body 에 접근해서 ol 의 li 를 가되 2호 요소의 문자열 출력
+		alert($("body ol li:eq(2)").text()); // 오므라이스
+		
+		// li 에 접근하여 li 태그의 개수를 출력
+		alert($("li").length); // 6
+		
+		// li 태그 개수 + p 태그 개수 + ol 태그 개수 의 합을 출력 = 6 (li) + 2 (p) + 1 (ol) = 9
+		alert($("li, p, ol").length); // 9
+		
+		$(".hansik").css("color", "blue"); // 전부 다 blue
+	
+	</script>
+	
+</body>
+</html>
