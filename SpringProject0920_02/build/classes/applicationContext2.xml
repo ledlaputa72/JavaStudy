@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 생성자 인젝션 (constructor injection -->
+	<!-- Insa insaBean = new Insa("홍길동");
+	즉, property 자리에 constructor-arg를 써준다. 
+	 -->
+
+	<bean id="constargBean" class="constarg.Constarg">
+		<constructor-arg name="insa" ref="insaBean"/>
+		<!-- insaBean객체 전달을 위해 ref사용 
+			insa 는 setInsa()를 생각, 결국 insa필드에 Insa클래스의 객체를 넣겠다는것 -->
+	</bean>
+
+</beans>

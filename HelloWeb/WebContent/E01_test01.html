@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="jquery-3.1.1.js"></script>
+<script>
+$(function(){
+	$("h2").next().css("background-color","#ff0")
+	.css("border","2px solid #f00");
+	//체이닝 기법 : $(요소선).css(속성1,값1).css(속성2,값2).css(속성3,값3);
+});
+
+</script>
+</head>
+<body>
+<h1>제이쿼리</h1>
+<h2 >선택자</h2>
+ <h3 id="tit3">직접 선택자</h3>
+ <h3>인접 선택자</h3>
+</body>
+</html>
