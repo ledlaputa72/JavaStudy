@@ -1,0 +1,20 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+*{
+	font-family: 'Nanum Gothic', serif;
+}
+#main_title {
+	/* font-family: 'Nanum Brush Script', serif; */
+	font-family: 'Jeju Hallasan', serif;
+}
+
+h4 {
+	font-family: 'Jeju Gothic', serif;
+}
+
+#nav_top {
+	background-color: silver;
+}
