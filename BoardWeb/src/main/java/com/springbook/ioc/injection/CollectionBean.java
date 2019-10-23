@@ -1,4 +1,4 @@
-package polymorphism;
+package com.springbook.ioc.injection;
 
 import java.util.Properties;
 

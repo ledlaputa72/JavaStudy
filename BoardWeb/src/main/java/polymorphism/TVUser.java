@@ -15,15 +15,10 @@ public class TVUser {
 		tv.volumeUp();
 		tv.volumeDown();
 		tv.powerOff();
+		
+		//3. Spring 컨테이너 닫기 
+		factory.close();
 	}
 
 }
 
-
-
-/*BeanFactory factory = new BeanFactory();
-TV tv = (TV) factory.getBean(args[0]);
-tv.powerOn();
-tv.volumeUp();
-tv.volumeDown();
-tv.powerOff();*/
